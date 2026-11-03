@@ -63,14 +63,16 @@ const archiv = archivWurzel({ wurzel: A.wurzel })
 const norm = (s) => String(s ?? '').normalize('NFKC').toLowerCase().replace(/[’']/g, "'").replace(/\s+/g, ' ').trim()
 // Felder mit erfundenem Fall: Zahlen und Daten dort sind keine Aussagen über die Welt.
 const ERFUNDEN = /(^|\.)beispielbild(\.|$)|(^|\.)beispiel(\[|$)|(^|\.)beispielzeile(\[|$)/
+// Bewertungsregeln der Einheit («unter 60 %», «80 %», «mind. 3 Kriterien»): keine Aussagen über die Welt (03.11.2026).
+const BEWERTUNG = /^rubrik_shared\.niveaubaender\[\d+\]\./
 const NUR_IMMER = new Set(['artikel', 'stand', 'abstimmung'])
 const NICHT_AMTLICH = /(^|\.)(wikipedia\.org|srf\.ch|nzz\.ch|tagesanzeiger\.ch|20min\.ch|blick\.ch|watson\.ch|beobachter\.ch|comparis\.ch|moneyland\.ch)$/
 
 /** Alle Aussagen einer Einheit: [{ feld, datei, traeger, art, treffer, umfeld, text }]. */
 function aussagenVon(E, fz) {
   const out = []
-  for (const f of textfelder(E)) {
-    const erfunden = ERFUNDEN.test(f.pfad)
+  for (const f of textfelder(E, { dossier: true })) {
+    const erfunden = ERFUNDEN.test(f.pfad) || (f.datei === 'kn.json' && BEWERTUNG.test(f.pfad))
     const liste = fallzahlenFuer(fz, f.traeger)
     for (const a of findeAussagen(f.text)) {
       if (erfunden && !NUR_IMMER.has(a.art)) continue
@@ -133,7 +135,7 @@ for (const ordner of A.ordner) {
   if (datei.daten.einheit !== ordner) B.fehler('ERR_FAKTEN_EINHEIT', `${rel}/fakten.json › einheit`, `«${datei.daten.einheit}» — die Datei gehört nicht zu dieser Einheit`)
   const zeilen = (Array.isArray(datei.daten.zeilen) ? datei.daten.zeilen : []).filter((z) => z && typeof z === 'object')
 
-  const felder = new Map(textfelder(E).map((f) => [f.feld, f]))
+  const felder = new Map(textfelder(E, { dossier: true }).map((f) => [f.feld, f]))
   const begleiterTexte = [...felder.values()].filter((f) => f.datei === 'begleiter.md')
   /** Felder, in denen der Wortlaut einer Zeile wirklich steht. Im Begleiter zählt jeder Absatz (die Zählung verschiebt sich mit jeder Änderung). */
   const orte = (z) => {

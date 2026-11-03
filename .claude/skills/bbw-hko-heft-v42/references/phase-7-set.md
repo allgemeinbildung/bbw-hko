@@ -1,18 +1,37 @@
 # Phase 7 — Set (`set.json`)
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Ergebnis: `src/data/einheiten/<ordner>/set.json` mit Kopf, Glossar und gemeinsamem
 Auftrag. Skelett: `assets/set-template.json`. Voraussetzung: `prinzip.json`,
 `kn.json` und beide Hefte liegen vor und sind in `check-v42` ohne Befund.
 
 **Form aus Gold, Inhalt nie.** Die Felder und ihre Reihenfolge sind die der
 Gold-Datei `1.3.1_konsum_verantworten_v42/set.json`, dazu `produkte` (E25).
-Kein weiteres Feld. Fest in jeder Einheit: ein gemeinsamer Auftrag mit fünf
+Kein weiteres Feld bei EFZ; EBA ergänzt die Felder der folgenden Ausnahme. Fest in jeder Einheit: ein gemeinsamer Auftrag mit fünf
 Schritten, vier KN-Kriterien im Wortlaut, Auftragsbogen mit vier Seiten, Glossar
 je Heft. **Herzuleiten je Einheit:** Sprachmodi des Auftrags, daraus die zwei
 Produkte und ihre Form auf dem Bogen, die Sozialform, Lebensbereich und Fall.
 
 Leitfaden §7.5 ist an zwei Stellen ersetzt: kein Glossar auf A3 (E17), A4 heisst
 «Selbsteinschätzung» (E18).
+
+
+### EBA-Ausnahme: Auftragsbogen A1–A4
+
+Für EBA gilt `assets/eba-set-template.json`. Die EFZ-Regel «kein weiteres
+Feld» gilt hier nicht: `gemeinsamer_auftrag.woerter` ist Pflicht, eine
+nichtleere Liste mit je `{begriff, definition}`, beide nichtleer und auf
+A2-Sprachniveau. «Wichtige Wörter» steht vor der Situation auf A1.
+`heft_bezug` steht auf **A2**, nicht A1; Wörter immer mit
+**«Wichtige Wörter (S. 2)»** referenzieren, nie «Glossar (S. 8)».
+A4: **«Punkte · Kriterium · Ich · Partner/in»**, Bereiche «Sprache/Gesellschaft».
+Alle vier Kriterien brauchen `name_lernende` und `stufen_lernende`: vier
+nichtleere Ich-Sätze, Anzahl gleich `stufen`, gleiche Bedeutung und gleicher
+Massstab wie der KN-Wortlaut. An den Produktmodus anpassen (etwa «beim
+Sprechen», «im Reglement»). `kn_kriterium`, `dimension` und `stufen` bleiben
+zeichengenau aus dem KN (R6); die Lernendenfassung ändert keine Bewertung.
 
 ## 1. Herleitung vor dem Schreiben
 

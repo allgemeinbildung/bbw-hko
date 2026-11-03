@@ -1,5 +1,8 @@
 # Phase 5 — Spuren je Heft
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Ergebnis: `spuren.ohne_medien` und/oder `spuren.mit_medien` in
 `herausforderung_A.json` und `herausforderung_B.json` — LF3 und LF4 je Spur
 **mit** Lösung, Kasten S. 4, Quellenbindung, Rezeptionskarte, `scaffold_90`.

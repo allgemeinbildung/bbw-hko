@@ -1,5 +1,8 @@
 # Ableitungsregeln — Ordner, IDs, Kurzlink, Quellen-IDs
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Grundlage: `docs/upgrade-v4.2/ENTSCHEIDE.md` E21 (dazu E5 für die Form der
 Gold-Einheit). Alles auf dieser Seite ist **nach dem ersten Druck fest**: Der
 Ordnername steht im QR-Code jedes gedruckten Hefts. Darum gilt:

@@ -1,5 +1,8 @@
 # nRLP → Lehrmittel-Crosswalk
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 **Warum es diese Datei gibt.** Die nRLP-Nummerierung und die Lehrmittel-Nummerierung
 sind zwei voneinander unabhängige Systeme, die sich zufällig überschneiden. Aus
 `nRLP 2.1.2` folgt **nicht** Lehrmittel-Kapitel `2.1`.
@@ -209,7 +212,7 @@ Konsumentscheidungen sind im 4J `1.3`, im 3J `3.1`. Immer den Lehrgang mitprüfe
 
 ## EBA 2-jährig
 
-EBA hat **kein Lehrmittel**. Die Skill `hko-2er-EBA-set-generator` erzeugt stattdessen
+EBA hat **kein Lehrmittel**. Das EBA-Profil dieser Skill erzeugt stattdessen
 ein eigenes A2-Wissensdossier (`dossier.json`). Dieser Crosswalk gilt dort nicht.
 
 ---

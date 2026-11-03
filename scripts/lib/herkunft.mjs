@@ -35,7 +35,7 @@ import { textfelder, TEMPLATE_V42 } from './pruefung.mjs'
 import { findeAussagen } from './aussagen.mjs'
 
 const SKRIPT_REPO = join(dirname(fileURLToPath(import.meta.url)), '..', '..')
-const DATEIEN = ['herausforderung_A.json', 'herausforderung_B.json', 'set.json', 'kn.json']
+const DATEIEN = ['herausforderung_A.json', 'herausforderung_B.json', 'set.json', 'kn.json', 'dossier.json']
 const norm = (p) => resolve(p).replace(/\\/g, '/').replace(/\/$/, '').toLowerCase()
 
 /**
@@ -106,7 +106,7 @@ function aussagenJeFeld(stand) {
   const E = { hefte, json: stand.dateien, begleiter: stand.begleiter, quellen: new Map(), methoden: new Map(), v42: hefte.some((h) => h.json.template === TEMPLATE_V42) }
   const out = new Map()
   const n = (s) => String(s).normalize('NFKC').toLowerCase().replace(/[’']/g, "'").replace(/\s+/g, ' ').trim()
-  for (const f of textfelder(E, { karten: false })) {
+  for (const f of textfelder(E, { karten: false, dossier: true })) {
     const a = findeAussagen(f.text).map((x) => `${x.art}:${n(x.treffer)}`)
     if (!a.length) continue
     // Begleiter als ein Feld: Die Absatznummer ist kein fester Ort.

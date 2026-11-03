@@ -202,6 +202,7 @@ export function loesungsfelderAus(dateien) {
     const gattung = datei === 'set.json' ? 'set.json' : 'herausforderung_<H>.json'
     for (const m of MUSTER) {
       if (m.datei !== gattung) continue
+      if (json.lehrgang === 'EBA_2J' && /^abschluss\.loesung\.(verbindungen|transfer|eigene_knoten)/.test(m.pfad)) continue
       for (const k of entfalte(json, m.pfad, m.spur === '<spur>' ? null : m.spur)) {
         const text = FORM[m.form](k.wert)
         if (!text.trim()) continue

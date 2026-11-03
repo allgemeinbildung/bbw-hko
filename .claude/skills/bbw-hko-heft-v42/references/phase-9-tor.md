@@ -1,5 +1,8 @@
 # Phase 9 — Tor und Bericht
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Das Tor führt nur der Orchestrator aus, nie zwei Tore gleichzeitig im selben
 Arbeitsbaum (`references/lauf.md` §5). Auf Phase 9 folgt in jedem Lauf
 Phase 10 (`references/phase-10-abschluss.md`).
@@ -84,8 +87,8 @@ des Orchestrators nach dem Trockenlauf.)
 
 **Messung.** Die Executor haben ihr Heft schon in der Schreibphase gemessen
 (`references/lauf.md` §6); das Tor misst **alle** Dokumente, auch S. 8 der
-Hefte und den Auftragsbogen. Die Messung läuft lokal mit der Schreibschrift
-Segoe Print; sie gilt, vor allem für Seite 6. Ein Überlauf bis 2 px auf Seite 6
+Hefte und den Auftragsbogen. Die Messung verwendet die eingebetteten Produktionsschriften
+IBM Plex, HKO Hand und HKO Symbole; Segoe Print ist nur Fallback. Ein Überlauf bis 2 px auf Seite 6
 ist hingenommen und wird nur gemeldet; alles darüber wird in den Daten
 behoben. (Herkunft: ENTSCHEIDE E28 Nr. 2; Prompt
 `einheit-aus-bauplan-lokal.md`, Fassung bis 07.10.2026.)

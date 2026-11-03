@@ -252,6 +252,7 @@ function pruefeZeile(E, B, f, z, H) {
     if (b.herkunft === 'quelle') geprueft = belegQuelle(E, B, wo, b, z.urteil, { zeiten, absaetze }) && geprueft
     else if (b.herkunft === 'lehrmittel') geprueft = belegLehrmittel(B, wo, b, z.urteil, seiten) && geprueft
     else if (b.herkunft === 'nrlp') belegNrlp(B, wo, b)
+    else if (b.herkunft === 'dossier') geprueft = belegDossier(E, B, wo, b, z.urteil) && geprueft
   }
   if (!geprueft || z.urteil === 'falsch') return
 
@@ -345,6 +346,16 @@ function belegLehrmittel(B, wo, b, urteil, seiten) {
     B.fehler('ERR_STELLE_FALSCH', wo, `${b.wo}: Anker steht auf ${s.treffer.map((x) => x.stelle || 'ohne Seite').join(', ')}, die Zeile sagt «${b.stelle || 'leer'}»`)
   }
   if (tr.seite !== null) seiten.push(tr.seite)
+  return true
+}
+
+function belegDossier(E, B, wo, b, urteil) {
+  const n = E.json['dossier.json']?.nuggets?.find((n) => n.id === b.stelle)
+  if (b.wo !== 'dossier.json' || !n) { B.fehler('ERR_BELEG_DOSSIER', wo, `Info-Karte ${b.stelle} fehlt in dossier.json`); return false }
+  if (!b.anker) return urteil === 'falsch'
+  const a = ankerWoerter(b.anker).join(' ')
+  const text = [n.titel, n.inhalt, n.beispiel].filter(Boolean).join(' ')
+  if (!a || !ankerWoerter(text).join(' ').includes(a)) { B.fehler('ERR_ANKER_NICHT_IM_TEXT', wo, `Anker steht nicht in Info-Karte ${b.stelle}`); return false }
   return true
 }
 

@@ -1,5 +1,8 @@
 # Phase 1 — Bauplan
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 **Ergebnis:** `docs/cloud-run/bauplaene/<ordner>.md` nach
 `docs/cloud-run/bauplaene/_VORLAGE.md` — jeder Entscheid, den früher ein Mensch
 im Dialog traf, mit einer Empfehlung, höchstens zwei Alternativen, Herleitung.

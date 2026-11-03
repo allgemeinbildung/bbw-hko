@@ -1,5 +1,8 @@
 # Kohärenz-Raster — was fest ist, was hergeleitet wird
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Leitprinzip (Pietro, 02.10.2026): Die Einheiten sind untereinander kohärent
 und behalten zugleich die HKO-Flexibilität bei **Sprachmodi,
 Schlüsselkompetenzen und Handlungsprodukten**. Die Gold-Einheit 1.3.1 ist die

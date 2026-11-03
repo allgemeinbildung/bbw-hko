@@ -1,5 +1,8 @@
 # Gegenleser — feste Besetzung, Zeitpunkt, Aufträge
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Die Skripte des Tors prüfen Längen und Struktur, nicht Sinn. Was Lernende beim
 Bearbeiten stolpern lässt, findet nur, wer das Dokument bearbeitet. Darum gehört
 zu jeder Einheit eine feste Besetzung von Gegenlesern. Sie berichten nur; sie
@@ -181,6 +184,32 @@ ab) gilt nicht mehr. (Herkunft: Rückblick §5.1, §5.3; ENTSCHEIDE E38, Stufe C
 Über alle Dateien: «ß», Platzhalter, Transliterationen
 (`references/umlaute.md`), Fall-Begriffe (`references/sprache.md` §7.1) und
 Anrede (`references/sprache.md`).
+
+### 4.4 EBA: Fachlektorat (Lehrperson und Fachlektorin)
+
+Für EBA zusätzlich zu 4.1 ein Fachlektorat am Export (`export-v42`), Vorbild die
+Argon-Gegenlesungen vom 03.11.2026 (`docs/cloud-run/laeufe/2026-11-03-*/GEGENLESUNG-argon.md`).
+Modell: ein anderes als das erzeugende. Auftrag wörtlich:
+
+> Du bist erfahrene EBA-Lehrperson und kritische Fachlektorin. Spiele Heft A,
+> Heft B, Auftragsbogen und Kompetenznachweis als Lernende/r durch und schreibe
+> jede Antwort hin. Prüfe dann: (1) **Verweise** — zeigt jede Seiten-, Tabellen-,
+> Raster-, Info-Karten-, Leitfragen- und Methodenangabe auf etwas, das gedruckt
+> existiert und den versprochenen Inhalt hat? Weiss ich bei jedem Schritt, wo ich
+> schreibe? (2) **Vorwegnahme** — rechnet oder entscheidet eine Info-Karte, ein
+> Beispiel oder eine Folgeaufgabe den Fall schon vor? (3) **Fragen** — ein Auftrag,
+> eindeutig; antwortet die Lösung genau darauf, ohne Zusatz? Steht jede Zahl der
+> Lösung im Heft? (4) **Hilfen** — führt jeder Satzanfang zur Musterlösung dieser
+> Leitfrage? Passen Denkhilfe-Spalten, Methodenkarten und Kriterien zum Produkt und
+> Modus? (5) **Sachrichtigkeit** — jede Rechts- und Zahlenaussage am Erlass bzw.
+> an der Quelle, mit Zuständigkeit, Bedingung und Geltungsbereich; jede Rechnung
+> nachrechnen. (6) **A2** — Satzlänge, Nebensätze, Paragraphen, Sie/Ich. (7)
+> **Kopien** aus der Gold-Einheit. (8) **Begleiter** gegen `eba-profil.md` §6.7.
+> Befunde A (muss vor Unterricht) / B (sollte) / C (klein), je mit Datei + Feld,
+> Wortlaut, was falsch ist, Beleg, Vorschlag. Nichts ändern.
+
+Die Regeln, gegen die das Lektorat liest, stehen in `eba-profil.md` §6; was davon
+zählbar ist, hat `check-eba` vorher schon gefunden.
 
 ## 5. Nachprüfung — jeder Befund, bevor er zum Auftrag wird
 

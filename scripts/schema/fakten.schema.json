@@ -26,7 +26,7 @@
     "feld": {
       "description": "Datei › Stelle. Dateien der Einheit ohne Pfad davor; Karten mit «quellen/» bzw. «methoden/». JSON: Pfad wie in check-all (z. B. «herausforderung_B.json › situation_text»); begleiter.md: «begleiter.md › Absatz N».",
       "type": "string",
-      "pattern": "^(?:herausforderung_[AB]\\.json|set\\.json|kn\\.json|prinzip\\.json|begleiter\\.md|quellen/[^ /]+\\.json|methoden/[^ /]+\\.json) › \\S.*$"
+      "pattern": "^(?:herausforderung_[AB]\\.json|set\\.json|kn\\.json|prinzip\\.json|dossier\\.json|begleiter\\.md|quellen/[^ /]+\\.json|methoden/[^ /]+\\.json) › \\S.*$"
     },
     "zeile": {
       "type": "object",

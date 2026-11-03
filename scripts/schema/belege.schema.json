@@ -40,7 +40,7 @@
       "required": ["herkunft", "anker", "wo", "stelle"],
       "additionalProperties": false,
       "properties": {
-        "herkunft": { "enum": ["quelle", "lehrmittel", "nrlp"] },
+        "herkunft": { "enum": ["quelle", "lehrmittel", "nrlp", "dossier"] },
         "anker": { "type": "string", "pattern": "^\\s*\\S+(?:\\s+\\S+){4,11}\\s*$" },
         "wo": { "type": "string", "minLength": 1 },
         "stelle": { "type": "string" }
@@ -59,7 +59,7 @@
         "spur": { "description": "«beide» für den Kern des Hefts und den gemeinsamen Auftrag.", "enum": ["beide", "ohne_medien", "mit_medien"] },
         "herkunft": {
           "description": "Woher die Aussage des Felds stammt — nach dem Befund des Audits, nicht nach der Behauptung des Felds.",
-          "enum": ["quelle", "lehrmittel", "fallueberlegung", "nrlp"]
+          "enum": ["quelle", "lehrmittel", "fallueberlegung", "nrlp", "dossier"]
         },
         "anker": { "$ref": "#/$defs/anker" },
         "wo": {
@@ -81,6 +81,7 @@
         "bemerkung": { "description": "In eigenen Worten: was die Grundlage wirklich sagt (bei «falsch», «fundstelle_falsch», «ableitung»).", "type": "string" }
       },
       "allOf": [
+        {"if": {"properties": {"herkunft": {"const": "dossier"}}, "required": ["herkunft"]}, "then": {"properties": {"wo": {"const": "dossier.json"}, "stelle": {"pattern": "^nugget_[AB]_[0-9]{2}$"}}}},
         {
           "if": { "properties": { "herkunft": { "const": "fallueberlegung" } }, "required": ["herkunft"] },
           "then": {
@@ -93,11 +94,11 @@
           }
         },
         {
-          "if": { "properties": { "herkunft": { "enum": ["quelle", "lehrmittel", "nrlp"] } }, "required": ["herkunft"] },
+          "if": { "properties": { "herkunft": { "enum": ["quelle", "lehrmittel", "nrlp", "dossier"] } }, "required": ["herkunft"] },
           "then": { "properties": { "urteil": { "enum": ["stimmt", "fundstelle_falsch", "falsch"] } } }
         },
         {
-          "if": { "properties": { "herkunft": { "enum": ["quelle", "lehrmittel", "nrlp"] }, "urteil": { "enum": ["stimmt", "fundstelle_falsch"] } }, "required": ["herkunft", "urteil"] },
+          "if": { "properties": { "herkunft": { "enum": ["quelle", "lehrmittel", "nrlp", "dossier"] }, "urteil": { "enum": ["stimmt", "fundstelle_falsch"] } }, "required": ["herkunft", "urteil"] },
           "then": { "properties": { "anker": { "minLength": 1 } } }
         },
         {

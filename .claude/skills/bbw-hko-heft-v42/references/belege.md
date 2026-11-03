@@ -1,5 +1,16 @@
 # Belege — Ort, Dateien, Felder, Urteile
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+**EBA-Dossierbelege:** `herkunft: "dossier"`, `wo: "dossier.json"`,
+`stelle: "nugget_A_01"` (interne ID der tatsächlich vorhandenen Karte), Anker
+5–12 Wörter aus Titel, Inhalt oder Beispiel dieser Karte. `check-belege` prüft
+Karte und Anker. Die Faktenprüfung liest zusätzlich den Dossiertext; dieser
+braucht Primärquellen und wird nicht durch den eigenen Dossierbeleg bewiesen.
+Nicht gedruckte Netz-Lösungen sind bei EBA keine Lösungs-Auditfelder.
+
+
+
 Eine prüfende Rolle gibt ihr Ergebnis nicht als Prosa ab, sondern als
 **Beleg-Datei**. Ein Skript prüft sie dann mechanisch: Der Anker steht im
 Archivtext, die Zeitmarke liegt im Fenster der Ankerzeile, der Hash stimmt noch,

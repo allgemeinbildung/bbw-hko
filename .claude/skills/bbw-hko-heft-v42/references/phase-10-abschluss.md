@@ -1,5 +1,8 @@
 # Phase 10 — Abschluss vor der Freigabe
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Das Tor prüft Form. Die Gegenleser finden, ob sich ein Heft bearbeiten lässt —
 nicht, ob stimmt, was darin steht. In der Serie vom 02.–05.10.2026 kamen die
 meisten inhaltlichen Fehler erst in einer nachträglichen Abschlussrunde zum

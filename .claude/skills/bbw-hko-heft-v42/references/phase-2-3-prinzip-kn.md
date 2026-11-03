@@ -1,5 +1,8 @@
 # Phase 2 und 3 — `prinzip.json` und `kn.json`
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Eingang: der freigegebene Bauplan `docs/cloud-run/bauplaene/<ordner>.md`, der nRLP-Datensatz des Lehrgangs (`public/nrlp_3j.json` bzw. `public/nrlp_4j.json`) und die Kapiteldateien unter `material/_lehrmittel/`. Ausgang: zwei Dateien im Ordner der Einheit. Skelette: `assets/prinzip-template.json`, `assets/kn-template.json`. **In diesen Phasen wird nicht gefragt.** Was der Bauplan offen lässt, entscheidet `references/auto-modus.md`; der Entscheid steht im Bericht.
 
 Form beider Dateien ist die der Gold-Einheit: dieselben Schlüssel, kein weiterer, keiner weniger. Diese Datei nennt jeden Schlüssel. Ein Feld, das hier nicht steht, gibt es nicht (auch nicht `additional_trade_offs`, `persona_pool_*`, `gewicht_prozent`, `kn_vorgabe`).
@@ -159,6 +162,40 @@ Vor den Heften, weil `rubrik_shared` den Wortlaut der Feedback-Kriterien liefert
 - `definition_lang` — für die Lehrperson: was die Szene bündelt, was am Fall neu ist, was übertragen werden muss. Zählwörter «beide», «zwei», «A und B» (E2) — nie «drei», nie «C».
 - `alignment_note` — zwei Schlüssel. `herausforderungen_mapping`: genau zwei Einträge, `hf_letter` `"A"` und `"B"`, je ein `scene_element`: der Satzteil der Szene, der das Prinzip dieses Hefts aktiviert. Je Heft ein eigenes Element.
 - `new_dimensions` — leere Liste. Bringt die Szene eine Spannung, die weder A noch B trägt, wird die Szene umgeschrieben.
+
+
+### EBA-Ausnahme: Kompetenznachweis für Lernende
+
+Vorlage `assets/eba-kn-template.json`. `definition_kurz` lautet:
+«Dieser Fall ist neu. Sie brauchen dafür beide Hefte.» Dossier und Hefte
+sind erlaubt, kein Internet; kein LP-Entscheid über das Lehrmittel.
+Vorbereitung: «Stichworte auf den Seiten 2 und 3». Mini Case: «Vier kurze
+Aufgaben. Sie werden Schritt für Schritt schwieriger.» Alle gedruckten
+Lernendentexte auf A2: kein «Hybrid», keine K-Stufen/K-Decke, LF-Kürzel
+oder Bloom-Wörter. `definition_lang`, `typ`, `k_stufe`, Mapping und andere
+LP-/Technikfelder sind ausgenommen.
+
+Alle vier `rubrik_shared.kriterien` brauchen zusätzlich `name_lernende`
+und vier nichtleere `stufen_lernende` in Ich-Form: Anzahl gleich `stufen`,
+gleiche Bedeutung je Punktzahl; passend zum Produktmodus. `name`,
+`dimension` und `stufen` bleiben Bewertungswortlaut (R6).
+Jedes `niveaubaender[]` braucht eine nichtleere `definition_lernende` auf A2
+mit derselben Punkteschwelle wie `definition` (80 %: drei oder mehr Kriterien
+auf mindestens 2 Punkten). Niveaus sprechen Lernende mit Sie an; die
+Ich-Form gilt für Kriterien.
+
+Verlangt eine Aufgabe eine auszufüllende Tabelle, ist
+`kn_typen[].aufgaben[].tabelle: {spalten, zeilen}` Pflicht: nichtleere Liste
+nichtleerer A2-Spaltentitel, positive ganze Zeilenzahl. Ohne Tabellenauftrag
+weglassen; keine fehlende Tabelle bloss im Text bestellen.
+
+Werkschau: zwei Produkte, Werkwahl **2 Sätze**, Reflexion **120–150 Wörter**.
+Für das Auslesen durch den Renderer diese Muster in `ablauf` beibehalten:
+«Lernende wählen eines ihrer zwei Produkte aus den Heften (A; B).»
+(A/B durch die tatsächlichen Produktnamen ersetzen),
+«Werkwahl-Begründung (2 Sätze): …»,
+«Transfer-Reflexion (120-150 Wörter): …» (Bindestrich in den Daten).
+Die EFZ-Werte 2–3 Sätze und 200–250 Wörter gelten hier nicht.
 
 ### 3.3 `kn_typen` — drei Einträge, feste Struktur
 

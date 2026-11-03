@@ -1,0 +1,599 @@
+{
+  "id": "{{ORDNER}}_hf_{{A|B}}",
+  "template": "heft_8page_v42",
+  "modul": "{{X.Y — Nummer des Lebensbezugs}}",
+  "modul_titel": "{{THEMA-TITEL aus dem Datensatz — KURZFORM des Lebensbezugs; in A, B und set.json gleich}}",
+  "lehrgang": "EBA_2J",
+  "buchstabe": "{{A|B}}",
+  "sit_farbe": "{{Heft A: #C0392B · Heft B: #2471A3}}",
+  "sit_farbe_light": "{{Heft A: #FADBD8 · Heft B: #D6EAF8}}",
+  "sit_farbe_mid": "{{Heft A: #E74C3C · Heft B: #3498DB}}",
+  "titel": "{{TITEL des Hefts — ≤ 60 Zeichen}}",
+  "herausforderung": {
+    "buchstabe": "{{A|B}}",
+    "label": "{{= prinzip.herausforderungen.<A|B>.herausforderung}}"
+  },
+  "prinzip_ref": "{{ORDNER}}_prinzip",
+  "nrlp": {
+    "nr": "{{X.Y.Z — erste Kompetenz des Hefts}}",
+    "nr_primary": [
+      "{{X.Y.Z — je Kompetenz des Hefts ein Eintrag, erster = nrlp.nr, höchstens zwei}}"
+    ],
+    "lebensbezug": "{{X.Y}}",
+    "themen": [
+      "{{T<Nummer des Themas>}}"
+    ],
+    "gesellschaft": [
+      {
+        "aspekt": "{{ASPEKT wörtlich aus kompetenzen[].gesellschaftliche_inhalte[].aspekt}}",
+        "iteration": "{{R-STUFE aus zirkularitaet.gesellschaftsinhalte[].wiederholungen für dieses Thema}}"
+      }
+    ],
+    "sprachmodi": [
+      "{{MODUS wörtlich aus kompetenzen[].sprachmodi[].modus der Kompetenzen dieses Hefts — nie von der Themen-Ebene}}"
+    ],
+    "sprachmodus_ids": [
+      "{{SM1–SM9 gemäss references/sprachmodus-ids.md — gleiche Reihenfolge und Länge wie sprachmodi}}"
+    ],
+    "sk": [
+      "{{SK-NUMMER als Zahl 1–12 — je Eintrag ein sk_anker}}"
+    ],
+    "kompetenz_id": "{{= nrlp.nr}}",
+    "lebensbezug_id": "{{= nrlp.lebensbezug}}",
+    "kompetenz_text": "{{KOMPETENZ-SATZ von nrlp.nr, zeichengenau aus dem Datensatz des Lehrgangs}}",
+    "lebensbezug_text": "{{LEBENSBEZUG-SATZ, zeichengenau aus dem Datensatz des Lehrgangs}}"
+  },
+  "persona": {
+    "beruf": "{{Lernende/r EBA, N. Lehrjahr — N aus nrlp_2j}}",
+    "betrieb": "eigener Lehrbetrieb",
+    "ort": "eigener Wohnort"
+  },
+  "situation_text": "{{EIGENER FALL in Ich-Form, A2, 350–700 Zeichen; voraussetzungsfrei}}",
+  "zahlen_tabelle": [
+    {
+      "label": "{{ZAHL der Situation, Bezeichnung — ≤ 45 Zeichen; höchstens 4 Zeilen}}",
+      "wert": "{{WERT — ≤ 15 Zeichen}}"
+    }
+  ],
+  "leitfrage": "{{LEITFRAGE des Hefts in Ich-Form — ≤ 140 Zeichen}}",
+  "mehrdeutigkeit": {
+    "explizit": true,
+    "trade_off": "{{SPANNUNGSFELD in der Form X vs. Y, ein Eintrag aus prinzip.mehrdeutigkeits_architektur.trade_off_raum — ≤ 70 Zeichen}}",
+    "hint": "{{HINWEIS, der beide Pole konkret benennt, Sie-Form — ≤ 160 Zeichen}}"
+  },
+  "quellen_anker": [
+    {
+      "ref": "{{PASSENDER INHALT oder Info-Karte des eigenen EBA-Dossiers; keine Lehrmittel-Voraussetzung}}",
+      "titel": "{{KAPITELTITEL}}",
+      "unterueberschrift": "{{WAS auf den Seiten steht, eigene Worte}}",
+      "seiten": "{{PASSENDER INHALT oder Info-Karte des eigenen EBA-Dossiers; keine Lehrmittel-Voraussetzung}}",
+      "fuer_leitfrage": [
+        "{{LF-NUMMER als Zahl}}"
+      ]
+    }
+  ],
+  "leitfragen_intro": "{{Was Leitfrage 1, Leitfrage 2 und Leitfrage 3 zum eigenen Produkt beitragen; A2}}",
+  "auftakt_typ": "pfad",
+  "leitfragen": [
+    {
+      "nr": 1,
+      "bloom": "Verstehen",
+      "knoten_ref": "{{Dossier | Info-Karte zum eigenen Heft und zu Leitfrage 1}}",
+      "text": "{{AUFTRAG Leitfrage 1: verstehen mit Material; A2, ≤ 220 Zeichen}}",
+      "liefert": "{{PRODUKTBAUSTEIN, nominal, 3–7 Wörter und ≤ 50 Zeichen}}",
+      "antwortform": "schreibfeld",
+      "feld_hoehe_mm": 60,
+      "scaffolding": {
+        "strategien": [
+          "{{STRATEGIE 1 — Info-Karte lesen, ≤ 90 Zeichen}}",
+          "{{STRATEGIE 2 — Denkschritt genau dieser Leitfrage, mit Wörtern des Falls, ≤ 90 Zeichen}}",
+          "{{STRATEGIE 3 — ins eigene Produkt übertragen, ≤ 90 Zeichen}}"
+        ],
+        "satzanfaenge": [
+          "«{{SATZANFANG 1 — führt zur Musterlösung dieser Leitfrage, in keiner anderen Leitfrage wiederholt (eba-profil.md §6.4), ≤ 60 Zeichen}}»",
+          "«{{SATZANFANG 2 — führt zur Musterlösung dieser Leitfrage, in keiner anderen Leitfrage wiederholt (eba-profil.md §6.4), ≤ 60 Zeichen}}»",
+          "«{{SATZANFANG 3 — führt zur Musterlösung dieser Leitfrage, in keiner anderen Leitfrage wiederholt (eba-profil.md §6.4), ≤ 60 Zeichen}}»"
+        ],
+        "produkt": "{{WAS aus dieser Antwort ins Produkt geht — ≤ 110 Zeichen}}"
+      },
+      "loesung": {
+        "kern": "{{KERN der Lösung — ≤ 55 Zeichen}}",
+        "zeilen": [
+          {
+            "label": "{{LABEL — ≤ 24 Zeichen}}",
+            "text": "{{LÖSUNG in eigenen Worten; 3 bis 6 Zeilen, alle text zusammen ≤ 900 Zeichen}}",
+            "quelle": "{{PASSENDER INHALT oder Info-Karte des eigenen EBA-Dossiers; keine Lehrmittel-Voraussetzung}}"
+          },
+          {
+            "label": "{{LABEL — ≤ 24 Zeichen}}",
+            "text": "{{LÖSUNG}}",
+            "quelle": "{{PASSENDER INHALT oder Info-Karte des eigenen EBA-Dossiers; keine Lehrmittel-Voraussetzung}}"
+          },
+          {
+            "label": "{{LABEL — ≤ 24 Zeichen}}",
+            "text": "{{LÖSUNG}}",
+            "quelle": "{{PASSENDER INHALT oder Info-Karte des eigenen EBA-Dossiers; keine Lehrmittel-Voraussetzung}}"
+          }
+        ]
+      }
+    }
+  ],
+  "handlungsprodukt": {
+    "format": "{{FORMAT des Produkts in einer Zeile, = prinzip.herausforderungen.<A|B>.handlungsprodukt_typ oder dessen Kurzform}}",
+    "titel": "{{TITEL des Produkts — ≤ 60 Zeichen}}",
+    "format_detail": "{{WAS das Produkt ist und woraus es besteht, Sie-Form}}",
+    "beschreibung": "{{WAS ich mit dem Produkt tue, Ich-Form — ≤ 200 Zeichen}}",
+    "schritte": [
+      {
+        "label": "01 {{TÄTIGKEIT — Label ganz ≤ 30 Zeichen}}",
+        "hint": "{{SCHRITT 1, Sie-Form, nennt passende Heftseite; Beispiel S. 5, Methoden S. 6, Kriterien S. 7; ≤ 140 Zeichen}}"
+      },
+      {
+        "label": "02 {{TÄTIGKEIT — Label ganz ≤ 30 Zeichen}}",
+        "hint": "{{SCHRITT 2, Sie-Form, nennt passende Heftseite; Beispiel S. 5, Methoden S. 6, Kriterien S. 7; ≤ 140 Zeichen}}"
+      },
+      {
+        "label": "03 {{TÄTIGKEIT — Label ganz ≤ 30 Zeichen}}",
+        "hint": "{{SCHRITT 3, Sie-Form, nennt passende Heftseite; Beispiel S. 5, Methoden S. 6, Kriterien S. 7; ≤ 140 Zeichen}}"
+      },
+      {
+        "label": "04 {{TÄTIGKEIT — Label ganz ≤ 30 Zeichen}}",
+        "hint": "{{SCHRITT 4, Sie-Form, nennt passende Heftseite; Beispiel S. 5, Methoden S. 6, Kriterien S. 7; ≤ 140 Zeichen}}"
+      },
+      {
+        "label": "05 {{TÄTIGKEIT — Label ganz ≤ 30 Zeichen}}",
+        "hint": "{{SCHRITT 5, Sie-Form, nennt passende Heftseite; Beispiel S. 5, Methoden S. 6, Kriterien S. 7; ≤ 140 Zeichen}}"
+      }
+    ],
+    "hilfe_verweis": "Hilfe: Methoden auf der nächsten Seite",
+    "abgaben": [
+      "{{ABGABE — ≤ 80 Zeichen; höchstens 3 Einträge}}"
+    ],
+    "beispielbild": {
+      "titel": "{{Beispiel an einem anderen Fall: FALL, der weder im Heft noch im Auftrag noch im KN vorkommt — ≤ 90 Zeichen}}",
+      "legende": [
+        {
+          "key": "{{KENNWORT der Markierung: frei wählbar, kurz, in Kleinbuchstaben}}",
+          "text": "{{BEDEUTUNG der Markierung — ≤ 28 Zeichen; höchstens 3 Einträge}}"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "{{BLOCK 1 — ≤ 32 Zeichen}}",
+          "eintraege": [
+            {
+              "marke": "{{ein key aus legende, sonst Schlüssel weglassen}}",
+              "text": "{{EINTRAG wie von Hand geschrieben — ≤ 105 Zeichen; höchstens 5 Einträge je Block}}",
+              "notiz": "{{RANDNOTIZ, sonst Schlüssel weglassen — ≤ 60 Zeichen}}"
+            }
+          ]
+        },
+        {
+          "titel": "{{BLOCK 2 — ≤ 32 Zeichen}}",
+          "eintraege": [
+            {
+              "text": "{{EINTRAG — ≤ 105 Zeichen}}"
+            }
+          ]
+        },
+        {
+          "titel": "{{BLOCK 3 — ≤ 32 Zeichen; 2 bis 3 Blöcke}}",
+          "eintraege": [
+            {
+              "text": "{{EINTRAG — ≤ 105 Zeichen}}"
+            }
+          ]
+        }
+      ]
+    },
+    "loesungsbild": {
+      "titel": "{{Mögliche Lösung zum Fall: FALL des Hefts in Kurzform — ≤ 90 Zeichen}}",
+      "hinweis": "{{HINWEIS an die Lehrperson: eine mögliche Lösung, keine Vorlage; wann zeigen}}",
+      "legende": [
+        {
+          "key": "{{dieselben Schlüssel wie im beispielbild}}",
+          "text": "{{BEDEUTUNG — ≤ 28 Zeichen}}"
+        }
+      ],
+      "bloecke": [
+        {
+          "titel": "{{BLOCK 1 wie im beispielbild — ≤ 32 Zeichen}}",
+          "eintraege": [
+            {
+              "marke": "{{ein key aus legende, sonst Schlüssel weglassen}}",
+              "text": "{{EINTRAG zum Fall des Hefts — ≤ 130 Zeichen; höchstens 7 Einträge je Block}}",
+              "notiz": "{{RANDNOTIZ, sonst Schlüssel weglassen — ≤ 60 Zeichen}}"
+            }
+          ]
+        },
+        {
+          "titel": "{{BLOCK 2 wie im beispielbild — ≤ 32 Zeichen}}",
+          "eintraege": [
+            {
+              "text": "{{EINTRAG — ≤ 130 Zeichen}}"
+            }
+          ]
+        },
+        {
+          "titel": "{{BLOCK 3 wie im beispielbild — ≤ 32 Zeichen}}",
+          "eintraege": [
+            {
+              "text": "{{EINTRAG — ≤ 130 Zeichen}}"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "feedback_kriterien": [
+    {
+      "kn_kriterium": "{{NAME zeichengenau aus kn.rubrik_shared.kriterien, eines mit dimension SuK, gemäss prinzip.kn_kriterien_verteilung}}",
+      "dimension": "SuK",
+      "stufen": [
+        "{{STUFE 0 Punkte, zeichengenau aus kn.rubrik_shared}}",
+        "{{STUFE 1 Punkt, zeichengenau aus kn.rubrik_shared}}",
+        "{{STUFE 2 Punkte, zeichengenau aus kn.rubrik_shared}}",
+        "{{STUFE 3 Punkte, zeichengenau aus kn.rubrik_shared}}"
+      ],
+      "indikator_produkt": "{{WORAN das Kriterium an diesem Produkt zu sehen ist — ≤ 90 Zeichen}}",
+      "name_lernende": "{{EINFACHER NAME für Lernende, derselbe KN-Massstab}}",
+      "stufen_lernende": [
+        "{{ICH-SATZ für 0 Punkte, entspricht KN-Stufe, A2, ≤ 120 Zeichen}}",
+        "{{ICH-SATZ für 1 Punkte, entspricht KN-Stufe, A2, ≤ 120 Zeichen}}",
+        "{{ICH-SATZ für 2 Punkte, entspricht KN-Stufe, A2, ≤ 120 Zeichen}}",
+        "{{ICH-SATZ für 3 Punkte, entspricht KN-Stufe, A2, ≤ 120 Zeichen}}"
+      ]
+    },
+    {
+      "kn_kriterium": "{{NAME zeichengenau aus kn.rubrik_shared.kriterien, eines mit dimension Ges, gemäss prinzip.kn_kriterien_verteilung}}",
+      "dimension": "Ges",
+      "stufen": [
+        "{{STUFE 0 Punkte, zeichengenau aus kn.rubrik_shared}}",
+        "{{STUFE 1 Punkt, zeichengenau aus kn.rubrik_shared}}",
+        "{{STUFE 2 Punkte, zeichengenau aus kn.rubrik_shared}}",
+        "{{STUFE 3 Punkte, zeichengenau aus kn.rubrik_shared}}"
+      ],
+      "indikator_produkt": "{{WORAN das Kriterium an diesem Produkt zu sehen ist — ≤ 90 Zeichen}}",
+      "name_lernende": "{{EINFACHER NAME für Lernende, derselbe KN-Massstab}}",
+      "stufen_lernende": [
+        "{{ICH-SATZ für 0 Punkte, entspricht KN-Stufe, A2, ≤ 120 Zeichen}}",
+        "{{ICH-SATZ für 1 Punkte, entspricht KN-Stufe, A2, ≤ 120 Zeichen}}",
+        "{{ICH-SATZ für 2 Punkte, entspricht KN-Stufe, A2, ≤ 120 Zeichen}}",
+        "{{ICH-SATZ für 3 Punkte, entspricht KN-Stufe, A2, ≤ 120 Zeichen}}"
+      ]
+    }
+  ],
+  "lernfortschritt": {
+    "scaffold_90": "{{STÜTZE, die es im Heft wirklich gibt: Beispiel auf S. 5, Beispielzeile im Raster}}",
+    "scaffold_100": "{{PLUS-AUFGABE, Sie-Form, ohne das Wort Spur — ≤ 150 Zeichen}}"
+  },
+  "methoden": [
+    {
+      "ref": "{{ID einer Karte in src/data/methoden/}}",
+      "fuer": "{{WOFÜR in dieser Abgabe}}",
+      "tun": "{{PASSENDER INHALT oder Info-Karte des eigenen EBA-Dossiers; keine Lehrmittel-Voraussetzung}}"
+    },
+    {
+      "ref": "__spur__",
+      "fuer": "Rezeptionswerkzeug der gewählten Spur"
+    },
+    {
+      "ref": "{{ID einer Karte in src/data/methoden/}}",
+      "fuer": "{{WOFÜR in dieser Abgabe}}",
+      "tun": "{{PASSENDER INHALT oder Info-Karte des eigenen EBA-Dossiers; keine Lehrmittel-Voraussetzung}}"
+    },
+    {
+      "ref": "{{ID einer Karte in src/data/methoden/}}",
+      "fuer": "{{WOFÜR in dieser Abgabe}}",
+      "tun": "{{PASSENDER INHALT oder Info-Karte des eigenen EBA-Dossiers; keine Lehrmittel-Voraussetzung}}"
+    }
+  ],
+  "mindmap_zentrum": "{{= prinzip.mindmap_zentrum_kurz, in A und B identisch — ≤ 40 Zeichen}}",
+  "mindmap_aeste": [
+    {
+      "titel": "{{AST 1 — ≤ 30 Zeichen}}",
+      "punkte": [
+        "{{BEGRIFF = ein glossar[].begriff dieses Hefts ohne spur — ≤ 25 Zeichen; höchstens 5 je Ast, 10 im Heft}}"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "{{AST 2 — ≤ 30 Zeichen}}",
+      "punkte": [
+        "{{BEGRIFF — ≤ 25 Zeichen}}"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "{{AST 3 — ≤ 30 Zeichen}}",
+      "punkte": [
+        "{{BEGRIFF — ≤ 25 Zeichen}}"
+      ],
+      "optional": false
+    },
+    {
+      "titel": "gilt auch bei …",
+      "punkte": [],
+      "optional": false,
+      "transfer": true
+    }
+  ],
+  "abschluss": {
+    "quercheck": [
+      "{{OFFENE FRAGE 1 der Situation als Ja/Nein-Frage in Ich-Form — ≤ 110 Zeichen}}",
+      "{{OFFENE FRAGE 2 der Situation — ≤ 110 Zeichen}}"
+    ],
+    "mitnahme": [
+      "{{ZEILE 1: was ich aus diesem Heft mitnehme, in Ich-Form — ≤ 50 Zeichen}}",
+      "{{ZEILE 2 — ≤ 50 Zeichen}}",
+      "Mir noch unklar"
+    ],
+    "loesung": {
+      "verbindungen": [
+        {
+          "von": "{{KNOTEN aus mindmap_aeste[].punkte}}",
+          "nach": "{{KNOTEN aus mindmap_aeste[].punkte}}",
+          "text": "{{BESCHRIFTUNG der Verbindung, Verb}}"
+        },
+        {
+          "von": "{{KNOTEN}}",
+          "nach": "{{KNOTEN}}",
+          "text": "{{BESCHRIFTUNG}}"
+        },
+        {
+          "von": "{{KNOTEN}}",
+          "nach": "{{KNOTEN}}",
+          "text": "{{BESCHRIFTUNG}}"
+        },
+        {
+          "von": "{{KNOTEN}}",
+          "nach": "{{KNOTEN}}",
+          "text": "{{BESCHRIFTUNG}}"
+        },
+        {
+          "von": "{{KNOTEN}}",
+          "nach": "gilt auch bei …",
+          "text": "{{BESCHRIFTUNG der Verbindung zum Transfer-Feld}}"
+        }
+      ],
+      "transfer": "{{EINTRAG für das Feld gilt auch bei …: zwei bis drei andere Situationen, keine davon aus Auftrag oder KN}}",
+      "eigene_knoten": {
+        "ohne_medien": [
+          "{{BEGRIFF 1 aus dem Raster dieser Spur = glossar-Eintrag mit spur ohne_medien, falls einer geführt ist}}",
+          "{{BEGRIFF 2 — genau 2 Einträge; Schlüssel nur, wenn das Heft die Spur hat}}"
+        ],
+        "mit_medien": [
+          "{{BEGRIFF 1 aus dem Raster dieser Spur = glossar-Eintrag mit spur mit_medien, falls einer geführt ist}}",
+          "{{BEGRIFF 2 — genau 2 Einträge; Schlüssel nur, wenn das Heft die Spur hat}}"
+        ]
+      },
+      "quercheck": [
+        "{{ANTWORT auf Quer-Check-Frage 1}}",
+        "{{ANTWORT auf Quer-Check-Frage 2}}"
+      ],
+      "mitnahme": [
+        "{{MÖGLICHER EINTRAG zu Zeile 1}}",
+        "{{MÖGLICHER EINTRAG zu Zeile 2}}",
+        "{{MÖGLICHER EINTRAG zu Mir noch unklar}}"
+      ]
+    }
+  },
+  "bewertungsraster": [
+    {
+      "produkt": "Leitfragen",
+      "vollstaendig_wenn": [
+        "{{VOLLSTÄNDIGKEIT Leitfrage 1}}",
+        "{{VOLLSTÄNDIGKEIT Leitfrage 3 mit Grund}}"
+      ]
+    },
+    {
+      "produkt": "Raster",
+      "vollstaendig_wenn": [
+        "Raster mit drei Zeilen",
+        "{{JEDE ZEILE mit passendem Begriff}}",
+        "Ergebnis in zwei Sätzen"
+      ]
+    },
+    {
+      "produkt": "{{KURZNAME des Produkts}}",
+      "vollstaendig_wenn": [
+        "{{MERKMAL 1 des fertigen Produkts — ≤ 70 Zeichen}}",
+        "{{MERKMAL 2 — ≤ 70 Zeichen}}",
+        "{{MERKMAL 3 — ≤ 70 Zeichen; höchstens 3 Punkte}}"
+      ]
+    },
+    {
+      "produkt": "Abschluss",
+      "vollstaendig_wenn": [
+        "Quer-Check: jede Frage abgehakt und beantwortet",
+        "«Das nehme ich mit» ausgefüllt"
+      ]
+    }
+  ],
+  "wochen": 1,
+  "wochen_plan": [
+    {
+      "label": "Teil 1",
+      "text": "Situation lesen, Leitfrage 1",
+      "aktiv": true
+    },
+    {
+      "label": "Teil 2",
+      "text": "Leitfrage 2 mit Raster, Leitfrage 3 mit Denkhilfe",
+      "aktiv": false
+    },
+    {
+      "label": "Teil 3",
+      "text": "{{EIGENES PRODUKT, Kriterien, Abschluss mit Quer-Check; ≤ 80 Zeichen}}",
+      "aktiv": false
+    }
+  ],
+  "dekontextualisierung": {
+    "frage": "{{FRAGE in Ich-Form, die vom Fall wegführt}}",
+    "ziel": "{{PRINZIP dieses Hefts in einem Satz, angelehnt an prinzip.dekontextualisierungs_anker.anker_statement}}"
+  },
+  "prinzip_handoff": {
+    "kernkonzept": "{{= set.konzept_progression[].konzept dieses Hefts}}",
+    "lehrmittel_anker": "{{PASSENDER INHALT oder Info-Karte des eigenen EBA-Dossiers; keine Lehrmittel-Voraussetzung}}",
+    "kn_aktivierung": "{{WAS der KN aus diesem Heft verlangt — einziges Feld des Hefts, das den KN-Fall nennen darf}}",
+    "transfer_check": "{{PRÜFFRAGE: Kann die Lernende …?}}"
+  },
+  "sk_anker": [
+    {
+      "sk": "{{SK-NUMMER als Zahl, aus nrlp.sk}}",
+      "wo": "{{<Feldpfad oder Seite> — <was dort geübt wird>, z. B. leitfragen[3] + Produkt — …}}"
+    }
+  ],
+  "spuren": {
+    "ohne_medien": {
+      "leitfragen": [
+        {
+          "nr": 2,
+          "bloom": "Anwenden",
+          "knoten_ref": "{{Dossier | Info-Karte zum eigenen Heft und zu Leitfrage 2}}",
+          "text": "{{AUFTRAG Leitfrage 2: Raster füllen und Ergebnis in zwei Sätzen; A2, ≤ 220 Zeichen}}",
+          "liefert": "{{PRODUKTBAUSTEIN, nominal, 3–7 Wörter und ≤ 50 Zeichen}}",
+          "antwortform": "raster",
+          "raster": {
+            "knoten_ref": "{{Dossier | Info-Karte zum eigenen Heft und zu Leitfrage 2}}",
+            "auftrag": "{{Info-Karte nennen. Im Raster ist die erste Zeile schon ausgefüllt, als Beispiel. Zwei weitere Zeilen ausfüllen lassen; ≤ 220 Zeichen}}",
+            "spalten": [
+              "{{SPALTE 1, ≤ 18 Zeichen}}",
+              "{{SPALTE 2, ≤ 18 Zeichen}}",
+              "{{SPALTE 3, ≤ 18 Zeichen}}",
+              "→ Begriff"
+            ],
+            "zeilen": 3,
+            "beispielzeile": [
+              "{{FUNDSTELLE — ≤ 25 Zeichen}}",
+              "{{KERNAUSSAGE in eigenen Worten — ≤ 25 Zeichen}}",
+              "{{BELEG — ≤ 25 Zeichen}}",
+              "{{BEGRIFF aus Leitfrage 1 — ≤ 25 Zeichen}}"
+            ]
+          },
+          "feld_hoehe_mm": 30,
+          "scaffolding": {
+            "strategien": [
+              "Lesen Sie zuerst die Beispielzeile im Raster.",
+              "{{STRATEGIE 2 — Denkschritt genau dieser Leitfrage, mit Wörtern des Falls, ≤ 90 Zeichen}}",
+              "{{STRATEGIE 3 — ins eigene Produkt übertragen, ≤ 90 Zeichen}}"
+            ],
+            "satzanfaenge": [
+              "«{{SATZANFANG 1 — führt zur Musterlösung dieser Leitfrage, in keiner anderen Leitfrage wiederholt (eba-profil.md §6.4), ≤ 60 Zeichen}}»",
+              "«{{SATZANFANG 2 — führt zur Musterlösung dieser Leitfrage, in keiner anderen Leitfrage wiederholt (eba-profil.md §6.4), ≤ 60 Zeichen}}»",
+              "«{{SATZANFANG 3 — führt zur Musterlösung dieser Leitfrage, in keiner anderen Leitfrage wiederholt (eba-profil.md §6.4), ≤ 60 Zeichen}}»"
+            ],
+            "produkt": "{{WAS aus dem Raster ins Produkt geht — ≤ 110 Zeichen}}"
+          },
+          "loesung": {
+            "kern": "{{KERN der Lösung — ≤ 55 Zeichen}}",
+            "quelle_ref": "{{= raster.knoten_ref}}",
+            "quelle_stand": "{{JJJJ-MM-TT heute}}",
+            "zeilen": [
+              {
+                "label": "Erwartet",
+                "text": "{{AUSSAGEN mit Seite, eigene Worte; 3 bis 6 Zeilen, alle text zusammen ≤ 900 Zeichen}}",
+                "quelle": "{{PASSENDER INHALT oder Info-Karte des eigenen EBA-Dossiers; keine Lehrmittel-Voraussetzung}}"
+              },
+              {
+                "label": "Auch gültig",
+                "text": "{{WEITERE AUSSAGEN mit Seite}}",
+                "quelle": "{{PASSENDER INHALT oder Info-Karte des eigenen EBA-Dossiers; keine Lehrmittel-Voraussetzung}}"
+              },
+              {
+                "label": "Begriffe",
+                "text": "{{WELCHE Zuordnungen zu Leitfrage 1-Begriffen gelten}}"
+              },
+              {
+                "label": "Befund",
+                "text": "{{WAS ein tragfähiger Befund verbindet; was eigene Beobachtung der Lernenden ist}}"
+              }
+            ],
+            "raster_zeilen": [
+              [
+                "{{= raster.beispielzeile[0]}}",
+                "{{= raster.beispielzeile[1]}}",
+                "{{= raster.beispielzeile[2]}}",
+                "{{= raster.beispielzeile[3]}}"
+              ],
+              [
+                "{{FUNDSTELLE}}",
+                "{{KERNAUSSAGE}}",
+                "{{BELEG}}",
+                "{{BEGRIFF aus Leitfrage 1}}"
+              ],
+              [
+                "{{FUNDSTELLE}}",
+                "{{KERNAUSSAGE}}",
+                "{{BELEG}}",
+                "{{BEGRIFF aus Leitfrage 1}}"
+              ]
+            ],
+            "befund": "{{MÖGLICHER BEFUND in zwei bis drei Sätzen, Ich-Form}}"
+          }
+        },
+        {
+          "nr": 3,
+          "bloom": "Entscheiden",
+          "knoten_ref": "{{Dossier | Info-Karte zum eigenen Heft und zu Leitfrage 3}}",
+          "pol_typ": "{{position_gegenposition|modell_eigener_fall|recht_praxis — = prinzip.pol_typ_verteilung.<A|B>.ohne_medien, A ≠ B}}",
+          "text": "{{AUFTRAG Leitfrage 3: zwei Wege abwägen und begründet entscheiden; A2, ≤ 220 Zeichen}}",
+          "liefert": "{{PRODUKTBAUSTEIN, nominal, 3–7 Wörter und ≤ 50 Zeichen}}",
+          "antwortform": "schreibfeld",
+          "feld_hoehe_mm": 45,
+          "scaffolding": {
+            "strategien": [
+              "{{STRATEGIE 1 — Info-Karte lesen, ≤ 90 Zeichen}}",
+              "{{STRATEGIE 2 — Denkschritt genau dieser Leitfrage, mit Wörtern des Falls, ≤ 90 Zeichen}}",
+              "{{STRATEGIE 3 — ins eigene Produkt übertragen, ≤ 90 Zeichen}}"
+            ],
+            "satzanfaenge": [
+              "«{{SATZANFANG 1 — führt zur Musterlösung dieser Leitfrage, in keiner anderen Leitfrage wiederholt (eba-profil.md §6.4), ≤ 60 Zeichen}}»",
+              "«{{SATZANFANG 2 — führt zur Musterlösung dieser Leitfrage, in keiner anderen Leitfrage wiederholt (eba-profil.md §6.4), ≤ 60 Zeichen}}»",
+              "«{{SATZANFANG 3 — führt zur Musterlösung dieser Leitfrage, in keiner anderen Leitfrage wiederholt (eba-profil.md §6.4), ≤ 60 Zeichen}}»"
+            ],
+            "produkt": "{{WAS aus dieser Antwort ins Produkt geht — ≤ 110 Zeichen}}"
+          },
+          "loesung": {
+            "kern": "{{Erwartungshorizont: POL ↔ POL, Entscheid — ≤ 55 Zeichen}}",
+            "erwartungshorizont": {
+              "gut_wenn": [
+                "{{MERKMAL 1 einer guten Antwort}}",
+                "{{MERKMAL 2}}",
+                "{{MERKMAL 3}}"
+              ],
+              "beispiel_pol_1": "{{BEISPIELANTWORT für den einen Entscheid, Ich-Form, erkennt die Spannung an}}",
+              "beispiel_pol_2": "{{BEISPIELANTWORT für den anderen Entscheid, Ich-Form, erkennt die Spannung an}}",
+              "nicht_tragfaehig": "{{WAS nicht genügt}}"
+            }
+          }
+        }
+      ],
+      "kasten_s4": {
+        "typ": "denkhilfe",
+        "titel": "Denkhilfe – zuerst hier Stichworte, dann schreiben",
+        "spalten": [
+          "{{SPALTE 1 — ≤ 30 Zeichen}}",
+          "{{SPALTE 2 — ≤ 30 Zeichen}}",
+          "{{SPALTE 3 — ≤ 30 Zeichen; 2 bis 3 Spalten}}"
+        ],
+        "hinweis": "{{HINWEIS zum Ausfüllen — ≤ 140 Zeichen}}",
+        "loesung_zeilen": [
+          [
+            "{{MÖGLICHER EINTRAG Spalte 1}}",
+            "{{MÖGLICHER EINTRAG Spalte 2}}",
+            "{{MÖGLICHER EINTRAG Spalte 3 — je Zeile so viele Zellen wie spalten, mindestens 1 Zeile}}"
+          ]
+        ]
+      },
+      "methoden_ref_rezeption": {
+        "ref": "hko-quelle-raster",
+        "fuer": "{{für das Raster zu … (S. 3)}}",
+        "beispiel": [
+          "{{NEUTRALES BEISPIEL einer Rasterzeile, Sujet weder aus dem Heft noch aus der Quelle, im Muster der Karte}}"
+        ]
+      },
+      "scaffold_90": "{{STÜTZE dieser Spur: Beispiel auf S. 5 und die ausgefüllte Beispielzeile im Raster (S. 3)}}"
+    }
+  }
+}

@@ -178,6 +178,13 @@ const WAS = [
 // Der Abschluss gehört teils zum Kern, teils zur Spur: genannt wird nur, was das Paket führt.
 const ABSCHLUSS = { abschluss_verbindung: 'beschrifte die Verbindungen des Begriffsnetzes (Seite 8)', abschluss_transfer: 'nenne den Übertrag («gilt auch bei …»)', abschluss_knoten: 'nenne zwei eigene Begriffe für die leeren Knoten, wie sie nach dieser Spur naheliegen', abschluss_quercheck: 'beantworte jede Quer-Check-Frage', abschluss_mitnahme: 'nenne mögliche Einträge «Das nehme ich mit»' }
 function wasVon(aufgabe, fs) {
+  const json = E.json[fs[0]?.datei]
+  if (json?.lehrgang === 'EBA_2J') {
+    const nr = /leitfragen\[LF(\d)\]$/.exec(aufgabe)?.[1]
+    if (nr === '1') return 'Beantworte Leitfrage 1 mit Fundstelle in der Info-Karte des Dossiers und wörtlichem Anker.'
+    if (nr === '2') return 'Fülle das Raster mit drei Zeilen inklusive Beispielzeile aus, belege es an der Info-Karte und schreibe den Befund.'
+    if (nr === '3') return 'Nenne Merkmale einer guten Antwort, je eine vertretbare Antwort für beide Wege und was nicht genügt.'
+  }
   if (/abschluss\.loesung$/.test(aufgabe)) return `Abschluss: ${Object.entries(ABSCHLUSS).filter(([art]) => fs.some((f) => f.art === art)).map(([, x]) => x).join('; ')}.`
   return WAS.find(([re]) => re.test(aufgabe))?.[1] ?? 'Löse die Aufgabe, mit Fundstelle und Anker.'
 }
@@ -210,20 +217,21 @@ function sichtbar(heft, spur) {
   const json = heftJson(heft)
   const out = []
   for (const f of textfelder(E, { karten: false, begleiter: false, kn: false })) {
+    if (json.lehrgang === 'EBA_2J' && (/^mindmap|^feedback_kriterien.*(?:kn_kriterium|(?<!lernende)stufen\[)/.test(f.pfad))) continue
     if (f.traeger !== heft || f.loesung || (f.spur && f.spur !== spur) || NICHT_GEDRUCKT.test(f.pfad)) continue
-    out.push({ seite: seiteVonFeld(f.pfad), pfad: f.pfad, text: f.text })
+    out.push({ seite: seiteVonFeld(f.pfad, json.lehrgang), pfad: f.pfad, text: f.text })
   }
   const lfs = [...(json.leitfragen ?? []).map((lf) => ['', lf]), ...((json.spuren?.[spur]?.leitfragen ?? []).map((lf) => [`spuren.${spur}.`, lf]))]
   for (const [vor, lf] of lfs) {
     const p = `${vor}leitfragen[LF${lf.nr}]`
     const teile = [`Antwortform ${lf.antwortform ?? '—'}`]
     if (lf.pol_typ) teile.push(`Abwägung ${lf.pol_typ}`)
-    if (Number.isFinite(lf.raster?.zeilen)) teile.push(`Raster mit ${lf.raster.zeilen} leeren Zeilen`)
+    if (Number.isFinite(lf.raster?.zeilen)) teile.push(`Raster mit ${lf.raster.zeilen} Zeilen${lf.raster.beispielzeile ? ", erste Zeile als ausgefülltes Beispiel" : ", alle leer"}`)
     if (lf.raster?.quelle_ref) teile.push(`Raster zur Quelle ${lf.raster.quelle_ref}`)
-    out.push({ seite: seiteVonFeld(p), pfad: `${p} (Form)`, text: teile.join(' · ') })
+    out.push({ seite: seiteVonFeld(p, json.lehrgang), pfad: `${p} (Form)`, text: teile.join(' · ') })
   }
   ;(json.spuren?.[spur]?.quellen ?? []).forEach((q, i) => out.push({ seite: i ? 4 : 3, pfad: `spuren.${spur}.quellen[${i}] (Form)`, text: `Quelle ${q.ref} · Rolle ${q.rolle}${Number.isFinite(q.raster?.zeilen) ? ` · Raster mit ${q.raster.zeilen} leeren Zeilen` : ''}` }))
-  for (const g of E.json['set.json']?.glossar ?? []) if (g?.heft === heft && (!g.spur || g.spur === spur)) out.push({ seite: 8, pfad: 'set.json › glossar', text: `${g.begriff}: ${g.definition}` })
+  for (const g of E.json['set.json']?.glossar ?? []) if (g?.heft === heft && (!g.spur || g.spur === spur)) out.push({ seite: json.lehrgang === 'EBA_2J' ? 2 : 8, pfad: 'set.json › glossar', text: `${g.begriff}: ${g.definition}` })
   for (const [id, { karte, heft: h }] of E.methoden) if (h === heft) out.push({ seite: 6, pfad: `methoden/${id}.json`, text: [karte.name, karte.kap ? `Kap. ${karte.kap}, ${karte.seiten ?? ''}` : '', karte.lesen, ...(karte.schritte ?? []), karte.merk].filter((x) => typeof x === 'string' && x.trim()).join(' — ') })
   return out
 }
@@ -428,8 +436,8 @@ if (F.has('--probe')) {
     z.push('## 1. «Das geben Sie ab»', '', feldZeile(`${datei} › handlungsprodukt.abgaben`), `- Produkt: ${hp.titel ?? '—'} — ${hp.format ?? '—'}`, `- Form im Einzelnen: ${hp.format_detail ?? '—'}`, ...(hp.abgaben ?? []).map((a) => `- Abgabe: ${a}`))
     z.push('', '## 2. Kriterien mit Stufen (0 bis 3 Punkte)'); kriterien(datei, 'feedback_kriterien', j.feedback_kriterien)
     z.push('', '## 3. Lösungsbild', '', feldZeile(`${datei} › handlungsprodukt.loesungsbild`), `- Titel: ${hp.loesungsbild?.titel ?? '—'}`, '', ...feldTexte(/^handlungsprodukt\.loesungsbild/))
-    const lf4 = (j.spuren?.[spur]?.leitfragen ?? []).find((l) => l.nr === 4)
-    z.push('## 4. Die Frage LF4 (für den Befund «keine echte Wahl»)', '', feldZeile(`${datei} › spuren.${spur}.leitfragen[LF4].text`), `- ${lf4?.text ?? '—'}`, `- Abwägung: ${lf4?.pol_typ ?? '—'}`)
+    const lf4 = (j.spuren?.[spur]?.leitfragen ?? []).find((l) => l.pol_typ)
+    z.push(`## 4. Die Abwägungsfrage Leitfrage ${lf4?.nr ?? '?'} (für den Befund «keine echte Wahl»)`, '', feldZeile(`${datei} › spuren.${spur}.leitfragen[LF${lf4?.nr}].text`), `- ${lf4?.text ?? '—'}`, `- Abwägung: ${lf4?.pol_typ ?? '—'}`)
   }
   schreibe(out, z.join('\n') + '\n')
   console.log(`${NAME} — Paket der Lösbarkeitsprobe geschrieben: ${out} (${z.length} Zeilen)`)
@@ -441,7 +449,7 @@ if (F.has('--probe')) {
 const felder = gewaehlterUmfang()
 const out = ausserhalb('--out', O.out)
 if (!felder.length) { console.log(`${NAME} — ${O.ordner} · Paket ${teilName(O.heft, O.spur)}: kein Feld im Umfang${F.has('--nur-veraltet') ? ' (alle Zeilen tragen den heutigen Hash)' : ''} — nichts geschrieben.`); process.exit(0) }
-if (!lehrmittel.pfad) { console.error(`${NAME}: Lehrmittel fehlt lokal (${lehrmittel.kandidaten.join(' · ')}) — kein Paket.`); process.exit(2) }
+if (!lehrmittel.pfad && !E.hefte.every((h) => h.json.lehrgang === 'EBA_2J')) { console.error(`${NAME}: Lehrmittel fehlt lokal (${lehrmittel.kandidaten.join(' · ')}) — kein Paket.`); process.exit(2) }
 if (!archiv.pfad) { console.error(`${NAME}: Quellenarchiv fehlt lokal (${archiv.grund}) — kein Paket.`); process.exit(2) }
 const A = aufgaben(felder)
 const titel = `${O.ordner} · ${O.heft === 'auftrag' ? 'Auftragsbogen' : `Heft ${O.heft} · ${O.kern === 'nur' ? 'Kern' : `Spur ${O.spur}`}`}${F.has('--nur-veraltet') ? ' · nur veraltete Felder' : ''}`
@@ -467,6 +475,11 @@ if (!F.has('--mit-loesung')) {
   z.push('', `## C. Quellen in voller Auflösung (${karten.length})`, '', karten.length ? 'Jede Zeile beginnt mit ihrer Stelle: `[mm:ss]` Einsatzzeit · `[Abs. N]` Absatz · `[ohne Marke]`. «(ausserhalb)» heisst: nicht im Ausschnitt der Karte — ein Anker von dort belegt nichts.' : 'Dieses Paket hat keine Quelle: Grundlage ist das Lehrmittel.')
   for (const [id, { karte }] of karten) { const q = druckeQuelle(id, karte); nQ += q.n; z.push(...q.zeilen) }
   const kap = druckeKapitel(kapSicht)
+  if (E.hefte.some((h) => h.json.lehrgang === 'EBA_2J')) {
+    const d = E.json['dossier.json']
+    if (!d?.nuggets?.length) bad('EBA-Paket braucht ein Dossier mit Info-Karten')
+    z.push('', '## Dossier — Info-Karten als Wissensgrundlage', ...d.nuggets.map((n) => `### ${n.id}\n${n.titel}\n${n.inhalt}\n${n.beispiel ?? ''}`), '', '### Glossar', ...(d.glossar ?? []).map((g) => `${g.begriff}: ${g.erklaerung_a2}`))
+  }
   z.push('', `## D. Lehrmittel mit Seitenmarken (Kapitel ${kapSicht.join(', ') || '—'})`, '', 'Jede Zeile beginnt mit der Buchseite `[S. N]`, auf der sie steht.', ...kap.zeilen)
   schreibe(out, z.join('\n') + '\n')
   console.log(`${NAME} — Blind-Paket geschrieben: ${out}\n  ${titel}\n  ${A.size} Aufgaben · ${felder.length} Lösungsfelder · ${sicht.length} sichtbare Felder · ${karten.length} Quelle(n) mit ${nQ} Zeilen · Lehrmittel Kap. ${kapSicht.join(', ') || '—'} mit ${kap.n} Zeilen\n  Teildatei des Auditors: _pruefung/${O.ordner}/belege.${teilName(O.heft, O.spur)}.json`)

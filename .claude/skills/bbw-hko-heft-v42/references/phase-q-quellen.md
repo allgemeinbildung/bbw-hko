@@ -1,5 +1,8 @@
 # Phase Q — Quellen (nur lokal)
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Ergebnis: je Heft mit Medien-Spur bis zu vier Quellenkarten unter
 `src/data/quellen/`, die Volltexte im Archiv ausserhalb des Repos, der
 Quellen-Abschnitt des Bauplans gefüllt. Danach folgt der eine Stopp (Freigabe

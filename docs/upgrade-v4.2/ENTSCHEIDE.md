@@ -2338,3 +2338,24 @@ Word-Dokumente, Medien-Spur.
 **Rückgängig:** Ordner `src/data/einheiten/1.1.1_lehrvertrag_orientieren_v42/` und die sieben
 Karten `src/data/methoden/hko-eba-*.json` löschen; der Code hat ohne EBA-Einheit im Format v4.2
 keine Wirkung.
+
+## E47 — EBA-Profil der Standard-Skill (Entscheid Pietro, 03.11.2026)
+
+Neue EBA-Einheiten entstehen mit `bbw-hko-heft-v42`, Profil
+`references/eba-profil.md` und eigenen EBA-Vorlagen. Die alte
+`hko-2er-EBA-set-generator` ist veraltet; übernommen sind nur A2-Regeln und
+der auf v4.2 bereinigte Dossier-Teil. EFZ-Regeln bleiben unverändert.
+
+EBA: drei Leitfragen, eine Spur, Dossier, S. 5 Auftrag/Beispiel,
+S. 6 Methoden, S. 7 Prüfen ohne Arbeitsfläche, kein Lernenden-Begriffsnetz,
+Ich-Kriterien zusätzlich zum KN-Wortlaut, Zweierarbeit und freiwilliger
+Auftrag für die LP. Eingebettete Produktionsschriften statt Segoe Print als
+Messmassstab. Gold-Form, keine Gold-Inhalte kopieren.
+
+Prüftore: `check-eba.mjs` in `check-all`, EBA-v4.2-Entwürfe ohne alte
+EBA-Ausnahme/Baseline in `check-einheiten`; Dossier als Audit-Belegquelle,
+Faktenprüfung einschliesslich Dossiertext, Rollen/Seiten im Audit-Paket
+profilabhängig. Nicht gedruckte Netz-Lösungen sind keine EBA-Auditpflicht.
+Skill-Einstieg, Phasenreferences und Vorlagen sind im selben Zug nachgeführt.
+Die vorhandene Gold-Einheit erhält dadurch keine rückwirkend erfundenen
+Audits. Erster neuer Generierungslauf bleibt Testlauf und Entwurf.

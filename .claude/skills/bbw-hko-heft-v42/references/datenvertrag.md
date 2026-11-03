@@ -1,5 +1,8 @@
 # Datenvertrag v4.2 — jedes Feld, jede Regel
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Dieses Dokument sagt für jedes Feld der fünf Einheitsdateien und der
 Quellenkarte: was es ist, woher sein Wert kommt und welche Prüfung es bestehen
 muss. Grundlage sind die Gold-Einheit
@@ -355,7 +358,57 @@ Quelle «Quelle»; `rolle: "pflicht"` ist nur der interne Wert (E16).
 Dazu trägt `gemeinsamer_auftrag` in jeder neuen Einheit das Feld `produkte`
 (E25). Es steht nicht in Gold; im Skelett steht es nach `abgaben`: Abschnitt 12.1.
 
+
+### EBA-Ausnahme: Auftragsbogen A1–A4
+
+Für EBA gilt `assets/eba-set-template.json`. Die EFZ-Regel «kein weiteres
+Feld» gilt hier nicht: `gemeinsamer_auftrag.woerter` ist Pflicht, eine
+nichtleere Liste mit je `{begriff, definition}`, beide nichtleer und auf
+A2-Sprachniveau. «Wichtige Wörter» steht vor der Situation auf A1.
+`heft_bezug` steht auf **A2**, nicht A1; Wörter immer mit
+**«Wichtige Wörter (S. 2)»** referenzieren, nie «Glossar (S. 8)».
+A4: **«Punkte · Kriterium · Ich · Partner/in»**, Bereiche «Sprache/Gesellschaft».
+Alle vier Kriterien brauchen `name_lernende` und `stufen_lernende`: vier
+nichtleere Ich-Sätze, Anzahl gleich `stufen`, gleiche Bedeutung und gleicher
+Massstab wie der KN-Wortlaut. An den Produktmodus anpassen (etwa «beim
+Sprechen», «im Reglement»). `kn_kriterium`, `dimension` und `stufen` bleiben
+zeichengenau aus dem KN (R6); die Lernendenfassung ändert keine Bewertung.
+
 ## 6. kn.json
+
+### EBA-Ausnahme: Kompetenznachweis für Lernende
+
+Vorlage `assets/eba-kn-template.json`. `definition_kurz` lautet:
+«Dieser Fall ist neu. Sie brauchen dafür beide Hefte.» Dossier und Hefte
+sind erlaubt, kein Internet; kein LP-Entscheid über das Lehrmittel.
+Vorbereitung: «Stichworte auf den Seiten 2 und 3». Mini Case: «Vier kurze
+Aufgaben. Sie werden Schritt für Schritt schwieriger.» Alle gedruckten
+Lernendentexte auf A2: kein «Hybrid», keine K-Stufen/K-Decke, LF-Kürzel
+oder Bloom-Wörter. `definition_lang`, `typ`, `k_stufe`, Mapping und andere
+LP-/Technikfelder sind ausgenommen.
+
+Alle vier `rubrik_shared.kriterien` brauchen zusätzlich `name_lernende`
+und vier nichtleere `stufen_lernende` in Ich-Form: Anzahl gleich `stufen`,
+gleiche Bedeutung je Punktzahl; passend zum Produktmodus. `name`,
+`dimension` und `stufen` bleiben Bewertungswortlaut (R6).
+Jedes `niveaubaender[]` braucht eine nichtleere `definition_lernende` auf A2
+mit derselben Punkteschwelle wie `definition` (80 %: drei oder mehr Kriterien
+auf mindestens 2 Punkten). Niveaus sprechen Lernende mit Sie an; die
+Ich-Form gilt für Kriterien.
+
+Verlangt eine Aufgabe eine auszufüllende Tabelle, ist
+`kn_typen[].aufgaben[].tabelle: {spalten, zeilen}` Pflicht: nichtleere Liste
+nichtleerer A2-Spaltentitel, positive ganze Zeilenzahl. Ohne Tabellenauftrag
+weglassen; keine fehlende Tabelle bloss im Text bestellen.
+
+Werkschau: zwei Produkte, Werkwahl **2 Sätze**, Reflexion **120–150 Wörter**.
+Für das Auslesen durch den Renderer diese Muster in `ablauf` beibehalten:
+«Lernende wählen eines ihrer zwei Produkte aus den Heften (A; B).»
+(A/B durch die tatsächlichen Produktnamen ersetzen),
+«Werkwahl-Begründung (2 Sätze): …»,
+«Transfer-Reflexion (120-150 Wörter): …» (Bindestrich in den Daten).
+Die EFZ-Werte 2–3 Sätze und 200–250 Wörter gelten hier nicht.
+
 
 Der KN entsteht vor den Heften, weil `rubrik_shared` den Wortlaut der
 Feedback-Kriterien liefert. `check-v42.mjs` liest für seine Regeln aus dieser

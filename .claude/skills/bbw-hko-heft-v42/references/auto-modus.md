@@ -1,5 +1,8 @@
 # Auto-Modus — unbeaufsichtigt, ohne Stopp, ohne Rückfrage
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Im Auto-Modus beantwortet niemand eine Frage. Die Skill führt einen
 freigegebenen Bauplan aus, füllt Lücken nach einer festen Regel, hält jeden
 solchen Entscheid fest und endet entweder mit grünem Tor, abgeschlossener

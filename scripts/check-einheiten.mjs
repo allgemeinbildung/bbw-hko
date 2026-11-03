@@ -116,9 +116,11 @@ function pruefeHeft(sit, slug, spur) {
   const schritte = sit.handlungsprodukt?.schritte ?? []
 
   // --- Check 33: Kopplung 4+1 -------------------------------------------
-  if (lfs.length !== 4 || schritte.length !== 5) {
+  const eba = sit.template === TEMPLATE_V42 && sit.lehrgang === 'EBA_2J'
+  const sollLf = eba ? 3 : 4
+  if (lfs.length !== sollLf || schritte.length !== 5) {
     add('ERR_KOPPLUNG_NICHT_1ZU1', 'handlungsprodukt.schritte',
-      `${lfs.length} Leitfragen / ${schritte.length} Schritte (erwartet 4 / 5)`)
+      `${lfs.length} Leitfragen / ${schritte.length} Schritte (erwartet ${sollLf} / 5)`)
   }
 
   lfs.forEach((lf, i) => {
@@ -133,7 +135,7 @@ function pruefeHeft(sit, slug, spur) {
     }
     // Rueckweg: schritte[i].hint nennt LF(i+1) woertlich
     const s = schritte[i]
-    if (s && !new RegExp(`\\bLF\\s?${i + 1}\\b|\\bLeitfrage\\s${i + 1}\\b`, 'i').test(s.hint ?? '')) {
+    if (!eba && s && !new RegExp(`\\bLF\\s?${i + 1}\\b|\\bLeitfrage\\s${i + 1}\\b`, 'i').test(s.hint ?? '')) {
       add('WARN_HINT_OHNE_ABSENDER', `handlungsprodukt.schritte[${i}].hint`,
         `Schritt ${i + 1} "${s.label}" nennt LF${i + 1} nicht woertlich`)
     }
@@ -390,7 +392,8 @@ function frozenReason(slug) {
   if (status !== 'entwurf') return status ? `live (${status})` : 'live (kein status-Feld)'
   const hp = join(DATA, slug, 'herausforderung_A.json')
   const lg = existsSync(hp) ? (JSON.parse(readFileSync(hp, 'utf8')).lehrgang ?? '') : ''
-  if (lg.startsWith('EBA')) return 'EBA — vorerst ausgenommen'
+  const template = existsSync(hp) ? JSON.parse(readFileSync(hp, 'utf8')).template : ''
+  if (lg.startsWith('EBA') && template !== TEMPLATE_V42) return 'EBA — altes Format ausgenommen'
   return null
 }
 
@@ -422,7 +425,11 @@ const baseline = !strict && existsSync(BASELINE)
   ? new Set(JSON.parse(readFileSync(BASELINE, 'utf8')).befunde)
   : new Set()
 
-const neu = alle.filter((x) => !baseline.has(key(x)))
+const neu = alle.filter((x) => {
+  const p = join(DATA, x.slug, 'herausforderung_A.json')
+  const h = existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : null
+  return (!frozen[x.slug] && h?.lehrgang === 'EBA_2J' && h.template === TEMPLATE_V42) || !baseline.has(key(x))
+})
 
 const gruppen = {}
 for (const x of neu) (gruppen[x.id] ??= []).push(x)

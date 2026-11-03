@@ -273,6 +273,7 @@ for (const slug of slugs) {
     ['Leitfragen-Loesungen', 'check-lf-loesung.mjs', [slug]],
   ]
   if (/^heft_8page_v4/.test(template)) sub.push(['Heft v4.x (Budgets, Spuren, Quellen)', 'check-v42.mjs', [slug]])
+  if (template === 'heft_8page_v42') sub.push(['EBA-Profil (Dossier, Ich-Kriterien, Sozialform)', 'check-eba.mjs', [slug]])
   for (const [name, script, args] of sub) {
     const r = lauf(script, args)
     zeile(r.ok, name)

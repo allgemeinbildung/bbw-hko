@@ -173,15 +173,15 @@ for (const [f, j] of Object.entries(skelett)) {
 
 // ------------------------------- ANREDE · GESPERRT (Felder der Lernenden)
 
-{
-  const heft = skelett['herausforderung-template.json']
-  const set = skelett['set-template.json']
+for (const prefix of ['', 'eba-']) {
+  const heft = skelett[prefix + 'herausforderung-template.json']
+  const set = skelett[prefix + 'set-template.json']
   const E = { hefte: heft ? [{ heft: 'A', datei: 'herausforderung-template.json', json: heft }] : [], json: { ...(set ? { 'set.json': set } : {}) }, begleiter: null, quellen: new Map(), methoden: new Map() }
   if (skelett['quelle-template.json']) E.quellen.set('quelle-template', { karte: skelett['quelle-template.json'] })
   // Wie `lernende` in scripts/check-kohaerenz.mjs: Hefte, gemeinsamer Auftrag und Glossar — ohne Lösungsfelder und Technik.
   const lernende = textfelder(E, { begleiter: false, kn: false }).filter((f) => (f.traeger === 'A' || f.traeger === 'karte' || (f.datei === 'set.json' && (f.pfad.startsWith('gemeinsamer_auftrag') || f.pfad.startsWith('glossar')))) && !f.loesung && !/kontext_ausschluss|aktivierte_trade_offs|dekontextualisierung|\.wo$|sozialform\.zulaessig/.test(f.pfad))
   for (const f of lernende) {
-    const datei = f.datei === 'set.json' ? 'set-template.json' : f.traeger === 'karte' ? 'quelle-template.json' : f.datei
+    const datei = f.datei === 'set.json' ? prefix + 'set-template.json' : f.traeger === 'karte' ? 'quelle-template.json' : prefix + f.datei
     const rest = festerText(f.text)
     for (const m of rest.matchAll(RE_GESPERRT)) melde('ERR_SKEL_GESPERRT', datei, f.pfad, `«${m[0]}» im festen Text der Lernenden: «${kurz(rest, m.index, m[0].length)}»`)
     const rede = /situation_text|persona|hybrid_situation|stationen|satzanfaenge|beispiel/.test(f.pfad)
@@ -200,6 +200,7 @@ function* schluesselPfade(o, p = '') {
 const GOLD_DATEI = { 'herausforderung-template.json': ['herausforderung_A.json', 'herausforderung_B.json'], 'set-template.json': ['set.json'], 'kn-template.json': ['kn.json'], 'prinzip-template.json': ['prinzip.json'] }
 {
   const goldDir = join(wurzel, 'src', 'data', 'einheiten', GOLD)
+  const ebaGoldDir = join(wurzel, 'src', 'data', 'einheiten', '1.1.1_lehrvertrag_orientieren_v42')
   const vertragPfad = join(SKILL, 'references', 'datenvertrag.md')
   const typesPfad = join(wurzel, 'src', 'lib', 'einheiten', 'types.ts')
   const fehlt = [existsSync(goldDir) ? null : `Gold-Einheit ${GOLD}`, existsSync(vertragPfad) ? null : 'references/datenvertrag.md', existsSync(typesPfad) ? null : 'src/lib/einheiten/types.ts'].filter(Boolean)
@@ -232,7 +233,7 @@ const GOLD_DATEI = { 'herausforderung-template.json': ['herausforderung_A.json',
 
   for (const [f, j] of Object.entries(skelett)) {
     const gold = new Set()
-    for (const g of GOLD_DATEI[f] ?? []) { const p = join(goldDir, g); if (existsSync(p)) { try { for (const x of schluesselPfade(JSON.parse(lies(p)))) gold.add(x) } catch { /* Gold unlesbar: check-all meldet es */ } } }
+    for (const g of (f === 'eba-dossier-template.json' ? ['dossier.json'] : GOLD_DATEI[f.replace(/^eba-/, '')] ?? [])) { const p = join(f.startsWith('eba-') ? ebaGoldDir : goldDir, g); if (existsSync(p)) { try { for (const x of schluesselPfade(JSON.parse(lies(p)))) gold.add(x) } catch { /* Gold unlesbar: check-all meldet es */ } } }
     const bekannt = f === 'quelle-template.json' ? kartenPfade : gold
     const pfade = [...new Set([...schluesselPfade(j)])].filter((p) => !/\{\{/.test(p))
     let nurVertrag = 0; let unbekannt = 0; let ohneTyp = 0
@@ -248,7 +249,7 @@ const GOLD_DATEI = { 'herausforderung-template.json': ['herausforderung_A.json',
       if (typNamen.size && !inTyp && (inGold || inVertrag)) { ohneTyp++; if (!inVertrag) ohneTypUndVertrag.push(p) }
     }
     // Ein Name, den types.ts nicht kennt, ist kein Befund, solange der Datenvertrag das Feld führt («nur Gold»).
-    if (ohneTypUndVertrag.length) melde('WARN_SKEL_FELD_NICHT_IN_TYPES', f, `${ohneTypUndVertrag.length} Feldpfad(e)`, `der Feldname kommt in types.ts nicht vor, und der Datenvertrag führt den Pfad nicht: ${ohneTypUndVertrag.slice(0, 10).join(', ')}${ohneTypUndVertrag.length > 10 ? ' …' : ''}`, WARNUNG)
+    if (ohneTypUndVertrag.length && f !== 'eba-dossier-template.json') melde('WARN_SKEL_FELD_NICHT_IN_TYPES', f, `${ohneTypUndVertrag.length} Feldpfad(e)`, `der Feldname kommt in types.ts nicht vor, und der Datenvertrag führt den Pfad nicht: ${ohneTypUndVertrag.slice(0, 10).join(', ')}${ohneTypUndVertrag.length > 10 ? ' …' : ''}`, WARNUNG)
     felderZeilen.push(`${f}: ${pfade.length} Feldpfade · ${pfade.length - unbekannt - nurVertrag} in ${f === 'quelle-template.json' ? 'den Quellenkarten' : 'Gold'} · ${nurVertrag} nur im Datenvertrag · ${unbekannt} unbekannt · ${ohneTyp} Feldname(n) nicht in types.ts`)
   }
 }
@@ -257,6 +258,14 @@ const GOLD_DATEI = { 'herausforderung-template.json': ['herausforderung_A.json',
 
 if (skelett['set-template.json'] && skelett['set-template.json'].status !== 'entwurf') melde('ERR_SKEL_FESTWERT', 'set-template.json', 'status', `«${skelett['set-template.json'].status}» — eine neue Einheit trägt "entwurf"`)
 if (skelett['herausforderung-template.json'] && skelett['herausforderung-template.json'].template !== TEMPLATE_V42) melde('ERR_SKEL_FESTWERT', 'herausforderung-template.json', 'template', `«${skelett['herausforderung-template.json'].template}» — Soll ${TEMPLATE_V42}`)
+
+// EBA-Festwerte und Strukturen müssen auch im ungefüllten Skelett stimmen.
+{
+  const h = skelett['eba-herausforderung-template.json']
+  const s = skelett['eba-set-template.json']
+  if (h && (h.template !== TEMPLATE_V42 || h.lehrgang !== 'EBA_2J' || h.leitfragen?.length !== 1 || h.leitfragen[0]?.nr !== 1 || Object.keys(h.spuren ?? {}).join() !== 'ohne_medien' || h.spuren.ohne_medien.leitfragen?.map((l) => l.nr).join() !== '2,3')) melde('ERR_SKEL_FESTWERT', 'eba-herausforderung-template.json', 'EBA-Profil', 'Template, Lehrgang, drei Leitfragen und eine Spur erforderlich')
+  if (s && (s.status !== 'entwurf' || s.lehrgang !== 'EBA_2J' || s.spur !== 'ohne_medien' || JSON.stringify(s.gemeinsamer_auftrag?.sozialform?.zulaessig) !== '["partner"]')) melde('ERR_SKEL_FESTWERT', 'eba-set-template.json', 'EBA-Profil', 'Entwurf, EBA, ohne_medien und Zweierarbeit erforderlich')
+}
 
 // --------------------------------------------------- Markdown-Skelette
 

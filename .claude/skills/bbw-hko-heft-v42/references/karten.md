@@ -1,5 +1,8 @@
 # Karten — ändern oder neu anlegen
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Methodenkarten (`src/data/methoden/`) und Quellenkarten (`src/data/quellen/`)
 werden von vielen Einheiten geführt, die meisten sind publiziert. Wer eine
 Karte ändert, ändert gedruckte Hefte — auch solche, die er nie geöffnet hat.

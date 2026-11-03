@@ -1,12 +1,15 @@
 # Phase 0 — Verortung
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 **Ergebnis:** das Verortungsblatt (Bauplan §1 und §2): Lehrgang, Lebensbezug,
 Kompetenzen je Heft, Sprachmodi je Kompetenz, zulässige Spuren je Heft, SK des
 Themas, Aspekte, Kapiteldateien mit geprüften Seiten, Ordnername und IDs.
 
 **Eingabe:** Lehrgang (`EFZ_3J` oder `EFZ_4J`) und eine Kompetenznummer
 `X.Y.Z`. Fehlt der Lehrgang, ist das die einzige Rückfrage vor dieser Phase.
-EBA ist nicht Gegenstand dieser Skill.
+EBA verwendet das EBA-Profil mit `public/nrlp_2j.json`; Kapitelregeln hier gelten für EFZ.
 
 **Grundsatz (Leitprinzip):** Phase 0 legt fest, **woraus** später Sprachmodi,
 Schlüsselkompetenzen und Produkte hergeleitet werden — aus dem nRLP-Datensatz

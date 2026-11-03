@@ -1,5 +1,8 @@
 # Phase 6 — Abschluss und Bilder (je Heft)
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Ergebnis: Begriffsnetz, Abschluss mit Lösung, Checkliste, Übersicht, Beispielbild
 und Lösungsbild in `herausforderung_A.json` und `herausforderung_B.json`. Alles
 gehört zum **Kern** (einmal je Heft, nicht unter `spuren`); nur

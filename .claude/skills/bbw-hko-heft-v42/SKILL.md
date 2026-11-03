@@ -1,6 +1,6 @@
 ---
 name: bbw-hko-heft-v42
-description: "Standard-Generator für neue EFZ-Einheiten in bbw-hko (Format v4.2, Template heft_8page_v42): erzeugt aus einer nRLP-Kompetenz und dem Lehrmittelkapitel eine Einheit mit zwei Heften A/B (je acht Seiten, je in den Spuren ohne Medien und mit Medien), gemeinsamem Auftrag, Kompetenznachweis, Begleiter, Glossar mit Begriffsnetz, Beispielbild und Lösungen für alle Felder — und schreibt sie nach src/data/einheiten/{X.Y.Z}_{slug}/ (dazu Quellenkarten nach src/data/quellen/). Nutze diese Skill immer, wenn Pietro eine neue Einheit will: 'mach eine Einheit zu 2.1.2', 'neue Einheit für EFZ 3J/4J', 'Heft generieren', 'Einheit mit Medien-Spur', 'v4.2-Einheit', 'Bauplan für X.Y.Z', 'Einheit aus dem Bauplan erzeugen', 'Produktionslauf'. Auch bei allgemeinen oder englischen Aufträgen wie 'create the new HKO Einheit for X.Y.Z', 'neue HKO-Einheit erstellen' oder 'Lehrmittelkapitel X.Y → Lernsituationen für ABU Reform 2030': Ein Lehrmittelkapitel plus HKO/ABU ohne das Wort '3er-Set' heisst immer v4.2, also diese Skill. Arbeitet mit einem Bauplan (ein gebündelter Stopp zur Freigabe) und läuft danach ohne Rückfrage durch Erzeugung, Tor, Gegenlesen, Fakten-Audit und Abschluss bis zur Vorlage für die Freigabe — bei jedem Start gleich: einzelne Einheit, Schleife über alle Baupläne, Abschluss einer vorhandenen Einheit ('Einheit abschliessen', 'bis zur Freigabe bringen', 'Einheit freigeben'). NICHT für: das alte 3er-Set mit drei Herausforderungen A/B/C ('3er-Set', 'alte Methode', 'wie früher' → bbw-hko-3er-set), EBA-Einheiten (→ hko-2er-EBA-set-generator), die KI-Toolbox einer fertigen Einheit (→ hko-ki-komplement)."
+description: "Standard-Generator für neue ABU-Einheiten in bbw-hko im Format v4.2: zwei achtseitige Hefte A/B, gemeinsamer Auftrag, Kompetenznachweis und Begleiter. Für EFZ 3J/4J mit Medien-Spuren; für EBA 2J mit A2-Profil, drei Leitfragen und Dossier. Verwenden für neue Einheiten, Baupläne, Produktionsläufe und den Abschluss vorhandener v4.2-Entwürfe. Nicht für ausdrücklich bestellte alte 3er-Sets oder die separate KI-Toolbox."
 ---
 
 # bbw-hko Heft v4.2 — Generator
@@ -14,6 +14,15 @@ Referenz für die Form ist die Gold-Einheit
 `src/data/einheiten/1.3.1_konsum_verantworten_v42/`. **Form übernehmen, Inhalt
 nie.** Kein Satz, kein Beispiel, keine Zahl der Gold-Einheit wandert in eine
 andere Einheit.
+
+## EBA-Profil — vor Phase 0 lesen
+
+Bei `EBA_2J` gilt [references/eba-profil.md](references/eba-profil.md) für
+alle Phasen, Datenvertrag, Audits und Vorlagen. Es ersetzt die dort benannten
+EFZ-Regeln zu vier Leitfragen, zwei Spuren, Lehrmittel, Netz und Arbeitsfläche.
+EBA nutzt `assets/eba-*-template.*` und erzeugt zusätzlich `dossier.json`.
+Formreferenz: `src/data/einheiten/1.1.1_lehrvertrag_orientieren_v42/`.
+Inhalte nie kopieren. Die alte EBA-Skill ist veraltet und wird nicht ausgeführt.
 
 ## 0. Leitprinzip — einheitlich im Gerüst, frei in Modus, Kompetenz und Produkt
 
@@ -120,7 +129,7 @@ gefragt. Was früher ein Stopp war
 Bauplans mit **einer** empfohlenen Variante und höchstens zwei genannten
 Alternativen.
 
-**Eingabe, bevor irgendetwas beginnt:** Lehrgang (`EFZ_3J` oder `EFZ_4J`) und
+**Eingabe, bevor irgendetwas beginnt:** Lehrgang (`EBA_2J`, `EFZ_3J` oder `EFZ_4J`) und
 Kompetenznummer. Fehlt der Lehrgang, ist das die einzige Rückfrage vor Phase 0
 — eine Nummer `X.Y.Z` bedeutet in 3J und 4J nicht dasselbe.
 

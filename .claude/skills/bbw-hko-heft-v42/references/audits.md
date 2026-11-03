@@ -1,5 +1,8 @@
 # Audits — drei Rollen, die eine Datei abgeben
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Das Tor prüft Form, die Lernenden-Gegenleser finden Bearbeitbarkeit. Ob stimmt,
 was in einer Lösung steht, ob eine Rechtsaussage stimmt und ob sich das Produkt
 mit den Kriterien überhaupt auf die höchste Stufe bringen lässt, prüfen drei

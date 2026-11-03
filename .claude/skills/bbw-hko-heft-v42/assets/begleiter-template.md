@@ -1,3 +1,6 @@
+<!-- EBA-Ausnahme: eba-begleiter-template.md verwenden. A4 Ich/Partner/in,
+Lernendenfassung bei gleichem Massstab; Heft-Bezug A2, Wichtige Wörter S. 2.
+Die EFZ-Angaben Selbst/Fremd, A1 und gleicher Wortlaut gelten nicht für EBA. -->
 ---
 titel: "Begleit-Dokument — {{= set.einheit_titel}} ({{X.Y — Lebensbezug}})"
 untertitel: "{{EINE ZEILE: was die Einheit umfasst — Hefte, Spuren, Auftrag, KN}}"

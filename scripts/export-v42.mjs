@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // export-v42.mjs — schreibt alle v4.2-Dokumente einer Einheit als eigenständige
-// HTML- und Word-Dateien, so wie sie der ZIP der Workbench enthält, dazu den
+// HTML- und Word-Dateien, so wie sie der ZIP der Workbench enthält — Hefte, Auftragsbogen,
+// Lösungen, Kompetenznachweis (kn-s_<form>, kn-lp), bei EBA Dossier und Leseblatt —, dazu den
 // Begleiter als `begleiter.docx`.
 //
 //   node scripts/export-v42.mjs <slug> [--out <dir>]
@@ -14,6 +15,8 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 import { ROOT, startSsr } from './v42-ssr.mjs'
+import { renderToStaticMarkup } from 'react-dom/server'
+import { createElement } from 'react'
 
 const argv = process.argv.slice(2)
 const outIdx = argv.indexOf('--out')
@@ -51,6 +54,28 @@ try {
   const cssRenderer = cssFuerEinheit(cssRendererBasis, d)
 
   const dokumente = v42Dokumente(d, { logoPng: new Uint8Array(logoBytes) })
+  if (d.hf_A?.lehrgang === 'EBA_2J' && d.dossier) {
+    const { DocEbaDossier } = await server.ssrLoadModule('/src/components/einheiten/docs/DocEbaDossier.tsx')
+    const { DocLeseblatt } = await server.ssrLoadModule('/src/components/einheiten/docs/DocLeseblatt.tsx')
+    const { buildDossier, buildLeseblatt } = await server.ssrLoadModule('/src/lib/einheiten/docx-builder.ts')
+    const props = { dossier: d.dossier, logoPng: new Uint8Array(logoBytes) }
+    dokumente.push({ datei: 'dossier', titel: 'Dossier', markup: () => renderToStaticMarkup(createElement(DocEbaDossier, props)), docx: () => buildDossier(props), protokoll: false })
+    if (d.dossier.leseblatt) dokumente.push({ datei: 'leseblatt', titel: 'Leseblatt', markup: () => renderToStaticMarkup(createElement(DocLeseblatt, props)), docx: () => buildLeseblatt(props), protokoll: false })
+  }
+  // Kompetenznachweis: je KN-Form das Blatt für Lernende (DOC-KN-S) und das LP-Dokument (DOC-KN-LP),
+  // wie im ZIP der Workbench — damit Messung, Schriftprüfung und Word-Seitenzahl auch sie erfassen.
+  if (d.kn?.kn_typen?.length) {
+    const { DocKnS } = await server.ssrLoadModule('/src/components/einheiten/docs/DocKnS.tsx')
+    const { DocKnLp } = await server.ssrLoadModule('/src/components/einheiten/docs/DocKnLp.tsx')
+    const { buildKnS, buildKnLp } = await server.ssrLoadModule('/src/lib/einheiten/docx-builder.ts')
+    const logoPng = new Uint8Array(logoBytes)
+    for (const t of d.kn.kn_typen) {
+      const props = { kn: d.kn, knTyp: t.typ, edits: {}, onEdit: () => {} }
+      dokumente.push({ datei: `kn-s_${t.typ}`, titel: `Kompetenznachweis · ${t.label ?? t.typ}`, markup: () => renderToStaticMarkup(createElement(DocKnS, props)), docx: () => buildKnS({ kn: d.kn, knTyp: t.typ, logoPng }), protokoll: false })
+    }
+    const lp = { kn: d.kn, prinzip: d.prinzip, set: d.set, sits: [d.hf_A, d.hf_B, d.hf_C] }
+    dokumente.push({ datei: 'kn-lp', titel: 'Kompetenznachweis · Lehrperson', markup: () => renderToStaticMarkup(createElement(DocKnLp, lp)), docx: () => buildKnLp({ ...lp, logoPng }), protokoll: false })
+  }
   if (!dokumente.length) throw new Error(`«${slug}» hat keine v4.2-Dokumente (keine spur_varianten)`)
 
   mkdirSync(OUT, { recursive: true })

@@ -1,5 +1,8 @@
 # Sprache — Schweizer Hochdeutsch, Anrede, gesperrte Wörter
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Gilt für jeden Text, den die Skill schreibt: die fünf Einheitsdateien, die
 Quellenkarten, `begleiter.md`, den Bauplan und den Bericht. Übernommen und
 angepasst aus `language-rules.md` der Skill `bbw-hko-3er-set` (dort unverändert);
@@ -404,3 +407,18 @@ Nicht still korrigiert, sondern neu geschrieben und im Bericht vermerkt:
 □ CHF-Format: Apostroph und Halbgeviertstrich
 □ Kein Satz aus dem Lehrmittel oder aus einer Quelle
 ```
+
+## EBA-Ausnahme: gedruckte Auftrag- und KN-Texte
+
+Alle gedruckten Lernendentexte auf A2 prüfen, auch KN-Titel, `definition_kurz`,
+Format, Ablauf, Fragen, Aufgaben, Tabellenspalten, Reflexionsfragen,
+`name_lernende`, `stufen_lernende` und `definition_lernende` der Niveaubänder.
+Kein «Hybrid»/«Hybrid-Herausforderung», keine K-Decke, K1–K6, LF1–LF4 oder
+Bloom-/Taxonomie-Wörter. Statt «Aufgaben steigender Komplexität»:
+«Vier kurze Aufgaben. Sie werden Schritt für Schritt schwieriger.»
+Statt «Hybrid-Herausforderung»: «Fall». Kriterien in Ich-Form;
+Aufträge und Niveau-Erklärungen in Sie-Form. Gleiche Punkteschwellen wie im
+KN-Wortlaut; Produktmodus beachten (Sprechen/Schreiben, passendes Dokument).
+LP-/Technikfelder wie `definition_lang`, `typ`, `k_stufe`, Mapping, SK und
+Sprachmodi sind ausgenommen. `check-eba.mjs` wählt KN-Druckfelder gezielt aus;
+A2-Verständlichkeit und Bedeutungsgleichheit zusätzlich selbst lesen.

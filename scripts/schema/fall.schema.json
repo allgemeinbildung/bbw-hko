@@ -10,14 +10,15 @@
     "format": { "const": "bbw-hko/fall@1" },
     "einheit": { "type": "string", "pattern": "^[0-9]\\.[0-9]\\.[0-9]_[a-z0-9]+(?:_[a-z0-9]+)*$" },
     "faelle": {
-      "description": "Je Träger einer Situation ein Fall: Heft A, Heft B, gemeinsamer Auftrag.",
+      "description": "Je Träger einer Situation ein Fall: Heft A, Heft B, gemeinsamer Auftrag, Kompetenznachweis (kn; erfundene Beträge des KN-Falls, seit 03.11.2026).",
       "type": "object",
       "required": ["A", "B"],
       "additionalProperties": false,
       "properties": {
         "A": { "$ref": "#/$defs/fall" },
         "B": { "$ref": "#/$defs/fall" },
-        "auftrag": { "$ref": "#/$defs/fall" }
+        "auftrag": { "$ref": "#/$defs/fall" },
+        "kn": { "$ref": "#/$defs/fall" }
       }
     }
   },

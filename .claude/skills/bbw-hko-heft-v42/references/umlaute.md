@@ -1,5 +1,8 @@
 # Umlaute und häufige Verschreiber — Prüfung vor dem Schreiben
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Übernommen und angepasst aus `_common_misspellings.md` der Skill
 `bbw-hko-3er-set` (dort unverändert). Diese Datei listet bekannte Verschreiber
 mit der richtigen Schreibweise. Vor jedem Schreiben einer Datei wird jeder

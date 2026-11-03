@@ -86,6 +86,8 @@ export function ladeEinheit(wurzel, ordner) {
     if (!existsSync(p)) { E.fehler.push(`${f} fehlt`); continue }
     try { E.json[f] = liesJson(p) } catch (e) { E.fehler.push(`${f}: ${e.message}`) }
   }
+  const dp = join(dir, 'dossier.json')
+  if (existsSync(dp)) { try { E.json['dossier.json'] = liesJson(dp) } catch (e) { E.fehler.push(`dossier.json: ${e.message}`) } }
   const b = join(dir, 'begleiter.md')
   if (existsSync(b)) E.begleiter = readFileSync(b, 'utf8').replace(/^﻿/, '').replace(/\r\n?/g, '\n')
   E.status = E.json['set.json']?.status
@@ -216,7 +218,7 @@ function* strings(o, p = '') {
  *            loesung (true = nur die Lehrperson sieht es), spur (null | 'ohne_medien' | 'mit_medien') }
  * Leitfragen werden wie in lib/loesungsfelder.mjs über ihre Nummer angesprochen ([LF3]).
  */
-export function textfelder(E, { karten = true, begleiter = true, kn = true } = {}) {
+export function textfelder(E, { karten = true, begleiter = true, kn = true, dossier = false } = {}) {
   const out = []
   const nimm = (datei, json, traeger) => {
     // Der Spur-Anker `methoden[i].ref: "__spur__"` ist ein Platzhalter: Gedruckt wird die Rezeptionskarte der Spur.
@@ -229,6 +231,10 @@ export function textfelder(E, { karten = true, begleiter = true, kn = true } = {
   }
   for (const h of E.hefte) nimm(h.datei, h.json, h.heft)
   if (E.json['set.json']) nimm('set.json', E.json['set.json'], 'auftrag')
+  if (dossier && E.json['dossier.json']) {
+    const d = E.json['dossier.json']
+    nimm('dossier.json', { nuggets: (d.nuggets ?? []).map(({ id, tag, fuer_leitfrage, glossar_refs, fakten_anker, ...text }) => text), sprachmodi_scaffolds: d.sprachmodi_scaffolds, transfer_wissensblatt: d.transfer_wissensblatt, glossar: d.glossar, leseblatt: d.leseblatt }, 'dossier')
+  }
   if (kn && E.json['kn.json']) nimm('kn.json', E.json['kn.json'], 'kn')
   if (begleiter && E.begleiter) {
     // Absätze wie in check-all («begleiter.md › Absatz N»); Feld-Marker bleiben stehen, ihr Inhalt zählt als Text.
@@ -278,7 +284,13 @@ export const ERFUNDEN = /(^|\.)beispielbild(\.|$)|(^|\.)beispiel(\[|$)|(^|\.)bei
  */
 export const HEFT_SEITEN = 8
 export const BOGEN_SEITEN = 4
-export function seiteVonFeld(pfad) {
+export function seiteVonFeld(pfad, lehrgang) {
+  if (lehrgang === 'EBA_2J') {
+    if (/leitfragen\[LF2\]/.test(pfad)) return 3
+    if (/leitfragen\[LF3\]|kasten_s4/.test(pfad)) return 4
+    if (/^feedback_kriterien|^lernfortschritt/.test(pfad)) return 7
+    if (/^handlungsprodukt\.beispielbild/.test(pfad)) return 5
+  }
   const p = pfad.replace(/^spuren\.(ohne_medien|mit_medien)\./, '')
   if (/^(titel|persona|situation_text|zahlen_tabelle|leitfrage$|mehrdeutigkeit|quellen_anker|wochen_plan)/.test(p)) return 1
   if (/^leitfragen_intro|^leitfragen\[LF[12]\]/.test(p)) return 2
@@ -316,7 +328,13 @@ export const ELEMENT_SEITEN_EBA = Object.freeze([
   { wort: /\bLF\s?1\b|Wissensecke I\b/, seiten: [2], name: 'LF1' },
   { wort: /\bLF\s?2\b|\bRaster(?:s|zeilen?)?\b|\bBeispielzeile\b/, seiten: [3], name: 'Raster/LF2' },
   { wort: /\bLF\s?3\b|\bDenkhilfe\b|Wissensecke II\b/, seiten: [4], name: 'LF3/Denkhilfe' },
-  ...ELEMENT_SEITEN.slice(4),
+  // Seitenfolge 5–7 im EBA-Heft (worte().pruefSeite, 03.11.2026): S. 5 Auftrag mit Beispiel,
+  // S. 6 Methoden, S. 7 «Prüfen» mit den Kriterien. Keine Arbeitsfläche.
+  { wort: /«Das geben Sie ab»|\bBeispiel(?:bild|blatt)?\b/, seiten: [5, 3], name: 'Abgaben/Beispiel' },
+  { wort: /\bMethoden(?:karten?|seite)?\b/, seiten: [6], name: 'Methoden' },
+  { wort: /\bKriterien\b|\bSelbsteinschätzung\b/, seiten: [7], name: 'Kriterien' },
+  { wort: /Wichtige Wörter/i, seiten: [2], name: 'Wichtige Wörter' },
+  { wort: /\bCheckliste\b|\bQuer-Check\b|«Das nehme ich mit»/, seiten: [8], name: 'Checkliste/Quer-Check' },
 ])
 export const elementSeiten = (lehrgang) => (lehrgang === 'EBA_2J' ? ELEMENT_SEITEN_EBA : ELEMENT_SEITEN)
 

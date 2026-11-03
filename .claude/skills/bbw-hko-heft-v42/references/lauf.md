@@ -1,5 +1,8 @@
 # Lauf — ein Ablauf für jeden Start
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Diese Datei sagt, **wer was in welcher Reihenfolge tut**, sobald ein
 freigegebener Bauplan vorliegt. Sie gilt für jeden Start gleich: einzelne
 Einheit, Schleife über alle Baupläne, Abschluss einer vorhandenen Einheit. Ein

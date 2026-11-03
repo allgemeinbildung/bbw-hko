@@ -1,5 +1,8 @@
 # Phase 4 — Heft-Kern (`herausforderung_A.json`, dann `herausforderung_B.json`)
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Der Kern ist alles, was in beiden Spuren gleich ist: Seite 1, Seite 2, Seite 5, drei der vier
 Methodenkarten und die Felder, die nur die Lehrperson sieht. **Nicht in dieser Phase:** `spuren`
 (Phase 5), `mindmap_aeste`, `abschluss`, `bewertungsraster`, `wochen_plan`,

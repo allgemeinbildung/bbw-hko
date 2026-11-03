@@ -1,5 +1,8 @@
 # Sprachmodus-IDs — kanonische Nummerierung (SM1–SM9)
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 **Zweck:** Der nRLP listet die 9 Sprachmodi in fester Reihenfolge, **nummeriert sie aber nicht**. Damit beide Render-Pfade (LP-Metadaten-Block, SuS-Marker) maschinenlesbar auf Sprachmodi referenzieren können, definiert diese Datei die **verbindliche ID-Vergabe SM1–SM9** nach der Reihenfolge in `nrlp_*.json → zirkularitaet.sprachmodi[]`.
 
 Diese IDs sind **Single Source of Truth**. In bbw-hko spiegelt `src/lib/einheiten/sprachfoerderung.ts` dieselbe Zuordnung.

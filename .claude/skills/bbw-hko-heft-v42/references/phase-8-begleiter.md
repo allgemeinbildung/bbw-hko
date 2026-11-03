@@ -1,5 +1,8 @@
 # Phase 8 — Begleiter (`begleiter.md`)
 
+**EBA_2J:** Zuerst [eba-profil.md](eba-profil.md) lesen; dessen Abweichungen ersetzen die entsprechenden EFZ-Regeln dieser Reference.
+
+
 Ergebnis: `src/data/einheiten/<ordner>/begleiter.md`. Skelett:
 `assets/begleiter-template.md`. Voraussetzung: `prinzip.json`, `kn.json`,
 beide Hefte und `set.json` sind fertig und `check-v42` ist für sie ruhig — der
@@ -370,3 +373,14 @@ Warnung). `check-all` meldet zusätzlich `ERR_PLATZHALTER`, `ERR_ESZETT` und die
 Leck-Befunde je `begleiter.md › Absatz n`; die Absatznummer zählt durch
 Leerzeilen getrennte Blöcke ab Dateianfang. Das vollständige Tor mit Export
 (`begleiter.docx`) beschreibt `references/phase-9-tor.md`.
+
+## EBA-Ausnahme: Auftrag und KN erklären
+
+Für EBA ersetzt `assets/eba-begleiter-template.md` die EFZ-Vorlage.
+A1: Wichtige Wörter vor der Situation; Heft-Bezug auf A2, Wörter in beiden
+Heften auf S. 2 («Wichtige Wörter (S. 2)»), kein Glossar auf S. 8.
+A4: «Ich» / «Partner/in» statt «Selbst» / «Fremd», Lernendenfassung der vier
+Kriterien, **gleicher Massstab**, nicht gleicher Wortlaut. Das gilt auch für
+Heft S. 7 und KN für Lernende; bewertet wird nach `stufen` im KN.
+KN: Dossier und Hefte erlaubt; Werkwahl 2 Sätze, Reflexion 120–150 Wörter.
+Niveaubänder mit einfacher `definition_lernende` erklären.
