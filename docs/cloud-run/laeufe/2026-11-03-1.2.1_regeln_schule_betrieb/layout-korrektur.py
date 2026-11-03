@@ -1,0 +1,8 @@
+﻿from pathlib import Path
+import json
+r=Path('src/data/einheiten/1.2.1_regeln_schule_betrieb');p=r/'herausforderung_B.json';d=json.loads(p.read_text(encoding='utf-8'));d['methoden'][0]['fuer']='für Fakten auf Seite 1';d['methoden'][3]['fuer']='für Ihre Gesprächsfragen';d['methoden'][3]['beispiel']=['«Ich habe eine Frage zum Plan. Wann passt ein kurzes Gespräch?»'];p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+p=r/'dossier.json';d=json.loads(p.read_text(encoding='utf-8'));d['nuggets'][0]['inhalt']=d['nuggets'][0]['inhalt'].replace('Diese Werte geben Ihnen im Schulalltag Orientierung.','');d['nuggets'][1]['inhalt']='An Zürcher Berufsfachschulen und kantonalen Lehrwerkstätten gilt das Disziplinarreglement. Stören Sie den Unterricht nicht. Befolgen Sie die Anweisungen der Lehrperson. Aufnahmen von Bild und Ton brauchen die ausdrückliche Genehmigung jeder betroffenen Person. Bei Regelverstössen darf die Lehrperson Gegenstände während des Unterrichts zeitweilig einziehen. Sie darf Lernende aus der Unterrichtsstunde wegweisen. Die Schulleitung ermahnt mündlich oder schriftlich. Auch dafür vorgesehene Lehrpersonen dürfen das. Schriftliche Verweise verfügt die Schulleitung. Nur dabei sind Bussen möglich.';p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+p=Path('D:/OS/_lab/quellen-archiv/bbw-hko/_pruefung/1.2.1_regeln_schule_betrieb/belege.json');b=json.loads(p.read_text(encoding='utf-8'))
+for z in b['zeilen']:
+ if z['herkunft']=='dossier' and z['stelle']=='nugget_A_02':z['anker']=' '.join(d['nuggets'][1]['inhalt'].split()[:10])
+p.write_text(json.dumps(b,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')

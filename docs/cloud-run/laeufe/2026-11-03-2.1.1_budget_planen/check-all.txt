@@ -1,0 +1,30 @@
+﻿check-all — 1 Einheit(en)
+
+  ok      Lehrmittel  150 Kapitel und 280 Quellentexte fuer die Leck-Pruefung geladen
+  ok      nRLP-Datensaetze
+  ok      Namen  Ordner · IDs · Quellenkarten · Archiv · Laufordner
+  ok      Karten  geaenderte Methoden- und Quellenkarten gegen origin/main · Verbraucher · Vermerk
+      karten geaendert — gegen origin/main (2344df5)
+        49 Methodenkarten, 156 Quellenkarten · neu: 7 · geändert: 0 · gelöscht: 0
+        Kartenbelege unter _pruefung/_karten/: 0 Datei(en), 0 Zeile(n) veraltet
+      
+        warnung  KARTE_FESTE_ZAHL  src/data/methoden/hko-eba-fakt-oder-gefuehl.json › schritte[3]
+                 Zahlwort «zwei» — Zahlen und Formate nennt die Einheit, nicht die Karte (Regel e)
+      
+      GRUEN — keine gebundene Karte ohne Vermerk geändert, 1 Warnung(en).
+  ok      Skelette  Vorlagen der Skill: Anrede · gesperrte Woerter · Platzhalterform · Felder · feste Angaben
+
+2.1.1_budget_planen
+  ok      Struktur · Status · Methoden · Sprache · Leck  0 Fehler, 0 Warnungen
+  ok      nRLP-Abgleich (Kompetenz-/Lebensbezugstexte, Lehrgaenge)
+  ok      Kopplung · Autarkie · Begleiter-Marker
+  ok      Leitfragen-Loesungen
+  ok      Heft v4.x (Budgets, Spuren, Quellen)
+  ok      EBA-Profil (Dossier, Ich-Kriterien, Sozialform)
+  ok      Belege (belege.json: Feld, Hash, Anker, Zeitmarke, Urteil)
+  ok      Fakten (fakten.json: Rechts- und Sachaussagen)
+  ok      Zeiger (archiv_ref, Wortzahl, Absatz, Zeitmarke, Seiten)
+  ok      Zahlen (Rechnungen, Summen, Fallzahlen)
+  ok      Kohaerenz (Werte, Loesung sichtbar, Woerter, Anzahl, Punkte)
+
+GRUEN — keine Fehler.
