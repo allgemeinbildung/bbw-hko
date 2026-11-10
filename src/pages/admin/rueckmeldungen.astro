@@ -1,7 +1,8 @@
 ---
 // Auswertung der Rückmeldungen von Lehrpersonen für Kernteam 1.
 // Zahlen und Namen kommen bei jedem Aufruf aus der Datenbank (keine Personendaten im Repo);
-// die Einordnung (Abschnitte 2–5) ist der Stand vom 19.10.2026 und steht als Text in dieser Datei.
+// die Einordnung (Abschnitte 2–5) ist der Stand vom 19.10.2026, der Nachtrag (Abschnitt 6) der Stand vom 10.11.2026;
+// beides steht als Text in dieser Datei.
 import Admin from '../../layouts/Admin.astro'
 import { einheitById } from '../../lib/einheiten'
 import { createAdminClient } from '../../lib/supabase'
@@ -275,6 +276,35 @@ const offeneSichtung = feedbacks.filter((f: any) => ungesichtet(f.status)).lengt
         <li><b>Sichtung durch KT1:</b> Wer sichtet die Rückmeldungen und das eingereichte Material und gibt den Lehrpersonen eine Antwort? Sonst bleibt der Kanal einseitig.</li>
         <li><b>Formular:</b> Soll das Feedback-Formular verlangen, dass die Lehrperson die verwendete Herausforderung nennt? Dann lassen sich Rückmeldungen sicher zuordnen.</li>
       </ol>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-bold text-slate-900">6 · Nachtrag: Uploads seit dem 30.10.2026 (Stand 10.11.2026)</h2>
+      <p class="text-sm max-w-3xl text-slate-600">Handgeschriebener Text, Stand 10.11.2026. Personen sind nicht genannt. Grundlage: sieben neue Einträge seit dem 30.10. (31.10. bis 06.11.), die Dateien dazu und die Liste von Pascal Rusch (28 Lehrpersonen, 1. Lehrjahr). Die Basis bleibt klein, alles sind Beobachtungen, keine Häufigkeiten.</p>
+      <h3 class="text-sm font-bold text-slate-900">Beteiligung</h3>
+      <ul class="list-disc pl-5 space-y-1.5 text-sm max-w-3xl">
+        <li><b>12 von 28</b> haben Material geteilt (30.10.: 8). 5 haben nur «unverändert unterrichtet» gemeldet, 8 haben ein Konto ohne Upload, 3 kein Konto. Zählt «unverändert», sind es 17 von 28.</li>
+        <li>Nach Liste: EBA 6 von 11, 3-j. EFZ 7 von 12, 4-j. EFZ 3 von 13.</li>
+        <li>Seit dem 30.10. gab es 7 neue Einträge: 2× angepasst, 3× eigenes Material, 2× «unverändert». 11 neue Dateien, davon eine Beispielarbeit von Lernenden ohne Namen.</li>
+      </ul>
+      <h3 class="text-sm font-bold text-slate-900">Was die neuen Abgaben zeigen</h3>
+      <ol class="list-decimal pl-5 space-y-2 text-sm max-w-3xl">
+        <li><b>«Zu schwer» betrifft mehr als eine Einheit.</b> Sechs Personen nennen das Niveau zu hoch (drei im Oktober, drei neu): «Konflikt kommunizieren», «Rechte verstehen und nutzen» und «Lehrvertrag orientieren». Eine weitere Person nennt «Ausbildung kommunizieren» passend, aber die Spreizung der Klasse sehr gross.</li>
+        <li><b>Der Einstieg wird hinterfragt.</b> Eine Lehrperson lehnt es ab, das Schuljahr mit Rechtsproblemen und Konflikten zu beginnen, und stellt einen neutralen Input voran. Das betrifft die Dramaturgie der Thema-1-Einheiten, nicht nur Niveau und Umfang.</li>
+        <li><b>EBA-Einheit «Lehrvertrag».</b> Zwei Rückmeldungen sind kritisch: zu viel Information auf dem Arbeitsblatt, Glossar schwierig, das Blatt lässt sich kaum individualisieren, der mündliche KN ist organisatorisch sehr schwierig, Nachholen bei Absenzen ebenso. Welche Fassung die beiden eingesetzt haben, ist nicht belegt; zu prüfen ist, ob die überarbeitete v4.2 das trifft. Zusätzlich hat eine Lehrperson ein eigenes, vollständiges EBA-Set zu 1.1.1 hochgeladen (Dossier, zwei KN mit Punkteraster und Lösung).</li>
+        <li><b>KN-Raster.</b> Das Punkteraster mit Maximalpunkten je Lernbereich, Lösung und Selbsteinschätzung taucht wieder auf (Ersatz fürs Plattform-Raster). Eine Person wünscht genauer ausformulierte Kriterien; ein Eintrag lässt den KN ganz weg. «Fachkorrektheit» steht weiter unter Sprache und Kommunikation.</li>
+        <li><b>Lücken im Angebot.</b> BYOD, IT und KI zum Lehrbeginn (Kompetenz 1.1.2) sowie Manipulation und Desinformation (2.1.2). Zu 2.1.2 liegt ein fast fertiges Dossier mit Lehrpersonenunterlage vor.</li>
+        <li><b>Bestätigt aus dem Oktober:</b> Der Berufsbezug der Situation wird fast immer selbst hergestellt; Wissensinput und Lesehilfen werden nachgerüstet; die Zeit liegt über dem Richtwert (3 bis 12 Lektionen genannt).</li>
+        <li><b>Upload und Eintrag stimmen nicht immer überein.</b> Bei einem Eintrag nennt das Formular Handlungsprodukt und KN-Kriterien, die hochgeladene Datei enthält sie nicht.</li>
+      </ol>
+      <h3 class="text-sm font-bold text-slate-900">Für die Entscheide oben (5)</h3>
+      <ul class="list-disc pl-5 space-y-1.5 text-sm max-w-3xl">
+        <li><b>Entscheid 1 und 2:</b> Die «zu schwer»-Stimmen und die Kritik an der EBA-Einheit sprechen dafür, die drei EBA-Entwürfe (1.1.1 v4.2, 2.1.1, 1.2.1) erst nach dieser Durchsicht freizuschalten und einen optionalen neutralen Input vor der Herausforderung zu prüfen.</li>
+        <li><b>Entscheid 4:</b> Ein Punkteraster mit Maximalpunkten und Selbsteinschätzung als Variante zum 0–3-Raster ist durch eine Abgabe belegt.</li>
+        <li><b>Zwei Einheiten prüfen:</b> BYOD/IT-KI zum Lehrbeginn und 2.1.2 Manipulation und Desinformation. Vor einer Übernahme Einverständnis der Lehrpersonen einholen und das Urheberrecht eingebetteter Artikel klären.</li>
+        <li><b>Formular:</b> Bei «eigenes Material» Hinweis, dass Handlungsprodukt und KN als Datei beizulegen sind.</li>
+      </ul>
+      <p class="text-xs text-slate-500 max-w-3xl">Grenzen: Wirkung auf die Lernenden und der tatsächliche Einsatz sind nicht belegt; mehrere Dossiers wurden nur angelesen; ein Einverständnis der Lehrpersonen zur Auswertung ist nicht geklärt. Ausführlich: lokale Datei «2026-11-10_analyse-uploads-kt1-nachtrag.md» bei Pietro.</p>
     </section>
   </div>
 </Admin>
