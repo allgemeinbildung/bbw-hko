@@ -1,0 +1,356 @@
+---
+// «Meine Abteilung» — KT1-Mitglied betreut die Lehrpersonen der eigenen Abteilung:
+//   1. Lehrperson ansprechen (Textvorschlag) und das hier vermerken — oder als «nicht
+//      erreichbar» mit Begründung (Notausgang),
+//   2. ihre Materialien und Rückmeldungen sichten (Status + Kommentar),
+//   3. Inhalte per Knopf «An KT2 weiterleiten» → landen in /admin/kt2.
+// «Weiterleiten» ist erst nach Schritt 1 freigeschaltet (Oberflächen-Regel, keine
+// Datenbank-Sperre). Zuordnung über profiles.abteilung der Lehrperson.
+import Admin from '../../layouts/Admin.astro'
+import TextMitLinks from '../../components/TextMitLinks.astro'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const sb = Astro.locals.supabase
+const { data: ich } = await sb.from('profiles').select('role, abteilung, full_name').eq('id', user.id).single()
+if (ich?.role !== 'kt1') return Astro.redirect('/')
+const ichVorname = (ich?.full_name ?? '').split(/\s+/)[0] || ''
+
+const { data: alleProfile } = await sb
+  .from('profiles').select('id, full_name, abteilung, role').not('abteilung', 'is', null)
+const echteAbteilungen = Array.from(new Set(
+  (alleProfile ?? [])
+    .map((p: any) => p.abteilung as string)
+    .filter((a) => a && !/^Abt\. \d+$/.test(a) && !a.startsWith('Extern'))
+)).sort()
+
+const gewaehlt = Astro.url.searchParams.get('abteilung') || ich?.abteilung || ''
+const lehrpersonen = (alleProfile ?? [])
+  .filter((p: any) => p.abteilung === gewaehlt && ['lp', 'kt1'].includes(p.role))
+  .filter((p: any) => !/^(admin|KT1 Admin|DLH|pikt test|lehrer@)/i.test(p.full_name ?? ''))
+  .sort((a: any, b: any) => (a.full_name ?? '').localeCompare(b.full_name ?? '', 'de'))
+const lpIds = lehrpersonen.map((p: any) => p.id)
+
+let materials: any[] = []
+let einheitFb: any[] = []
+let situFb: any[] = []
+let ansprachen: any[] = []
+if (lpIds.length > 0) {
+  const [m, e, s, a] = await Promise.all([
+    sb.from('materials').select('*').in('submitted_by', lpIds),
+    sb.from('einheit_feedbacks').select('*').in('lp_id', lpIds).neq('status', 'entwurf'),
+    sb.from('feedbacks').select('*').in('lp_id', lpIds).neq('status', 'entwurf'),
+    sb.from('lp_ansprache').select('id, lp_id, kt1_id, art, notiz, created_at').in('lp_id', lpIds).order('created_at', { ascending: false }),
+  ])
+  materials = m.data ?? []
+  einheitFb = e.data ?? []
+  situFb = s.data ?? []
+  ansprachen = a.data ?? []   // fehlt die Tabelle (Migration 025 nicht angewendet), bleibt die Liste leer
+}
+
+type Item = {
+  kind: 'material' | 'einheit' | 'situation'
+  id: string; endpoint: string; datum: string; status: string; kommentar: string
+  titel: string; art: string; meta: string; row: any
+}
+const LEHRDAUER: Record<string, string> = { 'EBA': 'EBA 2-jährig', 'EFZ-3J': 'EFZ 3-jährig', 'EFZ-4J': 'EFZ 4-jährig' }
+const itemsFor = (lpId: string): Item[] => [
+  ...materials.filter((x) => x.submitted_by === lpId).map((x): Item => ({
+    kind: 'material', id: x.id, endpoint: `/api/materials/${x.id}`, datum: x.created_at, status: x.status,
+    kommentar: x.kt1_kommentar ?? '', titel: x.titel, art: 'Eingereichtes Material',
+    meta: `${LEHRDAUER[x.lehrdauer] ?? x.lehrdauer} · LJ ${x.lehrjahr} · T${x.thema_nr}`, row: x,
+  })),
+  ...einheitFb.filter((x) => x.lp_id === lpId).map((x): Item => ({
+    kind: 'einheit', id: x.id, endpoint: `/api/einheit-feedbacks/${x.id}`, datum: x.created_at, status: x.status,
+    kommentar: x.kt1_kommentar ?? '',
+    titel: x.feedback_art === 'eigenes' ? (x.eigen_titel || 'Eigenes Material') : x.einheit_id,
+    art: x.feedback_art === 'eigenes' ? 'Eigenes Material' : x.feedback_art === 'angepasst' ? 'Angepasste Einheit' : 'Rückmeldung Einheit',
+    meta: [x.klasse, x.lehrjahr ? `${x.lehrjahr}. LJ` : ''].filter(Boolean).join(' · '), row: x,
+  })),
+  ...situFb.filter((x) => x.lp_id === lpId).map((x): Item => ({
+    kind: 'situation', id: x.id, endpoint: `/api/feedbacks/${x.id}`, datum: x.created_at, status: x.status,
+    kommentar: x.kt1_kommentar ?? '', titel: x.situation_id, art: 'Rückmeldung Situation',
+    meta: [x.klasse, x.lehrjahr ? `${x.lehrjahr}. LJ` : ''].filter(Boolean).join(' · '), row: x,
+  })),
+].sort((a, b) => (b.datum ?? '').localeCompare(a.datum ?? ''))
+
+const datum = (s: string) => (s ? new Date(s).toLocaleDateString('de-CH') : '')
+
+const textFuer = (p: any, items: Item[]) => {
+  const vorname = (p.full_name ?? '').split(/\s+/)[0]
+  const kopf = `Hallo ${vorname}\n\nIch betreue im Kernteam 1 die Abteilung ${gewaehlt} und schaue mir an, was Lehrpersonen auf bbw-hko.ch hochgeladen oder zurückgemeldet haben.`
+  const schluss = `\n\nDie Plattform findest du hier: https://bbw-hko.ch\nBei technischen Problemen hilft der Knopf «Problem melden» unten rechts.\n\nDanke dir und liebe Grüsse\n${ichVorname}`
+  if (items.length === 0) {
+    return `${kopf}\n\nVon dir ist bisher noch nichts auf der Plattform. Wenn du eine Einheit oder Herausforderung unterrichtet hast, wäre eine kurze Rückmeldung sehr hilfreich: was hat funktioniert, was nicht, wie war das Niveau? Auch eigenes oder angepasstes Material kannst du dort teilen.${schluss}`
+  }
+  const liste = items.slice(0, 5).map((i) => `· ${i.titel}`).join('\n') + (items.length > 5 ? `\n· … und ${items.length - 5} weitere` : '')
+  return `${kopf}\n\nVon dir habe ich ${items.length === 1 ? 'einen Eintrag' : `${items.length} Einträge`} gesehen, danke!\n${liste}\n\nKönntest du kurz prüfen, ob alles vollständig ist (Anhänge, Angaben zur Klasse, was funktioniert hat und was nicht)? Gute Beiträge möchten wir gern an das Team weitergeben, das den gemeinsamen Kompetenznachweis baut (KT2). Bist du damit einverstanden?${schluss}`
+}
+
+const karten = lehrpersonen.map((p: any) => {
+  const items = itemsFor(p.id)
+  const letzte = ansprachen.find((a) => a.lp_id === p.id) ?? null
+  return { p, items, letzte, text: textFuer(p, items) }
+})
+const nAngesprochen = karten.filter((k) => k.letzte).length
+const nWeitergeleitet = karten.reduce((n, k) => n + k.items.filter((i) => i.status === 'weitergeleitet_kt2').length, 0)
+const nGesamt = karten.reduce((n, k) => n + k.items.length, 0)
+---
+<Admin title="Meine Abteilung">
+  <div class="mb-5 flex flex-wrap items-end justify-between gap-3">
+    <div>
+      <h1 class="text-2xl font-semibold">Meine Abteilung{gewaehlt ? ` · ${gewaehlt}` : ''}</h1>
+      <p class="text-sm text-slate-500 mt-1 max-w-3xl">
+        Erst die Lehrperson ansprechen und hier vermerken, dann ihre Beiträge sichten und per Knopf an KT2 weiterleiten.
+        Weitergeleitetes erscheint unter <a href="/admin/kt2" class="underline">KT2-Übergabe</a>.
+      </p>
+    </div>
+    <form method="get" class="flex items-center gap-2 text-sm">
+      <label for="abteilung" class="text-slate-500">Abteilung</label>
+      <select id="abteilung" name="abteilung" class="input text-sm py-1" onchange="this.form.submit()">
+        {!gewaehlt && <option value="">— wählen —</option>}
+        {echteAbteilungen.map((a) => <option value={a} selected={a === gewaehlt}>{a}</option>)}
+      </select>
+    </form>
+  </div>
+
+  {!gewaehlt && (
+    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-900">
+      In deinem Profil ist keine Abteilung hinterlegt. Wähle oben eine Abteilung.
+    </div>
+  )}
+
+  {gewaehlt && (
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+      <div class="bg-white border border-slate-200 rounded-lg p-3"><div class="text-2xl font-semibold">{karten.length}</div><div class="text-xs text-slate-500">Lehrpersonen mit Konto</div></div>
+      <div class="bg-white border border-slate-200 rounded-lg p-3"><div class="text-2xl font-semibold">{nAngesprochen} <span class="text-sm font-normal text-slate-400">von {karten.length}</span></div><div class="text-xs text-slate-500">angesprochen oder vermerkt</div></div>
+      <div class="bg-white border border-slate-200 rounded-lg p-3"><div class="text-2xl font-semibold">{nGesamt}</div><div class="text-xs text-slate-500">Beiträge insgesamt</div></div>
+      <div class="bg-white border border-slate-200 rounded-lg p-3"><div class="text-2xl font-semibold">{nWeitergeleitet}</div><div class="text-xs text-slate-500">an KT2 weitergeleitet</div></div>
+    </div>
+  )}
+
+  <div class="space-y-6">
+    {karten.map(({ p, items, letzte, text }) => (
+      <section class="bg-white border border-slate-200 rounded-lg overflow-hidden"
+        x-data={`lpKarte(${JSON.stringify(p.id)}, ${JSON.stringify(letzte ? { art: letzte.art, notiz: letzte.notiz ?? '', created_at: letzte.created_at } : null)})`}>
+        <header class="p-4 border-b border-slate-100 flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 class="text-lg font-semibold text-slate-900">{p.full_name}</h2>
+            <div class="text-xs text-slate-500">{items.length === 0 ? 'noch nichts hochgeladen oder zurückgemeldet' : `${items.length} ${items.length === 1 ? 'Beitrag' : 'Beiträge'}`}</div>
+          </div>
+          <div class="text-sm text-right">
+            <template x-if="latest">
+              <div>
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium"
+                  :class="latest.art === 'angesprochen' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'"
+                  x-text="latest.art === 'angesprochen' ? '✓ angesprochen' : 'nicht erreichbar'"></span>
+                <span class="text-xs text-slate-400 ml-1" x-text="new Date(latest.created_at).toLocaleDateString('de-CH')"></span>
+                <div class="text-xs text-slate-500 max-w-xs" x-show="latest.notiz" x-text="latest.notiz"></div>
+              </div>
+            </template>
+            <template x-if="!latest">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">noch nicht angesprochen</span>
+            </template>
+          </div>
+        </header>
+
+        <div class="p-4 bg-slate-50 border-b border-slate-100 space-y-3">
+          <details>
+            <summary class="cursor-pointer text-sm font-medium text-slate-700">1 · Textvorschlag zum Ansprechen</summary>
+            <textarea x-ref="txt" readonly rows="11" class="input text-xs mt-2 w-full font-mono" set:text={text}></textarea>
+            <button type="button" @click="kopieren()" class="mt-1 text-xs px-2.5 py-1 rounded border border-slate-300 bg-white hover:bg-slate-50" x-text="kopiert ? '✓ kopiert' : 'Text kopieren'"></button>
+            <span class="text-xs text-slate-400 ml-2">Du schickst ihn selbst (Teams oder Mail). Die Plattform sendet nichts.</span>
+          </details>
+          <div class="flex flex-wrap items-start gap-2">
+            <button type="button" @click="vermerken('angesprochen')" :disabled="saving"
+              class="text-xs px-3 py-1.5 rounded text-white font-medium disabled:opacity-60" style="background: var(--brand)">Ich habe sie/ihn angesprochen</button>
+            <button type="button" @click="neOffen = !neOffen" :disabled="saving"
+              class="text-xs px-3 py-1.5 rounded border border-slate-300 bg-white hover:bg-slate-50">Nicht erreichbar …</button>
+            <span x-show="err" class="text-xs text-red-600 self-center" x-text="err"></span>
+          </div>
+          <div x-show="neOffen" x-collapse class="flex flex-wrap items-start gap-2">
+            <input type="text" x-model="neNotiz" maxlength="1000" placeholder="Was hast du versucht? (z. B. zwei Mails, Teams, Sitzung)" class="input text-xs flex-1 min-w-[16rem]" />
+            <button type="button" @click="vermerken('nicht_erreichbar', neNotiz)" :disabled="saving || !neNotiz.trim()"
+              class="text-xs px-3 py-1.5 rounded bg-amber-600 text-white font-medium disabled:opacity-50">Vermerken und freischalten</button>
+          </div>
+        </div>
+
+        {items.length === 0 ? (
+          <div class="p-4 text-sm text-slate-500">Nichts zu sichten. Der Textvorschlag oben bittet um eine erste Rückmeldung.</div>
+        ) : (
+          <div class="divide-y divide-slate-100">
+            {items.map((it) => (
+              <article class="p-4"
+                x-data={`beitrag(${JSON.stringify(it.endpoint)}, ${JSON.stringify(it.status)}, ${JSON.stringify(it.kommentar)})`}>
+                <div class="flex flex-wrap justify-between gap-3">
+                  <div class="min-w-0">
+                    <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500">
+                      <span class={`font-medium px-2 py-0.5 rounded-full ${it.kind === 'material' ? 'bg-slate-200 text-slate-800' : it.kind === 'einheit' ? 'bg-emerald-100 text-emerald-800' : 'bg-sky-100 text-sky-800'}`}>{it.art}</span>
+                      <span>{datum(it.datum)}</span>
+                      {it.meta && <span>· {it.meta}</span>}
+                    </div>
+                    <div class="font-medium text-slate-900 mt-0.5">{it.titel}</div>
+                    {it.kind === 'material' && it.row.kompetenzversprechen && <div class="text-xs text-slate-500 italic mt-0.5">„{it.row.kompetenzversprechen}"</div>}
+                    {it.kind !== 'material' && (it.row.tauglichkeit || it.row.qualitaet || it.row.qualitaet_situation) && (
+                      <div class="text-xs text-slate-600 mt-0.5">
+                        Tauglichkeit {it.row.tauglichkeit ?? '—'} · Qualität {it.row.qualitaet_situation ?? it.row.qualitaet ?? '—'}
+                        {it.row.qualitaet_handlungsprodukt ? ` · Handlungsprodukt ${it.row.qualitaet_handlungsprodukt}` : ''}
+                        {it.row.schwierigkeit ? ` · Schwierigkeit ${it.row.schwierigkeit}` : ''}
+                        {it.row.motivation ? ` · Motivation ${it.row.motivation}` : ''}
+                      </div>
+                    )}
+                  </div>
+                  <div class="flex flex-wrap gap-2 shrink-0 self-start">
+                    {it.kind === 'material' && Array.isArray(it.row.zusatzmaterialien) && it.row.zusatzmaterialien.map((f: any) => (
+                      <a href={`/api/materials/${it.id}/files?path=${encodeURIComponent(f.path)}`} target="_blank" class="inline-flex items-center gap-1 text-xs px-2 py-1 bg-white border border-slate-200 rounded hover:bg-slate-50 text-slate-700">📎 {f.name}</a>
+                    ))}
+                    {it.kind === 'einheit' && Array.isArray(it.row.idee_dateien) && it.row.idee_dateien.map((f: any) => (
+                      <a href={`/api/einheit-feedbacks/${it.id}/files?path=${encodeURIComponent(f.path)}`} target="_blank" class="inline-flex items-center gap-1 text-xs px-2 py-1 bg-white border border-slate-200 rounded hover:bg-slate-50 text-slate-700">📎 {f.name}</a>
+                    ))}
+                  </div>
+                </div>
+
+                <details class="mt-2 text-sm">
+                  <summary class="cursor-pointer text-xs font-semibold text-slate-600">Inhalt ansehen</summary>
+                  <div class="space-y-2 mt-2">
+                    {it.kind === 'material' && (<>
+                      {it.row.herausforderung_text && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Herausforderung</span><TextMitLinks text={it.row.herausforderung_text} class="text-slate-700" /></div>}
+                      {it.row.handlungsprodukt_beschreibung && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Handlungsprodukt ({it.row.handlungsprodukt_typ})</span><TextMitLinks text={it.row.handlungsprodukt_beschreibung} class="text-slate-700" /></div>}
+                      {it.row.kn_aufgabe && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Kompetenznachweis</span><TextMitLinks text={it.row.kn_aufgabe} class="text-slate-700" /></div>}
+                      {Array.isArray(it.row.bewertungskriterien) && it.row.bewertungskriterien.length > 0 && (
+                        <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Bewertungspositionen</span>
+                          <ul class="list-disc pl-5 text-slate-700">{it.row.bewertungskriterien.map((k: any) => <li>{k.name} <span class="text-xs text-slate-400">({k.dimension})</span></li>)}</ul></div>
+                      )}
+                    </>)}
+                    {it.kind === 'einheit' && it.row.feedback_art === 'eigenes' && (<>
+                      {it.row.eigen_handlungssituation && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Herausforderung</span><TextMitLinks text={it.row.eigen_handlungssituation} class="text-slate-700" /></div>}
+                      {it.row.eigen_handlungsprodukt && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Handlungsprodukt</span><TextMitLinks text={it.row.eigen_handlungsprodukt} class="text-slate-700" /></div>}
+                      {it.row.eigen_kn_aufgabe && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Kompetenznachweis</span><TextMitLinks text={it.row.eigen_kn_aufgabe} class="text-slate-700" /></div>}
+                      {Array.isArray(it.row.eigen_links) && it.row.eigen_links.length > 0 && (
+                        <ul class="list-disc pl-5">{it.row.eigen_links.map((l: any) => <li><a href={l.url} target="_blank" rel="noopener" class="underline text-slate-700 break-all">{l.titel || l.url}</a></li>)}</ul>
+                      )}
+                    </>)}
+                    {it.kind !== 'material' && it.row.eigene_anpassungen && <div><span class="text-xs font-semibold text-amber-800 uppercase tracking-wide">Eigene Anpassungen</span><p class="text-slate-700 whitespace-pre-wrap">{it.row.eigene_anpassungen}</p></div>}
+                    {it.kind !== 'material' && it.row.was_funktionierte && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Was funktionierte</span><p class="text-slate-700 whitespace-pre-wrap">{it.row.was_funktionierte}</p></div>}
+                    {it.kind !== 'material' && it.row.was_nicht_funktionierte && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Was nicht funktionierte</span><p class="text-slate-700 whitespace-pre-wrap">{it.row.was_nicht_funktionierte}</p></div>}
+                    {it.kind !== 'material' && it.row.aenderungsvorschlaege && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Änderungsvorschläge</span><p class="text-slate-700 whitespace-pre-wrap">{it.row.aenderungsvorschlaege}</p></div>}
+                    {it.kind !== 'material' && it.row.anmerkungen && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Anmerkungen</span><p class="text-slate-700 whitespace-pre-wrap">{it.row.anmerkungen}</p></div>}
+                  </div>
+                </details>
+
+                <div class="mt-3 flex flex-wrap items-start gap-3">
+                  <template x-if="weitergeleitet">
+                    <div class="flex items-center gap-2">
+                      <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-violet-100 text-violet-800">An KT2 weitergeleitet</span>
+                      <button type="button" @click="zuruecknehmen()" :disabled="saving" class="text-xs text-slate-400 hover:text-slate-600 underline">zurücknehmen</button>
+                    </div>
+                  </template>
+                  <template x-if="!weitergeleitet">
+                    <select x-model="status" class="input text-xs py-1 w-44">
+                      <option value="eingereicht">Eingereicht</option>
+                      <option value="gesichtet">Gesichtet</option>
+                      {it.kind === 'material' && <option value="freigegeben">Freigegeben</option>}
+                      {it.kind === 'material' && <option value="revision_noetig">Revision nötig</option>}
+                    </select>
+                  </template>
+                  <textarea x-model="kommentar" rows="2" placeholder="Kommentar…" class="input text-xs resize-none flex-1 min-w-[16rem]"></textarea>
+                  <div class="flex items-center gap-2" x-show="dirty && !weitergeleitet">
+                    <button type="button" @click="speichern()" :disabled="saving" class="text-xs px-2.5 py-1 rounded text-white font-medium disabled:opacity-60" style="background: var(--brand)" x-text="saving ? 'Speichert…' : 'Speichern'"></button>
+                    <button type="button" @click="reset()" class="text-xs text-slate-400 hover:text-slate-600 underline">Abbrechen</button>
+                  </div>
+                  <button type="button" x-show="!weitergeleitet" @click="weiterleiten()" :disabled="saving || !freigeschaltet"
+                    :title="freigeschaltet ? '' : 'Erst die Lehrperson ansprechen oder als nicht erreichbar vermerken'"
+                    class="text-xs px-3 py-1.5 rounded border font-medium disabled:opacity-40 disabled:cursor-not-allowed border-violet-300 text-violet-800 bg-violet-50 hover:bg-violet-100">
+                    An KT2 weiterleiten
+                  </button>
+                  <span x-show="saved" x-transition class="text-xs text-emerald-600 font-medium self-center">✓ Gespeichert</span>
+                  <span x-show="saveError" class="text-xs text-red-600 self-center" x-text="saveError"></span>
+                </div>
+                <p class="text-xs text-slate-400 mt-1" x-show="!freigeschaltet && !weitergeleitet">Weiterleiten ist gesperrt, bis du die Lehrperson oben als angesprochen oder nicht erreichbar vermerkt hast.</p>
+              </article>
+            ))}
+          </div>
+        )}
+      </section>
+    ))}
+  </div>
+
+  {gewaehlt && karten.length === 0 && (
+    <div class="bg-white border border-slate-200 rounded-lg p-6 text-sm text-slate-500">
+      Keine Lehrpersonen mit Konto in dieser Abteilung gefunden.
+    </div>
+  )}
+  {gewaehlt && (
+    <p class="text-xs text-slate-400 mt-6">Lehrpersonen ohne Konto oder ohne Abteilungsangabe im Profil erscheinen hier nicht.</p>
+  )}
+</Admin>
+
+<script is:inline>
+function lpKarte(lpId, latest) {
+  return {
+    lpId, latest,
+    saving: false, err: '', kopiert: false, neOffen: false, neNotiz: '',
+    get freigeschaltet() { return !!this.latest },
+    async vermerken(art, notiz) {
+      this.saving = true; this.err = ''
+      try {
+        const res = await fetch('/api/lp-ansprache', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ lp_id: this.lpId, art, notiz: notiz || '' }),
+        })
+        const body = await res.json().catch(() => ({}))
+        if (!res.ok) { this.err = body.error || 'Fehler beim Speichern.'; return }
+        this.latest = { art: body.data.art, notiz: body.data.notiz || '', created_at: body.data.created_at }
+        this.neOffen = false; this.neNotiz = ''
+      } catch (e) { this.err = 'Netzwerkfehler.' } finally { this.saving = false }
+    },
+    async kopieren() {
+      try { await navigator.clipboard.writeText(this.$refs.txt.value) }
+      catch (e) { this.$refs.txt.select(); document.execCommand('copy') }
+      this.kopiert = true; setTimeout(() => { this.kopiert = false }, 2000)
+    },
+  }
+}
+function beitrag(endpoint, initialStatus, initialKommentar) {
+  return {
+    endpoint, status: initialStatus, kommentar: initialKommentar,
+    originalStatus: initialStatus, originalKommentar: initialKommentar,
+    weitergeleitet: initialStatus === 'weitergeleitet_kt2',
+    saving: false, saved: false, saveError: '',
+    get dirty() { return this.status !== this.originalStatus || this.kommentar !== this.originalKommentar },
+    reset() { this.status = this.originalStatus; this.kommentar = this.originalKommentar },
+    async senden(payload) {
+      this.saving = true; this.saveError = ''
+      try {
+        const res = await fetch(this.endpoint, {
+          method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload),
+        })
+        if (!res.ok) {
+          const body = await res.json().catch(() => ({}))
+          this.saveError = body.error || 'Fehler beim Speichern.'
+          return false
+        }
+        this.saved = true; setTimeout(() => { this.saved = false }, 2500)
+        return true
+      } catch (e) { this.saveError = 'Netzwerkfehler.'; return false } finally { this.saving = false }
+    },
+    async speichern() {
+      if (await this.senden({ status: this.status, kt1_kommentar: this.kommentar || null })) {
+        this.originalStatus = this.status; this.originalKommentar = this.kommentar
+      }
+    },
+    async weiterleiten() {
+      if (!this.freigeschaltet) return
+      if (await this.senden({ status: 'weitergeleitet_kt2', kt1_kommentar: this.kommentar || null })) {
+        this.weitergeleitet = true; this.originalKommentar = this.kommentar
+      }
+    },
+    async zuruecknehmen() {
+      if (await this.senden({ status: 'gesichtet' })) {
+        this.weitergeleitet = false; this.status = 'gesichtet'; this.originalStatus = 'gesichtet'
+      }
+    },
+  }
+}
+</script>
