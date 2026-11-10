@@ -1,5 +1,6 @@
 ---
-// «Erfahrungen von Kolleg:innen» auf der Detailseite einer Einheit — ohne Namen.
+// «Erfahrungen von Kolleg:innen» auf der Detailseite einer Einheit.
+// Namen nur, wenn die Person zugestimmt hat; Klasse und Abteilung nie.
 // Daten aus src/lib/erfahrungen.ts (feste Spaltenliste, nur freigegebene Zeilen).
 import { BEWERTUNGEN, type ErfahrungenUebersicht } from '../../lib/erfahrungen'
 import { KOMMENTAR_FELDER } from '../../lib/feedback-kommentare'
@@ -10,7 +11,7 @@ interface Props {
   feedbackUrl: string
 }
 const { daten, feedbackUrl } = Astro.props
-const { liste, mittel, empfehlung, niveau } = daten
+const { gesamt, liste, mittel, empfehlung, niveau } = daten
 
 const monat = new Intl.DateTimeFormat('de-CH', { month: 'long', year: 'numeric' })
 const niveauLabel: Record<string, string> = { zu_leicht: 'zu leicht', passend: 'passend', zu_schwer: 'zu schwer' }
@@ -26,6 +27,11 @@ const kommentare = (e: (typeof liste)[number]): Array<[string, number | null, st
   KOMMENTAR_FELDER
     .filter((f) => e.bewertung_kommentare?.[f])
     .map((f) => [KOMMENTAR_LABEL[f] ?? f, (e[f as keyof typeof e] as number | null) ?? null, e.bewertung_kommentare![f]])
+const STELLUNG_LABEL: Record<string, string> = {
+  aufgenommen: 'Wird aufgenommen',
+  nicht_aufgenommen: 'Wird nicht aufgenommen',
+  spaeter: 'Später',
+}
 const komponenten = (e: (typeof liste)[number]) =>
   [e.genutzt_sit_a && 'A', e.genutzt_sit_b && 'B', e.genutzt_sit_c && 'C', e.genutzt_kn && 'KN'].filter(Boolean).join(' · ')
 ---
@@ -33,11 +39,13 @@ const komponenten = (e: (typeof liste)[number]) =>
   <details class="max-w-7xl mx-auto px-6 py-4 group">
     <summary class="cursor-pointer select-none flex flex-wrap items-baseline gap-x-3 gap-y-1">
       <h2 class="text-sm font-semibold text-slate-900 inline">Erfahrungen von Kolleg:innen</h2>
-      {liste.length === 0 ? (
-        <span class="text-xs text-slate-500">Noch keine Rückmeldungen freigegeben.</span>
+      {gesamt === 0 ? (
+        <span class="text-xs text-slate-500">Noch keine Rückmeldungen.</span>
       ) : (
         <span class="text-xs text-slate-500">
-          {liste.length} {liste.length === 1 ? 'Rückmeldung' : 'Rückmeldungen'}
+          {gesamt} {gesamt === 1 ? 'Rückmeldung' : 'Rückmeldungen'}
+          {liste.length === 0 && <> · noch nicht freigegeben</>}
+          {liste.length > 0 && liste.length < gesamt && <> · {liste.length} davon einsehbar</>}
           {empfehlung.n > 0 && <> · {empfehlung.ja} von {empfehlung.n} empfehlen die Einheit weiter</>}
         </span>
       )}
@@ -47,7 +55,7 @@ const komponenten = (e: (typeof liste)[number]) =>
 
     <div class="mt-4">
       <p class="text-xs text-slate-500 mb-4">
-        Ohne Namen, Klasse und Abteilung. Sichtbar ist nur, was Lehrpersonen beim Absenden freigegeben haben.
+        Sichtbar ist nur, was Lehrpersonen freigegeben haben. Ein Name erscheint nur mit Zustimmung der Person, Klasse und Abteilung nie.
         Selbst unterrichtet? <a href={feedbackUrl} class="underline">Deine Erfahrung teilen</a>.
       </p>
 
@@ -77,6 +85,7 @@ const komponenten = (e: (typeof liste)[number]) =>
               <span class={`font-medium px-2 py-0.5 rounded-full ${e.feedback_art === 'angepasst' ? 'bg-amber-100 text-amber-800' : 'bg-emerald-100 text-emerald-800'}`}>
                 {e.feedback_art === 'angepasst' ? 'Angepasst' : '1:1 übernommen'}
               </span>
+              {e.name && <span class="font-medium text-slate-700">{e.name}</span>}
               <span>{monat.format(new Date(e.created_at))}</span>
               {komponenten(e) && <span>· eingesetzt: {komponenten(e)}</span>}
               {e.kn_typ_verwendet && (
@@ -90,6 +99,12 @@ const komponenten = (e: (typeof liste)[number]) =>
             {e.bewertungspositionen_feedback && <p class="text-slate-700 whitespace-pre-wrap"><span class="font-medium">Bewertungspositionen:</span> {e.bewertungspositionen_feedback}</p>}
             {e.scaffolds_feedback && <p class="text-slate-700 whitespace-pre-wrap"><span class="font-medium">Scaffolds:</span> {e.scaffolds_feedback}</p>}
             {e.anmerkungen && <p class="text-slate-700 whitespace-pre-wrap">{e.anmerkungen}</p>}
+            {e.kt1_stellungnahme && (
+              <p class="mt-2 rounded bg-slate-50 border border-slate-200 px-2 py-1 text-slate-700">
+                <span class="font-medium">Antwort KT1: {STELLUNG_LABEL[e.kt1_stellungnahme] ?? e.kt1_stellungnahme}.</span>
+                {e.kt1_stellungnahme_text && <> {e.kt1_stellungnahme_text}</>}
+              </p>
+            )}
             {kommentare(e).length > 0 && (
               <ul class="mt-1 space-y-0.5 text-slate-700">
                 {kommentare(e).map(([label, wert, text]) => (

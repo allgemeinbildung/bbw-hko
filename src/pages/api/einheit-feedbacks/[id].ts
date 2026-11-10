@@ -62,7 +62,12 @@ const LP_FIELDS = [
   'status',
 ] as const
 
-const KT1_FIELDS = ['status', 'kt1_kommentar'] as const
+// Sichtbarkeit, Namens-Zustimmung und Stellungnahme setzt KT1 über «Meine Abteilung»
+// (nach dem Gespräch mit der Lehrperson).
+const KT1_FIELDS = [
+  'status', 'kt1_kommentar',
+  'fuer_lp_sichtbar', 'namen_freigegeben', 'kt1_stellungnahme', 'kt1_stellungnahme_text',
+] as const
 
 function pick(body: Record<string, unknown>, allowed: readonly string[]) {
   const out: Record<string, unknown> = {}
