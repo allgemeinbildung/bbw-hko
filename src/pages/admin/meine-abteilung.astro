@@ -90,7 +90,8 @@ const textFuer = (p: any, items: Item[]) => {
 
 const karten = lehrpersonen.map((p: any) => {
   const items = itemsFor(p.id)
-  const letzte = ansprachen.find((a) => a.lp_id === p.id) ?? null
+  const juengste = ansprachen.find((a) => a.lp_id === p.id) ?? null
+  const letzte = juengste && juengste.art !== 'zurueckgenommen' ? juengste : null
   return { p, items, letzte, text: textFuer(p, items) }
 })
 const nAngesprochen = karten.filter((k) => k.letzte).length
@@ -151,6 +152,7 @@ const hatErfahrung = (i: Item) => i.kind === 'einheit' && i.row.feedback_art !==
                   x-text="latest.art === 'angesprochen' ? '✓ angesprochen' : 'nicht erreichbar'"></span>
                 <span class="text-xs text-slate-400 ml-1" x-text="new Date(latest.created_at).toLocaleDateString('de-CH')"></span>
                 <div class="text-xs text-slate-500 max-w-xs" x-show="latest.notiz" x-text="latest.notiz"></div>
+                <button type="button" @click="vermerken('zurueckgenommen')" :disabled="saving" class="text-xs text-slate-400 hover:text-slate-600 underline">rückgängig</button>
               </div>
             </template>
             <template x-if="!latest">
@@ -300,7 +302,6 @@ const hatErfahrung = (i: Item) => i.kind === 'einheit' && i.row.feedback_art !==
                         <option value="nicht_aufgenommen">Wird nicht aufgenommen</option>
                         <option value="spaeter">Später</option>
                       </select>
-                      <input type="text" x-model="stellungText" maxlength="500" placeholder="Kurzer Satz dazu (erscheint bei der Einheit, sobald die Rückmeldung sichtbar ist)" class="input text-xs flex-1 min-w-[16rem]" />
                       <button type="button" @click="stellungSpeichern()" :disabled="saving || !stellungDirty" class="px-2.5 py-1 rounded border border-slate-300 bg-white hover:bg-slate-50 disabled:opacity-40">Antwort speichern</button>
                     </div>
                   </div>
@@ -339,7 +340,7 @@ function lpKarte(lpId, latest) {
         })
         const body = await res.json().catch(() => ({}))
         if (!res.ok) { this.err = body.error || 'Fehler beim Speichern.'; return }
-        this.latest = { art: body.data.art, notiz: body.data.notiz || '', created_at: body.data.created_at }
+        this.latest = body.data.art === 'zurueckgenommen' ? null : { art: body.data.art, notiz: body.data.notiz || '', created_at: body.data.created_at }
         this.neOffen = false; this.neNotiz = ''
       } catch (e) { this.err = 'Netzwerkfehler.' } finally { this.saving = false }
     },
@@ -357,7 +358,7 @@ function beitrag(endpoint, initialStatus, initialKommentar, extra) {
     sichtbar: !!extra.sichtbar, namen: !!extra.namen, zugestimmt: false,
     stellung: extra.stellung || '', stellungText: extra.stellungText || '',
     origStellung: extra.stellung || '', origStellungText: extra.stellungText || '',
-    get stellungDirty() { return this.stellung !== this.origStellung || this.stellungText !== this.origStellungText },
+    get stellungDirty() { return this.stellung !== this.origStellung },
     async sichtbarSetzen(modus) {
       const nutzlast = modus === 'mit_namen' ? { fuer_lp_sichtbar: true, namen_freigegeben: true }
         : modus === 'ohne_namen' ? { namen_freigegeben: false }
@@ -369,8 +370,8 @@ function beitrag(endpoint, initialStatus, initialKommentar, extra) {
       }
     },
     async stellungSpeichern() {
-      if (await this.senden({ kt1_stellungnahme: this.stellung || null, kt1_stellungnahme_text: this.stellungText || null })) {
-        this.origStellung = this.stellung; this.origStellungText = this.stellungText
+      if (await this.senden({ kt1_stellungnahme: this.stellung || null })) {
+        this.origStellung = this.stellung
       }
     },
     originalStatus: initialStatus, originalKommentar: initialKommentar,

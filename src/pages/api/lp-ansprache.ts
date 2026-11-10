@@ -3,7 +3,8 @@ import type { APIRoute } from 'astro'
 const json = (body: unknown, status: number) =>
   new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } })
 
-// KT1 vermerkt: Lehrperson angesprochen — oder (Notausgang) nicht erreichbar.
+// KT1 vermerkt: Lehrperson angesprochen, oder (Notausgang) nicht erreichbar, oder nimmt das zurück
+// ('zurueckgenommen' ist eine weitere Protokollzeile; massgeblich ist die jüngste).
 // Schreibt über den RLS-Client; die Datenbank lässt nur role='kt1' mit kt1_id = eigene ID zu.
 export const POST: APIRoute = async ({ locals, request }) => {
   if (!locals.user) return json({ error: 'Nicht angemeldet.' }, 401)
@@ -19,7 +20,7 @@ export const POST: APIRoute = async ({ locals, request }) => {
   const art = body.art
   const notiz = typeof body.notiz === 'string' ? body.notiz.trim().slice(0, 1000) : ''
   if (!lp_id) return json({ error: 'lp_id fehlt.' }, 400)
-  if (art !== 'angesprochen' && art !== 'nicht_erreichbar') return json({ error: 'Ungültige Art.' }, 400)
+  if (art !== 'angesprochen' && art !== 'nicht_erreichbar' && art !== 'zurueckgenommen') return json({ error: 'Ungültige Art.' }, 400)
   // Notausgang ohne Begründung wäre keiner: es muss stehen, was versucht wurde.
   if (art === 'nicht_erreichbar' && !notiz) return json({ error: 'Bitte kurz vermerken, was du versucht hast.' }, 400)
 
