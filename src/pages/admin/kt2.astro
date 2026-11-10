@@ -14,6 +14,7 @@ const [
   { data: situFb },
   { data: einheitFb },
   { data: materialFb },
+  { data: materialien },
 ] = await Promise.all([
   Astro.locals.supabase
     .from('feedbacks')
@@ -30,6 +31,12 @@ const [
     .select('*, materials(titel, kompetenz_nr)')
     .or('status.eq.weitergeleitet_kt2,freigabe_gemeinsamer_kn.eq.true')
     .order('created_at', { ascending: false }),
+  // Eingereichte Materialien, die ein KT1-Mitglied über «Meine Abteilung» weitergeleitet hat.
+  Astro.locals.supabase
+    .from('materials')
+    .select('*')
+    .eq('status', 'weitergeleitet_kt2')
+    .order('created_at', { ascending: false }),
 ])
 
 // Resolve lp names
@@ -37,21 +44,23 @@ const allLpIds = Array.from(new Set([
   ...(situFb ?? []).map((f: any) => f.lp_id),
   ...(einheitFb ?? []).map((f: any) => f.lp_id),
   ...(materialFb ?? []).map((f: any) => f.lp_id),
+  ...(materialien ?? []).map((m: any) => m.submitted_by),
 ].filter(Boolean)))
 
-let profilesById = new Map<string, { full_name: string | null }>()
+let profilesById = new Map<string, { full_name: string | null; abteilung: string | null }>()
 if (allLpIds.length > 0) {
   const { data: profs } = await Astro.locals.supabase
-    .from('profiles').select('id, full_name').in('id', allLpIds)
-  profilesById = new Map((profs ?? []).map((p: any) => [p.id, { full_name: p.full_name }]))
+    .from('profiles').select('id, full_name, abteilung').in('id', allLpIds)
+  profilesById = new Map((profs ?? []).map((p: any) => [p.id, { full_name: p.full_name, abteilung: p.abteilung }]))
 }
 
 type Row = {
   id: string
-  stream: 'Situation' | 'Einheit' | 'Material'
+  stream: 'Situation' | 'Einheit' | 'Material' | 'Eingereicht'
   ref_id: string
   ref_label: string
   lp_name: string | null
+  abteilung: string | null
   created_at: string
   status: string
   freigabe: boolean
@@ -80,6 +89,7 @@ const rows: Row[] = [
     ref_id: f.situation_id,
     ref_label: f.situation_id,
     lp_name: profilesById.get(f.lp_id)?.full_name ?? null,
+    abteilung: profilesById.get(f.lp_id)?.abteilung ?? null,
     created_at: f.created_at,
     status: f.status,
     freigabe: !!f.freigabe_gemeinsamer_kn,
@@ -101,6 +111,7 @@ const rows: Row[] = [
     ref_id: f.einheit_id,
     ref_label: f.einheit_id,
     lp_name: profilesById.get(f.lp_id)?.full_name ?? null,
+    abteilung: profilesById.get(f.lp_id)?.abteilung ?? null,
     created_at: f.created_at,
     status: f.status,
     freigabe: !!f.freigabe_gemeinsamer_kn,
@@ -122,6 +133,7 @@ const rows: Row[] = [
     ref_id: f.material_id,
     ref_label: f.materials?.kompetenz_nr ? `${f.materials.kompetenz_nr} · ${f.materials.titel ?? ''}` : f.material_id,
     lp_name: profilesById.get(f.lp_id)?.full_name ?? null,
+    abteilung: profilesById.get(f.lp_id)?.abteilung ?? null,
     created_at: f.created_at,
     status: f.status,
     freigabe: !!f.freigabe_gemeinsamer_kn,
@@ -137,12 +149,35 @@ const rows: Row[] = [
     idee_dateien: Array.isArray(f.idee_dateien) ? f.idee_dateien : [],
     endpoint: `/api/material-feedbacks/${f.id}`,
   })),
+  ...(materialien ?? []).map((m: any) => ({
+    id: m.id,
+    stream: 'Eingereicht' as const,
+    ref_id: m.id,
+    ref_label: m.titel,
+    lp_name: profilesById.get(m.submitted_by)?.full_name ?? null,
+    abteilung: profilesById.get(m.submitted_by)?.abteilung ?? null,
+    created_at: m.created_at,
+    status: m.status,
+    freigabe: false,
+    tauglichkeit: null,
+    qualitaet_situation: null,
+    qualitaet_handlungsprodukt: null,
+    niveau_passung: null,
+    kn_ergebnis: null,
+    neue_idee: false,
+    idee_typ: null,
+    idee_titel: null,
+    idee_beschreibung: null,
+    idee_dateien: [],
+    endpoint: `/api/materials/${m.id}`,
+  })),
 ].sort((a, b) => b.created_at.localeCompare(a.created_at))
 
 const streamBadge: Record<string, string> = {
   Situation: 'bg-sky-100 text-sky-800',
   Einheit: 'bg-emerald-100 text-emerald-800',
   Material: 'bg-violet-100 text-violet-800',
+  Eingereicht: 'bg-slate-200 text-slate-800',
 }
 const niveauLabel: Record<string, string> = {
   zu_leicht: 'Zu leicht', passend: 'Passend', zu_schwer: 'Zu schwer',
@@ -180,7 +215,7 @@ const niveauLabel: Record<string, string> = {
                   <span class="text-xs text-slate-400">{created}</span>
                 </div>
                 <div class="font-medium text-slate-900 truncate">{row.ref_label}</div>
-                <div class="text-xs text-slate-500">{row.lp_name ?? '—'}</div>
+                <div class="text-xs text-slate-500">{row.lp_name ?? '—'}{row.abteilung ? ` · ${row.abteilung}` : ''}</div>
               </div>
               <div class="flex flex-wrap gap-4 text-xs text-slate-600 shrink-0">
                 <div><span class="text-slate-400">Taug.</span> {row.tauglichkeit ?? '—'}</div>
