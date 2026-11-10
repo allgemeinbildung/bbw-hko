@@ -96,6 +96,9 @@ const karten = lehrpersonen.map((p: any) => {
 const nAngesprochen = karten.filter((k) => k.letzte).length
 const nWeitergeleitet = karten.reduce((n, k) => n + k.items.filter((i) => i.status === 'weitergeleitet_kt2').length, 0)
 const nGesamt = karten.reduce((n, k) => n + k.items.length, 0)
+const nUngesichtet = karten.reduce((n, k) => n + k.items.filter((i) => i.status === 'eingereicht').length, 0)
+// Einheiten-Rückmeldungen (1:1 / angepasst) erscheinen bei der Einheit; nur dort gibt es Sichtbarkeit und Antwort.
+const hatErfahrung = (i: Item) => i.kind === 'einheit' && i.row.feedback_art !== 'eigenes'
 ---
 <Admin title="Meine Abteilung">
   <div class="mb-5 flex flex-wrap items-end justify-between gap-3">
@@ -122,10 +125,11 @@ const nGesamt = karten.reduce((n, k) => n + k.items.length, 0)
   )}
 
   {gewaehlt && (
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
       <div class="bg-white border border-slate-200 rounded-lg p-3"><div class="text-2xl font-semibold">{karten.length}</div><div class="text-xs text-slate-500">Lehrpersonen mit Konto</div></div>
       <div class="bg-white border border-slate-200 rounded-lg p-3"><div class="text-2xl font-semibold">{nAngesprochen} <span class="text-sm font-normal text-slate-400">von {karten.length}</span></div><div class="text-xs text-slate-500">angesprochen oder vermerkt</div></div>
       <div class="bg-white border border-slate-200 rounded-lg p-3"><div class="text-2xl font-semibold">{nGesamt}</div><div class="text-xs text-slate-500">Beiträge insgesamt</div></div>
+      <div class="bg-white border border-slate-200 rounded-lg p-3"><div class="text-2xl font-semibold">{nUngesichtet}</div><div class="text-xs text-slate-500">noch nicht gesichtet</div></div>
       <div class="bg-white border border-slate-200 rounded-lg p-3"><div class="text-2xl font-semibold">{nWeitergeleitet}</div><div class="text-xs text-slate-500">an KT2 weitergeleitet</div></div>
     </div>
   )}
@@ -182,7 +186,12 @@ const nGesamt = karten.reduce((n, k) => n + k.items.length, 0)
           <div class="divide-y divide-slate-100">
             {items.map((it) => (
               <article class="p-4"
-                x-data={`beitrag(${JSON.stringify(it.endpoint)}, ${JSON.stringify(it.status)}, ${JSON.stringify(it.kommentar)})`}>
+                x-data={`beitrag(${JSON.stringify(it.endpoint)}, ${JSON.stringify(it.status)}, ${JSON.stringify(it.kommentar)}, ${JSON.stringify({
+                  sichtbar: !!it.row.fuer_lp_sichtbar,
+                  namen: !!it.row.namen_freigegeben,
+                  stellung: it.row.kt1_stellungnahme ?? '',
+                  stellungText: it.row.kt1_stellungnahme_text ?? '',
+                })})`}>
                 <div class="flex flex-wrap justify-between gap-3">
                   <div class="min-w-0">
                     <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500">
@@ -267,6 +276,35 @@ const nGesamt = karten.reduce((n, k) => n + k.items.length, 0)
                   <span x-show="saved" x-transition class="text-xs text-emerald-600 font-medium self-center">✓ Gespeichert</span>
                   <span x-show="saveError" class="text-xs text-red-600 self-center" x-text="saveError"></span>
                 </div>
+                {hatErfahrung(it) && (
+                  <div class="mt-3 rounded border border-slate-200 bg-slate-50 p-3 space-y-2 text-xs">
+                    <div class="font-semibold text-slate-700">Bei der Einheit sichtbar («Erfahrungen von Kolleg:innen»)</div>
+                    <div class="text-slate-600">Jetzt:
+                      <span class="font-medium" x-text="namen ? 'mit Namen sichtbar' : (sichtbar ? 'ohne Namen sichtbar' : 'nicht sichtbar')"></span>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-3">
+                      <label class="inline-flex items-center gap-1.5">
+                        <input type="checkbox" x-model="zugestimmt" /> Die Lehrperson hat zugestimmt, dass ihr Name bei dieser Rückmeldung steht
+                      </label>
+                      <button type="button" @click="sichtbarSetzen('mit_namen')" :disabled="saving || !zugestimmt || !freigeschaltet || originalStatus === 'eingereicht' || namen"
+                        class="px-2.5 py-1 rounded text-white font-medium disabled:opacity-40 disabled:cursor-not-allowed" style="background: var(--brand)">Mit Namen sichtbar machen</button>
+                      <button type="button" x-show="namen" @click="sichtbarSetzen('ohne_namen')" :disabled="saving" class="text-slate-500 underline">Namen entfernen</button>
+                      <button type="button" x-show="sichtbar || namen" @click="sichtbarSetzen('aus')" :disabled="saving" class="text-slate-500 underline">ausblenden</button>
+                    </div>
+                    <p class="text-slate-400" x-show="!freigeschaltet">Erst die Lehrperson oben ansprechen oder als nicht erreichbar vermerken.</p>
+                    <p class="text-slate-400" x-show="freigeschaltet && originalStatus === 'eingereicht'">Erst sichten: Status auf «Gesichtet» setzen und speichern.</p>
+                    <div class="flex flex-wrap items-start gap-2 pt-2 border-t border-slate-200">
+                      <select x-model="stellung" class="input text-xs py-1 w-52">
+                        <option value="">Keine Antwort von KT1</option>
+                        <option value="aufgenommen">Wird aufgenommen</option>
+                        <option value="nicht_aufgenommen">Wird nicht aufgenommen</option>
+                        <option value="spaeter">Später</option>
+                      </select>
+                      <input type="text" x-model="stellungText" maxlength="500" placeholder="Kurzer Satz dazu (erscheint bei der Einheit, sobald die Rückmeldung sichtbar ist)" class="input text-xs flex-1 min-w-[16rem]" />
+                      <button type="button" @click="stellungSpeichern()" :disabled="saving || !stellungDirty" class="px-2.5 py-1 rounded border border-slate-300 bg-white hover:bg-slate-50 disabled:opacity-40">Antwort speichern</button>
+                    </div>
+                  </div>
+                )}
                 <p class="text-xs text-slate-400 mt-1" x-show="!freigeschaltet && !weitergeleitet">Weiterleiten ist gesperrt, bis du die Lehrperson oben als angesprochen oder nicht erreichbar vermerkt hast.</p>
               </article>
             ))}
@@ -312,9 +350,29 @@ function lpKarte(lpId, latest) {
     },
   }
 }
-function beitrag(endpoint, initialStatus, initialKommentar) {
+function beitrag(endpoint, initialStatus, initialKommentar, extra) {
+  extra = extra || {}
   return {
     endpoint, status: initialStatus, kommentar: initialKommentar,
+    sichtbar: !!extra.sichtbar, namen: !!extra.namen, zugestimmt: false,
+    stellung: extra.stellung || '', stellungText: extra.stellungText || '',
+    origStellung: extra.stellung || '', origStellungText: extra.stellungText || '',
+    get stellungDirty() { return this.stellung !== this.origStellung || this.stellungText !== this.origStellungText },
+    async sichtbarSetzen(modus) {
+      const nutzlast = modus === 'mit_namen' ? { fuer_lp_sichtbar: true, namen_freigegeben: true }
+        : modus === 'ohne_namen' ? { namen_freigegeben: false }
+        : { fuer_lp_sichtbar: false, namen_freigegeben: false }
+      if (await this.senden(nutzlast)) {
+        if ('fuer_lp_sichtbar' in nutzlast) this.sichtbar = nutzlast.fuer_lp_sichtbar
+        this.namen = nutzlast.namen_freigegeben
+        if (modus === 'aus') this.zugestimmt = false
+      }
+    },
+    async stellungSpeichern() {
+      if (await this.senden({ kt1_stellungnahme: this.stellung || null, kt1_stellungnahme_text: this.stellungText || null })) {
+        this.origStellung = this.stellung; this.origStellungText = this.stellungText
+      }
+    },
     originalStatus: initialStatus, originalKommentar: initialKommentar,
     weitergeleitet: initialStatus === 'weitergeleitet_kt2',
     saving: false, saved: false, saveError: '',

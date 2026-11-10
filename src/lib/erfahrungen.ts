@@ -1,10 +1,11 @@
-// erfahrungen.ts — Rückmeldungen anderer Lehrpersonen zu einer Einheit, ohne Namen
-// (Entscheid KT 29.09.2026, Migration 022).
+// erfahrungen.ts — Rückmeldungen anderer Lehrpersonen zu einer Einheit
+// (Entscheid KT 29.09.2026, Migration 022; Namen nur mit Zustimmung seit 10.11.2026, Migration 026).
 //
 // Gelesen wird mit dem Service-Role-Client, weil RLS einer Lehrperson nur ihre
-// eigenen Zeilen zeigt. Die Anonymität hängt deshalb allein an ÖFFENTLICHE_SPALTEN:
-// kein lp_id, keine Klasse, keine Abteilung, keine Dateien, kein KT1-Kommentar.
-// Wer hier eine Spalte ergänzt, veröffentlicht sie.
+// eigenen Zeilen zeigt. Was öffentlich wird, hängt allein an OEFFENTLICHE_SPALTEN:
+// keine Klasse, keine Abteilung, keine Dateien, kein KT1-Kommentar. lp_id wird nur
+// gelesen, um den Namen aufzulösen, und nur dann, wenn namen_freigegeben = true;
+// danach wird es verworfen. Wer hier eine Spalte ergänzt, veröffentlicht sie.
 
 import { createAdminClient } from './supabase'
 
@@ -22,6 +23,9 @@ const OEFFENTLICHE_SPALTEN = [
   'eigene_anpassungen', 'anmerkungen',
   'bewertung_kommentare', 'bewertungspositionen_feedback', 'scaffolds_feedback',
 ].join(', ')
+
+// Seit Migration 026. Fehlen die Spalten noch, liest ladeErfahrungen() ohne sie weiter.
+const NEUE_SPALTEN = ['lp_id', 'namen_freigegeben', 'kt1_stellungnahme', 'kt1_stellungnahme_text'].join(', ')
 
 export interface Erfahrung {
   id: string
@@ -52,6 +56,10 @@ export interface Erfahrung {
   bewertung_kommentare: Record<string, string> | null
   bewertungspositionen_feedback: string | null
   scaffolds_feedback: string | null
+  /** Nur gesetzt, wenn die Person zugestimmt hat (namen_freigegeben). */
+  name: string | null
+  kt1_stellungnahme: 'aufgenommen' | 'nicht_aufgenommen' | 'spaeter' | null
+  kt1_stellungnahme_text: string | null
 }
 
 export const BEWERTUNGEN: Array<[keyof Erfahrung, string]> = [
@@ -64,6 +72,8 @@ export const BEWERTUNGEN: Array<[keyof Erfahrung, string]> = [
 ]
 
 export interface ErfahrungenUebersicht {
+  /** Alle eingereichten Rückmeldungen zur Einheit, auch die nicht freigegebenen. */
+  gesamt: number
   liste: Erfahrung[]
   mittel: Array<{ label: string; wert: number; n: number }>
   empfehlung: { ja: number; n: number }
@@ -72,16 +82,46 @@ export interface ErfahrungenUebersicht {
 
 export async function ladeErfahrungen(einheitId: string): Promise<ErfahrungenUebersicht | null> {
   try {
-    const { data, error } = await createAdminClient()
+    const admin = createAdminClient()
+    const abfrage = (spalten: string) => admin
       .from('einheit_feedbacks')
-      .select(OEFFENTLICHE_SPALTEN)
+      .select(spalten)
       .eq('einheit_id', einheitId)
       .eq('fuer_lp_sichtbar', true)
       .in('feedback_art', ['1zu1', 'angepasst'])
       .in('status', ['eingereicht', 'gesichtet', 'weitergeleitet_kt2'])
       .order('created_at', { ascending: false })
-    if (error) throw error
-    const liste = (data ?? []) as unknown as Erfahrung[]
+
+    let res = await abfrage(`${OEFFENTLICHE_SPALTEN}, ${NEUE_SPALTEN}`)
+    if (res.error) res = await abfrage(OEFFENTLICHE_SPALTEN) // Migration 026 noch nicht angewendet
+    if (res.error) throw res.error
+    const roh = (res.data ?? []) as unknown as Array<Erfahrung & { lp_id?: string; namen_freigegeben?: boolean }>
+
+    // Namen auflösen, nur für Zeilen mit ausdrücklicher Zustimmung.
+    const mitName = roh.filter((r) => r.namen_freigegeben && r.lp_id)
+    const namen = new Map<string, string>()
+    if (mitName.length > 0) {
+      const { data: profs } = await admin.from('profiles').select('id, full_name')
+        .in('id', Array.from(new Set(mitName.map((r) => r.lp_id as string))))
+      for (const p of profs ?? []) if ((p as any).full_name) namen.set((p as any).id, (p as any).full_name)
+    }
+    const liste: Erfahrung[] = roh.map((r) => {
+      const { lp_id, namen_freigegeben, ...rest } = r
+      return {
+        ...(rest as Erfahrung),
+        name: namen_freigegeben && lp_id ? (namen.get(lp_id) ?? null) : null,
+        kt1_stellungnahme: (rest as any).kt1_stellungnahme ?? null,
+        kt1_stellungnahme_text: (rest as any).kt1_stellungnahme_text ?? null,
+      }
+    })
+
+    const { count } = await admin
+      .from('einheit_feedbacks')
+      .select('id', { count: 'exact', head: true })
+      .eq('einheit_id', einheitId)
+      .in('feedback_art', ['1zu1', 'angepasst'])
+      .in('status', ['eingereicht', 'gesichtet', 'weitergeleitet_kt2'])
+    const gesamt = Math.max(count ?? 0, liste.length)
 
     const mittel = BEWERTUNGEN.map(([key, label]) => {
       const werte = liste.map((e) => e[key]).filter((v): v is number => typeof v === 'number')
@@ -93,6 +133,7 @@ export async function ladeErfahrungen(einheitId: string): Promise<ErfahrungenUeb
     for (const e of liste) if (e.niveau_passung && e.niveau_passung in niveau) niveau[e.niveau_passung as keyof typeof niveau]++
 
     return {
+      gesamt,
       liste,
       mittel,
       empfehlung: { ja: emp.filter((e) => e.weiterempfehlung).length, n: emp.length },
