@@ -76,8 +76,20 @@ export function pruefeVorschlag(args: {
     if (gesehen.has(e.pfad)) { verwirf(e.datei, e.pfad, 'doppelt'); continue }
     gesehen.add(e.pfad)
     let wert: unknown
-    try { wert = JSON.parse(e.wert_json) } catch { verwirf(datei, e.pfad, 'kein gültiges JSON'); continue }
+    try {
+      wert = JSON.parse(e.wert_json)
+    } catch {
+      // Echter Durchgang 14.11.2026: Das Modell schickt Text-Felder manchmal als nackten Text
+      // statt als JSON-Zeichenkette. Ist das Original ein Text, gilt der nackte Text als Wert.
+      if (typeof lesePfad(rohOriginal, e.pfad) === 'string' && typeof e.wert_json === 'string' && e.wert_json.trim()) wert = e.wert_json.trim()
+      else { verwirf(datei, e.pfad, 'kein gültiges JSON'); continue }
+    }
     if (!feldFuer(datei, e.pfad)) { verwirf(datei, e.pfad, 'nicht ersetzbar'); continue }
+    // Dossier D2: `fakten_anker` ist im Vertrag fest leer (die Belege gehören zum alten Text).
+    // Der Server setzt das selbst, statt die ganze Info-Karte zu verwerfen.
+    if (datei === 'dossier' && /^nuggets\[id=[^\]]+\]$/.test(e.pfad) && wert && typeof wert === 'object' && !Array.isArray(wert)) {
+      wert = { ...(wert as Record<string, unknown>), fakten_anker: [] }
+    }
     kandidaten.push({ pfad: e.pfad, wert, begruendung: e.begruendung })
   }
   // F14: Kommt die ganze Schrittliste (H24L/G6L), gilt sie — Einzel-Hints derselben Datei fallen weg.

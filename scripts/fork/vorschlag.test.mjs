@@ -140,14 +140,22 @@ test('eigener_text: Ersetzung unter spuren.mit_medien wird verworfen', () => {
 test('kein gültiges JSON, falsche Datei, doppelter Pfad', () => {
   const v = pruefe({
     antwort: antwort([
-      { datei: 'herausforderung_A', pfad: LF1, wert_json: '{kaputt', begruendung: '' },
-      ers(LF1, NEU_LF1),
+      // Objektfeld: kaputtes JSON bleibt verworfen (nur Textfelder dürfen nackten Text tragen).
+      { datei: 'herausforderung_A', pfad: 'persona', wert_json: '{kaputt', begruendung: '' },
+      { datei: 'herausforderung_A', pfad: 'persona', wert_json: '{"beruf":"x","betrieb":"y","ort":"z"}', begruendung: '' },
       ers('titel', 'Anderer Titel', 'herausforderung_B'),
     ]),
   })
   assert.deepEqual(v.verworfen.map((x) => x.grund), ['kein gültiges JSON', 'doppelt', 'falsche Datei (erwartet herausforderung_A)'])
   assert.equal(v.verworfen[2].datei, 'herausforderung_B')
   assert.equal(v.ersetzungen.length, 0)
+})
+
+test('Textfeld als nackter Text (statt JSON-Zeichenkette) gilt als Text', () => {
+  const v = pruefe({ antwort: antwort([{ datei: 'herausforderung_A', pfad: LF1, wert_json: NEU_LF1, begruendung: '' }]) })
+  assert.deepEqual(v.verworfen, [])
+  assert.equal(v.ersetzungen.length, 1)
+  assert.equal(v.ersetzungen[0].wert, NEU_LF1)
 })
 
 test('Bestätigung ausserhalb der Feldliste wird ignoriert; Hinweis auf 1000 Zeichen gekürzt', () => {

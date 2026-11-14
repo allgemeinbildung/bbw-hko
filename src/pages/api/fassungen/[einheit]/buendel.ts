@@ -168,7 +168,8 @@ async function verarbeite(
       // Eine Korrekturrunde (Befund 14.11.2026): Schon ein Pflichtfeld knapp über der Grenze
       // macht den ganzen Vorschlag unvollständig. Darum einmal nachfragen — nur für die
       // fehlenden Pfade, mit dem Grund des Servers. Zählt nicht als eigenes Bündel.
-      if (!vorschlag.vollstaendig && vorschlag.fehlend.length) {
+      // Bis zu zwei Runden: Im echten Durchgang blieb ein Feld nach der ersten Runde noch knapp über der Grenze.
+      for (let runde = 0; runde < 2 && !vorschlag.vollstaendig && vorschlag.fehlend.length; runde++) {
         const gruende = vorschlag.fehlend.map((p) => {
           const v = vorschlag.verworfen.find((x) => x.pfad === p)
           return `- ${p}: ${v ? v.grund : 'fehlt in der Antwort'}`
@@ -187,6 +188,7 @@ async function verarbeite(
           vorschlag = pruefe(antwort)
         } else {
           console.warn(`[fassungen] Korrekturrunde ${row.id}: ${nachfrage.fehler}`)
+          break
         }
       }
       patch = { status: vorschlag.vollstaendig ? 'vorschlag' : 'unvollstaendig', vorschlag, modell: erg.modell }
