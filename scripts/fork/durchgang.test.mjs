@@ -147,8 +147,8 @@ for (const E of EINHEITEN) {
         for (const b of buendel) {
           // 2. Anfrage: Feldliste enthält jede Pflicht, kein Personenbezug (Invariante 9).
           const text = A.key === 'eigener_text' ? EIGENER_TEXT : null
-          const { system, nutzer } = baueAnfrage({ kontext, datei: b.datei, roh: rohAktuell[b.datei], kommentare: b.kommentare, eigenerText: text, eba, pflicht: b.pflicht, glossarBegriffe: b.glossar })
-          for (const p of b.pflicht) assert.ok(nutzer.includes(`\n### ${p}\n`), `Pflicht ${p} fehlt in der Feldliste`)
+          const { system, nutzer } = baueAnfrage({ kontext, datei: b.datei, roh: rohAktuell[b.datei], rohOriginal: rohOriginal?.[b.datei], kommentare: b.kommentare, eigenerText: text, eba, pflicht: b.pflicht, glossarBegriffe: b.glossar })
+          for (const p of b.pflicht) assert.ok(nutzer.includes(`\n### ${p} (`), `Pflicht ${p} fehlt in der Feldliste`)
           for (const re of PERSONENBEZUG) assert.equal(re.test(system + nutzer), false, `Personenbezug ${re}`)
           if (A.key === 'eigener_text') assert.equal(b.pflicht.some((p) => p.startsWith('spuren.mit_medien.')), false)
 

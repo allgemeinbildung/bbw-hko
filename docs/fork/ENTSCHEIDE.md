@@ -59,6 +59,21 @@ sagt das so und verspricht nicht «nichts wird gespeichert». Ablehnungstexte
 des Modells gehen nicht an den Browser (nur eine allgemeine Meldung).
 `max_output_tokens` ist fest 32 000.
 
+**F12 · Grenzen je Feld und eine Korrekturrunde (14.11.2026, nach dem ersten
+echten Durchgang).** Mit nur «höchstens 15 % länger» überschritt das Modell bei
+grösseren Aufträgen einzelne Budgets knapp (z. B. 116 statt 115 Zeichen); jedes
+verworfene Pflichtfeld machte den ganzen Vorschlag unvollständig. Die Feldliste
+nennt darum je Feld die Grenze in Zeichen (`anfrage.ts › grenze`, dieselbe Rechnung
+wie `pruefeWert`, gemessen am Original). Bleiben Pflichtfelder offen, fragt die
+Route einmal nach — nur für diese Pfade, mit dem Grund des Servers. Die
+Nachfrage zählt nicht als eigenes Bündel für die Tagesgrenze; sie verdoppelt im
+schlechtesten Fall Laufzeit und Kosten des Bündels.
+
+**F13 · Netz: Wartezeit beim Verbindungsaufbau.** Node gibt jeder Adresse beim
+Wechsel zwischen IPv4/IPv6 nur 250 ms; im lokalen Netz liefen alle Versuche ab
+(`ETIMEDOUT`), obwohl curl die API erreichte. `openai.ts` setzt die Wartezeit auf
+2 s (nur Server).
+
 **F10 · Laufzeit.** Ein Aufruf pro Heft kann 30–90 s dauern. Die Route setzt
 die Vercel-Laufzeit auf 120 s (Astro-Adapter `maxDuration`). Reicht das im
 Plan von Pietro nicht, ist das eine Frage an Pietro (offen, siehe Übergabe).

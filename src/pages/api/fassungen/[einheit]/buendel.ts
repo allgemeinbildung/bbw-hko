@@ -141,7 +141,7 @@ async function verarbeite(
   let patch: Partial<BuendelRow>
   try {
     const { system, nutzer } = baueAnfrage({
-      kontext: c.kontext, datei, roh: c.rohAktuell[datei], kommentare: l.kommentare,
+      kontext: c.kontext, datei, roh: c.rohAktuell[datei], rohOriginal: c.rohOriginal[datei], kommentare: l.kommentare,
       eigenerText: c.text, eba: c.eba, pflicht: l.pflicht, glossarBegriffe: l.glossarBegriffe,
     })
     const erg = await frageModell({ system, nutzer })
@@ -151,11 +151,37 @@ async function verarbeite(
       art = erg.fehler
       patch = { status: 'fehler' }
     } else {
-      const vorschlag = pruefeVorschlag({
-        datei, rohOriginal: c.rohOriginal[datei], rohAktuell: c.rohAktuell[datei], antwort: erg.antwort,
+      const pruefe = (antwort: typeof erg.antwort) => pruefeVorschlag({
+        datei, rohOriginal: c.rohOriginal[datei], rohAktuell: c.rohAktuell[datei], antwort,
         kommentare: l.kommentare, eba: c.eba, buendelId: row.id, pflicht: l.pflicht, methodenRefs: methodenRefs(),
         glossarBegriffe: l.glossarBegriffe, glossarIds: l.glossarIds,
       })
+      let antwort = erg.antwort
+      let vorschlag = pruefe(antwort)
+      // Eine Korrekturrunde (Befund 14.11.2026): Schon ein Pflichtfeld knapp über der Grenze
+      // macht den ganzen Vorschlag unvollständig. Darum einmal nachfragen — nur für die
+      // fehlenden Pfade, mit dem Grund des Servers. Zählt nicht als eigenes Bündel.
+      if (!vorschlag.vollstaendig && vorschlag.fehlend.length) {
+        const gruende = vorschlag.fehlend.map((p) => {
+          const v = vorschlag.verworfen.find((x) => x.pfad === p)
+          return `- ${p}: ${v ? v.grund : 'fehlt in der Antwort'}`
+        })
+        const nachfrage = await frageModell({
+          system,
+          nutzer: `${nutzer}\n\nKORREKTUR: Diese Pflicht-Pfade sind noch nicht gültig. Senden Sie NUR diese Pfade neu — ersetzt (deutlich unter der Grenze) oder bestätigt:\n${gruende.join('\n')}`,
+        })
+        if (nachfrage.ok) {
+          const neu = new Set(vorschlag.fehlend)
+          antwort = {
+            ersetzungen: [...antwort.ersetzungen.filter((e) => !neu.has(e.pfad)), ...nachfrage.antwort.ersetzungen.filter((e) => neu.has(e.pfad))],
+            bestaetigt: [...antwort.bestaetigt, ...nachfrage.antwort.bestaetigt.filter((b) => neu.has(b.pfad))],
+            hinweis: antwort.hinweis,
+          }
+          vorschlag = pruefe(antwort)
+        } else {
+          console.warn(`[fassungen] Korrekturrunde ${row.id}: ${nachfrage.fehler}`)
+        }
+      }
       patch = { status: vorschlag.vollstaendig ? 'vorschlag' : 'unvollstaendig', vorschlag, modell: erg.modell }
     }
   } catch (e) {

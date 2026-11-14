@@ -15,6 +15,12 @@
  * `error.code` weitergegeben, nie mit `error.message` oder Request-Inhalt.
  * Kein `user`, keine `metadata`, `store: false` (Invariante 9).
  */
+import { getDefaultAutoSelectFamilyAttemptTimeout, setDefaultAutoSelectFamilyAttemptTimeout } from 'node:net'
+
+// Node probiert IPv4/IPv6 abwechselnd und gibt jeder Adresse nur 250 ms (Standard).
+// In langsameren Netzen (lokal im Schulnetz belegt, 14.11.2026) laufen alle Versuche
+// mit ETIMEDOUT ab, obwohl curl die API erreicht. 2 s pro Adresse genügen. Nur Server.
+if (getDefaultAutoSelectFamilyAttemptTimeout() < 2000) setDefaultAutoSelectFamilyAttemptTimeout(2000)
 
 const ENDPUNKT = 'https://api.openai.com/v1/responses'
 /** F10: Route laeuft hoechstens 120 s, der Aufruf bricht vorher ab. */

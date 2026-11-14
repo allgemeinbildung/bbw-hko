@@ -11,7 +11,32 @@
  */
 import type { WerkstattKontext } from '../werkstatt/kontext'
 import type { FassungsDatei } from './adresse.ts'
-import { feldFuer, AUFTRAEGE, type AuftragKey } from './positivliste.ts'
+import { feldFuer, textMax, AUFTRAEGE, type AuftragKey } from './positivliste.ts'
+import { lesePfad } from './adresse.ts'
+
+const zeichen = (s: string) => [...s].length
+function summe(v: unknown): number {
+  if (typeof v === 'string') return zeichen(v)
+  if (Array.isArray(v)) return v.reduce((a, x) => a + summe(x), 0)
+  if (v && typeof v === 'object') return Object.entries(v).reduce((a, [k, x]) => a + (k === 'ref' ? 0 : summe(x)), 0)
+  return 0
+}
+
+/**
+ * Grenze je Feld in Worten für das Modell — dieselbe Rechnung wie `pruefeWert` (§6),
+ * gemessen am Original auf der Platte. Ohne konkrete Zahl überschreitet das Modell
+ * die Budgets regelmässig, und ein verworfenes Pflichtfeld macht den ganzen Vorschlag
+ * unvollständig (Befund im ersten echten Durchgang, 14.11.2026).
+ */
+export function grenze(original: unknown): string {
+  if (typeof original === 'string') return `höchstens ${textMax(zeichen(original))} Zeichen`
+  if (Array.isArray(original) && original.every((x) => typeof x === 'string')) {
+    const laengste = Math.max(0, ...original.map((x) => zeichen(x as string)))
+    return `${original.length} Einträge, je höchstens ${textMax(laengste)} Zeichen`
+  }
+  if (Array.isArray(original)) return `${original.length} Einträge, alle Texte zusammen höchstens ${textMax(summe(original))} Zeichen`
+  return `gleiche Felder, alle Texte zusammen höchstens ${textMax(summe(original))} Zeichen`
+}
 
 export interface BuendelKommentar {
   auftrag: AuftragKey
@@ -25,6 +50,8 @@ export interface AnfrageArgs {
   datei: FassungsDatei
   /** Rohdatei mit der bisherigen Fassung angewendet. */
   roh: unknown
+  /** Rohdatei wie auf der Platte — Budgets messen dagegen (VERTRAG §6). Fehlt sie, gilt `roh`. */
+  rohOriginal?: unknown
   kommentare: BuendelKommentar[]
   eigenerText?: string | null
   eba: boolean
@@ -109,7 +136,11 @@ export function baueAnfrage(a: AnfrageArgs): { system: string; nutzer: string } 
     `- ${niveau}`,
     '- Schweizer Schreibweise: «ss» statt Eszett, echte Umlaute, Guillemets «…».',
     '- Keine Namen realer Personen, keine Daten von Lernenden.',
-    '- Gleiche Form wie das Original: gleiche Felder im Objekt, gleiche Anzahl Listeneinträge, gleiche Abstufung bei den vier Stufen eines Kriteriums. Höchstens 15 Prozent länger als das Original.',
+    '- Das Heft muss für die Lehrperson in sich stimmen: Kein Feld darf den alten Fall oder das alte Produkt noch nennen, auch nicht als Wortteil (z. B. «Karte», «Legende», «Landkarte», wenn das Produkt jetzt ein Plakat ist). Prüfen Sie jedes Feld der Feldliste darauf.',
+    '- Beim Beispielbild bleibt die Blockart (Liste, Tabelle, Text, Wechsel); der Inhalt muss aber nach dem neuen Produkt aussehen.',
+    '- Stützt sich eine Leitfrage auf den eigenen Text, sagen Sie das ausdrücklich («im Text …»). Personen aus dem Text heissen dann «die Person im Text» oder mit Namen und dem Zusatz «im Text».',
+    '- Gleiche Form wie das Original: gleiche Felder im Objekt, gleiche Anzahl Listeneinträge, gleiche Abstufung bei den vier Stufen eines Kriteriums.',
+    '- Jedes Feld der Feldliste nennt seine Grenze in Klammern («höchstens N Zeichen»). Halten Sie sie streng ein — lieber kürzer. Ein Wert über der Grenze wird verworfen, und dann fehlt das Feld im ganzen Vorschlag.',
     '- Felder, die nur die Lehrperson sieht (Lösungen, Erwartungshorizont, Lösungsbild, abschluss.loesung, loesung_zeilen), bleiben dort. Kein Lösungstext in ein Feld für Lernende.',
     '- Die fünf Schritte des Handlungsprodukts behalten ihr Label; nur der Hinweis («hint») darf sich ändern.',
     '- Methoden: ein Eintrag `methoden[ref=…]` wird ganz ersetzt; `ref` darf nur auf eine bestehende Karte zeigen, wenn Sie die Karte wechseln.',
@@ -141,7 +172,10 @@ export function baueAnfrage(a: AnfrageArgs): { system: string; nutzer: string } 
     leitfragenKontext(a.roh).join('\n') || '- keine',
     '',
     'Feldliste (Pfad und aktueller Wert; nur diese Pfade sind ersetzbar):',
-    ...felder.map((f) => `### ${f.pfad}\n${JSON.stringify(f.wert)}`),
+    ...felder.map((f) => {
+      const orig = a.rohOriginal === undefined ? f.wert : lesePfad(a.rohOriginal, f.pfad) ?? f.wert
+      return `### ${f.pfad} (${grenze(orig)})\n${JSON.stringify(f.wert)}`
+    }),
     '',
     'Kommentare der Lehrperson:',
     ...a.kommentare.map((c) => `- [${c.auftrag}] ${c.datei}:${c.pfad} — ${c.kommentar.trim()}`),
