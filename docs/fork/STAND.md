@@ -62,3 +62,10 @@ Export der echten Fassungen (`export-v42.mjs --fassung`): keine Seite läuft üb
 - Tests 176/176, Build grün.
 - Tagesgrenze griff nach 20 Testaufrufen (429) wie vorgesehen; lokal in `.env` auf 60 gesetzt. Für Vercel entscheidet Pietro.
 - Nicht von dieser Session, nicht committet: `src/components/einheiten/fork/ForkPanel.tsx` («Vorschau schliessen»).
+
+## Nachtrag 14.11.2026 (Abend) — frischer EBA-Durchgang, letzte Befunde
+
+- EBA-Testfassung auf Pietros Erlaubnis gelöscht und neu aufgebaut: Situation (Bäckerei) → Produkt (Checkliste, Schrittliste umbenannt) → eigener Text, je Heft + Dossier, über die Leiste übernommen. 53 Ersetzungen, alle angewendet, kein Überlauf, 149/149 Marken.
+- Blinde Lesung letzter Stand: EFZ und EBA je «mit kleinen Korrekturen einsetzbar»; EBA: Zahlen überall gleich, Leseblatt-Aufgaben lösbar, Info-Karten-Titel passen zu den Verweisen. Verbleibend: einzelne Wortreste («Abschnitte»), Beispiel-Checkliste zu nah an der Lösung, Glossar-Feinheiten — Sache der Vorschau pro Block.
+- Behoben auf dem Weg (Commits `94c7ec8` … `061c27a`): Dossier läuft NACH dem Heft mit angepasstem Heft als Lesekontext; Dossier-Regeln (Leseblatt nur aus Info-Karten, Titel passend, eigener Text in A-01) — eine frühere Ersetzung dieser Regeln griff nicht und ist jetzt belegt in der Anfrage; `datei`-Angabe des Modells nicht mehr massgeblich; Zeitgrenze pro Aufruf 140 s; Vokabeln als Begriff → Glossar-ID; feste Felder der Sprachkarte stellt der Server wieder her; Info-Karten höchstens Original + 15 %; H36 (Quer-Check) beim Produktwechsel erlaubt; Leiste springt nach dem Speichern zum nächsten offenen Vorschlag.
+- Bekannt: Ein Bündel, dessen Aufruf durch ein Neuladen des Dev-Servers unterbrochen wird, bleibt auf «offen» stehen (nur lokal beim Entwickeln; auf Vercel gibt es kein Neuladen). Tests 177/177, Build grün, Original dateigleich.
