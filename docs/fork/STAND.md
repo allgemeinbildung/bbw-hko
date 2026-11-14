@@ -53,3 +53,12 @@ Export der echten Fassungen (`export-v42.mjs --fassung`): keine Seite läuft üb
 - **Word-Vermerk** steht in der Kopfzeile (`docx-*.ts` im Zaun). **Deck-Link** zeigt das Original. **Auftragsbogen-Titel (G1)** ohne Marke. **Entscheid ohne Transaktion.**
 - Echte Word-/PDF-Dateien beim eigenen Text und `unpdf` auf Vercel sind nicht getestet (nur eingefügter Text).
 - Die Testfassungen beider Gold-Einheiten stehen in deinem Konto; «Fassung löschen» in der Leiste entfernt sie.
+
+## Nachtrag 14.11.2026 — F14/F15 mit echtem Modell
+
+- `d3ff307`: Schrittliste H24L/G6L beim Produktwechsel, EBA-Dossier zieht bei Situation/Produkt mit (Entscheide Pietro).
+- `9568fa1`: Nackter Text in Textfeldern gilt als Text; `fakten_anker` der Info-Karten setzt der Server leer; bis zu zwei Korrekturrunden.
+- Echter Durchgang: EFZ Produktwechsel → Schritte «01 Plakat gliedern» … «05 Vortrag prüfen», vollständig, übernommen. EBA Situation (Bäckerei) → Heft 9 Ersetzungen + Dossier 8 Ersetzungen, beide vollständig, übernommen.
+- Tests 176/176, Build grün.
+- Tagesgrenze griff nach 20 Testaufrufen (429) wie vorgesehen; lokal in `.env` auf 60 gesetzt. Für Vercel entscheidet Pietro.
+- Nicht von dieser Session, nicht committet: `src/components/einheiten/fork/ForkPanel.tsx` («Vorschau schliessen»).
