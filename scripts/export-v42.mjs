@@ -4,8 +4,12 @@
 // Lösungen, Kompetenznachweis (kn-s_<form>, kn-lp), bei EBA Dossier und Leseblatt —, dazu den
 // Begleiter als `begleiter.docx`.
 //
-//   node scripts/export-v42.mjs <slug> [--out <dir>]
+//   node scripts/export-v42.mjs <slug> [--out <dir>] [--fassung <json-datei>]
 //   node scripts/export-v42.mjs 1.3.1_konsum_verantworten_v42 --out C:/temp/v42
+//
+// Fork-Pilot: `--fassung` liest `{ ersetzungen, nur_spur }` (VERTRAG §2) und exportiert
+// die eigene Fassung wie ihr ZIP — Vermerk in Fusszeile (HTML) bzw. Kopfzeile (Word),
+// dazu HINWEIS-FASSUNG.txt. Ohne die Option ist die Ausgabe unverändert.
 //
 // Default für --out: <os.tmpdir()>/bbw-hko-v42/<slug>. Welche Dokumente es gibt,
 // entscheidet allein src/lib/einheiten/v42-dokumente.tsx. Prüfen danach mit
@@ -20,12 +24,14 @@ import { createElement } from 'react'
 
 const argv = process.argv.slice(2)
 const outIdx = argv.indexOf('--out')
-const slug = argv.find((a, i) => !a.startsWith('--') && i !== outIdx + 1)
-if (!slug || (outIdx > -1 && !argv[outIdx + 1])) {
-  console.error('usage: node scripts/export-v42.mjs <slug> [--out <dir>]')
+const faIdx = argv.indexOf('--fassung')
+const slug = argv.find((a, i) => !a.startsWith('--') && i !== outIdx + 1 && (faIdx < 0 || i !== faIdx + 1))
+if (!slug || (outIdx > -1 && !argv[outIdx + 1]) || (faIdx > -1 && !argv[faIdx + 1])) {
+  console.error('usage: node scripts/export-v42.mjs <slug> [--out <dir>] [--fassung <json-datei>]')
   process.exit(2)
 }
 const OUT = outIdx > -1 ? resolve(argv[outIdx + 1]) : join(tmpdir(), 'bbw-hko-v42', slug)
+const fassung = faIdx > -1 ? JSON.parse(readFileSync(resolve(argv[faIdx + 1]), 'utf8')) : null
 
 // Wie die Workbench: Logo als data-URI (im entpackten ZIP gibt es keinen Server)
 // und als Bytes für den Word-Kopf; Schriften eingebettet aus derselben Datei, die
@@ -47,13 +53,28 @@ try {
   const { Packer } = await server.ssrLoadModule('docx')
   const { buildBegleiterBuffer } = await server.ssrLoadModule('/src/lib/einheiten/begleiter-builder.ts')
 
-  const roh = loadEinheit(slug)
+  let roh, fork = null
+  if (fassung) {
+    const { fassungPruefer } = await server.ssrLoadModule('/src/lib/fork/seite.ts')
+    const { warnungen } = await server.ssrLoadModule('/src/lib/fork/positivliste.ts')
+    const { VERMERK } = await server.ssrLoadModule('/src/lib/fork/typen.ts')
+    const { VERMERK_CSS, abteilungMitVermerk } = await server.ssrLoadModule('/src/components/einheiten/fork/fork-hilfe.ts')
+    fork = { VERMERK, VERMERK_CSS, abteilungMitVermerk, warnungen: warnungen(fassung.ersetzungen ?? []).filter((w) => w.code !== 'fusszeile').map((w) => w.text) }
+    roh = loadEinheit(slug, { fassung: { ersetzungen: fassung.ersetzungen ?? [], ...(fassung.nur_spur ? { nur_spur: fassung.nur_spur } : {}) }, fassungPruefer })
+    const b = roh?.fassung_bericht
+    if (b) console.error(`Fassung: angewendet ${b.angewendet}, veraltet ${b.veraltet.length}, verworfen ${b.verworfen.length}`)
+  } else roh = loadEinheit(slug)
   if (!roh) throw new Error(`Einheit «${slug}» nicht im Index`)
   // Wie [setKey].astro: Kompetenz-Klartexte vor dem Rendern auflösen.
   const d = enrichKompetenzen(roh)
-  const cssRenderer = cssFuerEinheit(cssRendererBasis, d)
+  // Fassung wie im ZIP der Workbench: Vermerk an der HTML-Fusszeile, im Word in der Kopfzeile.
+  const cssRenderer = cssFuerEinheit(cssRendererBasis, d) + (fork ? fork.VERMERK_CSS : '')
 
   const dokumente = v42Dokumente(d, { logoPng: new Uint8Array(logoBytes) })
+  if (fork) {
+    const word = v42Dokumente(d, { logoPng: new Uint8Array(logoBytes), abteilung: fork.abteilungMitVermerk('') })
+    dokumente.forEach((x, i) => { x.docx = word[i].docx })
+  }
   if (d.hf_A?.lehrgang === 'EBA_2J' && d.dossier) {
     const { DocEbaDossier } = await server.ssrLoadModule('/src/components/einheiten/docs/DocEbaDossier.tsx')
     const { DocLeseblatt } = await server.ssrLoadModule('/src/components/einheiten/docs/DocLeseblatt.tsx')
@@ -110,6 +131,11 @@ try {
     const begleiterPfad = join(OUT, 'begleiter.docx')
     writeFileSync(begleiterPfad, await buildBegleiterBuffer(d.begleiter.raw, new Uint8Array(logoBytes)))
     geschrieben.push(begleiterPfad)
+  }
+  if (fork) {
+    const hinweis = join(OUT, 'HINWEIS-FASSUNG.txt')
+    writeFileSync(hinweis, [fork.VERMERK, '', ...fork.warnungen.map((w) => `- ${w}`)].join('\n') + '\n', 'utf8')
+    geschrieben.push(hinweis)
   }
 } finally {
   await server.close()

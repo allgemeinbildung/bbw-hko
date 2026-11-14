@@ -216,11 +216,11 @@ Pflicht-Abhängigkeit, die im Heft vorhanden ist, muss in der Antwort
 
 ### `handlungsprodukt_aendern`
 - Ziel: H22/H23 (Heft) oder G5 `auftrag` / G9 (Auftragsbogen).
-- Erlaubt im Heft: H11, H13, H21–H33, H37. Im Auftragsbogen: G5–G10.
+- Erlaubt im Heft: H11, H13, H20–H33, H37. Im Auftragsbogen: G5–G10.
 - Pflicht (Heft): H22, H23, H24 für **alle** Schritte, H26, H27 (falls
   vorhanden), H28, H29, H30 für **alle** Kriterien, H31 (und H32 bei EBA) für
   alle Kriterien, H33 für jede Methode ausser `__spur__`, H37, H11 und H13 jeder
-  Leitfrage, H21. (Auftragsbogen): G6 für alle Schritte, G7, G9, G10.
+  Leitfrage, H20 (wirksam im Heft, überschreibt H21 `scaffold_90`), H21. (Auftragsbogen): G6 für alle Schritte, G7, G9, G10.
 - Die vier Stufen behalten ihre Abstufung; nur Begriffe und Produkt werden
   angepasst.
 

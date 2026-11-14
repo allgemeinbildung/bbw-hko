@@ -211,7 +211,7 @@ const ERLAUBT: Record<AuftragKey, string[]> = {
   leitfrage_umformulieren: ['H10', 'H11', 'H13', 'H15', 'G5'],
   eigener_text: [...bereich('H', 8, 19), ...bereich('H', 34, 36), ...bereich('D', 1, 8)],
   situation_umformulieren: [...bereich('H', 1, 7), ...bereich('H', 9, 14), ...bereich('H', 17, 21), 'H24', 'H26', 'H28', 'H29', 'H30', ...bereich('H', 34, 37), ...bereich('G', 1, 13)],
-  handlungsprodukt_aendern: ['H11', 'H13', ...bereich('H', 21, 33), 'H37', ...bereich('G', 5, 10)],
+  handlungsprodukt_aendern: ['H11', 'H13', 'H20', ...bereich('H', 21, 33), 'H37', ...bereich('G', 5, 10)],
 }
 const ZIEL: Record<AuftragKey, (f: Feld) => boolean> = {
   leitfrage_umformulieren: (f) => f.nr === 'H10' || f.muster === `${GA}.leitfrage`,
@@ -242,7 +242,7 @@ const PFLICHT: Record<AuftragKey, { heft: string[]; set: string[] }> = {
   leitfrage_umformulieren: { heft: [], set: [] },
   eigener_text: { heft: ['H8', 'H36'], set: [] },
   situation_umformulieren: { heft: ['H2', 'H3', 'H4', 'H5', 'H6', 'H7', 'H9', 'H14', 'H19', 'H28', 'H29', 'H36'], set: ['G2', 'G3', 'G4', 'G5', 'G11', 'G13'] },
-  handlungsprodukt_aendern: { heft: ['H22', 'H23', 'H24', 'H26', 'H27', 'H28', 'H29', 'H30', 'H31', 'H32', 'H33', 'H37', 'H11', 'H13', 'H21'], set: ['G6', 'G7', 'G9', 'G10'] },
+  handlungsprodukt_aendern: { heft: ['H22', 'H23', 'H24', 'H26', 'H27', 'H28', 'H29', 'H30', 'H31', 'H32', 'H33', 'H37', 'H11', 'H13', 'H20', 'H21'], set: ['G6', 'G7', 'G9', 'G10'] },
 }
 function pfadeZu(nrs: string[], art: Feld['datei'], roh: unknown, eba: boolean): string[] {
   return FELDER.filter((f) => f.datei === art && nrs.includes(f.nr) && (eba || !f.nurEba)).flatMap((f) => konkretePfade(f.muster, roh))
