@@ -166,6 +166,18 @@ export function baueAnfrage(a: AnfrageArgs): { system: string; nutzer: string } 
     '',
     'Aufträge in diesem Bündel:',
     liste(auftraege.map((x) => `${x}: ${AUFTRAEGE[x]?.beschreibung ?? ''}`)),
+    ...(a.datei === 'dossier'
+      ? [
+          '',
+          'Regeln für das Dossier (echter Durchgang 14.11.2026):',
+          '- Das Dossier gehört zum Heft unter «Heft (Lesekontext)». Info-Karten, Sprachkarte und Glossar sprechen von genau dieser Situation, diesem Produkt und diesen Zahlen. Zahlen wörtlich wie im Heft.',
+          '- Die Titel der Info-Karten müssen zu den Verweisen im Heft passen (quellen_anker, knoten_ref «Info-Karte A-01» usw.): Jede Info-Karte liefert, was die Leitfrage verlangt, die auf sie verweist.',
+          '- Die Sprachkarte (sprachmodi_scaffolds) nennt dieselben Schritte wie das Handlungsprodukt im Heft.',
+          '- Das Leseblatt besteht aus den Texten der Info-Karten (zuerst A, dann B). Jede Richtig-falsch-Aussage und jede W-Frage muss allein aus diesen Info-Karten-Texten lösbar sein — nie aus dem eigenen Text oder dem Heft.',
+          '- Mit eigenem Text: Die Info-Karte, auf die Leitfrage 1 verweist (meist A-01), gibt den eigenen Text in A2 wieder — mit denselben Angaben und Zahlen. So sind Leseblatt-Aufgaben zum eigenen Text aus dem Lesetext lösbar.',
+          '- Übernehmen Sie die Wörter des Hefts (z. B. «Angaben» statt «Abschnitte», wenn das Heft so spricht). Glossar-Einträge, die im Heft und in den Info-Karten nicht vorkommen, ersetzen Sie durch Wörter, die dort vorkommen.',
+        ]
+      : []),
   ].filter((z) => z !== '').join('\n')
 
   const felder = feldauszug(a.datei, a.roh)
