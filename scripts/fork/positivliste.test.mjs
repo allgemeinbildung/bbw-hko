@@ -188,7 +188,9 @@ test('Budgets und Form', () => {
   const nug = kopie(D.nuggets[0])
   nug.fakten_anker = []; nug.inhalt = 'Ein eigener, kurzer Text.'
   assert.equal(pruefeWert('dossier', 'nuggets[id=nugget_A_01]', D.nuggets[0], nug, ctx), null)
-  assert.match(pruefeWert('dossier', 'nuggets[id=nugget_A_01]', D.nuggets[0], { ...nug, inhalt: 'a'.repeat(701) }, ctx), /700/)
+  // Neu: Originallänge + 15 %, höchstens 700 (Leseblatt setzt die Texte zusammen).
+  assert.match(pruefeWert('dossier', 'nuggets[id=nugget_A_01]', D.nuggets[0], { ...nug, inhalt: 'a'.repeat(701) }, ctx), /zu lang/)
+  assert.equal(pruefeWert('dossier', 'nuggets[id=nugget_A_01]', D.nuggets[0], { ...nug, inhalt: 'a'.repeat(Math.ceil(D.nuggets[0].inhalt.length * 1.15) + 1) }, ctx)?.startsWith('Info-Karte zu lang'), true)
   assert.match(pruefeWert('dossier', 'nuggets[id=nugget_A_01]', D.nuggets[0], { ...nug, fakten_anker: D.nuggets[0].fakten_anker }, ctx), /fakten_anker/)
   assert.match(pruefeWert('dossier', 'nuggets[id=nugget_A_01]', D.nuggets[0], { ...nug, tag: 'B' }, ctx), /tag/)
   const ids = D.glossar.map((g) => g.id)

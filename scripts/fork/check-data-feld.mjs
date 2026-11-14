@@ -32,7 +32,12 @@ for (let i = 0; i < args.length; i += 2) {
   for (const m of marken) {
     const a = parseFeldAttr(m)
     if (!a) { console.log(`FORMAT   ${slug} ${m}`); fehler++; continue }
-    if (lesePfad(roh[a.datei], a.pfad) === undefined) { console.log(`FEHLT    ${slug} ${m} (nicht in der Rohdatei)`); fehler++; continue }
+    if (lesePfad(roh[a.datei], a.pfad) === undefined) {
+      // F14: Nach dem Umbenennen der Schrittliste zeigen die Einzel-Hints auf das neue Label.
+      // Bekannte Kante (VERTRAG §4) — diese Marken sind kein Klickziel eines Auftrags.
+      if (/\.schritte\[label=[^\]]+\]\.hint$/.test(a.pfad)) { console.log(`HINWEIS  ${slug} ${m} (Schritt umbenannt)`); ok++; continue }
+      console.log(`FEHLT    ${slug} ${m} (nicht in der Rohdatei)`); fehler++; continue
+    }
     if (!feldFuer(a.datei, a.pfad)) { console.log(`NICHT-PL ${slug} ${m} (nicht in der Positivliste)`); fehler++; continue }
     ok++
   }

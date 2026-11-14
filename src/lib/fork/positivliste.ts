@@ -419,7 +419,11 @@ function spezial(s: Spezial, o: unknown, n: unknown, ctx: PruefKontext): string 
   if (s === 'nugget') {
     const nug = n as { inhalt: string; fakten_anker: unknown[] }
     if (nug.fakten_anker.length) return '`fakten_anker` muss leer sein'
-    return zeichen(nug.inhalt) > 700 ? `Info-Karte zu lang: ${zeichen(nug.inhalt)} Zeichen, erlaubt 700` : null
+    // Das Leseblatt setzt die Texte der Info-Karten zusammen (S. 1 hat nur Platz für zwei
+    // Absätze): darum gilt die Originallänge + 15 %, höchstens 700 (echter Durchgang 14.11.2026).
+    const altLen = zeichen(String((o as { inhalt?: unknown })?.inhalt ?? ''))
+    const max = Math.min(700, altLen ? textMax(altLen) : 700)
+    return zeichen(nug.inhalt) > max ? `Info-Karte zu lang: ${zeichen(nug.inhalt)} Zeichen, erlaubt ${max}` : null
   }
   if (s === 'schrittnummern') {
     const nummer = (x: unknown) => String((x as { label?: unknown })?.label ?? '').trim().split(/\s/)[0]
