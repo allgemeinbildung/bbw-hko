@@ -95,7 +95,23 @@ export function pruefeVorschlag(args: {
     if (datei === 'dossier' && /^nuggets\[id=[^\]]+\]$/.test(e.pfad) && wert && typeof wert === 'object' && !Array.isArray(wert)) {
       wert = { ...(wert as Record<string, unknown>), fakten_anker: [] }
     }
+    // Dossier D3: feste Teilfelder der Sprachkarte stellt der Server wieder her, statt die
+    // ganze Karte zu verwerfen (echter Durchgang 14.11.2026).
+    if (datei === 'dossier' && /^sprachmodi_scaffolds\[tag=[^\]]+\]$/.test(e.pfad) && wert && typeof wert === 'object' && !Array.isArray(wert)) {
+      const alt = lesePfad(rohAktuell, e.pfad) as Record<string, unknown> | undefined
+      if (alt) wert = { ...(wert as Record<string, unknown>), tag: alt.tag, sm_id: alt.sm_id, modus_label: alt.modus_label, strategien: alt.strategien }
+    }
     kandidaten.push({ pfad: e.pfad, wert, begruendung: e.begruendung })
+  }
+  // Dossier D8: Vokabeln sind Glossar-IDs. Das Modell nennt oft den Begriff — der Server bildet
+  // ihn auf die ID ab, und zwar im Glossar dieser Antwort, falls es ersetzt wird, sonst im aktuellen.
+  const neuesGlossar = kandidaten.find((k) => k.pfad === 'glossar')?.wert as { id?: string; begriff?: string }[] | undefined
+  const glossarJetzt = (Array.isArray(neuesGlossar) ? neuesGlossar : ((rohAktuell as { glossar?: { id?: string; begriff?: string }[] })?.glossar ?? []))
+  const vok = kandidaten.find((k) => k.pfad === 'leseblatt.vokabeln')
+  if (datei === 'dossier' && vok && Array.isArray(vok.wert)) {
+    const ids = new Set(glossarJetzt.map((g) => g.id))
+    const nachBegriff = new Map(glossarJetzt.map((g) => [String(g.begriff ?? '').toLowerCase().trim(), g.id]))
+    vok.wert = (vok.wert as unknown[]).map((x) => (typeof x === 'string' && !ids.has(x) && nachBegriff.get(x.toLowerCase().trim())) || x)
   }
   // F14: Kommt die ganze Schrittliste (H24L/G6L), gilt sie — Einzel-Hints derselben Datei fallen weg.
   //      Sonst adressierten sie nach einem Label-Wechsel ein Label, das es nicht mehr gibt (§1 Reihenfolge).
@@ -117,7 +133,8 @@ export function pruefeVorschlag(args: {
   const ctx: PruefKontext = {
     methodenRefs: args.methodenRefs,
     glossarBegriffe: args.glossarBegriffe,
-    glossarIds: args.glossarIds,
+    // D8 prüft gegen das Glossar NACH der Ersetzung (Vertrag) — also das dieser Antwort, falls vorhanden.
+    glossarIds: Array.isArray(neuesGlossar) ? neuesGlossar.map((g) => g?.id).filter((x): x is string => typeof x === 'string') : args.glossarIds,
     lpTexte: [...new Set([...lpTexte(datei, rohOriginal), ...lpTexte(datei, vorschlagRoh)])],
   }
 
