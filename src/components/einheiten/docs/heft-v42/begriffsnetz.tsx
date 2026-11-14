@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
 import type { SituationJson } from '../../../../lib/einheiten/types'
+import { fm } from '../../../../lib/fork/feld'
 
 /**
  * Heft v4.2, Seite 8 — Begriffsnetz, Glossar des Hefts und Checkliste in zwei Spalten
@@ -92,8 +93,8 @@ export function Begriffsnetz({ sit }: { sit: SituationJson }) {
   const { aeste, transfer } = netzAeste(sit)
   const ecken = ['v42-bn-titel-ol', 'v42-bn-titel-or', 'v42-bn-titel-ul']
   return (
-    <div className="v42-bn">
-      <div className="v42-bn-zentrum" style={pos(NETZ_MM.breite / 2, MITTE_Y)}>{sit.mindmap_zentrum}</div>
+    <div className="v42-bn" {...fm(sit, 'mindmap_aeste')}>
+      <div className="v42-bn-zentrum" style={pos(NETZ_MM.breite / 2, MITTE_Y)} {...fm(sit, 'mindmap_zentrum')}>{sit.mindmap_zentrum}</div>
       {aeste.map((ast, a) => {
         const punkte = (ast.punkte || []).slice(0, 5)
         return [
@@ -147,7 +148,7 @@ export function ChecklisteZweispaltig({ sit }: { sit: SituationJson }) {
   const raster = sit.bewertungsraster || []
   if (!raster.length) return null
   return (
-    <section className="v42-bn-check">
+    <section className="v42-bn-check" {...fm(sit, 'bewertungsraster')}>
       <div className="v42-kasten-label">Checkliste Vollständigkeit</div>
       <div className="v42-bn-check-raster">
         {raster.map((b, i) => (

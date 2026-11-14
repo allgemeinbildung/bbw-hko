@@ -1,0 +1,137 @@
+/**
+ * Fork-Pilot «Meine Fassung» — Prüfung einer Modellantwort (VERTRAG §4, §6, §7 letzter
+ * Absatz; ENTSCHEIDE F7). Der Server parst `wert_json`, prüft Pfad gegen die
+ * Positivliste und den Auftrag, Form und Budget, setzt `original_hash` selbst und
+ * verwirft alles andere mit Grund.
+ *
+ * Reine Funktion: kein Netz, kein Dateisystem. Was ersetzbar ist, entscheidet allein
+ * `positivliste.ts` (Invariante 4); hier wird nur zusammengeführt.
+ */
+import { lesePfad, setzePfad, kanonisch, wertHash, type FassungsDatei } from './adresse.ts'
+import { feldFuer, erlaubtFuerAuftrag, pruefeWert, lpTexte, type AuftragKey, type PruefKontext } from './positivliste.ts'
+import type { ModellAntwort } from './openai.ts'
+import type { KommentarEingabe, Vorschlag, VorschlagErsetzung } from './typen.ts'
+
+const HINWEIS_MAX = 1000
+
+/** Nummer der Leitfrage aus einem Pfad wie `spuren.ohne_medien.leitfragen[nr=3].text`. */
+function leitfrageNr(pfad: string): number | null {
+  const m = /leitfragen\[nr=(\d+)\]/.exec(pfad)
+  return m ? Number(m[1]) : null
+}
+
+/** Aufträge der Kommentare in der Reihenfolge ihres ersten Auftretens, je mit den Ziel-Leitfragen (§4 «derselben Leitfrage»). */
+function auftraegeAus(kommentare: KommentarEingabe[]): { auftrag: AuftragKey; zielLeitfragen: number[] }[] {
+  const liste: { auftrag: AuftragKey; zielLeitfragen: number[] }[] = []
+  for (const k of kommentare) {
+    let eintrag = liste.find((x) => x.auftrag === k.auftrag)
+    if (!eintrag) { eintrag = { auftrag: k.auftrag, zielLeitfragen: [] }; liste.push(eintrag) }
+    const n = leitfrageNr(k.pfad)
+    if (n !== null && !eintrag.zielLeitfragen.includes(n)) eintrag.zielLeitfragen.push(n)
+  }
+  return liste
+}
+
+function kopie<T>(v: T): T {
+  return v === undefined ? v : (JSON.parse(JSON.stringify(v)) as T)
+}
+
+const kuerze = (s: string, max: number): string => {
+  const z = [...s]
+  return z.length > max ? z.slice(0, max).join('') : s
+}
+
+/** Prüft die Antwort des Modells für genau eine Datei eines Bündels. */
+export function pruefeVorschlag(args: {
+  datei: FassungsDatei
+  /** Rohdatei wie auf der Platte — Hash und Budget messen dagegen. */
+  rohOriginal: unknown
+  /** Rohdatei mit der bisherigen Fassung — das hat das Modell gesehen. */
+  rohAktuell: unknown
+  antwort: ModellAntwort
+  kommentare: KommentarEingabe[]
+  eba: boolean
+  buendelId: string
+  /** positivliste.pflichtPfade(...) für dieses Bündel. */
+  pflicht: string[]
+  methodenRefs: Set<string>
+  glossarBegriffe?: string[]
+  glossarIds?: string[]
+}): Vorschlag {
+  const { datei, rohOriginal, rohAktuell, antwort } = args
+  const auftraege = auftraegeAus(args.kommentare)
+  const ersetzungen: VorschlagErsetzung[] = []
+  const bestaetigt: Vorschlag['bestaetigt'] = []
+  const verworfen: Vorschlag['verworfen'] = []
+  const verwirf = (d: string, pfad: string, grund: string) => verworfen.push({ datei: d, pfad, grund })
+  const bestaetige = (pfad: string, begruendung: string) => {
+    if (!bestaetigt.some((b) => b.pfad === pfad)) bestaetigt.push({ pfad, begruendung })
+  }
+
+  // 1. Parsen, Datei und Positivliste; doppelte Pfade (nur die erste gilt).
+  const gesehen = new Set<string>()
+  const kandidaten: { pfad: string; wert: unknown; begruendung: string }[] = []
+  for (const e of antwort.ersetzungen) {
+    if (e.datei !== datei) { verwirf(e.datei, e.pfad, `falsche Datei (erwartet ${datei})`); continue }
+    if (gesehen.has(e.pfad)) { verwirf(e.datei, e.pfad, 'doppelt'); continue }
+    gesehen.add(e.pfad)
+    let wert: unknown
+    try { wert = JSON.parse(e.wert_json) } catch { verwirf(datei, e.pfad, 'kein gültiges JSON'); continue }
+    if (!feldFuer(datei, e.pfad)) { verwirf(datei, e.pfad, 'nicht ersetzbar'); continue }
+    kandidaten.push({ pfad: e.pfad, wert, begruendung: e.begruendung })
+  }
+
+  // 2. LP-Texte desselben Hefts, Original und Vorschlag (§6, Invariante 6). Der Vorschlag
+  //    ist die bisherige Fassung mit allen LP-Feldern dieser Antwort — strenger ist sicherer.
+  const vorschlagRoh = kopie(rohAktuell)
+  for (const k of kandidaten) {
+    const feld = feldFuer(datei, k.pfad)!
+    if (feld.lp || feld.lpTeile) setzePfad(vorschlagRoh, k.pfad, kopie(k.wert))
+  }
+  const ctx: PruefKontext = {
+    methodenRefs: args.methodenRefs,
+    glossarBegriffe: args.glossarBegriffe,
+    glossarIds: args.glossarIds,
+    lpTexte: [...new Set([...lpTexte(datei, rohOriginal), ...lpTexte(datei, vorschlagRoh)])],
+  }
+
+  // 3. Bestätigung, Auftrag (§4), Form und Budget (§6).
+  for (const k of kandidaten) {
+    if (kanonisch(k.wert) === kanonisch(lesePfad(rohAktuell, k.pfad))) { bestaetige(k.pfad, k.begruendung); continue }
+    // F6: Ein Bündel mit eigenem Text legt die Fassung auf «ohne Medien» fest — für alle Aufträge darin.
+    if (auftraege.some((a) => a.auftrag === 'eigener_text') && k.pfad.startsWith('spuren.mit_medien.')) {
+      verwirf(datei, k.pfad, 'Eigener Text gilt nur für die Spur ohne Medien')
+      continue
+    }
+    let auftrag: AuftragKey | null = null
+    let ersterGrund = 'Kein Auftrag im Bündel'
+    for (const [i, a] of auftraege.entries()) {
+      const grund = erlaubtFuerAuftrag(a.auftrag, datei, k.pfad, { eba: args.eba, zielLeitfragen: a.zielLeitfragen })
+      if (grund === null) { auftrag = a.auftrag; break }
+      if (i === 0) ersterGrund = grund
+    }
+    if (!auftrag) { verwirf(datei, k.pfad, ersterGrund); continue }
+    const original = lesePfad(rohOriginal, k.pfad)
+    const grund = pruefeWert(datei, k.pfad, original, k.wert, ctx)
+    if (grund) { verwirf(datei, k.pfad, grund); continue }
+    ersetzungen.push({
+      datei, pfad: k.pfad, wert: k.wert, original_hash: wertHash(original),
+      auftrag, buendel_id: args.buendelId, begruendung: k.begruendung,
+    })
+  }
+
+  // 4. Ausdrückliche Bestätigungen: nur Pfade der Positivliste, sonst ignorieren.
+  for (const b of antwort.bestaetigt) {
+    if (feldFuer(datei, b.pfad) && !ersetzungen.some((e) => e.pfad === b.pfad)) bestaetige(b.pfad, b.begruendung)
+  }
+
+  // 5. Vollständigkeit (4a, F7): jede Pflicht ersetzt oder bestätigt.
+  const erledigt = new Set([...ersetzungen.map((e) => e.pfad), ...bestaetigt.map((b) => b.pfad)])
+  const fehlend = [...new Set(args.pflicht)].filter((p) => !erledigt.has(p))
+
+  return {
+    ersetzungen, bestaetigt, verworfen, fehlend,
+    vollstaendig: fehlend.length === 0,
+    hinweis: kuerze(typeof antwort.hinweis === 'string' ? antwort.hinweis : '', HINWEIS_MAX),
+  }
+}

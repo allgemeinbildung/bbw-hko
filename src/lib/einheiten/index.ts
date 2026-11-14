@@ -6,6 +6,8 @@ import { resolveQuellen } from './quellen'
 import { SPUR_KEYS, effektiveSpur, isV42, resolveSpur, spurenVerfuegbar } from './spuren'
 import { withLeitfragenLoesungen } from './begleiter-loesungen'
 import { withFeldern } from './begleiter-felder'
+import { wendeAn } from '../fork/anwenden'
+import type { Ersetzung, FassungBericht, FassungOption } from '../fork/anwenden'
 
 export * from './lehrgang'
 export { methodeKarte, alleMethodenKarten, resolveMethoden } from './methoden'
@@ -178,33 +180,55 @@ function withGlossar(sit: SituationJson | null, set: SetJson | null | undefined,
 export interface LoadEinheitOptions {
   /** v4.2: gewünschte Spur. Ohne Angabe gilt `set.spur` (falls nicht `wahl`), sonst `DEFAULT_SPUR`. */
   spur?: SpurKey
+  /** Fork-Pilot: Ersetzungen über den Rohdateien (VERTRAG §2). Ohne Option alles wie bisher. */
+  fassung?: FassungOption
+  /** Fork-Pilot: Haken für die Positivliste — liefert einen Grund, wenn die Ersetzung verworfen wird. */
+  fassungPruefer?: (e: Ersetzung) => string | null
 }
 
-export function loadEinheit(slug: string, opts?: LoadEinheitOptions): EinheitFullSet | null {
-  if (!einheitById(slug)) return null
-  const setRaw = pickJson<SetJson>(slug, 'set')
-  const rohA = pickJson<SituationJson>(slug, 'herausforderung_A')
-  const rohB = pickJson<SituationJson>(slug, 'herausforderung_B')
-  const rohC = pickJson<SituationJson>(slug, 'herausforderung_C')
-
-  // v4.2: jede Spur, die mindestens ein Heft führt, wird fertig aufgelöst. Die
-  // Verdopplung des Kerns entsteht erst hier, im Speicher — nie auf der Platte.
-  // Bestandseinheiten haben keine Spur: `varianten` bleibt leer, und das Ergebnis
-  // bekommt weder `spur` noch `spur_varianten`.
+/**
+ * Löst die Hefte einer Einheit auf. v4.2: jede Spur, die mindestens ein Heft führt, wird
+ * fertig aufgelöst. Die Verdopplung des Kerns entsteht erst hier, im Speicher — nie auf
+ * der Platte. Bestandseinheiten haben keine Spur: `varianten` bleibt leer, `spur` null.
+ * `nurSpur` (Fassung) beschränkt `varianten` auf diese Spur, falls vorhanden.
+ */
+function loeseHefte(rohA: SituationJson | null, rohB: SituationJson | null, rohC: SituationJson | null, setRaw: SetJson | null, wunschSpur?: SpurKey, nurSpur?: SpurKey) {
   const varianten: NonNullable<EinheitFullSet['spur_varianten']> = {}
   for (const key of SPUR_KEYS) {
     if (![rohA, rohB].some((h) => spurenVerfuegbar(h).includes(key))) continue
     varianten[key] = { hf_A: ladeHeft(rohA, key, setRaw), hf_B: ladeHeft(rohB, key, setRaw) }
   }
+  if (nurSpur && varianten[nurSpur]) for (const k of SPUR_KEYS) if (k !== nurSpur) delete varianten[k]
   const verfuegbar = Object.keys(varianten) as SpurKey[]
-  const wunsch = effektiveSpur(setRaw, opts?.spur)
+  const wunsch = effektiveSpur(setRaw, nurSpur && varianten[nurSpur] ? nurSpur : wunschSpur)
   // Hat keines der Hefte die gewünschte Spur, gilt die erste vorhandene (Leitfaden §4.4).
   const spur: SpurKey | null = verfuegbar.length ? (verfuegbar.includes(wunsch) ? wunsch : verfuegbar[0]) : null
-
   // Die wirksame Spur ist dieselbe Instanz wie in `spur_varianten` — nichts wird doppelt aufgelöst.
   const hf_A = spur ? varianten[spur]!.hf_A : ladeHeft(rohA, wunsch)
   const hf_B = spur ? varianten[spur]!.hf_B : ladeHeft(rohB, wunsch)
   const hf_C = ladeHeft(rohC, spur ?? wunsch)
+  return { varianten, spur, hf_A, hf_B, hf_C }
+}
+
+export function loadEinheit(slug: string, opts?: LoadEinheitOptions): (EinheitFullSet & { fassung_bericht?: FassungBericht }) | null {
+  if (!einheitById(slug)) return null
+  const setRaw = pickJson<SetJson>(slug, 'set')
+  const rohA = pickJson<SituationJson>(slug, 'herausforderung_A')
+  const rohB = pickJson<SituationJson>(slug, 'herausforderung_B')
+  const rohC = pickJson<SituationJson>(slug, 'herausforderung_C')
+  const dossierRaw = pickJson<DossierJson>(slug, 'dossier')
+
+  // Original: Begleiter und (ohne Fassung) das Ergebnis.
+  const orig = loeseHefte(rohA, rohB, rohC, setRaw, opts?.spur)
+  // Fassung (Invariante 2): Ersetzungen auf tiefe Kopien der Rohdateien, vor `ladeHeft`.
+  // Begleiter, KN und KI-Toolbox bleiben Original (Entscheid F8, Invariante 4b).
+  const fa = opts?.fassung
+    ? wendeAn({ herausforderung_A: rohA, herausforderung_B: rohB, set: setRaw, dossier: dossierRaw }, opts.fassung.ersetzungen, opts.fassungPruefer)
+    : null
+  const fSet = (fa ? fa.dateien.set : setRaw) as SetJson | null
+  const { varianten, spur, hf_A, hf_B, hf_C } = fa
+    ? loeseHefte(fa.dateien.herausforderung_A as SituationJson | null, fa.dateien.herausforderung_B as SituationJson | null, rohC, fSet, opts?.spur, opts!.fassung!.nur_spur)
+    : orig
   const rawFile = Object.entries(begleiterFiles).find(([path]) => path.endsWith(`/${slug}/begleiter.md`))?.[1]
   // Die Leitfragen-Lösungen leben in den Herausforderungs-JSONs (C10) und werden hier
   // einmal in den Begleiter gespiegelt — danach sehen HTML, Word und ZIP dieselbe Form.
@@ -217,14 +241,14 @@ export function loadEinheit(slug: string, opts?: LoadEinheitOptions): EinheitFul
   // aufgelösten Medien-Spur. Bestandseinheiten (`spur` null) laufen wie bisher.
   const knRaw = pickJson<KnJson>(slug, 'kn')
   const prinzipRaw = pickJson<PrinzipJson>(slug, 'prinzip')
-  const medien = varianten.mit_medien
+  const medien = orig.varianten.mit_medien
   const raw = rawFile
     ? withLeitfragenLoesungen(
         withFeldern(rawFile, {
-          hf_A, hf_B, hf_C, kn: knRaw, set: setRaw, prinzip: prinzipRaw,
+          hf_A: orig.hf_A, hf_B: orig.hf_B, hf_C: orig.hf_C, kn: knRaw, set: setRaw, prinzip: prinzipRaw,
           ...(medien ? { quellen: { A: medien.hf_A?.quellen ?? [], B: medien.hf_B?.quellen ?? [] } } : {}),
         }),
-        spur ? [rohA, rohB, rohC] : [hf_A, hf_B, hf_C]
+        orig.spur ? [rohA, rohB, rohC] : [orig.hf_A, orig.hf_B, orig.hf_C]
       )
     : undefined
   const begleiter = raw ? { raw, ...parseFrontmatter(raw) } : null
@@ -237,16 +261,33 @@ export function loadEinheit(slug: string, opts?: LoadEinheitOptions): EinheitFul
     hf_C,
     kn: knRaw,
     prinzip: prinzipRaw,
-    set: setRaw,
+    set: fSet,
     begleiter: begleiter ? { raw: begleiter.raw, meta: begleiter.meta } : null,
     kiLiesmich: kiLiesmich ? { raw: kiLiesmich.raw, meta: kiLiesmich.meta } : null,
     ki: pickJson<KiJson>(slug, 'ki'),
     lernprompt: pickJson<LernpromptJson>(slug, 'lernprompt'),
     lernbegleiter: pickJson<LernbegleiterJson>(slug, 'lernbegleiter'),
-    dossier: pickJson<DossierJson>(slug, 'dossier'),
+    dossier: (fa ? fa.dateien.dossier : dossierRaw) as DossierJson | null,
     // Nur v4.2 — bei Bestandseinheiten fehlen beide Schlüssel ganz (Invariante 4).
     ...(spur ? { spur, spur_varianten: varianten } : {}),
+    // Nur mit Fassung — ohne Option fehlt der Schlüssel ganz (Fork-Invariante 3).
+    ...(fa ? { fassung_bericht: fa.bericht } : {}),
   }
+}
+
+/**
+ * Fork-Pilot: die vier ersetzbaren Rohdateien einer Einheit, so wie sie auf der Platte
+ * stehen (VERTRAG §1). Tiefe Kopien — der Aufrufer darf sie verändern, die Module von
+ * `import.meta.glob` bleiben unberührt (Invariante 2). Unbekannte Einheit → `null`.
+ */
+export function ladeRohdateien(slug: string): { herausforderung_A: SituationJson | null; herausforderung_B: SituationJson | null; set: SetJson | null; dossier: DossierJson | null } | null {
+  if (!einheitById(slug)) return null
+  return structuredClone({
+    herausforderung_A: pickJson<SituationJson>(slug, 'herausforderung_A'),
+    herausforderung_B: pickJson<SituationJson>(slug, 'herausforderung_B'),
+    set: pickJson<SetJson>(slug, 'set'),
+    dossier: pickJson<DossierJson>(slug, 'dossier'),
+  })
 }
 
 export const ABTEILUNGEN = [

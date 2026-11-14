@@ -2,6 +2,7 @@ import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react'
 import { A4Page, HandlungsFlaeche, Schreibfeld, SectionHead } from './chrome'
 import { Kasten } from './heft-v42/gemeinsam'
 import { istEba, worte } from '../../../lib/einheiten/v42-profil'
+import { fmSet } from '../../../lib/fork/feld'
 import type { AuftragProdukt, GemeinsamerAuftrag, GlossarEintrag, SetJson } from '../../../lib/einheiten/types'
 
 /**
@@ -171,6 +172,9 @@ function BogenPage({ nr, titel, abteilung, children }: { nr: number; titel: stri
 
 type SeiteProps = { ga: GemeinsamerAuftrag; set: SetJson; edits: Record<string, string>; onEdit: (k: string, v: string) => void }
 
+/** Feldmarke (Fork-Pilot): nur v4.2-Einheiten tragen sie. `set.spur` gibt es nur bei v4.2 (kein 3er-Set hat es). */
+const mk = (set: SetJson, pfad: string) => fmSet(set, `gemeinsamer_auftrag.${pfad}`, set.spur != null)
+
 // ---------------- A1 — Situation und Auftrag ----------------
 function SeiteA1({ ga, set }: SeiteProps) {
   const w = worte(set)
@@ -180,20 +184,20 @@ function SeiteA1({ ga, set }: SeiteProps) {
   return (
     <>
       <SectionHead num="A1">{ga.titel}</SectionHead>
-      {persona && <div className="v42-auftrag-persona"><span className="v42-auftrag-mikro">Persona</span>{persona}</div>}
+      {persona && <div className="v42-auftrag-persona" {...mk(set, 'persona')}><span className="v42-auftrag-mikro">Persona</span>{persona}</div>}
       {/* Wie im Leseblatt: die schwierigen Wörter vor dem Text. */}
       {woerter.length > 0 && (
         <Kasten label="Wichtige Wörter" className="v42-auftrag-kasten v42-auftrag-woerter">
-          <dl>
+          <dl {...mk(set, 'woerter')}>
             {woerter.map((g, i) => <div key={i}><dt>{g.begriff}</dt> <dd>{g.definition}</dd></div>)}
           </dl>
         </Kasten>
       )}
-      {ga.situation_text && <p className="v42-auftrag-situation">{ga.situation_text}</p>}
+      {ga.situation_text && <p className="v42-auftrag-situation" {...mk(set, 'situation_text')}>{ga.situation_text}</p>}
 
       <div className="v42-auftrag-zweier">
         {(ga.zahlen_tabelle?.length ?? 0) > 0 && (
-          <table className="zahlen-tabelle v42-auftrag-zahlen">
+          <table className="zahlen-tabelle v42-auftrag-zahlen" {...mk(set, 'zahlen_tabelle')}>
             <thead><tr><th>{w.auftrag.zahlenKopf[0]}</th><th style={{ textAlign: 'right' }}>{w.auftrag.zahlenKopf[1]}</th></tr></thead>
             <tbody>
               {ga.zahlen_tabelle!.map((z, i) => (
@@ -204,26 +208,26 @@ function SeiteA1({ ga, set }: SeiteProps) {
         )}
         <div className="v42-auftrag-fragen">
           {ga.leitfrage && (
-            <div className="v42-auftrag-leitfrage"><div className="v42-auftrag-mikro">Leitfrage</div>{ga.leitfrage}</div>
+            <div className="v42-auftrag-leitfrage" {...mk(set, 'leitfrage')}><div className="v42-auftrag-mikro">Leitfrage</div>{ga.leitfrage}</div>
           )}
           {ga.mehrdeutigkeit?.trade_off && (
             <div className="v42-auftrag-spannung">
               <div className="v42-auftrag-mikro">{w.spannungsfeld}</div>
               <strong>{ga.mehrdeutigkeit.trade_off}</strong>
-              {ga.mehrdeutigkeit.hint && <div className="v42-auftrag-hint">{ga.mehrdeutigkeit.hint}</div>}
+              {ga.mehrdeutigkeit.hint && <div className="v42-auftrag-hint" {...mk(set, 'mehrdeutigkeit.hint')}>{ga.mehrdeutigkeit.hint}</div>}
             </div>
           )}
         </div>
       </div>
 
       <Kasten label="Ihr Auftrag" className="v42-auftrag-kasten">
-        {ga.auftrag && <p className="v42-auftrag-auftrag">{ga.auftrag}</p>}
+        {ga.auftrag && <p className="v42-auftrag-auftrag" {...mk(set, 'auftrag')}>{ga.auftrag}</p>}
         {(ga.schritte?.length ?? 0) > 0 && (
           <ol className="v42-auftrag-schritte">
             {ga.schritte!.map((s, i) => {
               const [nr, label] = schrittTeile(s.label, i)
               return (
-                <li key={i}>
+                <li key={i} {...mk(set, `schritte[label=${s.label}].hint`)}>
                   <span className="v42-auftrag-nr">{nr}</span>
                   <span><strong>{label}</strong> — {s.hint}</span>
                 </li>
@@ -236,7 +240,7 @@ function SeiteA1({ ga, set }: SeiteProps) {
       <div className="v42-auftrag-zweier">
         {(ga.abgaben?.length ?? 0) > 0 && (
           <Kasten label="Das geben Sie ab" className="v42-auftrag-kasten">
-            <ul className="v42-auftrag-liste">
+            <ul className="v42-auftrag-liste" {...mk(set, 'abgaben')}>
               {ga.abgaben!.map((a, i) => <li key={i}><span className="check-box">☐</span><span>{a}</span></li>)}
             </ul>
           </Kasten>
@@ -245,19 +249,19 @@ function SeiteA1({ ga, set }: SeiteProps) {
           <Kasten label={w.auftrag.sozialform} className="v42-auftrag-kasten">
             {moeglich && <p className="v42-auftrag-klein"><strong>Möglich:</strong> {moeglich}</p>}
             {ga.sozialform?.empfehlung && (w.auftrag.sozialformNurEmpfehlung
-              ? <p className="v42-auftrag-klein">{ga.sozialform.empfehlung}</p>
-              : <p className="v42-auftrag-klein"><strong>Empfehlung:</strong> {ga.sozialform.empfehlung}</p>)}
+              ? <p className="v42-auftrag-klein" {...mk(set, 'sozialform.empfehlung')}>{ga.sozialform.empfehlung}</p>
+              : <p className="v42-auftrag-klein" {...mk(set, 'sozialform.empfehlung')}><strong>Empfehlung:</strong> {ga.sozialform.empfehlung}</p>)}
           </Kasten>
         )}
       </div>
 
       {/* Bezug auf die Hefte: der Auftrag sagt, was er braucht — das Heft nennt keine Woche. */}
-      {!w.auftrag.heftBezugAufA2 && <HeftBezug ga={ga} />}
+      {!w.auftrag.heftBezugAufA2 && <HeftBezug ga={ga} set={set} />}
     </>
   )
 }
 
-function HeftBezug({ ga }: { ga: GemeinsamerAuftrag }) {
+function HeftBezug({ ga, set }: { ga: GemeinsamerAuftrag; set: SetJson }) {
   if (!(ga.heft_bezug?.length ?? 0)) return <p className="v42-auftrag-hefte">Ihre Hefte A und B dürfen Sie benutzen.</p>
   return (
     <Kasten label="Das brauchen Sie aus Ihren Heften" className="v42-auftrag-kasten">
@@ -265,7 +269,7 @@ function HeftBezug({ ga }: { ga: GemeinsamerAuftrag }) {
         {ga.heft_bezug!.map((h, i) => (
           <div key={i}>
             <div className="v42-auftrag-bezug-kopf"><strong>Heft {h.heft}</strong>{h.titel ? ` · ${h.titel}` : ''}</div>
-            <ul className="v42-auftrag-bezug-liste">
+            <ul className="v42-auftrag-bezug-liste" {...mk(set, `heft_bezug[heft=${h.heft}].inhalte`)}>
               {(h.inhalte || []).map((t, j) => <li key={j}>{t}</li>)}
             </ul>
           </div>
@@ -290,7 +294,7 @@ function ProduktSeite({ nr, produkt, ga, set, edits, onEdit }: SeiteProps & { nr
       <>
         <SectionHead num={`A${nr}`}>{s.label}</SectionHead>
         {/* EBA: Heft-Bezug auf A2 auch bei einer Fläche (Befund 2.1.1, 03.11.2026). */}
-        {nr === 2 && worte(set).auftrag.heftBezugAufA2 && <HeftBezug ga={ga} />}
+        {nr === 2 && worte(set).auftrag.heftBezugAufA2 && <HeftBezug ga={ga} set={set} />}
         {hint}
         {/* Inline, weil die Regel in auftragsbogen.css an .v42-auftrag-a2 hängt: die Fläche füllt den Rest der Seite. */}
         <div className="v42-auftrag-flaeche" style={{ flex: '1 0 auto', display: 'flex', flexDirection: 'column', paddingTop: '2mm' }}>
@@ -311,10 +315,10 @@ function ProduktSeite({ nr, produkt, ga, set, edits, onEdit }: SeiteProps & { nr
   return (
     <>
       <SectionHead num={`A${nr}`}>{planTitel(s.label)}</SectionHead>
-      {mitBezug && <HeftBezug ga={ga} />}
+      {mitBezug && <HeftBezug ga={ga} set={set} />}
       {hint}
-      {produkt.hinweis && <p className="v42-auftrag-klein v42-auftrag-fest">{produkt.hinweis}</p>}
-      <div className="v42-auftrag-spur">
+      {produkt.hinweis && <p className="v42-auftrag-klein v42-auftrag-fest" {...mk(set, 'produkte')}>{produkt.hinweis}</p>}
+      <div className="v42-auftrag-spur" {...mk(set, 'produkte')}>
         {stationen.map((station, i) => (
           <div className="v42-auftrag-station" key={i}>
             <div className="v42-auftrag-station-kopf">
@@ -424,18 +428,20 @@ function SeiteA4({ ga, set, edits, onEdit }: SeiteProps) {
         </thead>
         {kriterien.map((k, ki) => {
           const { name, stufen } = kriteriumFuerBogen(k, set)
+          const lern = breit && k.stufen_lernende?.length === k.stufen.length
+          const kp = `feedback_kriterien[kn_kriterium=${k.kn_kriterium}]`
           return (
           <tbody key={ki}>
             <tr className="v42-auftrag-krit">
               <td colSpan={4}>
-                <strong>{name}</strong> <span className="v42-auftrag-dim">{w.dimension(k.dimension)}</span>
-                {k.indikator_produkt && <span className="v42-auftrag-indikator">Woran ich es sehe: {k.indikator_produkt}</span>}
+                <strong {...(breit && k.name_lernende ? mk(set, `${kp}.name_lernende`) : {})}>{name}</strong> <span className="v42-auftrag-dim">{w.dimension(k.dimension)}</span>
+                {k.indikator_produkt && <span className="v42-auftrag-indikator" {...mk(set, `${kp}.indikator_produkt`)}>Woran ich es sehe: {k.indikator_produkt}</span>}
               </td>
             </tr>
             {stufen.map((st, si) => (
               <tr key={si}>
                 <td className="v42-auftrag-pkt">{si}</td>
-                <td className="v42-auftrag-stufe">{st}</td>
+                <td className="v42-auftrag-stufe" {...mk(set, `${kp}.${lern ? 'stufen_lernende' : 'stufen'}`)}>{st}</td>
                 <td className="v42-auftrag-box">☐</td>
                 <td className="v42-auftrag-box">☐</td>
               </tr>

@@ -50,6 +50,10 @@ const { count: meldungenOffen } = await Astro.locals.supabase
             )}
           </a>
           <a
+            href="/admin/fassungen"
+            class={`px-3 py-1 rounded-md text-sm font-medium transition ${path === '/admin/fassungen' ? 'admin-tab-active' : 'admin-tab'}`}
+          >Fassungen</a>
+          <a
             href="/admin/vorschau-feedback"
             class={`px-3 py-1 rounded-md text-sm font-medium transition ${path === '/admin/vorschau-feedback' ? 'admin-tab-active' : 'admin-tab'}`}
           >Vorschau-Feedback</a>

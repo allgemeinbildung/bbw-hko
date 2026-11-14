@@ -10,6 +10,10 @@ import { skNameByNr, skTooltip } from '../../lib/sk-labels'
 import cssRendererBasis from '../../styles/einheiten-renderer.css?raw'
 import { cssFuerEinheit } from '../../lib/einheiten/css-v42'
 import cssBegleiter from '../../styles/einheiten-begleiter.css?raw'
+import type { EinheitFullSet } from '../../lib/einheiten/types'
+import { darfForken, istV42Einheit } from '../../lib/fork/positivliste'
+import { zuFassungSicht, waehleModus, ersetzungenFuer, fassungPruefer, nurSpurFuer, bausteineUnpassend, baueForkProp, type BuendelZeile } from '../../lib/fork/seite'
+import type { FassungBericht, FassungSicht, ForkProp } from '../../lib/fork/typen'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
@@ -46,9 +50,58 @@ const cssRenderer = cssFuerEinheit(cssRendererBasis, fullSet)
 if (istNurKt1(meta) && role !== 'kt1') {
   return Astro.redirect('/einheiten')
 }
+// Fork-Pilot «Meine Fassung» (Invarianten 3, 11, 12): nur kt1 und nur v4.2. Sonst bleibt
+// `forkProp` null und alles Folgende läuft wie ohne Pilot — dasselbe Set, keine Prop.
+let forkProp: ForkProp | null = null
+let anzeigeSet: EinheitFullSet = fullSet
+if (darfForken(role) && istV42Einheit({ A: fullSet.hf_A, B: fullSet.hf_B })) {
+  // Eigene Zeilen über RLS; kt1 darf alle lesen, darum ausdrücklich user_id. Fehlt die
+  // Migration oder schlägt etwas fehl: als gäbe es keine Fassung (Muster jahresplanung.astro).
+  let sicht: FassungSicht | null = null
+  try {
+    const { data: f, error: fe } = await Astro.locals.supabase
+      .from('einheit_fassungen').select('id, nur_spur, ersetzungen')
+      .eq('user_id', user.id).eq('einheit_id', setKey).maybeSingle()
+    if (!fe && f) {
+      const { data: b, error: be } = await Astro.locals.supabase
+        .from('einheit_fassung_buendel')
+        .select('id, heft, status, kommentare, vorschlag, entscheide, text_pfad, created_at')
+        .eq('fassung_id', f.id).eq('user_id', user.id).order('created_at', { ascending: true })
+      sicht = zuFassungSicht(setKey, f, be ? [] : ((b ?? []) as BuendelZeile[]))
+    }
+  } catch {
+    sicht = null
+  }
+  const q = Astro.url.searchParams
+  const { modus, buendel } = waehleModus(sicht, q.get('ansicht'), q.get('vorschau'))
+  const ersetzungen = sicht ? ersetzungenFuer(sicht, modus, buendel) : { fassung: [], vorschlag: [] }
+  let bericht: FassungBericht | null = null
+  if (sicht && modus !== 'original') {
+    const nurSpur = nurSpurFuer(sicht, ersetzungen.vorschlag)
+    const mitFassung = loadEinheit(setKey, {
+      fassung: { ersetzungen: [...ersetzungen.fassung, ...ersetzungen.vorschlag], ...(nurSpur ? { nur_spur: nurSpur } : {}) },
+      fassungPruefer,
+    })
+    if (mitFassung) {
+      const { fassung_bericht, ...rest } = mitFassung
+      bericht = fassung_bericht ?? null
+      anzeigeSet = rest
+    }
+  }
+  forkProp = baueForkProp({ einheitId: setKey, eba: meta.lehrgang === 'EBA_2J', sicht, modus, buendel, ersetzungen, bericht })
+  // VERTRAG §5: Bei Situations- oder Textwechsel passen Begleiter und KI-Toolbox nicht
+  // mehr — sie fehlen in Vorschau und ZIP der Fassung. KN bleibt (mit Warnung).
+  if (modus !== 'original' && bausteineUnpassend(forkProp.warnungen)) {
+    anzeigeSet = { ...anzeigeSet, ki: null, lernprompt: null, lernbegleiter: null, kiLiesmich: null, begleiter: null }
+  }
+}
+const forkAnsicht = forkProp && forkProp.modus !== 'original' ? forkProp : null
+const zeigeUmschalter = !!forkProp && (forkProp.fassung?.ersetzungen.length ?? 0) > 0
+const forkUrl = (ansicht: 'original' | 'fassung') => `/einheiten/${setKey}?ansicht=${ansicht}`
+
 // Entwurf-Bausteine (z. B. KI-Toolbox) für lp/gast aus dem Set entfernen, bevor
 // es ans Workbench-Island geht — KI-Tab + KI-Dateien im ZIP verschwinden.
-const visibleSet = stripDraftComponents(fullSet, meta, role)
+const visibleSet = stripDraftComponents(anzeigeSet, meta, role)
 const draftKomps = role === 'kt1' ? draftKomponenten(meta) : []
 // Archivierte Einheit: KT1 sieht den Hinweis und — falls gesetzt — den Link zur Nachfolgerin.
 const archiviert = role === 'kt1' && isArchiviert(meta)
@@ -118,14 +171,45 @@ const erfahrungen = isGuest ? null : await ladeErfahrungen(setKey)
       <a href="/einheiten" class="text-sm text-slate-500 hover:text-slate-700">← Katalog</a>
       <span class="text-slate-300">·</span>
       <h1 class="text-lg font-semibold text-slate-900">{meta.einheit_titel}</h1>
-      <span class="text-sm text-slate-500">{meta.titel}</span>
+      <span class="text-sm text-slate-500">{meta.titel}</span>{zeigeUmschalter && (
+        <nav class="inline-flex gap-1 text-sm" aria-label="Ansicht der Einheit" style="border: 1px solid var(--brand); border-radius: 9999px; padding: 2px;">
+          {(['original', 'fassung'] as const).map((a) => {
+            const aktiv = a === 'original' ? forkProp?.modus === 'original' : forkProp?.modus !== 'original'
+            return (
+              <a href={forkUrl(a)} aria-current={aktiv ? 'page' : undefined}
+                style={`padding: 2px 12px; border-radius: 9999px; color: var(--brand-dark); ${aktiv ? 'background: var(--brand-tint); font-weight: 600;' : ''}`}>
+                {a === 'original' ? 'Original' : 'Meine Fassung'}
+              </a>
+            )
+          })}
+        </nav>
+      )}
       <div class="ml-auto flex items-center gap-2 text-xs text-slate-500">
         {meta.hat_spuren && <a href="/einheiten/neues-format" class="underline hover:text-slate-700">Neues Format — was ist anders?</a>}
         {lehrgaengeOf(meta).map((l) => <span class="chip chip-blue">{lehrgangLabel(l)}</span>)}
         {meta.thema_nr != null && <span class="chip">T{meta.thema_nr}</span>}
         {meta.aspekte.slice(0, 2).map((a) => <span class="chip chip-green">{a}</span>)}
       </div>
-    </div>
+    </div>{forkAnsicht && (
+      <div style="background: var(--brand-tint); border-bottom: 1px solid var(--brand); color: var(--brand-dark);">
+        <div class="max-w-7xl mx-auto px-6 py-2.5 text-sm">
+          <p class="font-semibold">
+            {forkAnsicht.modus === 'vorschau'
+              ? 'Vorschau: Ihre Fassung mit dem neuen Vorschlag. Noch nichts ist übernommen.'
+              : 'Meine Fassung — angepasst, nicht von KT1 geprüft.'}
+            {forkAnsicht.modus === 'vorschau' && <a href={forkUrl('fassung')} class="ml-2 font-normal underline">Vorschau schliessen</a>}
+          </p>
+          {(forkAnsicht.warnungen.length > 0 || (forkAnsicht.bericht?.veraltet.length ?? 0) > 0) && (
+            <ul class="mt-1 list-disc pl-5 space-y-0.5">
+              {forkAnsicht.warnungen.map((w) => <li>{w.text}</li>)}
+              {(forkAnsicht.bericht?.veraltet.length ?? 0) > 0 && (
+                <li>{forkAnsicht.bericht!.veraltet.length} Anpassungen gelten nicht mehr, weil sich das Original geändert hat.</li>
+              )}
+            </ul>
+          )}
+        </div>
+      </div>
+    )}
   </div>
 
   <!-- B3 — «Was deckt diese Einheit ab?» (additive Übersicht aus dem Index) -->
@@ -205,5 +289,6 @@ const erfahrungen = isGuest ? null : await ladeErfahrungen(setKey)
     abgedeckteKompetenzen={meta.abgedeckte_kompetenzen}
     defaultAbteilung={defaultAbteilung}
     readOnly={isGuest}
+    {...(forkProp ? { fork: forkProp } : {})}
   />
 </Einheiten>

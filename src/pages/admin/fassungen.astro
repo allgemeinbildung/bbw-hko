@@ -1,0 +1,155 @@
+---
+import Admin from '../../layouts/Admin.astro'
+import { createAdminClient } from '../../lib/supabase'
+import { einheitById, ladeRohdateien } from '../../lib/einheiten/index'
+import { lesePfad, wertHash } from '../../lib/fork/adresse'
+import { AUFTRAEGE } from '../../lib/fork/positivliste'
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+
+const { data: profile } = await Astro.locals.supabase
+  .from('profiles').select('role').eq('id', user.id).single()
+if (profile?.role !== 'kt1') return Astro.redirect('/')
+
+type Ersetzung = { datei: string; pfad: string; wert: unknown; original_hash?: string; auftrag?: string }
+type Kommentar = { auftrag?: string; pfad?: string; kommentar?: string }
+type Fassung = { id: string; user_id: string; einheit_id: string; ersetzungen: Ersetzung[] | null; updated_at: string }
+type Buendel = { id: string; fassung_id: string; heft: string; kommentare: Kommentar[] | null; text_pfad: string | null; status: string; updated_at: string }
+
+let fehler = false
+let fassungen: Fassung[] = []
+let buendel: Buendel[] = []
+const namen = new Map<string, { full_name: string | null; abteilung: string | null }>()
+try {
+  const admin = createAdminClient()
+  const [f, b, p] = await Promise.all([
+    admin.from('einheit_fassungen').select('*').order('updated_at', { ascending: false }),
+    admin.from('einheit_fassung_buendel').select('*').order('created_at', { ascending: true }),
+    admin.from('profiles').select('id, full_name, abteilung'),
+  ])
+  if (f.error || b.error) throw new Error('Tabellen nicht lesbar')
+  fassungen = (f.data ?? []) as Fassung[]
+  buendel = (b.data ?? []) as Buendel[]
+  for (const x of p.data ?? []) namen.set(x.id, { full_name: x.full_name, abteilung: x.abteilung })
+} catch {
+  fehler = true
+}
+
+const auftragLabel = (k?: string) => (k && (AUFTRAEGE as Record<string, { label: string }>)[k]?.label) || k || '–'
+const text = (v: unknown) => (typeof v === 'string' ? v : v === undefined ? '(nicht vorhanden)' : JSON.stringify(v, null, 2))
+const datum = (s: string) => {
+  try { return new Date(s).toLocaleString('de-CH', { dateStyle: 'short', timeStyle: 'short' }) } catch { return s }
+}
+
+const zeilen = fassungen.map((f) => {
+  const ers = Array.isArray(f.ersetzungen) ? f.ersetzungen : []
+  const eintrag = einheitById(f.einheit_id)
+  const roh = ladeRohdateien(f.einheit_id) as Record<string, unknown> | null
+  const bs = buendel.filter((x) => x.fassung_id === f.id)
+  const status = new Map<string, number>()
+  for (const x of bs) status.set(x.status, (status.get(x.status) ?? 0) + 1)
+  const vergleiche = ers.map((e) => {
+    let original: unknown
+    try { original = roh ? lesePfad(roh[e.datei], e.pfad) : undefined } catch { original = undefined }
+    let geaendert = false
+    try { geaendert = !!e.original_hash && wertHash(original) !== e.original_hash } catch { geaendert = false }
+    return { e, original, geaendert }
+  })
+  return {
+    f,
+    ers,
+    bs,
+    status: [...status.entries()],
+    titel: eintrag?.einheit_titel ?? f.einheit_id,
+    auftraege: [...new Set(ers.map((e) => e.auftrag).filter(Boolean) as string[])],
+    person: namen.get(f.user_id),
+    vergleiche,
+  }
+})
+---
+<Admin title="Fassungen">
+  <div class="mb-5">
+    <h1 class="text-2xl font-semibold">Fassungen</h1>
+    <p class="text-sm text-slate-500 mt-1">Fork-Pilot «Meine Fassung»: eigene Anpassungen der Lehrpersonen an v4.2-Einheiten.</p>
+  </div>
+
+  {fehler && (
+    <div class="bg-white border border-slate-200 rounded-lg p-12 text-center text-slate-500">
+      Noch keine Fassungen (Migration 028 nicht angewendet?)
+    </div>
+  )}
+
+  {!fehler && zeilen.length === 0 && (
+    <div class="bg-white border border-slate-200 rounded-lg p-12 text-center text-slate-500">Noch keine Fassungen.</div>
+  )}
+
+  <div class="space-y-3">
+    {zeilen.map((z) => (
+      <details class="bg-white border border-slate-200 rounded-lg" style="border-top: 3px solid var(--brand);">
+        <summary class="cursor-pointer px-4 py-3 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+          <span class="font-medium text-slate-800">{z.person?.full_name ?? '–'}</span>
+          {z.person?.abteilung && <span class="text-xs text-slate-400">{z.person.abteilung}</span>}
+          <a href={`/einheiten/${z.f.einheit_id}`} class="text-sm hover:underline" style="color: var(--brand-dark);">{z.titel}</a>
+          <span class="text-xs text-slate-500">{z.auftraege.map(auftragLabel).join(', ') || 'keine Aufträge'}</span>
+          <span class="text-xs font-semibold px-2 py-0.5 rounded-full" style="background: var(--brand-tint); color: var(--brand-dark);">{z.ers.length} {z.ers.length === 1 ? 'Ersetzung' : 'Ersetzungen'}</span>
+          <span class="text-xs text-slate-500">
+            {z.bs.length} Bündel{z.status.length > 0 && ` (${z.status.map(([s, n]) => `${n} ${s}`).join(', ')})`}
+          </span>
+          <span class="text-xs text-slate-400 ml-auto whitespace-nowrap">zuletzt {datum(z.f.updated_at)}</span>
+        </summary>
+
+        <div class="px-4 pb-4 space-y-5 border-t border-slate-100 pt-3">
+          <section>
+            <h2 class="text-xs uppercase tracking-wide text-slate-500 mb-2">Ersetzungen</h2>
+            {z.vergleiche.length === 0 && <p class="text-sm text-slate-500">Keine Ersetzungen.</p>}
+            <div class="space-y-4">
+              {z.vergleiche.map(({ e, original, geaendert }) => (
+                <div>
+                  <div class="text-xs text-slate-500 mb-1">
+                    <span class="font-mono break-all">{e.datei}:{e.pfad}</span> · {auftragLabel(e.auftrag)}
+                    {geaendert && <span class="ml-2 font-semibold px-2 py-0.5 rounded-full bg-slate-200 text-slate-700">Original hat sich geändert</span>}
+                  </div>
+                  <div class="grid md:grid-cols-2 gap-3">
+                    <div class="border border-slate-200 rounded-md p-3 bg-slate-50">
+                      <div class="text-xs font-semibold text-slate-500 mb-1">Original</div>
+                      <pre class="whitespace-pre-wrap text-sm text-slate-700">{text(original)}</pre>
+                    </div>
+                    <div class="rounded-md p-3" style="border: 1px solid var(--brand); background: var(--brand-tint);">
+                      <div class="text-xs font-semibold mb-1" style="color: var(--brand-dark);">Fassung</div>
+                      <pre class="whitespace-pre-wrap text-sm text-slate-800">{text(e.wert)}</pre>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-xs uppercase tracking-wide text-slate-500 mb-2">Bündel</h2>
+            {z.bs.length === 0 && <p class="text-sm text-slate-500">Keine Bündel.</p>}
+            <div class="space-y-3">
+              {z.bs.map((b) => (
+                <div class="border border-slate-200 rounded-md p-3">
+                  <div class="text-xs text-slate-500 mb-2">
+                    Heft {b.heft} · <span class="font-semibold text-slate-700">{b.status}</span> · {datum(b.updated_at)}
+                    {b.text_pfad && <span> · mit eigenem Text</span>}
+                  </div>
+                  {(!Array.isArray(b.kommentare) || b.kommentare.length === 0) && <p class="text-sm text-slate-400">Keine Kommentare.</p>}
+                  <ul class="space-y-1 text-sm">
+                    {(Array.isArray(b.kommentare) ? b.kommentare : []).map((k) => (
+                      <li>
+                        <span class="text-xs text-slate-500">{auftragLabel(k.auftrag)} · <span class="font-mono break-all">{k.pfad ?? '–'}</span></span>
+                        <div class="text-slate-800 whitespace-pre-wrap">{k.kommentar ?? ''}</div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </details>
+    ))}
+  </div>
+</Admin>

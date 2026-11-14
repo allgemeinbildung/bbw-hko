@@ -236,9 +236,9 @@ export function ProduktBildBlatt({ bild, groesse, loesung = false }: { bild: Pro
 }
 
 /** Heft S. 6: Band unter den Methodenkarten mit dem Beispielblatt (`klein`). */
-export function BeispielBand({ bild, unterzeile = 'Beispiel an einem anderen Fall — bei Ihnen zählt die Form, nicht der Inhalt.' }: { bild: ProduktBild; unterzeile?: string }) {
+export function BeispielBand({ bild, unterzeile = 'Beispiel an einem anderen Fall — bei Ihnen zählt die Form, nicht der Inhalt.', marke }: { bild: ProduktBild; unterzeile?: string; /** Fork-Pilot: data-feld-Marke (VERTRAG §10). */ marke?: { 'data-feld'?: string } }) {
   return (
-    <section className="v42-pb-band">
+    <section className="v42-pb-band" {...marke}>
       <div className="v42-pb-bandkopf">
         <span className="v42-kasten-label v42-pb-label">So kann Ihr Produkt aussehen</span>
         <span className="v42-pb-unterzeile">{unterzeile}</span>

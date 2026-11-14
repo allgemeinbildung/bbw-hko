@@ -5,6 +5,7 @@ import { landingUrl } from '../../../../lib/einheiten/qr'
 import type { KastenS4, Leitfrage, Quelle, SituationJson } from '../../../../lib/einheiten/types'
 import { ankerZu, beurteilenLeitfrage, istEba, kernLeitfragen, rasterLeitfrage, worte } from '../../../../lib/einheiten/v42-profil'
 import { Kasten, SeitenKopf, type HeftSeiteProps } from './gemeinsam'
+import { fm, fmLf, fmSpur } from '../../../../lib/fork/feld'
 
 /**
  * Heft v4.2, Seiten 1–4 (Leitfaden §3): Herausforderung · Wissensecke I · Quelle ·
@@ -182,13 +183,13 @@ function Feld({ hoeheMm, minMm, wert, onChange, editierbar, className }: {
 }
 
 /** Scaffold-Spalte rechts neben der Leitfrage: So gehen Sie vor · Satzanfänge · Ins Produkt. */
-function ScaffoldSpalte({ sc, insProdukt }: { sc?: Leitfrage['scaffolding']; insProdukt: string }) {
+function ScaffoldSpalte({ sc, insProdukt, marke }: { sc?: Leitfrage['scaffolding']; insProdukt: string; marke?: { 'data-feld'?: string } }) {
   const strategien = sc?.strategien?.filter(Boolean) ?? []
   const satzanfaenge = sc?.satzanfaenge?.filter(Boolean) ?? []
   const produkt = sc?.produkt?.trim() ?? ''
   if (!strategien.length && !satzanfaenge.length && !produkt) return null
   return (
-    <aside className="v42-scaffold">
+    <aside className="v42-scaffold" {...marke}>
       {strategien.length > 0 && (
         <div>
           <Mini>So gehen Sie vor</Mini>
@@ -233,12 +234,12 @@ function LfBlock({ lf, feldKey, hoeheMm, props, vorFeld, wachsen }: {
         <div className="v42-lf-kopf">
           {/* EBA: ausgeschrieben, nicht «LF1» (Besprechung 23.10.2026). */}
           <span className="v42-lf-nr">{istEba(props.sit) ? `Leitfrage ${lf.nr}` : `LF${lf.nr}`}</span>
-          <p className="v42-lf-text">{lf.text}</p>
+          <p className="v42-lf-text" {...fmLf(props.sit, lf, 'text')}>{lf.text}</p>
         </div>
         <div className="v42-lf-meta">
           {lf.bloom && w.bloomZeigen && <Badge variant="outline">{lf.bloom}</Badge>}
-          {lf.knoten_ref && <span className="v42-ref">{w.fundstelle(lf.knoten_ref)}</span>}
-          {lf.liefert && <span className="v42-liefert">{w.liefert} {lf.liefert}</span>}
+          {lf.knoten_ref && <span className="v42-ref" {...fmLf(props.sit, lf, 'knoten_ref')}>{w.fundstelle(lf.knoten_ref)}</span>}
+          {lf.liefert && <span className="v42-liefert" {...fmLf(props.sit, lf, 'liefert')}>{w.liefert} {lf.liefert}</span>}
         </div>
         {vorFeld}
         {feldLabel && <Mini>{feldLabel}</Mini>}
@@ -249,7 +250,7 @@ function LfBlock({ lf, feldKey, hoeheMm, props, vorFeld, wachsen }: {
           editierbar={props.mode === 'fill'}
         />
       </div>
-      <ScaffoldSpalte sc={lf.scaffolding} insProdukt={w.insProdukt} />
+      <ScaffoldSpalte sc={lf.scaffolding} insProdukt={w.insProdukt} marke={fmLf(props.sit, lf, 'scaffolding')} />
     </section>
   )
 }
@@ -260,7 +261,7 @@ function LfBlock({ lf, feldKey, hoeheMm, props, vorFeld, wachsen }: {
  * Zeile vor und kennzeichnet sie — gestrichelt und kursiv, weil das Heft
  * schwarz-weiss kopiert wird.
  */
-function AusfuellTabelle({ spalten, leer, zeileMm, beispiel, vorgabe, keyPrefix, props, className, breiten }: {
+function AusfuellTabelle({ spalten, leer, zeileMm, beispiel, vorgabe, keyPrefix, props, className, breiten, markeSpalten, markeBeispiel }: {
   spalten: string[]
   leer: number
   zeileMm: number
@@ -272,17 +273,20 @@ function AusfuellTabelle({ spalten, leer, zeileMm, beispiel, vorgabe, keyPrefix,
   className: string
   /** Spaltenbreiten in %; ohne Angabe gleich breit. */
   breiten?: number[]
+  /** Feldmarken (Fork-Pilot): auf dem Tabellenkopf bzw. der Beispielzeile. */
+  markeSpalten?: { 'data-feld'?: string }
+  markeBeispiel?: { 'data-feld'?: string }
 }) {
   const editierbar = props.mode === 'fill'
   return (
     <table className={`v42-tabelle ${className}`}>
       <colgroup>{spalten.map((_, i) => <col key={i} style={breiten ? { width: `${breiten[i]}%` } : undefined} />)}</colgroup>
-      <thead>
+      <thead {...markeSpalten}>
         <tr>{spalten.map((s, i) => <th key={i}>{s}</th>)}</tr>
       </thead>
       <tbody>
         {beispiel && (
-          <tr className="v42-beispiel" style={{ height: `${zeileMm}mm` }}>
+          <tr className="v42-beispiel" style={{ height: `${zeileMm}mm` }} {...markeBeispiel}>
             {spalten.map((_, c) => (
               <td key={c}>
                 {c === 0 && <span className="v42-beispiel-tag">Beispiel</span>}
@@ -402,11 +406,11 @@ export function Seite1({ sit }: HeftSeiteProps) {
     <>
       <header className="v42-s1-kopf">
         <SeitenKopf nr={1} titel="Herausforderung" />
-        <h1 className="v42-titel">{sit.titel}</h1>
+        <h1 className="v42-titel" {...fm(sit, 'titel')}>{sit.titel}</h1>
         {/* Zwei Zeilen mit Beschriftung links: Persona, dann Kompetenz(en) über die volle Breite. */}
         <div className="v42-s1-meta">
           <Mini>Persona</Mini>
-          <p className="v42-persona">
+          <p className="v42-persona" {...fm(sit, 'persona')}>
             <strong>{p?.beruf}</strong>
             {(p?.betrieb || p?.ort) && <> · {[p?.betrieb, p?.ort].filter(Boolean).join(', ')}</>}
           </p>
@@ -433,10 +437,10 @@ export function Seite1({ sit }: HeftSeiteProps) {
       {eba && soStarten}
 
       <section className="v42-s1-situation">
-        <p className="v42-situation-text">{sit.situation_text}</p>
+        <p className="v42-situation-text" {...fm(sit, 'situation_text')}>{sit.situation_text}</p>
         {zahlenPaare.length > 0 && (
           // Zwei Paare pro Zeile: halbiert die Höhe der Tabelle, Label ≤ 45 Zeichen passt.
-          <table className="v42-zahlen">
+          <table className="v42-zahlen" {...fm(sit, 'zahlen_tabelle')}>
             <tbody>
               {zahlenPaare.map((paar, i) => (
                 <tr key={i}>
@@ -452,12 +456,12 @@ export function Seite1({ sit }: HeftSeiteProps) {
       </section>
 
       <div className="v42-s1-fragen">
-        <div className="leitfrage-callout v42-leitfrage">{sit.leitfrage}</div>
+        <div className="leitfrage-callout v42-leitfrage" {...fm(sit, 'leitfrage')}>{sit.leitfrage}</div>
         {sit.mehrdeutigkeit?.trade_off && (
           <div className="v42-spannung">
             <Mini>{worte(sit).spannungsfeld}</Mini>
             <p className="v42-spannung-titel">{sit.mehrdeutigkeit.trade_off}</p>
-            {sit.mehrdeutigkeit.hint && <p className="v42-spannung-hint">{sit.mehrdeutigkeit.hint}</p>}
+            {sit.mehrdeutigkeit.hint && <p className="v42-spannung-hint" {...fm(sit, 'mehrdeutigkeit.hint')}>{sit.mehrdeutigkeit.hint}</p>}
           </div>
         )}
       </div>
@@ -465,7 +469,7 @@ export function Seite1({ sit }: HeftSeiteProps) {
       {(sit.quellen_anker?.length ?? 0) > 0 && (
         <section className="v42-s1-ressourcen">
           <Mini>{worte(sit).imLehrmittel}</Mini>
-          <ul>
+          <ul {...fm(sit, 'quellen_anker')}>
             {sit.quellen_anker!.map((a, i) => (
               <li key={i}>
                 <strong>{a.titel}</strong>
@@ -490,7 +494,7 @@ export function Seite1({ sit }: HeftSeiteProps) {
       {(sit.wochen_plan?.length ?? 0) > 0 && (
         <section className="v42-s1-woche">
           <Mini>{worte(sit).uebersicht}</Mini>
-          <table className="v42-woche">
+          <table className="v42-woche" {...fm(sit, 'wochen_plan')}>
             <tbody>
               {sit.wochen_plan!.map((w, i) => (
                 <tr key={i}><td className="v42-woche-label">{w.label}</td><td>{w.text}</td></tr>
@@ -534,7 +538,7 @@ export function Seite2(props: HeftSeiteProps) {
       {sit.leitfragen_intro && (
         <section className="v42-intro">
           <Mini>Ihr Weg durch die Leitfragen</Mini>
-          <p>{sit.leitfragen_intro}</p>
+          <p {...fm(sit, 'leitfragen_intro')}>{sit.leitfragen_intro}</p>
         </section>
       )}
       {kernLeitfragen(sit).map((lf) => {
@@ -571,7 +575,7 @@ export function Seite3(props: HeftSeiteProps) {
         <Quellenkarte q={pflicht} sit={sit} />
       ) : raster?.knoten_ref ? (
         <Kasten label={worte(sit).abschnitt} className="v42-quellenkarte">
-          <p className="v42-q-titel">{raster.knoten_ref.replace(/\s*\|\s*/g, ' · ')}</p>
+          <p className="v42-q-titel" {...fmLf(sit, lf, 'raster.knoten_ref')}>{raster.knoten_ref.replace(/\s*\|\s*/g, ' · ')}</p>
           {anker && <p className="v42-q-herkunft">{[anker.titel, anker.unterueberschrift].filter(Boolean).join(' · ')}</p>}
         </Kasten>
       ) : null}
@@ -579,7 +583,7 @@ export function Seite3(props: HeftSeiteProps) {
       {auftrag && (
         <section className="v42-auftrag">
           <Mini>Auftrag</Mini>
-          <p>{auftrag}</p>
+          <p {...(pflicht ? {} : fmLf(sit, lf, 'raster.auftrag'))}>{auftrag}</p>
           {spalten.length > 0 && <p className="v42-s3-hilfe">→ Hilfe: Methodenkarte zum Raster auf S. 6</p>}
         </section>
       )}
@@ -597,6 +601,8 @@ export function Seite3(props: HeftSeiteProps) {
             props={props}
             className="v42-raster"
             breiten={rasterBreiten(spalten)}
+            markeSpalten={fmLf(sit, lf, 'raster.spalten')}
+            markeBeispiel={fmLf(sit, lf, 'raster.beispielzeile')}
           />
         </section>
       )}
@@ -610,6 +616,7 @@ export function Seite3(props: HeftSeiteProps) {
 // ── Seite 4 · Wissensecke II ──────────────────────────────────────────────
 
 function Denkhilfe({ k, props }: { k: KastenS4; props: HeftSeiteProps }) {
+  const marke = props.sit.spur === 'ohne_medien' ? fmSpur(props.sit, 'kasten_s4') : {}
   const spalten = k.spalten?.filter(Boolean) ?? []
   return (
     <Kasten label={k.titel} className="v42-denkhilfe">
@@ -621,9 +628,10 @@ function Denkhilfe({ k, props }: { k: KastenS4; props: HeftSeiteProps }) {
           keyPrefix={`${props.ns}denkhilfe_`}
           props={props}
           className="v42-denkhilfe-tabelle"
+          markeSpalten={marke}
         />
       )}
-      {k.hinweis && <p className="v42-hinweis">{k.hinweis}</p>}
+      {k.hinweis && <p className="v42-hinweis" {...marke}>{k.hinweis}</p>}
     </Kasten>
   )
 }

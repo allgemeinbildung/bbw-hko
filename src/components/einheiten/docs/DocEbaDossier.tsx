@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { A4Page, SectionHead } from './chrome'
+import { fmDossier } from '../../../lib/fork/feld'
 
 /* ---------------------------------------------------------------------------
    DocEbaDossier — EBA-only Wissens-Dossier renderer (Renderer B, A4/Print).
@@ -88,6 +89,8 @@ export interface DocEbaDossierProps {
   dossier: DossierJson
   abteilung?: string
   kompetenzNr?: string
+  /** Fork-Pilot: Dossier gehört zu einer v4.2-EBA-Einheit → data-feld-Marken. Fehlt = keine Marken. */
+  fork?: boolean
 }
 
 function chunk<T>(arr: T[], n: number): T[][] {
@@ -171,10 +174,10 @@ function RechercheBlock({ r }: { r: DossierRecherche }) {
   )
 }
 
-function NuggetCard({ n }: { n: DossierNugget }) {
+function NuggetCard({ n, aktiv }: { n: DossierNugget; aktiv: boolean }) {
   const tag = n.tag === 'A' || n.tag === 'B' ? n.tag : 'ab'
   return (
-    <div className={`eba-nugget tag-${String(tag).toLowerCase()}`}>
+    <div className={`eba-nugget tag-${String(tag).toLowerCase()}`} {...fmDossier(aktiv, `nuggets[id=${n.id}]`)}>
       <div className="eba-nugget-top">
         <span className="eba-ncode">{infokarteLabel(n.id)}</span>
         <h3>{n.titel}</h3>
@@ -186,9 +189,9 @@ function NuggetCard({ n }: { n: DossierNugget }) {
   )
 }
 
-function ScaffoldCard({ sc }: { sc: DossierScaffold }) {
+function ScaffoldCard({ sc, aktiv }: { sc: DossierScaffold; aktiv: boolean }) {
   return (
-    <div className={`eba-scaffold-card tag-${String(sc.tag || '').toLowerCase()}`}>
+    <div className={`eba-scaffold-card tag-${String(sc.tag || '').toLowerCase()}`} {...fmDossier(aktiv, `sprachmodi_scaffolds[tag=${sc.tag}]`)}>
       <h3>Herausforderung {sc.tag} — {sc.modus_label || sc.sm_id}</h3>
       {sc.satzanfaenge?.filter(Boolean).length ? (
         <>
@@ -212,7 +215,7 @@ function Section({ children }: { children: ReactNode }) {
 }
 
 // Titelseite — Kerndaten aus dem nRLP (EBA, nrlp_2j) + Einleitung/Gebrauchsanleitung.
-function TitelSeite({ kopf, einleitung }: { kopf?: DossierKopf; einleitung?: DossierEinleitung }) {
+function TitelSeite({ kopf, einleitung, aktiv }: { kopf?: DossierKopf; einleitung?: DossierEinleitung; aktiv: boolean }) {
   const niveau = kopf?.sprachniveau || 'A2'
   return (
     <>
@@ -232,7 +235,7 @@ function TitelSeite({ kopf, einleitung }: { kopf?: DossierKopf; einleitung?: Dos
       {einleitung && (einleitung.was_ist_das || (einleitung.so_benutzt_du_es?.length || 0) > 0) && (
         <div className="eba-einleitung">
           <h2>Was ist das Glossar+?</h2>
-          {einleitung.was_ist_das && <p>{einleitung.was_ist_das}</p>}
+          {einleitung.was_ist_das && <p {...fmDossier(aktiv, 'einleitung.was_ist_das')}>{einleitung.was_ist_das}</p>}
           {(einleitung.so_benutzt_du_es?.length || 0) > 0 && (
             <>
               <h3>So benutzen Sie es</h3>
@@ -265,7 +268,8 @@ function glossarSeiten<T extends { begriff?: string; erklaerung_a2?: string; bei
   return seiten
 }
 
-export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossierProps) {
+export function DocEbaDossier({ dossier, abteilung, kompetenzNr, fork }: DocEbaDossierProps) {
+  const aktiv = !!fork
   const nuggets = dossier.nuggets || []
   const aN = nuggets.filter((n) => n.tag === 'A')
   const bN = nuggets.filter((n) => n.tag === 'B')
@@ -286,7 +290,7 @@ export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossier
     pages.push({
       code: 'GLOSSAR+ · Titel',
       titel: kopf?.einheit_titel || 'Glossar+',
-      body: <TitelSeite kopf={kopf} einleitung={einleitung} />,
+      body: <TitelSeite kopf={kopf} einleitung={einleitung} aktiv={aktiv} />,
     })
   }
 
@@ -300,7 +304,7 @@ export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossier
       body: (
         <>
           {i === 0 && <SectionHead num="D1">Ihr Glossar+</SectionHead>}
-          {grp.map((n) => <NuggetCard key={n.id} n={n} />)}
+          {grp.map((n) => <NuggetCard key={n.id} n={n} aktiv={aktiv} />)}
         </>
       ),
     })
@@ -314,7 +318,7 @@ export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossier
       body: (
         <>
           {i === 0 && <SectionHead num="D2">So schreiben Sie Schritt für Schritt</SectionHead>}
-          <ScaffoldCard sc={sc} />
+          <ScaffoldCard sc={sc} aktiv={aktiv} />
         </>
       ),
     })
@@ -328,7 +332,7 @@ export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossier
       body: (
         <>
           <SectionHead num="D2">Das Grundprinzip</SectionHead>
-          <div className="eba-transfer">
+          <div className="eba-transfer" {...fmDossier(aktiv, 'transfer_wissensblatt')}>
             {tw.prinzip_in_einfach && <p className="eba-lead">{tw.prinzip_in_einfach}</p>}
             {tw.fachsystematik && <p>{tw.fachsystematik}</p>}
             {tw.austausch_scaffolds?.satzanfaenge?.filter(Boolean).length ? (
@@ -353,7 +357,7 @@ export function DocEbaDossier({ dossier, abteilung, kompetenzNr }: DocEbaDossier
       body: (
         <>
           {i === 0 && <SectionHead num="D3">Glossar — schwierige Wörter einfach erklärt</SectionHead>}
-          <div className="eba-glossar">
+          <div className="eba-glossar" {...fmDossier(aktiv, 'glossar')}>
             {grp.map((g) => (
               <div className="eba-gloss" key={g.id}>
                 <span className="eba-gloss-b">{g.begriff}</span> — <span className="eba-gloss-e">{g.erklaerung_a2}</span>

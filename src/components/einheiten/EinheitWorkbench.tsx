@@ -27,6 +27,10 @@ import { heftDatei, loesungenDatei, v42Dokumente } from '../../lib/einheiten/v42
 import { loesungenModell } from '../../lib/einheiten/loesungen-v42'
 import { DEFAULT_SPUR, SPUR_KEYS, isV42 } from '../../lib/einheiten/spuren'
 import type { SpurKey } from '../../lib/einheiten/types'
+import type { ForkProp } from '../../lib/fork/typen'
+import { VERMERK } from '../../lib/fork/typen'
+import ForkPanel from './fork/ForkPanel'
+import { VERMERK_CSS, abteilungMitVermerk } from './fork/fork-hilfe'
 
 /** v4.2 — Beschriftung des Spur-Umschalters (Leitfaden §4). */
 const SPUR_LABEL: Record<SpurKey, string> = { ohne_medien: 'Ohne Medien', mit_medien: 'Mit Medien' }
@@ -115,6 +119,8 @@ interface Props {
   defaultAbteilung?: string
   /** Read-only guest view: hides the bundle download and the feedback link. */
   readOnly?: boolean
+  /** Fork-Pilot (nur kt1 + v4.2, von der Seite gesetzt). Fehlt sie, ist alles wie vorher (Invariante 3). */
+  fork?: ForkProp
 }
 
 type DocSel = 'doc-s' | 'doc-austausch' | 'doc-kn-s' | 'doc-kn-lp' | 'doc-ki-1' | 'doc-ki-2' | 'doc-lernprompt' | 'doc-lernbegleiter' | 'doc-dossier' | 'doc-leseblatt' | 'doc-auftragsbogen' | 'doc-loesungen'
@@ -187,7 +193,11 @@ function GatePanel({ kind }: { kind: 'kn' | 'begleiter' | 'ki' | 'loesung' }) {
   )
 }
 
-export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feedbackUrl, abgedeckteKompetenzen, defaultAbteilung = '', readOnly = false }: Props) {
+export default function EinheitWorkbench({ set: dRoh, cssRenderer: cssRendererRoh, logoUrl, feedbackUrl, abgedeckteKompetenzen, defaultAbteilung = '', readOnly = false, fork }: Props) {
+  // Fork-Pilot: Vermerk «Angepasst, nicht von KT1 geprüft» nur in der eigenen Fassung und ihrer Vorschau.
+  // Ohne `fork` ist `cssRenderer` derselbe String wie bisher und `abtWord` gleich `abteilung`.
+  const vermerk = !!fork && fork.modus !== 'original'
+  const cssRenderer = vermerk ? cssRendererRoh + VERMERK_CSS : cssRendererRoh
   // v4.2 — Einheit mit Spuren (ENTSCHEIDE E3). Einziger Schalter für alles Spur-
   // Abhängige in dieser Datei. Ohne `spur_varianten` ist `d` dasselbe Objekt wie
   // `dRoh`, und jede Zeile unten läuft wie bisher (Invariante 4).
@@ -226,6 +236,14 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
   const heftNurEineSpur = istV42 && spurenDa.length > 1 && heftSpuren.length === 1
   const [mode, setMode] = useState<'info' | 'fill'>('fill')
   const [abteilung, setAbteilung] = useState(defaultAbteilung || '')
+  // Word: der Vermerk steht in der Kopfzeile (docx-*.ts liegen im Zaun) — nur für die Builder.
+  const abtWord = vermerk ? abteilungMitVermerk(abteilung) : abteilung
+  const v42Doks = (src: EinheitFullSet, logoPng: ArrayBuffer) => {
+    const html = v42Dokumente(src, { abteilung, logoPng })
+    if (!vermerk) return html
+    const word = v42Dokumente(src, { abteilung: abtWord, logoPng })
+    return html.map((x, i) => ({ ...x, docx: word[i].docx }))
+  }
   // client:only — kein SSR, localStorage steht beim ersten Render bereits zur
   // Verfügung. Gäste bekommen keine Persistenz (dokumentierte «kein Speichern»-Regel).
   const [edits, setEdits] = useState<Record<string, string>>(() => (readOnly ? {} : loadEdits(d.id)))
@@ -425,11 +443,11 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
     }
     if (doc === 'doc-dossier') {
       if (!d.dossier) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Dossier fehlt.</p></div>
-      return <DocEbaDossier dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} />
+      return <DocEbaDossier dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} fork={istV42} />
     }
     if (doc === 'doc-leseblatt') {
       if (!d.dossier?.leseblatt) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>Kein Lese-Arbeitsblatt.</p></div>
-      return <DocLeseblatt dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} />
+      return <DocLeseblatt dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} fork={istV42} />
     }
     if (!d.kn) return <div className="a4-page"><p style={{ padding: '40mm 0' }}>KN fehlt.</p></div>
     return <DocKnLp kn={d.kn} prinzip={d.prinzip} set={d.set} abteilung={abteilung} sits={[d.hf_A, d.hf_B, d.hf_C]} />
@@ -480,7 +498,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
         : !sit || !isV42(sit) ? null
         : doc === 'doc-loesungen' ? loesungenDatei(situation, sit.spur ?? spur)
         : heftDatei(situation, sit.spur ?? spur)
-      const dok = datei ? v42Dokumente(d, { abteilung, logoPng: pngBuf }).find((x) => x.datei === datei) : undefined
+      const dok = datei ? v42Doks(d, pngBuf).find((x) => x.datei === datei) : undefined
       if (dok) return { baseName: `${p}_${dok.datei}`, title: dok.titel, markup: dok.markup(), docx: dok.docx }
     }
     if (doc === 'doc-s') {
@@ -491,7 +509,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
         title: `DOC-S HF ${situation} (${suffix})`,
         compact: mode === 'info',
         markup: renderToStaticMarkup(<DocS sit={sit} set={d.set} abteilung={abteilung} mode={mode} edits={{}} onEdit={() => {}} />),
-        docx: () => buildDocS({ sit, set: d.set!, abteilung, mode, logoPng: pngBuf }),
+        docx: () => buildDocS({ sit, set: d.set!, abteilung: abtWord, mode, logoPng: pngBuf }),
       }
     }
     if (doc === 'doc-austausch') {
@@ -500,7 +518,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
         baseName: `${p}_doc-austausch`,
         title: 'DOC-AUSTAUSCH · Set-Abschluss',
         markup: renderToStaticMarkup(<DocAustausch set={d.set} sits={[d.hf_A, d.hf_B, d.hf_C]} abteilung={abteilung} edits={{}} onEdit={() => {}} />),
-        docx: () => buildAustausch({ set: d.set!, sits: [d.hf_A, d.hf_B, d.hf_C], abteilung, logoPng: pngBuf }),
+        docx: () => buildAustausch({ set: d.set!, sits: [d.hf_A, d.hf_B, d.hf_C], abteilung: abtWord, logoPng: pngBuf }),
       }
     }
     if (doc === 'doc-dossier') {
@@ -508,8 +526,8 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
       return {
         baseName: `${p}_doc-dossier`,
         title: 'Glossar+ (EBA)',
-        markup: renderToStaticMarkup(<DocEbaDossier dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} />),
-        docx: () => buildDossier({ dossier: d.dossier!, abteilung, kompetenzNr: d.kn?.kompetenz_nr, logoPng: pngBuf }),
+        markup: renderToStaticMarkup(<DocEbaDossier dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} fork={istV42} />),
+        docx: () => buildDossier({ dossier: d.dossier!, abteilung: abtWord, kompetenzNr: d.kn?.kompetenz_nr, logoPng: pngBuf }),
       }
     }
     if (doc === 'doc-leseblatt') {
@@ -517,8 +535,8 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
       return {
         baseName: `${p}_doc-leseblatt`,
         title: 'Lese-Arbeitsblatt (EBA)',
-        markup: renderToStaticMarkup(<DocLeseblatt dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} />),
-        docx: () => buildLeseblatt({ dossier: d.dossier!, abteilung, kompetenzNr: d.kn?.kompetenz_nr, logoPng: pngBuf }),
+        markup: renderToStaticMarkup(<DocLeseblatt dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} fork={istV42} />),
+        docx: () => buildLeseblatt({ dossier: d.dossier!, abteilung: abtWord, kompetenzNr: d.kn?.kompetenz_nr, logoPng: pngBuf }),
       }
     }
     if (doc === 'doc-kn-s') {
@@ -527,7 +545,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
         baseName: `${p}_doc-kn-s_${knTyp}`,
         title: `DOC-KN-S ${knTyp}`,
         markup: renderToStaticMarkup(<DocKnS kn={d.kn} knTyp={knTyp} abteilung={abteilung} edits={{}} onEdit={() => {}} />),
-        docx: () => buildKnS({ kn: d.kn!, knTyp, abteilung, logoPng: pngBuf }),
+        docx: () => buildKnS({ kn: d.kn!, knTyp, abteilung: abtWord, logoPng: pngBuf }),
       }
     }
     if (doc === 'doc-kn-lp') {
@@ -536,7 +554,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
         baseName: `${p}_doc-kn-lp`,
         title: 'DOC-KN-LP Lehrperson + Bewertung',
         markup: renderToStaticMarkup(<DocKnLp kn={d.kn} prinzip={d.prinzip} set={d.set} abteilung={abteilung} sits={[d.hf_A, d.hf_B, d.hf_C]} />),
-        docx: () => buildKnLp({ kn: d.kn!, prinzip: d.prinzip, set: d.set, abteilung, logoPng: pngBuf, sits: [d.hf_A, d.hf_B, d.hf_C] }),
+        docx: () => buildKnLp({ kn: d.kn!, prinzip: d.prinzip, set: d.set, abteilung: abtWord, logoPng: pngBuf, sits: [d.hf_A, d.hf_B, d.hf_C] }),
       }
     }
     if (doc === 'doc-ki-1' || doc === 'doc-ki-2') {
@@ -547,7 +565,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
         baseName: `${p}_doc-ki-${num}`,
         title: `DOC-KI-${num} · KI-Toolbox`,
         markup: renderToStaticMarkup(<DocKi ki={d.ki} which={which} abteilung={abteilung} edits={{}} onEdit={() => {}} />),
-        docx: () => buildKi({ ki: d.ki!, which, abteilung, logoPng: pngBuf }),
+        docx: () => buildKi({ ki: d.ki!, which, abteilung: abtWord, logoPng: pngBuf }),
       }
     }
     if (doc === 'doc-lernprompt') {
@@ -556,7 +574,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
         baseName: `${p}_doc-lernprompt`,
         title: 'DOC-LERNPROMPT · KI-Toolbox',
         markup: renderToStaticMarkup(<DocLernprompt lernprompt={d.lernprompt} abteilung={abteilung} edits={{}} onEdit={() => {}} />),
-        docx: () => buildLernprompt({ lernprompt: d.lernprompt!, abteilung, logoPng: pngBuf }),
+        docx: () => buildLernprompt({ lernprompt: d.lernprompt!, abteilung: abtWord, logoPng: pngBuf }),
       }
     }
     if (doc === 'doc-lernbegleiter') {
@@ -565,7 +583,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
         baseName: `${p}_doc-lernbegleiter`,
         title: 'DOC-LERNBEGLEITER · KI-Toolbox',
         markup: renderToStaticMarkup(<DocLernbegleiter lernbegleiter={d.lernbegleiter} abteilung={abteilung} edits={{}} onEdit={() => {}} />),
-        docx: () => buildLernbegleiter({ lernbegleiter: d.lernbegleiter!, abteilung, logoPng: pngBuf }),
+        docx: () => buildLernbegleiter({ lernbegleiter: d.lernbegleiter!, abteilung: abtWord, logoPng: pngBuf }),
       }
     }
     return null
@@ -683,7 +701,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
       // der Lehrperson gehört (Lösungen), liegt wie der Begleiter unter Material_LP/,
       // nicht zwischen den Heften. docKey mit Präfix, damit er über Einheiten eindeutig bleibt.
       if (istV42) {
-        for (const dok of v42Dokumente(dRoh, { abteilung, logoPng: pngArrayBuffer })) {
+        for (const dok of v42Doks(dRoh, pngArrayBuffer)) {
           const filename = `${dok.datei}.html`
           const htmlPfad = dok.lehrperson ? `Material_LP/${filename}` : `html/${filename}`
           const wordPfad = dok.lehrperson ? `Material_LP/${dok.datei}.docx` : `word/${dok.datei}.docx`
@@ -722,7 +740,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
           zip.file(`html/${filename}`, wrap(filename, title, markup, { compact: m === 'info', protokoll: m === 'fill' }))
           log.push(`html/${filename}`)
           try {
-            const docx = buildDocS({ sit: s, set: d.set, abteilung, mode: m, logoPng: pngArrayBuffer })
+            const docx = buildDocS({ sit: s, set: d.set, abteilung: abtWord, mode: m, logoPng: pngArrayBuffer })
             zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
             log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
           } catch (e) { console.warn('docx DocS failed', filename, e) }
@@ -736,19 +754,19 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
         zip.file(`html/${filename}`, wrap(filename, 'DOC-AUSTAUSCH · Set-Abschluss', markup))
         log.push(`html/${filename}`)
         try {
-          const docx = buildAustausch({ set: d.set, sits: [d.hf_A, d.hf_B, d.hf_C], abteilung, logoPng: pngArrayBuffer })
+          const docx = buildAustausch({ set: d.set, sits: [d.hf_A, d.hf_B, d.hf_C], abteilung: abtWord, logoPng: pngArrayBuffer })
           zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
           log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
         } catch (e) { console.warn('docx Austausch failed', filename, e) }
       }
 
       if (d.dossier) {
-        const markup = renderToStaticMarkup(<DocEbaDossier dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} />)
+        const markup = renderToStaticMarkup(<DocEbaDossier dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} fork={istV42} />)
         const filename = `${prefix}_doc-dossier.html`
         zip.file(`html/${filename}`, wrap(filename, 'Glossar+ (EBA) · Nachschlagen & Lernen', markup))
         log.push(`html/${filename}`)
         try {
-          const docx = buildDossier({ dossier: d.dossier, abteilung, kompetenzNr: d.kn?.kompetenz_nr, logoPng: pngArrayBuffer })
+          const docx = buildDossier({ dossier: d.dossier, abteilung: abtWord, kompetenzNr: d.kn?.kompetenz_nr, logoPng: pngArrayBuffer })
           if (docx) {
             zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
             log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
@@ -757,12 +775,12 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
       }
 
       if (d.dossier?.leseblatt) {
-        const markup = renderToStaticMarkup(<DocLeseblatt dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} />)
+        const markup = renderToStaticMarkup(<DocLeseblatt dossier={d.dossier} abteilung={abteilung} kompetenzNr={d.kn?.kompetenz_nr} fork={istV42} />)
         const filename = `${prefix}_doc-leseblatt.html`
         zip.file(`html/${filename}`, wrap(filename, 'Lese-Arbeitsblatt (EBA) · Lesen & Verstehen', markup))
         log.push(`html/${filename}`)
         try {
-          const docx = buildLeseblatt({ dossier: d.dossier, abteilung, kompetenzNr: d.kn?.kompetenz_nr, logoPng: pngArrayBuffer })
+          const docx = buildLeseblatt({ dossier: d.dossier, abteilung: abtWord, kompetenzNr: d.kn?.kompetenz_nr, logoPng: pngArrayBuffer })
           if (docx) {
             zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
             log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
@@ -777,7 +795,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
           zip.file(`html/${filename}`, wrap(filename, `DOC-KN-S ${typ.label}`, markup))
           log.push(`html/${filename}`)
           try {
-            const docx = buildKnS({ kn: d.kn, knTyp: typ.typ, abteilung, logoPng: pngArrayBuffer })
+            const docx = buildKnS({ kn: d.kn, knTyp: typ.typ, abteilung: abtWord, logoPng: pngArrayBuffer })
             if (docx) {
               zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
               log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
@@ -792,7 +810,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
         zip.file(`html/${filename}`, wrap(filename, 'DOC-KN-LP Lehrperson + Bewertung', markup))
         log.push(`html/${filename}`)
         try {
-          const docx = buildKnLp({ kn: d.kn, prinzip: d.prinzip, set: d.set, abteilung, logoPng: pngArrayBuffer, sits: [d.hf_A, d.hf_B, d.hf_C] })
+          const docx = buildKnLp({ kn: d.kn, prinzip: d.prinzip, set: d.set, abteilung: abtWord, logoPng: pngArrayBuffer, sits: [d.hf_A, d.hf_B, d.hf_C] })
           zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
           log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
         } catch (e) { console.warn('docx KnLp failed', filename, e) }
@@ -849,7 +867,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
           zip.file(`html/${filename}`, wrap(filename, `DOC-KI-${num} · KI-Toolbox`, markup))
           log.push(`html/${filename}`)
           try {
-            const docx = buildKi({ ki: d.ki, which, abteilung, logoPng: pngArrayBuffer })
+            const docx = buildKi({ ki: d.ki, which, abteilung: abtWord, logoPng: pngArrayBuffer })
             if (docx) {
               zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
               log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
@@ -864,7 +882,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
         zip.file(`html/${filename}`, wrap(filename, 'DOC-LERNPROMPT · KI-Toolbox', markup))
         log.push(`html/${filename}`)
         try {
-          const docx = buildLernprompt({ lernprompt: d.lernprompt, abteilung, logoPng: pngArrayBuffer })
+          const docx = buildLernprompt({ lernprompt: d.lernprompt, abteilung: abtWord, logoPng: pngArrayBuffer })
           if (docx) {
             zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
             log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
@@ -878,7 +896,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
         zip.file(`html/${filename}`, wrap(filename, 'DOC-LERNBEGLEITER · KI-Toolbox', markup))
         log.push(`html/${filename}`)
         try {
-          const docx = buildLernbegleiter({ lernbegleiter: d.lernbegleiter, abteilung, logoPng: pngArrayBuffer })
+          const docx = buildLernbegleiter({ lernbegleiter: d.lernbegleiter, abteilung: abtWord, logoPng: pngArrayBuffer })
           if (docx) {
             zip.file(`word/${filename.replace(/\.html$/, '.docx')}`, await docToBlob(docx))
             log.push(`word/${filename.replace(/\.html$/, '.docx')}`)
@@ -897,6 +915,7 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
 
       const readme = buildUebersicht({ prefix, log, d, when: new Date(), abgedeckteKompetenzen: docAbgedeckte })
       zip.file('Übersicht_LP.html', readme)
+      if (vermerk) zip.file('HINWEIS-FASSUNG.txt', [VERMERK, '', ...fork!.warnungen.map((w) => `- ${w.text}`)].join('\n') + '\n')
 
       const blob = await zip.generateAsync({ type: 'blob' })
       const url = URL.createObjectURL(blob)
@@ -1497,6 +1516,10 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer, logoUrl, feed
               Lernende</strong> · zum <strong>Üben vor dem Kompetenznachweis</strong>.
             </p>
           </div>
+        )}
+        {fork && !gateKind && (
+          <ForkPanel fork={fork} pagesRef={pagesRef} renderKey={`${doc}|${situation}|${spur}`}
+            zeige={(h) => (h === 'auftrag' ? pick('doc-auftragsbogen') : h === 'dossier' ? pick('doc-dossier') : selectSit(h))} />
         )}
         <main className="pages" ref={pagesRef}>
           <div className="pages-zoom" style={{ zoom }}>

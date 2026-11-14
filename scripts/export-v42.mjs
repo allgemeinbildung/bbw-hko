@@ -58,7 +58,8 @@ try {
     const { DocEbaDossier } = await server.ssrLoadModule('/src/components/einheiten/docs/DocEbaDossier.tsx')
     const { DocLeseblatt } = await server.ssrLoadModule('/src/components/einheiten/docs/DocLeseblatt.tsx')
     const { buildDossier, buildLeseblatt } = await server.ssrLoadModule('/src/lib/einheiten/docx-builder.ts')
-    const props = { dossier: d.dossier, logoPng: new Uint8Array(logoBytes) }
+    // `fork`: Feldmarken (Fork-Pilot) nur bei v4.2-Hefte; buildDossier/buildLeseblatt ignorieren das Feld.
+    const props = { dossier: d.dossier, logoPng: new Uint8Array(logoBytes), fork: d.hf_A?.template === 'heft_8page_v42' }
     dokumente.push({ datei: 'dossier', titel: 'Dossier', markup: () => renderToStaticMarkup(createElement(DocEbaDossier, props)), docx: () => buildDossier(props), protokoll: false })
     if (d.dossier.leseblatt) dokumente.push({ datei: 'leseblatt', titel: 'Leseblatt', markup: () => renderToStaticMarkup(createElement(DocLeseblatt, props)), docx: () => buildLeseblatt(props), protokoll: false })
   }

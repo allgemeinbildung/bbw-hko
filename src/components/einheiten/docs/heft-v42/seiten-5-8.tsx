@@ -7,6 +7,7 @@ import { istEba, worte } from '../../../../lib/einheiten/v42-profil'
 import { Kasten, SeitenKopf, type HeftSeiteProps } from './gemeinsam'
 import { Begriffsnetz, ChecklisteZweispaltig, GlossarStreifen } from './begriffsnetz'
 import { BeispielBand } from './produkt-bild'
+import { fm } from '../../../../lib/fork/feld'
 
 /**
  * Heft v4.2, Seiten 5–8 (Leitfaden §3): Auftrag · Methoden · Arbeitsfläche ·
@@ -121,17 +122,17 @@ function FeedbackKriterien(props: HeftSeiteProps) {
             <tbody key={ki}>
               <tr className="v42-krit-kopf">
                 <th colSpan={3}>
-                  <span className="v42-krit-name">{name}</span>
+                  <span className="v42-krit-name" {...(eba && k.name_lernende ? fm(props.sit, `feedback_kriterien[kn_kriterium=${k.kn_kriterium}].name_lernende`) : {})}>{name}</span>
                   {k.dimension && <span className="v42-krit-dim">{w.dimension(k.dimension)}</span>}
                   {k.indikator_produkt && (
-                    <span className="v42-krit-indikator">
+                    <span className="v42-krit-indikator" {...fm(props.sit, `feedback_kriterien[kn_kriterium=${k.kn_kriterium}].indikator_produkt`)}>
                       <span className="v42-krit-frage">Woran sehe ich das in meinem Produkt?</span> {k.indikator_produkt}
                     </span>
                   )}
                 </th>
               </tr>
               {stufen.map((s, si) => (
-                <tr key={si} className={wahl === String(si) ? 'v42-krit-stufe gewaehlt' : 'v42-krit-stufe'}>
+                <tr key={si} className={wahl === String(si) ? 'v42-krit-stufe gewaehlt' : 'v42-krit-stufe'} {...fm(props.sit, `feedback_kriterien[kn_kriterium=${k.kn_kriterium}].${stufen === k.stufen ? 'stufen' : 'stufen_lernende'}`)}>
                   <td className="v42-krit-nr">{RUBRIK_PUNKTE_LABELS[si] ?? `${si} Punkte`}</td>
                   <td className="v42-krit-text">{s}</td>
                   <td className="v42-krit-box">
@@ -162,8 +163,8 @@ export function Seite5(props: HeftSeiteProps) {
     <>
       <SeitenKopf nr={5} titel="Auftrag" />
       <Kasten label="Ihr Produkt" className="v42-produkt">
-        {hp?.titel && <div className="v42-produkt-titel">{hp.titel}</div>}
-        {hp?.beschreibung && <p className="v42-produkt-text">{hp.beschreibung}</p>}
+        {hp?.titel && <div className="v42-produkt-titel" {...fm(sit, 'handlungsprodukt.titel')}>{hp.titel}</div>}
+        {hp?.beschreibung && <p className="v42-produkt-text" {...fm(sit, 'handlungsprodukt.beschreibung')}>{hp.beschreibung}</p>}
       </Kasten>
       {w.medium && (
         <p className="v42-medium"><strong>{w.medium[0]}</strong> {w.medium[1]}</p>
@@ -176,23 +177,23 @@ export function Seite5(props: HeftSeiteProps) {
               <li key={i}>
                 <span className="v42-schritt-nr">{nr}</span>
                 <span className="v42-schritt-label">{text}</span>
-                <span className="v42-schritt-hint">{s.hint}</span>
+                <span className="v42-schritt-hint" {...fm(sit, `handlungsprodukt.schritte[label=${s.label}].hint`)}>{s.hint}</span>
               </li>
             )
           })}
         </ol>
       )}
-      {hp?.hilfe_verweis && <p className="v42-hilfe">→ {hp.hilfe_verweis}</p>}
+      {hp?.hilfe_verweis && <p className="v42-hilfe" {...fm(sit, 'handlungsprodukt.hilfe_verweis')}>→ {hp.hilfe_verweis}</p>}
       {abgaben.length > 0 && (
         <Kasten label="Das geben Sie ab" className="v42-abgaben">
-          <ul>
+          <ul {...fm(sit, 'handlungsprodukt.abgaben')}>
             {abgaben.map((a, i) => <li key={i}>{a}</li>)}
           </ul>
         </Kasten>
       )}
       {w.pruefSeite ? (
         // EBA: das Beispiel direkt unter dem Auftrag; Kriterien und Plus stehen auf S. 7.
-        bild && <BeispielBand bild={bild} unterzeile={w.beispielUnterzeile} />
+        bild && <BeispielBand bild={bild} unterzeile={w.beispielUnterzeile} marke={fm(sit, 'handlungsprodukt.beispielbild')} />
       ) : (
         <KriterienUndPlus {...props} />
       )}
@@ -208,7 +209,7 @@ function KriterienUndPlus(props: HeftSeiteProps) {
       <FeedbackKriterien {...props} />
       {plus && (
         <Kasten label={worte(props.sit).plus} className="v42-plus">
-          <p>{plus}</p>
+          <p {...fm(props.sit, 'lernfortschritt.scaffold_100')}>{plus}</p>
         </Kasten>
       )}
     </>
@@ -238,7 +239,7 @@ export function Seite6({ sit }: HeftSeiteProps) {
       {bild ? (
         <div className="v42-pb-s6">
           <MethodenGrid sit={sit} />
-          <BeispielBand bild={bild} />
+          <BeispielBand bild={bild} marke={fm(sit, 'handlungsprodukt.beispielbild')} />
         </div>
       ) : (
         <MethodenGrid sit={sit} />
@@ -302,13 +303,13 @@ function Mindmap({ sit }: { sit: SituationJson }) {
   const ecken = ['v42-mm-b1', 'v42-mm-b2', 'v42-mm-b3', 'v42-mm-b4']
   const enden = [[100 / 3, 100 / 3], [200 / 3, 100 / 3], [100 / 3, 200 / 3], [200 / 3, 200 / 3]]
   return (
-    <div className="v42-mm">
+    <div className="v42-mm" {...fm(sit, 'mindmap_aeste')}>
       <svg className="v42-mm-linien" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
         {aeste.map((ast, i) => (
           <line key={i} x1="50" y1="50" x2={enden[i][0]} y2={enden[i][1]} className={ast.transfer ? 'offen' : ''} />
         ))}
       </svg>
-      <div className="v42-mm-zentrum">{sit.mindmap_zentrum}</div>
+      <div className="v42-mm-zentrum" {...fm(sit, 'mindmap_zentrum')}>{sit.mindmap_zentrum}</div>
       {aeste.map((ast: Ast, i) => (
         <div className={`v42-mm-ast ${ecken[i]}${ast.transfer ? ' offen' : ''}`} key={i}>
           <div className="v42-mm-titel">{ast.titel}</div>
@@ -355,7 +356,7 @@ export function Seite8(props: HeftSeiteProps) {
         </>
       )}
       {quercheck.length > 0 && (
-        <section className="v42-quercheck">
+        <section className="v42-quercheck" {...fm(sit, 'abschluss')}>
           <div className="v42-kasten-label">{worte(sit).quercheck}</div>
           <ul>
             {quercheck.map((q, i) => {
@@ -373,7 +374,7 @@ export function Seite8(props: HeftSeiteProps) {
         </section>
       )}
       {mitnahme.length > 0 && (
-        <section className="v42-mitnahme">
+        <section className="v42-mitnahme" {...fm(sit, 'abschluss')}>
           <div className="v42-kasten-label">Das nehme ich mit</div>
           {/* Mit Begriffsnetz fehlt der Platz für die Anweisung — Label und Zeilen reichen. */}
           {!netz && <p className="v42-arbeitsanweisung">{worte(sit).mitnahme}</p>}

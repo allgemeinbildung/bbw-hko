@@ -5,7 +5,13 @@ import {
   LOESUNG_ERKLAERUNG, loesungenModell,
   type LoesungenModell, type LsAbschluss, type LsBeurteilen, type LsLeitfrage, type LsProdukt, type LsRaster, type LsZeile,
 } from '../../../lib/einheiten/loesungen-v42'
-import type { SituationJson } from '../../../lib/einheiten/types'
+import type { Leitfrage, SituationJson } from '../../../lib/einheiten/types'
+import { fm, fmLf, fmSpur } from '../../../lib/fork/feld'
+
+type Marke = { 'data-feld'?: string }
+/** Die Leitfrage zu einer Nummer im aufgelösten Heft (Kern und Spur liegen beide in `sit.leitfragen`). */
+const lfZu = (sit: SituationJson, nr: number): Leitfrage | undefined => sit.leitfragen?.find((l) => l.nr === nr)
+const loesungMarke = (sit: SituationJson, nr: number): Marke => fmLf(sit, lfZu(sit, nr), 'loesung')
 
 /**
  * Lösungen (v4.2, E19, nur Lehrperson): zu jedem Feld eines Hefts eine mögliche Lösung,
@@ -34,9 +40,9 @@ function Frage({ nr, text }: { nr: number; text: string }) {
   )
 }
 
-function Zeilen({ zeilen, hinweis }: { zeilen: LsZeile[]; hinweis?: boolean }) {
+function Zeilen({ zeilen, hinweis, marke }: { zeilen: LsZeile[]; hinweis?: boolean; marke?: Marke }) {
   return (
-    <dl className={hinweis ? 'v42-ls-zeilen v42-ls-hinweise' : 'v42-ls-zeilen'}>
+    <dl className={hinweis ? 'v42-ls-zeilen v42-ls-hinweise' : 'v42-ls-zeilen'} {...marke}>
       {zeilen.map((z, i) => (
         <div className="v42-ls-zeile" key={i}>
           {z.label && <dt>{z.label}</dt>}
@@ -66,14 +72,14 @@ function Kopf({ m }: { m: LoesungenModell }) {
   )
 }
 
-function Seite2({ lfs, titel }: { lfs: LsLeitfrage[]; titel: string }) {
+function Seite2({ lfs, titel, sit }: { lfs: LsLeitfrage[]; titel: string; sit: SituationJson }) {
   return (
     <>
       <div className="v42-seitenkopf"><SectionHead num="02">{`Wissensecke I · ${titel}`}</SectionHead></div>
       {lfs.map((lf) => (
         <section className="v42-ls-block" key={lf.nr}>
           <Frage nr={lf.nr} text={lf.text} />
-          <Zeilen zeilen={lf.zeilen} />
+          <Zeilen zeilen={lf.zeilen} marke={loesungMarke(sit, lf.nr)} />
         </section>
       ))}
     </>
@@ -111,7 +117,8 @@ function Tabelle({ spalten, zeilen, beispiel, breiten, className }: {
   )
 }
 
-function Seite3({ r }: { r: LsRaster }) {
+function Seite3({ r, sit }: { r: LsRaster; sit: SituationJson }) {
+  const marke = loesungMarke(sit, r.nr)
   return (
     <>
       <div className="v42-seitenkopf"><SectionHead num="03">Quelle · Leitfrage {r.nr}</SectionHead></div>
@@ -123,19 +130,19 @@ function Seite3({ r }: { r: LsRaster }) {
         </p>
       )}
       {r.spalten.length > 0 && (r.zeilen.length > 0 || r.beispiel) && (
-        <section className="v42-ls-block">
+        <section className="v42-ls-block" {...marke}>
           <div className="v42-ls-label">Raster</div>
           <Tabelle spalten={r.spalten} zeilen={r.zeilen} beispiel={r.beispiel} breiten={r.breiten} />
         </section>
       )}
       {r.befund && (
-        <section className="v42-ls-block">
+        <section className="v42-ls-block" {...marke}>
           <div className="v42-ls-label">Befund</div>
           <p className="v42-ls-text"><L>{r.befund}</L></p>
         </section>
       )}
       {r.hinweise.length > 0 && (
-        <section className="v42-ls-block v42-ls-lpbox">
+        <section className="v42-ls-block v42-ls-lpbox" {...marke}>
           <div className="v42-ls-label">Hinweise für die Lehrperson</div>
           <Zeilen zeilen={r.hinweise} hinweis />
         </section>
@@ -144,32 +151,33 @@ function Seite3({ r }: { r: LsRaster }) {
   )
 }
 
-function Seite4({ b }: { b: LsBeurteilen }) {
+function Seite4({ b, sit }: { b: LsBeurteilen; sit: SituationJson }) {
+  const marke = loesungMarke(sit, b.nr)
   return (
     <>
       <div className="v42-seitenkopf"><SectionHead num="04">Wissensecke II · Leitfrage {b.nr}</SectionHead></div>
       <Frage nr={b.nr} text={b.text} />
       {b.gutWenn.length > 0 && (
-        <section className="v42-ls-block">
+        <section className="v42-ls-block" {...marke}>
           <div className="v42-ls-label">Tragfähig, wenn …</div>
           <ul className="v42-ls-liste">{b.gutWenn.map((g, i) => <li key={i}>{g}</li>)}</ul>
           {b.tragfaehig && <p className="v42-ls-text">{b.tragfaehig}</p>}
         </section>
       )}
       {b.antworten.map((a, i) => (
-        <section className="v42-ls-block" key={i}>
+        <section className="v42-ls-block" key={i} {...marke}>
           <div className="v42-ls-label">Mögliche Antwort{b.antworten.length > 1 ? ` ${i + 1}` : ''}</div>
           <p className="v42-ls-text"><L>{a}</L></p>
         </section>
       ))}
       {b.nichtTragfaehig && (
-        <section className="v42-ls-block">
+        <section className="v42-ls-block" {...marke}>
           <div className="v42-ls-label">Nicht tragfähig</div>
           <p className="v42-ls-text">{b.nichtTragfaehig}</p>
         </section>
       )}
       {b.denkhilfe && (
-        <section className="v42-ls-block">
+        <section className="v42-ls-block" {...fmSpur(sit, 'kasten_s4')}>
           <div className="v42-ls-label">{b.denkhilfe.titel}</div>
           <Tabelle spalten={b.denkhilfe.spalten} zeilen={b.denkhilfe.zeilen} />
         </section>
@@ -257,20 +265,20 @@ function SeiteAbschluss({ a }: { a: LsAbschluss }) {
 }
 
 /** Die Seiten in fester Folge; leere Abschnitte entfallen. */
-function seitenVon(m: LoesungenModell): { key: string; inhalt: ReactNode }[] {
-  const out: { key: string; inhalt: ReactNode }[] = []
-  if (m.s2.length) out.push({ key: 's2', inhalt: <Seite2 lfs={m.s2} titel={m.s2Titel} /> })
-  if (m.s3) out.push({ key: 's3', inhalt: <Seite3 r={m.s3} /> })
-  if (m.s4) out.push({ key: 's4', inhalt: <Seite4 b={m.s4} /> })
-  if (m.produkt) out.push({ key: 'produkt', inhalt: <SeiteProdukt p={m.produkt} /> })
-  if (m.abschluss) out.push({ key: 'abschluss', inhalt: <SeiteAbschluss a={m.abschluss} /> })
+function seitenVon(m: LoesungenModell, sit: SituationJson): { key: string; inhalt: ReactNode; marke?: Marke }[] {
+  const out: { key: string; inhalt: ReactNode; marke?: Marke }[] = []
+  if (m.s2.length) out.push({ key: 's2', inhalt: <Seite2 lfs={m.s2} titel={m.s2Titel} sit={sit} /> })
+  if (m.s3) out.push({ key: 's3', inhalt: <Seite3 r={m.s3} sit={sit} /> })
+  if (m.s4) out.push({ key: 's4', inhalt: <Seite4 b={m.s4} sit={sit} /> })
+  if (m.produkt) out.push({ key: 'produkt', inhalt: <SeiteProdukt p={m.produkt} />, marke: fm(sit, 'handlungsprodukt.loesungsbild') })
+  if (m.abschluss) out.push({ key: 'abschluss', inhalt: <SeiteAbschluss a={m.abschluss} />, marke: fm(sit, 'abschluss') })
   return out
 }
 
 export function DocLoesungenV42({ sit, abteilung }: { sit: SituationJson; abteilung?: string }) {
   const m = loesungenModell(sit)
   if (!m) return null
-  const seiten = seitenVon(m)
+  const seiten = seitenVon(m, sit)
   return (
     <div className="v42-loesungen" style={sitColors(sit)}>
       {seiten.map((s, i) => (
@@ -286,7 +294,7 @@ export function DocLoesungenV42({ sit, abteilung }: { sit: SituationJson; abteil
           kompetenzNr={sit.nrlp?.nr}
           abgedeckteKompetenzen={sit.nrlp?.nr_primary}
         >
-          <div className={`a4-page-body v42-seite v42-ls-seite v42-ls-${s.key}`}>
+          <div className={`a4-page-body v42-seite v42-ls-seite v42-ls-${s.key}`} {...s.marke}>
             {i === 0 && <Kopf m={m} />}
             {s.inhalt}
           </div>

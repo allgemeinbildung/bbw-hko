@@ -4,6 +4,7 @@ import type { SituationJson, SetJson } from '../../../lib/einheiten/types'
 import { isV42 } from '../../../lib/einheiten/spuren'
 import { worte } from '../../../lib/einheiten/v42-profil'
 import { DocHeftV42 } from './DocHeftV42'
+import { fm } from '../../../lib/fork/feld'
 
 export interface DocSProps {
   sit: SituationJson
@@ -96,7 +97,7 @@ function isV3(sit: SituationJson): boolean {
 export function ChecklisteVollstaendigkeit({ sit }: { sit: SituationJson }) {
   if (!sit.bewertungsraster) return null
   return (
-    <section style={{ marginTop: '3mm' }}>
+    <section style={{ marginTop: '3mm' }} {...fm(sit, 'bewertungsraster')}>
       <MiniTableLabel>Checkliste Vollständigkeit</MiniTableLabel>
       <table className="cockpit-table checkliste-table">
         <thead>
@@ -643,6 +644,7 @@ function istAngereichert(m: NonNullable<SituationJson['methoden']>[number]): boo
 }
 
 export function MethodenGrid({ sit }: { sit: SituationJson }) {
+  const platzhalter = (sit.methoden || []).filter(Boolean)[1]
   const items = (sit.methoden || []).filter(Boolean)
     .slice()
     .sort((a, b) => Number(istAngereichert(a)) - Number(istAngereichert(b)))
@@ -652,7 +654,7 @@ export function MethodenGrid({ sit }: { sit: SituationJson }) {
   return (
     <div className="methoden-grid">
       {items.map((m, i) => (
-        <div className={m.quelle === 'hko' ? 'methode-box hko' : 'methode-box'} key={i}>
+        <div className={m.quelle === 'hko' ? 'methode-box hko' : 'methode-box'} key={i} {...(m === platzhalter ? {} : fm(sit, `methoden[ref=${m.id}]`))}>
           <div className="methode-head">
             <span className="methode-nr">{i + 1}</span>
             <span className="methode-name">{m.name}</span>

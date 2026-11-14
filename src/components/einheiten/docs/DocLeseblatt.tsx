@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { A4Page, SectionHead } from './chrome'
 import type { DossierJson } from './DocEbaDossier'
+import { fmDossier } from '../../../lib/fork/feld'
 
 /* ---------------------------------------------------------------------------
    DocLeseblatt — EBA-only Lese-Arbeitsblatt (Renderer B, A4/Print).
@@ -16,6 +17,8 @@ export interface DocLeseblattProps {
   dossier: DossierJson
   abteilung?: string
   kompetenzNr?: string
+  /** Fork-Pilot: Dossier gehört zu einer v4.2-EBA-Einheit → data-feld-Marken. Fehlt = keine Marken. */
+  fork?: boolean
 }
 
 function chunk<T>(arr: T[], n: number): T[][] {
@@ -24,7 +27,8 @@ function chunk<T>(arr: T[], n: number): T[][] {
   return out
 }
 
-export function DocLeseblatt({ dossier, abteilung, kompetenzNr }: DocLeseblattProps) {
+export function DocLeseblatt({ dossier, abteilung, kompetenzNr, fork }: DocLeseblattProps) {
+  const aktiv = !!fork
   const lese = dossier.leseblatt
   const komp = kompetenzNr || dossier.kompetenz_nr || dossier.kopf?.kompetenz_nr
   if (!lese) {
@@ -50,7 +54,7 @@ export function DocLeseblatt({ dossier, abteilung, kompetenzNr }: DocLeseblattPr
     <div className="eba-lese-woerter">
       <SectionHead num="L1">Wichtige Wörter</SectionHead>
       <p className="eba-lese-intro">Lesen Sie diese Wörter zuerst. Sie helfen Ihnen beim Text.</p>
-      <div className="eba-lese-vokabel">
+      <div className="eba-lese-vokabel" {...fmDossier(aktiv, 'leseblatt.vokabeln')}>
         {vok.map((g) => (
           <div className="eba-lese-vok" key={g.id}>
             <span className="eba-lese-vok-b">{g.begriff}</span> — <span>{g.erklaerung_a2}</span>
@@ -104,7 +108,7 @@ export function DocLeseblatt({ dossier, abteilung, kompetenzNr }: DocLeseblattPr
           {rf.length > 0 && (
             <>
               <div className="eba-lese-aufgabe-titel">1. Richtig oder falsch? Kreuzen Sie an.</div>
-              <div className="eba-lese-rf">
+              <div className="eba-lese-rf" {...fmDossier(aktiv, 'leseblatt.richtig_falsch')}>
                 {rf.map((r, i) => (
                   <div className="eba-lese-rf-row" key={i}>
                     <span className="eba-lese-rf-text">{r.text}</span>
@@ -118,7 +122,7 @@ export function DocLeseblatt({ dossier, abteilung, kompetenzNr }: DocLeseblattPr
             <>
               <div className="eba-lese-aufgabe-titel">2. Beantworten Sie die Fragen in ganzen Sätzen.</div>
               {wf.map((q, i) => (
-                <div className="eba-lese-frage" key={i}>
+                <div className="eba-lese-frage" key={i} {...fmDossier(aktiv, 'leseblatt.w_fragen')}>
                   <p className="eba-lese-frage-q">{i + 1}) {q}</p>
                   <div className="eba-lese-lines" aria-hidden="true" />
                 </div>
