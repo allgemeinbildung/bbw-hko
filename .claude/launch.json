@@ -20,6 +20,12 @@
       "port": 4325
     }
   ,{
+    "name": "astro-kt1",
+    "runtimeExecutable": "npm",
+    "runtimeArgs": ["--prefix", "D:/OS/dev/bbw-hko-kt1", "run", "dev", "--", "--port", "4331"],
+    "port": 4331
+  }
+  ,{
     "name": "guide",
     "runtimeExecutable": "python",
     "runtimeArgs": ["-m", "http.server", "4322", "--directory", "onboarding/output/jahresplanung"],
