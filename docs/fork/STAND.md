@@ -1,22 +1,37 @@
-# Baustand Fork-Pilot (laufend nachgeführt)
+# Baustand Fork-Pilot — Übergabe an Pietro (14.11.2026)
 
-Referenz-Export vor Schritt 2: `%TEMP%\fork-referenz-vor-schritt2` (efz/eba, 50 Dateien).
-Vergleich: `node scripts/fork/vergleich-export.mjs <referenz> <neu>` (ignoriert data-feld, docx-Zeitstempel, zufällige Hyperlink-IDs).
+Branch `fork-pilot`, Commit «Fork-Pilot «Meine Fassung»: Vertrag, Kern, API, Oberfläche, Admin-Sicht».
+Nicht gepusht, nicht deployt, Migration nicht angewendet. Rückkehr: `git switch main` (Tag `vor-fork-pilot`).
 
-| Schritt | Stand |
+## Tore (aus dem Brief) — Stand bei Übergabe
+
+| Tor | Ergebnis |
 |---|---|
-| 1 Inventar + Vertrag | fertig, von Pietro freigegeben 14.11.2026 (`VERTRAG.md`, `ENTSCHEIDE.md` F1–F10) |
-| 2 Kern | `adresse.ts`, `anwenden.ts`, `loadEinheit({fassung, fassungPruefer})` fertig, Tests grün, Export gleich. `positivliste.ts` bei Executor |
-| 4 Marken | alle Renderer markiert (Seiten 1–8, Auftragsbogen, Lösungen, Dossier mit Prop `fork`, Beispielband). Offen: Workbench muss `fork={istV42}` an DocEbaDossier/DocLeseblatt geben; G1-Titel ohne Marke (SectionHead) |
-| 5 Modell | `text.ts` (unpdf 2.1) fertig; `anfrage.ts` geschrieben (Orchestrator); `openai.ts` bei Executor |
-| 3 Speicher | `supabase/migrations/028_einheit_fassungen.sql` geschrieben (nicht angewendet). API-Routen offen |
-| 4 Markieren | `src/lib/fork/feld.ts` (Helfer fm/fmLf/fmSpur/fmSet/fmDossier). data-feld: seiten-1-4 fertig; seiten-5-8+DocS, Auftragsbogen+Lösungen, Dossier bei Workern. Kommentar-Oberfläche offen |
-| 5 Modell | `text.ts` (unpdf) und `openai.ts` (Transport) bei Executor. `anfrage.ts` (Inhalt der Anfrage) schreibt der Orchestrator |
-| 2b | `positivliste.ts` fertig (10 Tests), `openai.ts` fertig (10 Tests), `typen.ts` (Orchestrator: ForkProp, API-Formen, Hinweistexte) |
-| laufend | Executor: `vorschlag.ts`; API `src/pages/api/fassungen/**` + `server.ts` + `ladeRohdateien`; Seite `[setKey].astro` + `seite.ts`; Workbench + `fork/ForkPanel.tsx` |
-| 8–9 | Admin-Seite (nach API), Schlussprüfung |
+| `npm run build` | grün |
+| `node --test scripts/check-eba.test.mjs scripts/fork/*.test.mjs` | 155/155 grün |
+| `check-all` beider Gold-Einheiten | ROT wie vor dem Bau: nur `ERR_BELEGE_FEHLT` und `ERR_FAKTEN_FEHLT` (fehlende `_pruefung/1.1.1_lehrvertrag_orientieren_v42/{belege,fakten}.json`); auf Tag `vor-fork-pilot` identisch |
+| Export + `messen-v42` | kein Überlauf; Export dateigleich zur Referenz vor Schritt 2 (`scripts/fork/vergleich-export.mjs`, 50 Dateien) |
+| `scripts/fork/check-data-feld.mjs` | 159/159 (EFZ) und 146/146 (EBA) Marken gültig; Positivliste Code = Vertrag (58 Nummern) |
+| `OPENAI_API_KEY` | nur `src/lib/fork/openai.ts`, `.env.example`, Doku |
+| Dev-Server ohne Anmeldung / als gast / als lp (Seed) | API 401 / 403 / 403; kein Umschalter, keine Fork-Prop |
 
-Geplante Oberfläche (Orchestrator-Entscheid, noch nicht gebaut):
-- `/einheiten/[setKey]?ansicht=original|fassung` und `?vorschau=<buendel_id>`; SSR wendet Fassung (+ Vorschlag) an und gibt der Workbench eine Prop `fork`.
-- Vermerk «Angepasst, nicht von KT1 geprüft»: HTML per CSS an `.page-foot .foot-titel`, Word über die Kopfzeile (Abteilung), weil `docx-*.ts` im Zaun liegt.
-- ZIP der Fassung: Begleiter und KI-Toolbox fallen bei Situations-/Textwechsel weg; KN bleibt, Hinweisdatei im ZIP.
+## Was du tun musst, damit der Pilot läuft
+
+1. `supabase/migrations/028_einheit_fassungen.sql` im SQL-Editor anwenden (idempotent; legt auch den privaten Bucket `fassung-texte` an).
+2. In `.env` (lokal) bzw. Vercel: `OPENAI_API_KEY`, `OPENAI_MODEL` (Modellname deiner Wahl), optional `FORK_MAX_AUFRUFE_PRO_TAG` (Vorgabe 20).
+3. Dev-Server, als Admin anmelden, eine Gold-Einheit öffnen (`/einheiten/1.3.1_konsum_verantworten_v42`, `/einheiten/1.1.1_lehrvertrag_orientieren_v42`), «Markieren» in der Leiste über der Vorschau.
+
+## Noch nicht belegt (braucht Schritt 1–3)
+
+- Durchgang der vier Aufträge auf beiden Gold-Einheiten bis zum Download (Fertig-Kriterium des Briefs).
+- Blinde Lesung der übernommenen Fassungen (stimmt das Heft, bleibt EBA auf A2).
+- Echte Word-/PDF-Dateien beim eigenen Text; `unpdf` auf Vercel.
+
+## Offene Punkte für dich
+
+- **F11 Aufbewahrung bei OpenAI:** Der Hinweis in der Oberfläche sagt «nicht für Training, bis zu 30 Tage Missbrauchskontrolle» — nicht «nichts gespeichert». Stimmt der Wortlaut für dich und die Schule?
+- **Laufzeit 300 s gilt für alle Seiten** (eine SSR-Funktion). Alternative: `functionPerRoute`.
+- **Word-Vermerk** «Angepasst, nicht von KT1 geprüft» steht in der Kopfzeile statt in der Fusszeile, weil `docx-*.ts` im Zaun liegt. HTML: Fusszeile.
+- **Deck-Link** in der Fassung zeigt das Original (die Präsentation kennt keine Fassung).
+- **Auftragsbogen-Titel (G1)** hat keine Marke (`SectionHead` in `chrome.tsx`).
+- **Entscheid ohne Transaktion:** scheitert der zweite Schreibschritt, bleibt das Bündel auf `vorschlag`, obwohl die Ersetzung schon gilt.
