@@ -216,7 +216,7 @@ const ERLAUBT: Record<AuftragKey, string[]> = {
   eigener_text: [...bereich('H', 8, 19), ...bereich('H', 34, 36), ...bereich('D', 1, 8)],
   situation_umformulieren: [...bereich('H', 1, 7), ...bereich('H', 9, 14), ...bereich('H', 17, 21), 'H24', 'H26', 'H28', 'H29', 'H30', ...bereich('H', 34, 37), ...bereich('G', 1, 13), ...bereich('D', 1, 8)],
   // F14: H24L/G6L ganze Schrittliste (Labels nach der Nummer); F15: Dossier bei EBA.
-  handlungsprodukt_aendern: ['H7', 'H9', 'H10', 'H11', 'H13', 'H20', ...bereich('H', 21, 33), 'H24L', 'H37', ...bereich('G', 5, 10), 'G6L', ...bereich('D', 1, 8)],
+  handlungsprodukt_aendern: ['H7', 'H9', 'H10', 'H11', 'H13', 'H20', ...bereich('H', 21, 33), 'H24L', 'H36', 'H37', ...bereich('G', 5, 10), 'G6L', ...bereich('D', 1, 8)],
 }
 const ZIEL: Record<AuftragKey, (f: Feld) => boolean> = {
   leitfrage_umformulieren: (f) => f.nr === 'H10' || f.muster === `${GA}.leitfrage`,

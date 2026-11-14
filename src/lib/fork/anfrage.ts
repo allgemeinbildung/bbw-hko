@@ -59,6 +59,8 @@ export interface AnfrageArgs {
   pflicht: string[]
   /** Begriffe des Hefts aus `set.glossar` — Punkte im Begriffsnetz müssen daraus sein. */
   glossarBegriffe?: string[]
+  /** Nur Dossier-Aufruf: die angepassten Heft-Felder als Lesekontext (nicht änderbar). */
+  bezug?: Feldauszug[]
 }
 
 /** Listen und ihr Schlüssel (VERTRAG §1). */
@@ -170,6 +172,9 @@ export function baueAnfrage(a: AnfrageArgs): { system: string; nutzer: string } 
   const nutzer = [
     `Datei: ${a.datei} (${k.einheitTitel}, ${k.lehrgangLabel})`,
     '',
+    ...(a.bezug?.length
+      ? ['Heft (Lesekontext, bereits angepasst, nicht änderbar):', ...a.bezug.map((f) => `- ${f.pfad}: ${JSON.stringify(f.wert)}`), '']
+      : []),
     'Leitfragen (nicht änderbar, zur Orientierung):',
     leitfragenKontext(a.roh).join('\n') || '- keine',
     '',

@@ -220,7 +220,7 @@ Pflicht-Abhängigkeit, die im Heft vorhanden ist, muss in der Antwort
 
 ### `handlungsprodukt_aendern`
 - Ziel: H22/H23 (Heft) oder G5 `auftrag` / G9 (Auftragsbogen).
-- Erlaubt im Heft: H7, H9, H10 (nur wo der Wortlaut das Produkt nennt), H11, H13, H20–H33, H24L, H37. Im Auftragsbogen: G5–G10, G6L. Bei EBA im Dossier: D1–D8 (F15).
+- Erlaubt im Heft: H7, H9, H10 (nur wo der Wortlaut das Produkt nennt), H11, H13, H20–H33, H24L, H36 (Quer-Check und Mitnahme nennen oft das Produkt), H37. Im Auftragsbogen: G5–G10, G6L. Bei EBA im Dossier: D1–D8 (F15).
 - Pflicht (Heft): H22, H23, H24L (die ganze Schrittliste; Labels nach der Nummer dürfen sich ändern, F14), H26, H27 (falls
   vorhanden), H28, H29, H30 für **alle** Kriterien, H31 (und H32 bei EBA) für
   alle Kriterien, H33 für jede Methode ausser `__spur__`, H37, H11 und H13 jeder

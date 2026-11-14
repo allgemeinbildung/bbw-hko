@@ -15,7 +15,10 @@ import { einheitById, loadEinheit } from '../../../../lib/einheiten/index'
 import { werkstattKontext } from '../../../../lib/werkstatt/kontext'
 import { wendeAn } from '../../../../lib/fork/anwenden'
 import { pflichtPfade, DOSSIER_AUFTRAEGE, type AuftragKey } from '../../../../lib/fork/positivliste'
-import { baueAnfrage } from '../../../../lib/fork/anfrage'
+import { baueAnfrage, feldauszug, type Feldauszug } from '../../../../lib/fork/anfrage'
+
+/** Felder des Hefts, die das Dossier als Lesekontext braucht (keine Lösungen). */
+const BEZUG = /^(titel|persona|situation_text|zahlen_tabelle|leitfrage|quellen_anker|leitfragen_intro|(spuren\.[a-z_]+\.)?leitfragen\[nr=\d+\]\.(text|knoten_ref|liefert)|handlungsprodukt\.(titel|format|beschreibung|schritte|abgaben)|spuren\.[a-z_]+\.leitfragen\[nr=\d+\]\.raster\.(auftrag|knoten_ref))$/
 import { frageModell } from '../../../../lib/fork/openai'
 import { pruefeVorschlag } from '../../../../lib/fork/vorschlag'
 import { MAX_BYTES, textAusDatei, textAusEingabe } from '../../../../lib/fork/text'
@@ -130,9 +133,21 @@ export const POST: APIRoute = async ({ locals, params, request }) => {
       for (const r of (data ?? []) as BuendelRow[]) rows[rows.findIndex((x) => x.id === r.id)] = r
     }
 
-    const ergebnisse = await Promise.all(laeufe.map((l, i) => verarbeite(admin, rows[i], l, {
-      kontext, eba: z.eba, text, rohOriginal, rohAktuell,
-    })))
+    // Echter Durchgang 14.11.2026: Das Dossier muss zum NEUEN Heft passen (Situation, Produkt,
+    // Verweise auf Info-Karten, Zahlen). Darum erst das Heft, dann das Dossier mit dem
+    // angepassten Heft als Lesekontext — nicht mehr parallel.
+    const c = { kontext, eba: z.eba, text, rohOriginal, rohAktuell }
+    const ergebnisse: Awaited<ReturnType<typeof verarbeite>>[] = []
+    ergebnisse.push(await verarbeite(admin, rows[0], laeufe[0], c))
+    for (let i = 1; i < laeufe.length; i++) {
+      const heftDatei = HEFT_DATEI[laeufe[0].heft]
+      const vorschlag = ergebnisse[0]?.vorschlag
+      const heftNeu = vorschlag?.ersetzungen?.length
+        ? wendeAn({ [heftDatei]: rohAktuell[heftDatei] }, vorschlag.ersetzungen).dateien[heftDatei]
+        : rohAktuell[heftDatei]
+      const bezug = feldauszug(heftDatei, heftNeu).filter((f) => BEZUG.test(f.pfad))
+      ergebnisse.push(await verarbeite(admin, rows[i], laeufe[i], { ...c, bezug }))
+    }
     return json({ buendel: ergebnisse })
   } catch {
     return fehler('Der Vorschlag konnte nicht gespeichert werden.', 502)
@@ -141,7 +156,7 @@ export const POST: APIRoute = async ({ locals, params, request }) => {
 
 async function verarbeite(
   admin: Admin, row: BuendelRow, l: Lauf,
-  c: { kontext: ReturnType<typeof werkstattKontext>; eba: boolean; text: string | null; rohOriginal: RohDateien; rohAktuell: RohDateien },
+  c: { kontext: ReturnType<typeof werkstattKontext>; eba: boolean; text: string | null; rohOriginal: RohDateien; rohAktuell: RohDateien; bezug?: Feldauszug[] },
 ) {
   const datei = HEFT_DATEI[l.heft]
   let art: string | undefined
@@ -149,7 +164,7 @@ async function verarbeite(
   try {
     const { system, nutzer } = baueAnfrage({
       kontext: c.kontext, datei, roh: c.rohAktuell[datei], rohOriginal: c.rohOriginal[datei], kommentare: l.kommentare,
-      eigenerText: c.text, eba: c.eba, pflicht: l.pflicht, glossarBegriffe: l.glossarBegriffe,
+      eigenerText: c.text, eba: c.eba, pflicht: l.pflicht, glossarBegriffe: l.glossarBegriffe, bezug: c.bezug,
     })
     const erg = await frageModell({ system, nutzer })
     if (!erg.ok) {
