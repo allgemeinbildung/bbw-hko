@@ -223,7 +223,11 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
         body: JSON.stringify({ buendel_id: vorschauB.id, entscheide }),
       })
       if (!res.ok) { setFehler(await fehlerAus(res)); return }
-      geheZu('ansicht', 'fassung')
+      // Echter Durchgang 14.11.2026: Bei EBA entsteht zum Heft ein zweiter Vorschlag (Dossier).
+      // Er lag danach versteckt im Verlauf — darum direkt zum nächsten offenen Vorschlag.
+      const naechster = (fork.fassung?.buendel ?? []).find((b) => b.id !== vorschauB.id && b.status === 'vorschlag')
+      if (naechster) geheZu('vorschau', naechster.id)
+      else geheZu('ansicht', 'fassung')
     } catch { setFehler('Netzwerkfehler — bitte nochmals versuchen.') }
   }
 
@@ -254,6 +258,14 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
           <button type="button" className={`fk-knopf${markieren ? ' an' : ''}`} aria-pressed={markieren}
             onClick={() => { setMarkieren((m) => !m); setAuswahl(null) }}>
             {markieren ? 'Markieren beenden' : 'Markieren'}
+          </button>
+        )}
+        {/* Befund Pietro 14.11.2026: In der Vorschau fehlte «Markieren» kommentarlos — wer nur
+            «Übernehmen» klickte, sass fest. Der Weg zurück steht jetzt da, wo der Knopf war. */}
+        {!kannMarkieren && (
+          <button type="button" className="fk-knopf" title="Vorschau verlassen, ohne zu speichern"
+            onClick={() => geheZu('ansicht', (fork.fassung?.ersetzungen.length ?? 0) > 0 ? 'fassung' : 'original')}>
+            Vorschau schliessen
           </button>
         )}
         <button type="button" className="fk-link" onClick={() => setOffen((o) => !o)} aria-expanded={offen}>{offen ? 'einklappen' : 'ausklappen'}</button>
@@ -351,6 +363,9 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
                 <details><summary className="fk-klein">{v.verworfen.length} vom Server verworfen</summary>
                   <ul>{v.verworfen.map((x, i) => <li key={i} className="fk-klein">{lesbar(x.datei, x.pfad)}: {x.grund}</li>)}</ul>
                 </details>
+              )}
+              {anbieten && (
+                <p className="fk-hinweis">Übernommen ist erst, was Sie mit «Entscheid speichern» sichern. Danach können Sie weiter markieren.</p>
               )}
               {anbieten && (
                 <div className="fk-zeile">
