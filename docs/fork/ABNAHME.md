@@ -45,3 +45,18 @@ Inhaltliche Feinheiten der Modellvorschläge (einzelne Wortreste, Beispiel nah a
 ## Offen bei Pietro (Brief Invariante 16)
 
 Push, Deploy, Vercel-Variablen (`OPENAI_API_KEY`, `OPENAI_MODEL`, `FORK_MAX_AUFRUFE_PRO_TAG`), Mitteilung an KT1.
+
+## Nachtrag (frischer Beleg, 14.11.2026 abends)
+
+Auf der aktuellen EBA-Fassung zusätzlich `leitfrage_umformulieren` über die Leiste (markieren → abschicken → Vorschau → übernehmen). Danach enthalten beide gespeicherten Fassungen alle vier Aufträge (übernommene Ersetzungen je Auftrag, gelesen über `GET /api/fassungen/<einheit>`):
+
+| Einheit | leitfrage_umformulieren | eigener_text | situation_umformulieren | handlungsprodukt_aendern |
+|---|---|---|---|---|
+| EFZ `1.3.1_konsum_verantworten_v42` | 1 | 1 | 10 | 39 |
+| EBA `1.1.1_lehrvertrag_orientieren_v42` | 1 | 18 | 6 | 29 |
+
+Download der EBA-Fassung über «Ganze Einheit · ZIP»: `1.1.1_lehrvertrag_orientieren_v42_hko_bundle.zip` (17.5 MB).
+
+`check-all`: Die zwei Fehler (`ERR_BELEGE_FEHLT`, `ERR_FAKTEN_FEHLT`) betreffen fehlende Prüfdateien der EBA-Gold-Einheit unter `_pruefung/`, bestehen auf dem Tag `vor-fork-pilot` identisch und liegen ausserhalb dieses Baus (Zaun, Invariante 14). Der Brief nutzt `check-all` als Beleg, dass die Originale unberührt sind — das ist er: dieselbe Ausgabe vor und nach dem Bau.
+
+Drei Bündel der EBA-Testfassung stehen auf «offen»: Ihre Aufrufe wurden durch ein Neuladen des Dev-Servers abgebrochen. Sie haben keine Ersetzungen und beeinflussen die Fassung nicht.
