@@ -65,11 +65,16 @@ Fassungen pro Lehrperson; Einheiten in älteren Layouts.
 - *Hochgeladener Text.* Vorgabe: Der extrahierte Klartext wird gespeichert
   (privater Bucket), die Originaldatei nicht. Grund: die Weiterverarbeitung
   durch KT1 braucht den Text, das Layout der Datei nicht.
-- *EBA-Dossier beim Auftrag `eigener_text`.* Bei EBA steht der Lesetext in
-  `dossier.json`. Nach Invariante 4a müsste er dem eigenen Text folgen. Lege
-  im Vertrag einen Vorschlag vor (betroffenen Dossier-Abschnitt ersetzen oder
-  ausblenden und den eigenen Text als Beilage führen) und lass Pietro beim
-  Vertragsstopp entscheiden. Bis dahin ist `dossier.json` gesperrt.
+- *Wie weit das neue EBA-Dossier reicht.* Entschieden ist (Pietro,
+  14.11.2026): Bei EBA entsteht mit dem Auftrag `eigener_text` auch ein neues
+  Dossier. Offen ist nur der Zuschnitt. Vorgabe: Die Fassung ersetzt die
+  Inhaltsfelder von `dossier.json` (Wissensteile, Glossar, Leseblatt,
+  Sprachhilfen), die sich auf den alten Text stützen; `kopf`, `id`, Lehrgang,
+  Sprachniveau A2 und der Aufbau des Dossiers bleiben. Lies den Aufbau an
+  `1.1.1_lehrvertrag_orientieren_v42/dossier.json` und `DocEbaDossier.tsx`
+  ab, lege die Feldliste im Vertrag fest und zeige sie Pietro beim
+  Vertragsstopp. Das Dossier ist der grösste Einzelvorschlag des Pilots:
+  eigener Aufruf, getrennt vom Heft, mit eigener Vorschau.
 - *Modell und Kostendach.* Vorgabe: Modell über `OPENAI_MODEL`, Tagesgrenze der
   Aufrufe pro Person über `FORK_MAX_AUFRUFE_PRO_TAG`. Kein Modellname im Code.
 
@@ -175,6 +180,8 @@ Rest ist.
    `loesungsbild`, `scaffolding`, `abgaben`, die `hint` der Schritte und das
    `tun` der Methoden; `methoden[].ref` darf auf eine andere **bestehende**
    Karte aus `src/data/methoden/` wechseln, neue Karten entstehen nicht.
+   Bei EBA gehört das Dossier dazu: Mit einem eigenen Text entsteht ein
+   neues Dossier in A2, im selben Aufbau wie das Original.
 4b. **Ausserhalb des Hefts wird gewarnt, nicht geändert.** KN, Begleiter und
    KI-Toolbox bleiben im Original. Die Fassung zeigt, was dort nicht mehr
    passt, und nennt die Kriterien, deren Wortlaut im Heft jetzt vom KN der
@@ -420,7 +427,7 @@ Nicht anfassen; gehört in eine spätere Phase oder eine andere Session:
 - Ein Agent oder Worker im Hintergrund, Auftragstabellen, Warteschlangen.
 - Anpassungen an `kn.json`, `begleiter.md`, `ki.json`, `lernprompt.json`,
   `lernbegleiter.json` in einer Fassung, auch nicht als Vorschlag.
-  `dossier.json` erst nach Pietros Entscheid beim Vertragsstopp.
+  `dossier.json` nur beim Auftrag `eigener_text` einer EBA-Einheit.
 - Einheiten ohne `heft_8page_v42` (3er-Sets, ältere EBA-Einheiten),
   `/situationen/**`, `/einreichen`, `/vorlagen`, `/jahresplanung`,
   `/prompt-builder`, `public/nrlp/**`.
