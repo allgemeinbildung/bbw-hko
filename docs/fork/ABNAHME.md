@@ -60,3 +60,10 @@ Download der EBA-Fassung über «Ganze Einheit · ZIP»: `1.1.1_lehrvertrag_orie
 `check-all`: Die zwei Fehler (`ERR_BELEGE_FEHLT`, `ERR_FAKTEN_FEHLT`) betreffen fehlende Prüfdateien der EBA-Gold-Einheit unter `_pruefung/`, bestehen auf dem Tag `vor-fork-pilot` identisch und liegen ausserhalb dieses Baus (Zaun, Invariante 14). Der Brief nutzt `check-all` als Beleg, dass die Originale unberührt sind — das ist er: dieselbe Ausgabe vor und nach dem Bau.
 
 Drei Bündel der EBA-Testfassung stehen auf «offen»: Ihre Aufrufe wurden durch ein Neuladen des Dev-Servers abgebrochen. Sie haben keine Ersetzungen und beeinflussen die Fassung nicht.
+
+## Abnahme durch Pietro (14.11.2026)
+
+- Fork-Pilot **abgenommen**.
+- `check-all`: Die zwei vorbestehenden Fehler der EBA-Gold-Einheit gelten als erfüllt (Originale unberührt); die Prüfdateien sind eine eigene Aufgabe ausserhalb des Pilots.
+- Altbündel: Keines steht mehr auf «offen» (die abgebrochenen Aufrufe sind selbst zu Ende gelaufen). Bündel mit «fehler»/«unvollständig» sind der Verlauf früherer Versuche und bleiben.
+- Nächste Schritte bei Pietro: eigener Test lokal, Push, Vercel-Variablen, Mitteilung an KT1.
