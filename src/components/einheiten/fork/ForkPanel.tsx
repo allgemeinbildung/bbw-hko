@@ -337,6 +337,9 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
               <div className="fk-buendel-kopf"><strong>Vorschlag {HEFT_LABEL[vorschauB.heft]}</strong> · {STATUS_LABEL[vorschauB.status]}</div>
               {vorschauB.status === 'fehler' && <p className="fk-fehler">{vorschauB.meldung ?? 'Der Vorschlag konnte nicht erstellt werden.'}</p>}
               {v?.hinweis && <p className="fk-klein">{v.hinweis}</p>}
+              {v?.zahlen_warnungen?.map((w) => (
+                <p key={w.zahl} className="fk-warn">Die Zahl {w.zahl} stand bisher {w.vorher}-mal in diesem Heft, nach dem Vorschlag nur noch {w.nachher}-mal. Bitte prüfen Sie, ob die Zahlen zusammenpassen.</p>
+              ))}
               {vorschauB.status === 'unvollstaendig' && (
                 <p className="fk-warn">Der Vorschlag ist unvollständig und kann nicht übernommen werden. Diese abhängigen Felder fehlen: {v?.fehlend.map((p) => lesbar(null, p)).join('; ') || '–'}</p>
               )}

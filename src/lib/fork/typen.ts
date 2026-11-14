@@ -44,6 +44,8 @@ export interface Vorschlag {
   /** `fehlend.length === 0` — nur dann wird der Vorschlag zur Übernahme angeboten (4a). */
   vollstaendig: boolean
   hinweis: string
+  /** F18: Zahlen, die der Vorschlag nur an einem Teil ihrer Stellen ändert — Warnung, kein Verwerfen. */
+  zahlen_warnungen?: { zahl: string; vorher: number; nachher: number; pfade: string[] }[]
 }
 
 export type BuendelStatus = 'offen' | 'vorschlag' | 'unvollstaendig' | 'fehler' | 'abgeschlossen'

@@ -133,12 +133,79 @@ export async function aufrufeHeute(admin: Admin, userId: string): Promise<number
   return count ?? 0
 }
 
+// --- Not-Aus und Grenzen in der Datenbank (F16, Migration 029) --------------------------
+export type Reservierung = 'ok' | 'aus' | 'gesamt' | 'person'
+
+/** Meldung für die Oberfläche, oder `null` bei `ok`. */
+export function reservierungsMeldung(r: Reservierung, maxPerson: number): { text: string; status: number } | null {
+  if (r === 'aus') return { text: 'Die Anpassung mit dem Modell ist im Moment ausgeschaltet. Bitte später noch einmal versuchen.', status: 503 }
+  if (r === 'gesamt') return { text: 'Für heute sind alle Vorschläge der Plattform aufgebraucht. Morgen geht es weiter.', status: 429 }
+  if (r === 'person') return { text: `Tagesgrenze erreicht: höchstens ${maxPerson} Vorschläge pro Tag. Morgen geht es weiter.`, status: 429 }
+  return null
+}
+
+/** Fehlt die Funktion (Migration 029 noch nicht angewendet)? */
+function fehltFunktion(error: { code?: string; message?: string }): boolean {
+  return error.code === 'PGRST202' || error.code === '42883' || /fork_aufruf_reservieren/.test(error.message ?? '')
+}
+
+/**
+ * Prüft Not-Aus und Grenzen und vermerkt die Aufrufe in einem Schritt (`fork_aufruf_reservieren`,
+ * unter Sperre — zwei gleichzeitige Anfragen überschreiten die Grenze nicht gemeinsam).
+ * Ohne Migration 029 gilt die alte Zählung über die Bündel (nur Grenze pro Person).
+ * Jeder andere Fehler wirft — die Anfrage scheitert dann (fail closed).
+ */
+export async function reserviereAufrufe(admin: Admin, userId: string, anzahl: number, art: 'buendel' | 'korrektur'): Promise<Reservierung> {
+  const maxPerson = maxAufrufeProTag()
+  const { data, error } = await admin.rpc('fork_aufruf_reservieren', { p_user: userId, p_anzahl: anzahl, p_art: art, p_max_person: maxPerson })
+  if (error) {
+    if (!fehltFunktion(error)) throw new Error('Tagesgrenze nicht prüfbar')
+    console.warn('[fassungen] Migration 029 fehlt — Tagesgrenze nur pro Person, ohne Not-Aus')
+    if (art === 'korrektur') return 'ok'
+    return (await aufrufeHeute(admin, userId)) + anzahl > maxPerson ? 'person' : 'ok'
+  }
+  return (['ok', 'aus', 'gesamt', 'person'] as const).includes(data as Reservierung) ? (data as Reservierung) : 'aus'
+}
+
+// --- Löschfrist der hochgeladenen Texte (F17) -------------------------------------------
+export const VORGABE_AUFBEWAHRUNG_TAGE = 30
+
+/**
+ * Löscht Klartexte im Bucket `fassung-texte`, die älter als die Frist sind (Vorgabe 30 Tage,
+ * `fork_einstellungen.text_aufbewahrung_tage`). Läuft bei jedem neuen Bündel mit, für alle
+ * Personen, höchstens 100 Texte pro Lauf. Ein Fehler hier bricht nie die eigentliche Anfrage.
+ */
+export async function loescheAlteTexte(admin: Admin, jetzt: Date = new Date()): Promise<number> {
+  try {
+    let tage = VORGABE_AUFBEWAHRUNG_TAGE
+    const { data: e } = await admin.from('fork_einstellungen').select('text_aufbewahrung_tage').eq('id', 1).maybeSingle()
+    if (typeof e?.text_aufbewahrung_tage === 'number' && e.text_aufbewahrung_tage >= 1) tage = e.text_aufbewahrung_tage
+    const grenze = new Date(jetzt.getTime() - tage * 86_400_000).toISOString()
+    const { data: rows, error } = await admin.from('einheit_fassung_buendel')
+      .select('id, text_pfad').not('text_pfad', 'is', null).lt('created_at', grenze).limit(100)
+    if (error || !rows?.length) return 0
+    const pfade = [...new Set(rows.map((r) => r.text_pfad as string))]
+    const { error: stErr } = await admin.storage.from(FASSUNG_BUCKET).remove(pfade)
+    if (stErr) { console.warn('[fassungen] Löschfrist: Speicher nicht erreichbar'); return 0 }
+    // Ohne Migration 029 fehlt die Spalte `text_geloescht_am` — dann nur den Pfad leeren.
+    const ids = rows.map((r) => r.id as string)
+    const { error: upErr } = await admin.from('einheit_fassung_buendel').update({ text_pfad: null, text_geloescht_am: jetzt.toISOString() }).in('id', ids)
+    if (upErr) await admin.from('einheit_fassung_buendel').update({ text_pfad: null }).in('id', ids)
+    return pfade.length
+  } catch {
+    console.warn('[fassungen] Löschfrist: Lauf fehlgeschlagen')
+    return 0
+  }
+}
+
 // --- Fassung und Bündel -----------------------------------------------------------------
 export interface FassungRow { id: string; user_id: string; einheit_id: string; nur_spur: SpurKey | null; ersetzungen: Ersetzung[] }
 export interface BuendelRow {
   id: string; fassung_id: string; user_id: string; heft: BuendelHeft; kommentare: KommentarEingabe[]
   text_pfad: string | null; status: BuendelStatus; vorschlag: Vorschlag | null; entscheide: Record<string, Entscheid>
   modell: string | null; created_at: string
+  /** Migration 029: Klartext nach der Frist gelöscht (F17). */
+  text_geloescht_am?: string | null
 }
 
 export async function ladeFassung(admin: Admin, userId: string, slug: string): Promise<FassungRow | null> {
@@ -174,7 +241,7 @@ export function fehlerMeldung(art?: string): string {
 export function buendelSicht(r: BuendelRow, art?: string): BuendelSicht {
   return {
     id: r.id, heft: r.heft, status: r.status, kommentare: r.kommentare ?? [], vorschlag: r.vorschlag ?? null,
-    entscheide: r.entscheide ?? {}, hat_text: !!r.text_pfad, created_at: r.created_at,
+    entscheide: r.entscheide ?? {}, hat_text: !!r.text_pfad || !!r.text_geloescht_am, created_at: r.created_at,
     ...(r.status === 'fehler' ? { meldung: fehlerMeldung(art) } : {}),
   }
 }

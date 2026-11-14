@@ -93,3 +93,31 @@ Aufruf wie beim eigenen Text). Pflicht: Info-Karten und Sprachkarte des
 betroffenen Hefts; erlaubt: D1–D8.
 
 **F11, F10:** Wortlaut zu OpenAI und Laufzeit 300 s global bestätigt (Pietro, 14.11.2026).
+
+**F16 · Not-Aus und Grenzen in der Datenbank (Pietro «2–4 bauen», 14.11.2026).**
+Migration 029: Tabelle `fork_einstellungen` (eine Zeile) mit `aktiv`,
+`max_pro_tag_person` (null = `FORK_MAX_AUFRUFE_PRO_TAG`), `max_pro_tag_gesamt`
+(Vorgabe 100, alle Personen) und `text_aufbewahrung_tage`. Wirkt sofort, ohne
+Deploy: `update public.fork_einstellungen set aktiv = false;` im SQL-Editor.
+Gezählt wird in `fork_aufrufe`, eine Zeile pro Modellaufruf. Die Funktion
+`fork_aufruf_reservieren` prüft und vermerkt unter einer Sperre in einer
+Transaktion — die frühere Zählung «zählen, dann einfügen» liess zwei gleichzeitige
+Anfragen gemeinsam über die Grenze. Korrekturrunden (F12) zählen jetzt zur
+Gesamtgrenze, nicht zur Grenze pro Person, und halten beim Not-Aus an. Fehlt die
+Einstellungszeile, ist die Funktion aus. Ohne Migration 029 gilt die alte Zählung
+pro Person (Warnung im Log).
+
+**F17 · Löschfrist für hochgeladene Texte (Pietro, 14.11.2026).** Klartexte im
+Bucket `fassung-texte` werden nach `text_aufbewahrung_tage` (Vorgabe 30) gelöscht.
+Ohne Cron: Jedes neue Bündel räumt bis zu 100 abgelaufene Texte aller Personen mit
+auf; das Bündel vermerkt `text_geloescht_am`. Folge: Wird die Plattform länger
+nicht genutzt, liegen Texte länger als die Frist — bis zum nächsten Bündel.
+
+**F18 · Automatische Prüfungen (Pietro, 14.11.2026).** `pruefungen.ts`:
+Du-Anrede in Feldern für Lernende wird verworfen (Hausregel «Sie»), ausser das
+Original desselben Felds duzt schon; Zitate in Anführungszeichen und Gesprächszüge
+(`wechsel[n]`) zählen nicht. Bei einem Pflichtfeld fragt die Korrekturrunde mit
+diesem Grund nach. Zahlen (ab drei Ziffern, mit Trennzeichen oder Dezimalstelle;
+Daten und Nummern wie 1.3.1 nicht), die im Heft mehrmals stehen und vom Vorschlag
+nur an einem Teil der Stellen geändert werden, ergeben eine Warnung in der
+Vorschau, kein Verwerfen. Geprüft wird pro Datei — zwischen Heft und Dossier nicht.

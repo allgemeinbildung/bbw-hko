@@ -11,6 +11,7 @@ import { lesePfad, setzePfad, kanonisch, wertHash, type FassungsDatei } from './
 import { feldFuer, erlaubtFuerAuftrag, pruefeWert, lpTexte, type AuftragKey, type PruefKontext } from './positivliste.ts'
 import type { ModellAntwort } from './openai.ts'
 import type { KommentarEingabe, Vorschlag, VorschlagErsetzung } from './typen.ts'
+import { pruefeAnrede, zahlenWarnungen } from './pruefungen.ts'
 
 const HINWEIS_MAX = 1000
 
@@ -138,7 +139,7 @@ export function pruefeVorschlag(args: {
     lpTexte: [...new Set([...lpTexte(datei, rohOriginal), ...lpTexte(datei, vorschlagRoh)])],
   }
 
-  // 3. Bestätigung, Auftrag (§4), Form und Budget (§6).
+  // 3. Bestätigung, Auftrag (§4), Form und Budget (§6), Anrede (F18).
   for (const k of kandidaten) {
     if (kanonisch(k.wert) === kanonisch(lesePfad(rohAktuell, k.pfad))) { bestaetige(k.pfad, k.begruendung); continue }
     // F6: Ein Bündel mit eigenem Text legt die Fassung auf «ohne Medien» fest — für alle Aufträge darin.
@@ -157,6 +158,10 @@ export function pruefeVorschlag(args: {
     const original = lesePfad(rohOriginal, k.pfad)
     const grund = pruefeWert(datei, k.pfad, original, k.wert, ctx)
     if (grund) { verwirf(datei, k.pfad, grund); continue }
+    // F18: Hausregel «Sie» in allem, was Lernende lesen. Verworfen heisst bei einem Pflichtfeld:
+    // Die Korrekturrunde fragt mit diesem Grund nach.
+    const anrede = feldFuer(datei, k.pfad)!.lp ? null : pruefeAnrede(k.wert, original)
+    if (anrede) { verwirf(datei, k.pfad, anrede); continue }
     ersetzungen.push({
       datei, pfad: k.pfad, wert: k.wert, original_hash: wertHash(original),
       auftrag, buendel_id: args.buendelId, begruendung: k.begruendung,
@@ -172,9 +177,15 @@ export function pruefeVorschlag(args: {
   const erledigt = new Set([...ersetzungen.map((e) => e.pfad), ...bestaetigt.map((b) => b.pfad)])
   const fehlend = [...new Set(args.pflicht)].filter((p) => !erledigt.has(p))
 
+  // 6. Zahlen (F18): nur Warnung. Verglichen wird die Datei vor und nach diesem Vorschlag.
+  const nachher = kopie(rohAktuell)
+  for (const e of ersetzungen) setzePfad(nachher, e.pfad, kopie(e.wert))
+  const warnungen = ersetzungen.length ? zahlenWarnungen(rohAktuell, nachher) : []
+
   return {
     ersetzungen, bestaetigt, verworfen, fehlend,
     vollstaendig: fehlend.length === 0,
     hinweis: kuerze(typeof antwort.hinweis === 'string' ? antwort.hinweis : '', HINWEIS_MAX),
+    ...(warnungen.length ? { zahlen_warnungen: warnungen } : {}),
   }
 }

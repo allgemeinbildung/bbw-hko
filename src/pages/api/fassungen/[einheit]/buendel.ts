@@ -24,8 +24,8 @@ import { pruefeVorschlag } from '../../../../lib/fork/vorschlag'
 import { MAX_BYTES, textAusDatei, textAusEingabe } from '../../../../lib/fork/text'
 import { HEFT_DATEI, type BuendelHeft, type KommentarEingabe } from '../../../../lib/fork/typen'
 import {
-  FASSUNG_BUCKET, aufrufeHeute, buendelSicht, fehler, glossarBegriffe, holeOderLegeFassung, json,
-  leitfragenAus, maxAufrufeProTag, methodenRefs, pruefeKommentare, zugang, type Admin, type BuendelRow, type RohDateien,
+  FASSUNG_BUCKET, buendelSicht, fehler, glossarBegriffe, holeOderLegeFassung, json,
+  leitfragenAus, loescheAlteTexte, maxAufrufeProTag, methodenRefs, pruefeKommentare, reserviereAufrufe, reservierungsMeldung, zugang, type Admin, type BuendelRow, type RohDateien,
 } from '../../../../lib/fork/server'
 
 export const prerender = false
@@ -84,11 +84,12 @@ export const POST: APIRoute = async ({ locals, params, request }) => {
   const mitDossier = dossierAuftraege.length > 0 && z.eba && heft !== 'auftrag' && z.roh.dossier != null
   const admin = createAdminClient()
   try {
-    // Tagesgrenze (F4): jedes Bündel ist ein Modellaufruf, das Dossier zählt mit.
-    const max = maxAufrufeProTag()
-    if ((await aufrufeHeute(admin, z.userId)) + (mitDossier ? 2 : 1) > max) {
-      return fehler(`Tagesgrenze erreicht: höchstens ${max} Vorschläge pro Tag. Morgen geht es weiter.`, 429)
-    }
+    // Not-Aus und Tagesgrenzen (F4, F16): jedes Bündel ist ein Modellaufruf, das Dossier zählt mit.
+    // Prüfen und Vermerken geschieht in einem Schritt in der Datenbank.
+    const halt = reservierungsMeldung(await reserviereAufrufe(admin, z.userId, mitDossier ? 2 : 1, 'buendel'), maxAufrufeProTag())
+    if (halt) return fehler(halt.text, halt.status)
+    // Löschfrist der hochgeladenen Texte (F17) — läuft hier mit, ohne die Anfrage aufzuhalten.
+    void loescheAlteTexte(admin)
 
     const fassung = await holeOderLegeFassung(admin, z.userId, z.slug, eigener ? 'ohne_medien' : undefined)
     const rohOriginal = z.roh
@@ -185,6 +186,8 @@ async function verarbeite(
       // fehlenden Pfade, mit dem Grund des Servers. Zählt nicht als eigenes Bündel.
       // Bis zu zwei Runden: Im echten Durchgang blieb ein Feld nach der ersten Runde noch knapp über der Grenze.
       for (let runde = 0; runde < 2 && !vorschlag.vollstaendig && vorschlag.fehlend.length; runde++) {
+        // Korrekturrunden kosten auch: Sie zählen zur Gesamtgrenze und halten beim Not-Aus an (F16).
+        if ((await reserviereAufrufe(admin, row.user_id, 1, 'korrektur')) !== 'ok') break
         const gruende = vorschlag.fehlend.map((p) => {
           const v = vorschlag.verworfen.find((x) => x.pfad === p)
           return `- ${p}: ${v ? v.grund : 'fehlt in der Antwort'}`

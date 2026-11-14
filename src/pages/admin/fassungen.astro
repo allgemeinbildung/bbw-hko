@@ -15,7 +15,7 @@ if (profile?.role !== 'kt1') return Astro.redirect('/')
 type Ersetzung = { datei: string; pfad: string; wert: unknown; original_hash?: string; auftrag?: string }
 type Kommentar = { auftrag?: string; pfad?: string; kommentar?: string }
 type Fassung = { id: string; user_id: string; einheit_id: string; ersetzungen: Ersetzung[] | null; updated_at: string }
-type Buendel = { id: string; fassung_id: string; heft: string; kommentare: Kommentar[] | null; text_pfad: string | null; status: string; updated_at: string }
+type Buendel = { id: string; fassung_id: string; heft: string; kommentare: Kommentar[] | null; text_pfad: string | null; text_geloescht_am?: string | null; status: string; updated_at: string }
 
 let fehler = false
 let fassungen: Fassung[] = []
@@ -134,6 +134,7 @@ const zeilen = fassungen.map((f) => {
                   <div class="text-xs text-slate-500 mb-2">
                     Heft {b.heft} · <span class="font-semibold text-slate-700">{b.status}</span> · {datum(b.updated_at)}
                     {b.text_pfad && <span> · mit eigenem Text</span>}
+                    {!b.text_pfad && b.text_geloescht_am && <span> · eigener Text nach Frist gelöscht</span>}
                   </div>
                   {(!Array.isArray(b.kommentare) || b.kommentare.length === 0) && <p class="text-sm text-slate-400">Keine Kommentare.</p>}
                   <ul class="space-y-1 text-sm">

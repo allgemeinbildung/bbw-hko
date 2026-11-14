@@ -2,7 +2,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import {
-  pruefeKommentare, zurichMitternacht, leitfragenAus, glossarBegriffe, maxAufrufeProTag, buendelSicht, fehlerMeldung,
+  pruefeKommentare, zurichMitternacht, leitfragenAus, glossarBegriffe, maxAufrufeProTag, buendelSicht, fehlerMeldung, reservierungsMeldung,
 } from '../../src/lib/fork/server.ts'
 
 const k = (auftrag, datei, pfad, kommentar = 'Bitte einfacher.') => ({ auftrag, datei, pfad, kommentar })
@@ -83,4 +83,16 @@ test('Bündel-Sicht: kein Klartext, bei Fehler nur allgemeine Meldung', () => {
   assert.equal(s.meldung, fehlerMeldung('abgelehnt'))
   assert.equal(buendelSicht({ ...row, status: 'vorschlag', text_pfad: null }).meldung, undefined)
   assert.equal(buendelSicht({ ...row, text_pfad: null }).hat_text, false)
+})
+
+test('Not-Aus und Grenzen: Meldungen je Ergebnis der Reservierung (F16)', () => {
+  assert.equal(reservierungsMeldung('ok', 20), null)
+  assert.equal(reservierungsMeldung('aus', 20).status, 503)
+  assert.equal(reservierungsMeldung('gesamt', 20).status, 429)
+  assert.match(reservierungsMeldung('person', 7).text, /höchstens 7 Vorschläge/)
+})
+
+test('Bündel-Sicht: nach der Löschfrist bleibt «hat Text» stehen (F17)', () => {
+  const row = { id: 'b1', fassung_id: 'f1', user_id: 'u1', heft: 'A', kommentare: [], text_pfad: null, text_geloescht_am: '2026-12-14T10:00:00Z', status: 'abgeschlossen', vorschlag: null, entscheide: {}, modell: null, created_at: '2026-11-14T10:00:00Z' }
+  assert.equal(buendelSicht(row).hat_text, true)
 })
