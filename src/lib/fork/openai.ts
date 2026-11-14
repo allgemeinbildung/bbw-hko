@@ -24,7 +24,7 @@ if (getDefaultAutoSelectFamilyAttemptTimeout() < 2000) setDefaultAutoSelectFamil
 
 const ENDPUNKT = 'https://api.openai.com/v1/responses'
 /** F10: Route laeuft hoechstens 120 s, der Aufruf bricht vorher ab. */
-const ZEITLIMIT_MS = 110_000
+const ZEITLIMIT_MS = 140_000
 /** Obergrenze der Ausgabe (inkl. Denk-Tokens bei Reasoning-Modellen). */
 const MAX_AUSGABE_TOKENS = 32_000
 

@@ -143,11 +143,11 @@ test('kein gültiges JSON, falsche Datei, doppelter Pfad', () => {
       // Objektfeld: kaputtes JSON bleibt verworfen (nur Textfelder dürfen nackten Text tragen).
       { datei: 'herausforderung_A', pfad: 'persona', wert_json: '{kaputt', begruendung: '' },
       { datei: 'herausforderung_A', pfad: 'persona', wert_json: '{"beruf":"x","betrieb":"y","ort":"z"}', begruendung: '' },
-      ers('titel', 'Anderer Titel', 'herausforderung_B'),
+      ers('einleitung.was_ist_das', 'Anderer Text', 'dossier'),
     ]),
   })
   assert.deepEqual(v.verworfen.map((x) => x.grund), ['kein gültiges JSON', 'doppelt', 'falsche Datei (erwartet herausforderung_A)'])
-  assert.equal(v.verworfen[2].datei, 'herausforderung_B')
+  assert.equal(v.verworfen[2].datei, 'dossier')
   assert.equal(v.ersetzungen.length, 0)
 })
 
@@ -234,4 +234,10 @@ test('Dossier bei EBA-Situation: Pflicht Info-Karten und Sprachkarte des Hefts, 
   // EFZ: nie
   const efz = pruefe({ ...basis, eba: false, antwort: antwort([ers('nuggets[id=nugget_A_01]', nug, 'dossier')]) })
   assert.match(grundVon(efz, 'nuggets[id=nugget_A_01]'), /Dossier/)
+})
+
+test('Pfad dieser Datei mit abweichender `datei`-Angabe des Modells zählt zur Datei des Aufrufs', () => {
+  const v = pruefe({ antwort: antwort([ers(LF1, NEU_LF1, 'herausforderung_A.json')]) })
+  assert.deepEqual(v.verworfen, [])
+  assert.equal(v.ersetzungen[0].datei, 'herausforderung_A')
 })

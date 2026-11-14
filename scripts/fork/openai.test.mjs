@@ -91,13 +91,13 @@ test('HTTP-Fehler mit Nicht-JSON-Body', async () => {
   assert.match(r.meldung, /500/)
 })
 
-test('Zeitueberschreitung nach 110 s', async () => {
+test('Zeitueberschreitung nach 140 s', async () => {
   mock.timers.enable({ apis: ['setTimeout'] })
   globalThis.fetch = (url, init) => new Promise((_, reject) => {
     init.signal.addEventListener('abort', () => reject(new DOMException('aborted', 'AbortError')))
   })
   const p = frageModell(ARGS)
-  mock.timers.tick(109_999)
+  mock.timers.tick(139_999)
   await Promise.resolve()
   mock.timers.tick(1)
   const r = await p

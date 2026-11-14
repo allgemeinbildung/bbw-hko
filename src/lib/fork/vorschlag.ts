@@ -72,7 +72,12 @@ export function pruefeVorschlag(args: {
   const gesehen = new Set<string>()
   const kandidaten: { pfad: string; wert: unknown; begruendung: string }[] = []
   for (const e of antwort.ersetzungen) {
-    if (e.datei !== datei) { verwirf(e.datei, e.pfad, `falsche Datei (erwartet ${datei})`); continue }
+    // Ein Aufruf gilt genau einer Datei. Echter Durchgang 14.11.2026: Das Modell schrieb `datei`
+    // im Dossier-Aufruf anders (der Heft-Lesekontext steht daneben). Liegt der Pfad in DIESER
+    // Datei, zählt die Ersetzung zu ihr; sonst bleibt es «falsche Datei».
+    if (e.datei !== datei && !(feldFuer(datei, e.pfad) && lesePfad(rohAktuell, e.pfad) !== undefined)) {
+      verwirf(e.datei, e.pfad, `falsche Datei (erwartet ${datei})`); continue
+    }
     if (gesehen.has(e.pfad)) { verwirf(e.datei, e.pfad, 'doppelt'); continue }
     gesehen.add(e.pfad)
     let wert: unknown
