@@ -65,6 +65,11 @@ Fassungen pro Lehrperson; Einheiten in älteren Layouts.
 - *Hochgeladener Text.* Vorgabe: Der extrahierte Klartext wird gespeichert
   (privater Bucket), die Originaldatei nicht. Grund: die Weiterverarbeitung
   durch KT1 braucht den Text, das Layout der Datei nicht.
+- *EBA-Dossier beim Auftrag `eigener_text`.* Bei EBA steht der Lesetext in
+  `dossier.json`. Nach Invariante 4a müsste er dem eigenen Text folgen. Lege
+  im Vertrag einen Vorschlag vor (betroffenen Dossier-Abschnitt ersetzen oder
+  ausblenden und den eigenen Text als Beilage führen) und lass Pietro beim
+  Vertragsstopp entscheiden. Bis dahin ist `dossier.json` gesperrt.
 - *Modell und Kostendach.* Vorgabe: Modell über `OPENAI_MODEL`, Tagesgrenze der
   Aufrufe pro Person über `FORK_MAX_AUFRUFE_PRO_TAG`. Kein Modellname im Code.
 
@@ -152,11 +157,28 @@ Rest ist.
    `docs/fork/VERTRAG.md` und als Code an genau einer Stelle. Der Server
    verwirft jede Ersetzung ausserhalb der Liste, auch wenn das Modell sie
    liefert. Nie ersetzbar: `template`, `lehrgang`, `nrlp`, `buchstabe`, IDs,
-   Anzahl und Reihenfolge von Leitfragen, Schritten und Kriterien,
-   `feedback_kriterien[].stufen` und `kn_kriterium` (Wortlaut aus dem KN),
-   `raster.spalten/zeilen`-Anzahl, `methoden[].ref`, `quellen`, alles in
-   `kn.json`, `prinzip.json`, `ki.json`, `lernprompt.json`,
-   `lernbegleiter.json`, `begleiter.md`, `dossier.json`.
+   Anzahl und Reihenfolge von Leitfragen, Schritten und Kriterien, bei den
+   Kriterien ausserdem `kn_kriterium` (der Name), `dimension` und die Zahl der
+   vier Stufen, `raster.spalten/zeilen`-Anzahl, `quellen`, alles in `kn.json`,
+   `prinzip.json`, `ki.json`, `lernprompt.json`, `lernbegleiter.json`,
+   `begleiter.md`.
+4a. **Für die Lehrperson muss das Heft stimmen** (Entscheid Pietro,
+   14.11.2026). Eine Fassung gilt nur für eine Person; darum zieht ein
+   Auftrag alles nach, was im Heft, im Auftragsbogen und im Dokument
+   «Lösungen» davon abhängt. Ein Vorschlag, der ein abhängiges Feld
+   stehen lässt, ist unvollständig und wird nicht zur Übernahme angeboten.
+   Das gilt ausdrücklich für die Kriterien im Heft: `indikator_produkt`
+   folgt immer dem Handlungsprodukt; der Wortlaut von `stufen` (bei EBA auch
+   `name_lernende`, `stufen_lernende`) wird dort angepasst, wo er Begriffe
+   oder ein Produkt nennt, die es in der Fassung nicht mehr gibt. Die
+   Abstufung der vier Stufen bleibt. Ebenso folgen `beispielbild`,
+   `loesungsbild`, `scaffolding`, `abgaben`, die `hint` der Schritte und das
+   `tun` der Methoden; `methoden[].ref` darf auf eine andere **bestehende**
+   Karte aus `src/data/methoden/` wechseln, neue Karten entstehen nicht.
+4b. **Ausserhalb des Hefts wird gewarnt, nicht geändert.** KN, Begleiter und
+   KI-Toolbox bleiben im Original. Die Fassung zeigt, was dort nicht mehr
+   passt, und nennt die Kriterien, deren Wortlaut im Heft jetzt vom KN der
+   Plattform abweicht.
 5. **Die fünf Schritte bleiben.** `handlungsprodukt.schritte` und
    `gemeinsamer_auftrag.schritte` behalten Anzahl und `label`; ersetzbar ist
    nur `hint`.
@@ -258,9 +280,9 @@ Der Orchestrator entscheidet selbst und delegiert nicht:
   (Invariante 1), Positivliste der Felder je Auftrag, Abhängigkeiten zwischen
   Feldern (welche Felder ein Auftrag zusammen anfassen muss), Zeichenbudget je
   Feld, Form der Tabelle. Alles andere im Bau bezieht sich darauf.
-- **Die Linie «im Heft muss es stimmen».** Je Auftrag: welche Felder des Hefts
-  und des Auftragsbogens zwingend mitgeändert werden und wo nur eine Warnung
-  erscheint (KN, Begleiter, KI-Toolbox, Lösungsbild, Beispielbild).
+- **Die Abhängigkeiten je Auftrag** (Invariante 4a): die vollständige Liste
+  der Felder in Heft, Auftragsbogen und Lösungen, die ein Auftrag zusammen
+  anfassen muss, und der Wortlaut der Warnungen nach 4b.
 - **Was an OpenAI geht.** Der genaue Inhalt der Anfrage (Invariante 9) und die
   Auflagen aus dem Konsistenz-Vertrag.
 - **Die Migration `028`** vor der Übergabe an Pietro, Zeile für Zeile.
@@ -397,8 +419,8 @@ Nicht anfassen; gehört in eine spätere Phase oder eine andere Session:
 
 - Ein Agent oder Worker im Hintergrund, Auftragstabellen, Warteschlangen.
 - Anpassungen an `kn.json`, `begleiter.md`, `ki.json`, `lernprompt.json`,
-  `lernbegleiter.json`, `dossier.json` in einer Fassung, auch nicht als
-  Vorschlag.
+  `lernbegleiter.json` in einer Fassung, auch nicht als Vorschlag.
+  `dossier.json` erst nach Pietros Entscheid beim Vertragsstopp.
 - Einheiten ohne `heft_8page_v42` (3er-Sets, ältere EBA-Einheiten),
   `/situationen/**`, `/einreichen`, `/vorlagen`, `/jahresplanung`,
   `/prompt-builder`, `public/nrlp/**`.
