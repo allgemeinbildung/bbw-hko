@@ -90,6 +90,8 @@ export function feldauszug(datei: FassungsDatei, roh: unknown): Feldauszug[] {
       const basis = pfad ? `${pfad}.${k}` : k
       const schluessel = LISTEN_SCHLUESSEL[k]
       if (Array.isArray(v) && schluessel) {
+        // F14: Die ganze Schrittliste ist selbst ein Feld (H24L/G6L) — zusätzlich zu den Einzel-Hints.
+        if (feldFuer(datei, basis)) out.push({ pfad: basis, wert: v })
         for (const el of v) {
           const sw = el && typeof el === 'object' ? (el as Record<string, unknown>)[schluessel] : undefined
           if (sw == null || sw === '__spur__') continue
@@ -142,7 +144,7 @@ export function baueAnfrage(a: AnfrageArgs): { system: string; nutzer: string } 
     '- Gleiche Form wie das Original: gleiche Felder im Objekt, gleiche Anzahl Listeneinträge, gleiche Abstufung bei den vier Stufen eines Kriteriums.',
     '- Jedes Feld der Feldliste nennt seine Grenze in Klammern («höchstens N Zeichen»). Halten Sie sie streng ein — lieber kürzer. Ein Wert über der Grenze wird verworfen, und dann fehlt das Feld im ganzen Vorschlag.',
     '- Felder, die nur die Lehrperson sieht (Lösungen, Erwartungshorizont, Lösungsbild, abschluss.loesung, loesung_zeilen), bleiben dort. Kein Lösungstext in ein Feld für Lernende.',
-    '- Die fünf Schritte des Handlungsprodukts behalten ihr Label; nur der Hinweis («hint») darf sich ändern.',
+    '- Die fünf Schritte des Handlungsprodukts behalten Nummer, Anzahl und Reihenfolge. Bei einem neuen Handlungsprodukt ersetzen Sie die ganze Schrittliste (handlungsprodukt.schritte bzw. gemeinsamer_auftrag.schritte): Text nach der Nummer im Label und Hinweis passen Sie dem neuen Produkt an, die Nummer am Anfang («01», «02» …) bleibt. Sonst ändert sich nur der Hinweis («hint»).',
     '- Methoden: ein Eintrag `methoden[ref=…]` wird ganz ersetzt; `ref` darf nur auf eine bestehende Karte zeigen, wenn Sie die Karte wechseln.',
     a.glossarBegriffe?.length ? `- Punkte im Begriffsnetz (mindmap_aeste.punkte) nur aus diesen Begriffen: ${a.glossarBegriffe.join(', ')}.` : '',
     '- Jeder Pfad in Ihrer Antwort muss exakt einer der Pfade aus der Feldliste sein.',

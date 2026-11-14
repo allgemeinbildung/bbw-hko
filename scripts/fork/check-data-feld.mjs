@@ -41,7 +41,7 @@ for (let i = 0; i < args.length; i += 2) {
 
 // Positivliste im Code ↔ Vertrag (gleiche Nummern).
 const vertrag = readFileSync('docs/fork/VERTRAG.md', 'utf8')
-const imVertrag = new Set([...vertrag.matchAll(/^\| ([HGD]\d+) \|/gm)].map((m) => m[1]))
+const imVertrag = new Set([...vertrag.matchAll(/^\| ([HGD]\d+L?) \|/gm)].map((m) => m[1]))
 const imCode = new Set(FELDER.map((f) => f.nr))
 for (const n of imVertrag) if (!imCode.has(n)) { console.log(`VERTRAG  ${n} fehlt im Code`); fehler++ }
 for (const n of imCode) if (!imVertrag.has(n)) { console.log(`CODE     ${n} fehlt im Vertrag`); fehler++ }

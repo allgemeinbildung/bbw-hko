@@ -170,7 +170,7 @@ export function Seite5(props: HeftSeiteProps) {
         <p className="v42-medium"><strong>{w.medium[0]}</strong> {w.medium[1]}</p>
       )}
       {schritte.length > 0 && (
-        <ol className="v42-schritte">
+        <ol className="v42-schritte" {...fm(sit, 'handlungsprodukt.schritte')}>
           {schritte.map((s, i) => {
             const { nr, text } = schrittTeile(s.label, i)
             return (

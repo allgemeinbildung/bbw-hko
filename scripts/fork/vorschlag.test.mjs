@@ -169,7 +169,7 @@ test('LP-Leck: Lösungstext im Feld für Lernende wird verworfen (Invariante 6)'
   assert.equal(grundVon(v, 'leitfragen_intro'), 'Text aus einer Lösung im Feld für Lernende')
 })
 
-test('Dossier nur bei EBA mit eigenem Text', () => {
+test('Dossier nur bei EBA (eigener Text, Situation, Produkt)', () => {
   const pfad = 'einleitung.was_ist_das'
   const neu = 'Dieses Dossier erklärt den Lehrvertrag in kurzen Sätzen. Es hilft Ihnen bei den Fragen im Heft.'
   const basis = { datei: 'dossier', rohOriginal: DOSSIER, rohAktuell: DOSSIER, kommentare: [komm('eigener_text', 'leitfragen[nr=1].text')], antwort: antwort([ers(pfad, neu, 'dossier')]) }
@@ -177,5 +177,53 @@ test('Dossier nur bei EBA mit eigenem Text', () => {
   assert.deepEqual(eba.verworfen, [])
   assert.equal(eba.ersetzungen[0]?.original_hash, wertHash(DOSSIER.einleitung.was_ist_das))
   const efz = pruefe({ ...basis, eba: false })
-  assert.equal(grundVon(efz, pfad), 'Das Dossier ist nur bei EBA mit eigenem Text ersetzbar')
+  assert.equal(grundVon(efz, pfad), 'Das Dossier ist nur bei EBA mit eigenem Text, neuer Situation oder neuem Handlungsprodukt ersetzbar')
+})
+
+test('Vorrang: ganze Schrittliste (H24L) vor Einzel-Hints (H24) derselben Datei (F14)', () => {
+  const alt = A.handlungsprodukt.schritte
+  const neu = alt.map((s, i) => ({ label: `${s.label.split(' ')[0]} Neuer Schritt ${i + 1}`, hint: `Selbst geschriebener Hinweis ${i + 1}.` }))
+  const hint = `handlungsprodukt.schritte[label=${alt[0].label}].hint`
+  const kommentare = [komm('handlungsprodukt_aendern', 'handlungsprodukt.titel')]
+  const v = pruefe({ kommentare, antwort: antwort([ers(hint, 'Anderer Hinweis zum ersten Schritt.'), ers('handlungsprodukt.schritte', neu)]) })
+  assert.equal(grundVon(v, hint), 'durch Schrittliste ersetzt')
+  assert.deepEqual(v.ersetzungen.map((e) => e.pfad), ['handlungsprodukt.schritte'])
+  assert.equal(v.ersetzungen[0].original_hash, wertHash(alt))
+  // Ohne Liste bleibt der Einzel-Hint gültig.
+  const nur = pruefe({ kommentare, antwort: antwort([ers(hint, 'Anderer Hinweis zum ersten Schritt.')]) })
+  assert.deepEqual(nur.verworfen, [])
+  assert.deepEqual(nur.ersetzungen.map((e) => e.pfad), [hint])
+  // Pflicht beim Produktwechsel ist die Liste: mit ihr erfüllt.
+  const mitPflicht = pruefe({ kommentare, pflicht: ['handlungsprodukt.schritte'], antwort: antwort([ers('handlungsprodukt.schritte', neu)]) })
+  assert.equal(mitPflicht.vollstaendig, true)
+  // Situationswechsel darf die Liste nicht ersetzen.
+  const sit = pruefe({ kommentare: [komm('situation_umformulieren', 'situation_text')], antwort: antwort([ers('handlungsprodukt.schritte', neu)]) })
+  assert.match(grundVon(sit, 'handlungsprodukt.schritte'), /H24L/)
+})
+
+test('Einzel-Hint auf ein umbenanntes Label: verworfen mit Hinweis auf die Schrittliste (F14)', () => {
+  const v = pruefe({
+    kommentare: [komm('handlungsprodukt_aendern', 'handlungsprodukt.titel')],
+    antwort: antwort([ers('handlungsprodukt.schritte[label=01 Neuer Schritt].hint', 'Neuer Hinweis.')]),
+  })
+  assert.equal(grundVon(v, 'handlungsprodukt.schritte[label=01 Neuer Schritt].hint'), 'Dieser Schritt wurde umbenannt — bitte die ganze Schrittliste markieren.')
+})
+
+test('Dossier bei EBA-Situation: Pflicht Info-Karten und Sprachkarte des Hefts, Ersetzung erlaubt (F15)', () => {
+  const pflicht = pflichtPfade('situation_umformulieren', 'dossier', DOSSIER, { eba: true, heft: 'A' })
+  const kommentare = [komm('situation_umformulieren', 'einleitung.was_ist_das', 'dossier')]
+  const basis = { datei: 'dossier', rohOriginal: DOSSIER, rohAktuell: DOSSIER, eba: true, kommentare, pflicht }
+  const leer = pruefe({ ...basis, antwort: antwort() })
+  assert.equal(leer.vollstaendig, false)
+  assert.deepEqual(leer.fehlend, pflicht)
+  const nug = kopie(lesePfad(DOSSIER, 'nuggets[id=nugget_A_01]'))
+  nug.inhalt = 'Selbst geschriebene Info-Karte zur neuen Situation in kurzen Sätzen.'
+  nug.fakten_anker = []
+  const v = pruefe({ ...basis, antwort: antwort([ers('nuggets[id=nugget_A_01]', nug, 'dossier')], pflicht.slice(1).map((pfad) => ({ pfad, begruendung: 'Passt weiter.' }))) })
+  assert.deepEqual(v.verworfen, [])
+  assert.equal(v.ersetzungen[0]?.auftrag, 'situation_umformulieren')
+  assert.equal(v.vollstaendig, true)
+  // EFZ: nie
+  const efz = pruefe({ ...basis, eba: false, antwort: antwort([ers('nuggets[id=nugget_A_01]', nug, 'dossier')]) })
+  assert.match(grundVon(efz, 'nuggets[id=nugget_A_01]'), /Dossier/)
 })

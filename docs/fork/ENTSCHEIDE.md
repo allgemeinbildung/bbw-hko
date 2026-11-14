@@ -77,3 +77,19 @@ Wechsel zwischen IPv4/IPv6 nur 250 ms; im lokalen Netz liefen alle Versuche ab
 **F10 · Laufzeit.** Ein Aufruf pro Heft kann 30–90 s dauern. Die Route setzt
 die Vercel-Laufzeit auf 120 s (Astro-Adapter `maxDuration`). Reicht das im
 Plan von Pietro nicht, ist das eine Frage an Pietro (offen, siehe Übergabe).
+
+**F14 · Schritt-Labels beim Produktwechsel (Entscheid Pietro, 14.11.2026).**
+Invariante 5 wird gelockert: Bei `handlungsprodukt_aendern` darf der Text eines
+Schritt-Labels nach der Nummer ersetzt werden; Nummer («01 »…), Anzahl und
+Reihenfolge der fünf Schritte bleiben. Weil das Label der Listenschlüssel ist,
+bleibt das Adressformat unverändert (Invariante 1): Neu ist nur das ganze Feld
+`handlungsprodukt.schritte` (H24L) bzw. `gemeinsamer_auftrag.schritte` (G6L) als
+ein Block. Es ersetzt beim Produktwechsel die Einzel-Hints als Pflicht.
+
+**F15 · EBA-Dossier zieht bei Situations- und Produktwechsel mit (Entscheid
+Pietro, 14.11.2026).** Bei EBA ruft die Bündel-Route auch bei
+`situation_umformulieren` und `handlungsprodukt_aendern` das Dossier auf (eigener
+Aufruf wie beim eigenen Text). Pflicht: Info-Karten und Sprachkarte des
+betroffenen Hefts; erlaubt: D1–D8.
+
+**F11, F10:** Wortlaut zu OpenAI und Laufzeit 300 s global bestätigt (Pietro, 14.11.2026).

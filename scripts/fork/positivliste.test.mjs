@@ -52,7 +52,7 @@ test('nie ersetzbar → feldFuer null', () => {
     'leitfragen[nr=1].bloom', 'leitfragen[nr=1].antwortform', 'leitfragen[nr=1].feld_hoehe_mm',
     'feedback_kriterien[kn_kriterium=Fachkorrektheit].kn_kriterium', 'feedback_kriterien[kn_kriterium=Fachkorrektheit].dimension',
     'feedback_kriterien[kn_kriterium=Fachkorrektheit]', 'feedback_kriterien',
-    'handlungsprodukt.schritte[label=01 Karte einteilen].label', 'handlungsprodukt.schritte[label=01 Karte einteilen]', 'handlungsprodukt.schritte',
+    'handlungsprodukt.schritte[label=01 Karte einteilen].label', 'handlungsprodukt.schritte[label=01 Karte einteilen]',
     'spuren.mit_medien.quellen', 'spuren.ohne_medien.leitfragen[nr=3].raster.zeilen', 'spuren.mit_medien.leitfragen[nr=3].raster.quelle_ref',
     'spuren.mit_medien.leitfragen[nr=3].raster.vorgabe', 'spuren.ohne_medien.leitfragen[nr=4].pol_typ', 'mehrdeutigkeit.trade_off',
     'spuren.ohne_medien.methoden_ref_rezeption', 'methoden[ref=__spur__]', 'methoden[ref=hko-bedarf-oder-wunsch].ref', 'methoden',
@@ -79,7 +79,7 @@ test('darfForken nur kt1, istV42Einheit nur mit zwei v4.2-Heften', () => {
 test('Aufträge: Labels, Ziel, erlaubt', () => {
   assert.deepEqual(Object.keys(AUFTRAEGE).sort(), ['eigener_text', 'handlungsprodukt_aendern', 'leitfrage_umformulieren', 'situation_umformulieren'])
   assert.ok(zielFelder('leitfrage_umformulieren').some((f) => f.muster === 'gemeinsamer_auftrag.leitfrage'))
-  assert.deepEqual([...new Set(zielFelder('handlungsprodukt_aendern').map((f) => f.nr))].sort(), ['G5', 'G9', 'H22', 'H23'])
+  assert.deepEqual([...new Set(zielFelder('handlungsprodukt_aendern').map((f) => f.nr))].sort(), ['G5', 'G6L', 'G9', 'H22', 'H23', 'H24L'])
   const e = { eba: false }
   assert.equal(erlaubtFuerAuftrag('eigener_text', 'herausforderung_A', 'spuren.ohne_medien.leitfragen[nr=3].text', e), null)
   assert.match(erlaubtFuerAuftrag('eigener_text', 'herausforderung_A', 'spuren.mit_medien.leitfragen[nr=3].text', e), /ohne Medien/)
@@ -89,7 +89,16 @@ test('Aufträge: Labels, Ziel, erlaubt', () => {
   assert.match(erlaubtFuerAuftrag('leitfrage_umformulieren', 'set', 'gemeinsamer_auftrag.auftrag', e), /Leitfrage/)
   assert.equal(erlaubtFuerAuftrag('eigener_text', 'dossier', 'glossar', { eba: true }), null)
   assert.match(erlaubtFuerAuftrag('eigener_text', 'dossier', 'glossar', { eba: false }), /Dossier/)
-  assert.match(erlaubtFuerAuftrag('situation_umformulieren', 'dossier', 'glossar', { eba: true }), /Dossier/)
+  // F15: Situations- und Produktwechsel ziehen das EBA-Dossier mit.
+  assert.equal(erlaubtFuerAuftrag('situation_umformulieren', 'dossier', 'glossar', { eba: true }), null)
+  assert.equal(erlaubtFuerAuftrag('handlungsprodukt_aendern', 'dossier', 'nuggets[id=nugget_A_01]', { eba: true }), null)
+  assert.match(erlaubtFuerAuftrag('situation_umformulieren', 'dossier', 'glossar', { eba: false }), /Dossier/)
+  assert.match(erlaubtFuerAuftrag('leitfrage_umformulieren', 'dossier', 'glossar', { eba: true }), /Dossier/)
+  // F14: die ganze Schrittliste nur beim Produktwechsel.
+  assert.equal(erlaubtFuerAuftrag('handlungsprodukt_aendern', 'herausforderung_A', 'handlungsprodukt.schritte', e), null)
+  assert.equal(erlaubtFuerAuftrag('handlungsprodukt_aendern', 'set', 'gemeinsamer_auftrag.schritte', e), null)
+  assert.match(erlaubtFuerAuftrag('situation_umformulieren', 'herausforderung_A', 'handlungsprodukt.schritte', e), /H24L/)
+  assert.match(erlaubtFuerAuftrag('situation_umformulieren', 'set', 'gemeinsamer_auftrag.schritte', e), /G6L/)
   assert.match(erlaubtFuerAuftrag('situation_umformulieren', 'herausforderung_A', 'handlungsprodukt.titel', e), /H22/)
   assert.match(erlaubtFuerAuftrag('handlungsprodukt_aendern', 'herausforderung_A', 'feedback_kriterien[kn_kriterium=x].name_lernende', e), /EBA/)
   assert.equal(erlaubtFuerAuftrag('handlungsprodukt_aendern', 'herausforderung_A', 'feedback_kriterien[kn_kriterium=x].name_lernende', { eba: true }), null)
@@ -99,7 +108,9 @@ test('Aufträge: Labels, Ziel, erlaubt', () => {
 test('pflichtPfade handlungsprodukt_aendern auf EFZ-A', () => {
   const p = pflichtPfade('handlungsprodukt_aendern', 'herausforderung_A', gold.efz.A, { eba: false })
   const mit = (re) => p.filter((x) => re.test(x))
-  assert.equal(mit(/^handlungsprodukt\.schritte\[label=.*\]\.hint$/).length, 5)
+  // F14: Pflicht ist die ganze Schrittliste (H24L), nicht die Einzel-Hints.
+  assert.ok(p.includes('handlungsprodukt.schritte'))
+  assert.equal(mit(/^handlungsprodukt\.schritte\[/).length, 0)
   for (const k of ['Fachkorrektheit', 'Position / Werthaltung']) {
     assert.ok(p.includes(`feedback_kriterien[kn_kriterium=${k}].indikator_produkt`))
     assert.ok(p.includes(`feedback_kriterien[kn_kriterium=${k}].stufen`))
@@ -111,7 +122,8 @@ test('pflichtPfade handlungsprodukt_aendern auf EFZ-A', () => {
   assert.ok(!p.some((x) => /name_lernende|__spur__|schreib_/.test(x)))
   for (const x of p) assert.notEqual(lesePfad(gold.efz.A, x), undefined, x)
   const ps = pflichtPfade('handlungsprodukt_aendern', 'set', gold.efz.set, { eba: false })
-  assert.equal(ps.filter((x) => x.endsWith('.hint') && x.includes('schritte')).length, 5)
+  assert.ok(ps.includes('gemeinsamer_auftrag.schritte'))
+  assert.equal(ps.filter((x) => x.endsWith('.hint') && x.includes('schritte')).length, 0)
   assert.equal(ps.filter((x) => x.endsWith('.stufen')).length, 4)
 })
 
@@ -236,4 +248,50 @@ test('Gold-Originale bestehen Form-, Budget- und Leckprüfung gegen sich selbst 
       }
     }
   }
+})
+
+test('H24L/G6L: ganze Schrittliste — gleiche Anzahl, gleiche Nummer je Label, Budget wie Objekt (F14)', () => {
+  const pfad = 'handlungsprodukt.schritte'
+  const alt = gold.efz.A.handlungsprodukt.schritte
+  assert.equal(feldFuer('herausforderung_A', pfad)?.nr, 'H24L')
+  assert.equal(feldFuer('set', 'gemeinsamer_auftrag.schritte')?.nr, 'G6L')
+  const neu = alt.map((s, i) => ({ label: `${s.label.split(' ')[0]} Neuer Schritt ${i + 1}`, hint: s.hint }))
+  assert.equal(pruefeWert('herausforderung_A', pfad, alt, neu, ctx), null)
+  // Nummer an Position 2 vertauscht
+  const falsch = kopie(neu); falsch[1].label = '03 Anders'
+  assert.equal(pruefeWert('herausforderung_A', pfad, alt, falsch, ctx), 'Schritt 2: Das Label muss mit «02» beginnen')
+  // Nummer fehlt ganz
+  const ohne = kopie(neu); ohne[0].label = 'Ohne Nummer'
+  assert.match(pruefeWert('herausforderung_A', pfad, alt, ohne, ctx), /Schritt 1: .*«01»/)
+  // Anzahl
+  assert.match(pruefeWert('herausforderung_A', pfad, alt, neu.slice(0, 4), ctx), /«#» muss unverändert bleiben/)
+  // Budget: Summe aller Texte × 1.15
+  const lang = kopie(neu); lang[0].hint = 'x'.repeat(2000)
+  assert.match(pruefeWert('herausforderung_A', pfad, alt, lang, ctx), /zu lang/)
+  // Form: nur {label, hint}
+  assert.equal(pruefeWert('herausforderung_A', pfad, alt, neu.map((s) => ({ ...s, extra: 'x' })), ctx), 'Wert hat nicht die erwartete Form')
+  // Auftragsbogen gleich
+  const altSet = gold.eba.set.gemeinsamer_auftrag.schritte
+  const neuSet = altSet.map((s) => ({ label: `${s.label.split(' ')[0]} Kurz`, hint: s.hint }))
+  assert.equal(pruefeWert('set', 'gemeinsamer_auftrag.schritte', altSet, neuSet, ctx), null)
+})
+
+test('Einzel-Hint mit Label, das es im Original nicht gibt: verständliche Meldung (F14, bekannte Kante)', () => {
+  assert.equal(pruefeWert('herausforderung_A', 'handlungsprodukt.schritte[label=01 Neu].hint', undefined, 'Neuer Hinweis.', ctx),
+    'Dieser Schritt wurde umbenannt — bitte die ganze Schrittliste markieren.')
+  assert.equal(pruefeWert('set', 'gemeinsamer_auftrag.schritte[label=01 Neu].hint', undefined, 'Neuer Hinweis.', ctx),
+    'Dieser Schritt wurde umbenannt — bitte die ganze Schrittliste markieren.')
+  assert.equal(pruefeWert('herausforderung_A', 'leitfragen_intro', undefined, 'x', ctx), 'Feld fehlt im Original')
+})
+
+test('pflichtPfade Dossier bei EBA-Situation und -Produktwechsel: Info-Karten und Sprachkarte des Hefts (F15)', () => {
+  for (const a of ['situation_umformulieren', 'handlungsprodukt_aendern']) {
+    const dA = pflichtPfade(a, 'dossier', gold.eba.dossier, { eba: true, heft: 'A' })
+    assert.deepEqual(dA, ['nuggets[id=nugget_A_01]', 'nuggets[id=nugget_A_02]', 'nuggets[id=nugget_A_03]', 'sprachmodi_scaffolds[tag=A]'], a)
+    const dB = pflichtPfade(a, 'dossier', gold.eba.dossier, { eba: true, heft: 'B' })
+    assert.deepEqual(dB, ['nuggets[id=nugget_B_01]', 'nuggets[id=nugget_B_02]', 'nuggets[id=nugget_B_03]', 'sprachmodi_scaffolds[tag=B]'], a)
+    assert.deepEqual(pflichtPfade(a, 'dossier', gold.eba.dossier, { eba: false, heft: 'A' }), [], a)
+    for (const p of dA) assert.equal(erlaubtFuerAuftrag(a, 'dossier', p, { eba: true }), null, p)
+  }
+  assert.deepEqual(pflichtPfade('leitfrage_umformulieren', 'dossier', gold.eba.dossier, { eba: true, heft: 'A' }), [])
 })

@@ -223,7 +223,7 @@ function SeiteA1({ ga, set }: SeiteProps) {
       <Kasten label="Ihr Auftrag" className="v42-auftrag-kasten">
         {ga.auftrag && <p className="v42-auftrag-auftrag" {...mk(set, 'auftrag')}>{ga.auftrag}</p>}
         {(ga.schritte?.length ?? 0) > 0 && (
-          <ol className="v42-auftrag-schritte">
+          <ol className="v42-auftrag-schritte" {...mk(set, 'schritte')}>
             {ga.schritte!.map((s, i) => {
               const [nr, label] = schrittTeile(s.label, i)
               return (

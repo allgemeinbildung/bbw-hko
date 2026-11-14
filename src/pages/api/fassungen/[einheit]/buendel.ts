@@ -2,7 +2,8 @@
  * Fork-Pilot «Meine Fassung» (VERTRAG §7, §9).
  *  POST /api/fassungen/<einheit>/buendel   multipart: heft (A|B|auftrag), kommentare (JSON),
  *                                          optional text oder datei (nur Auftrag «eigener_text»)
- *  → { buendel: BuendelSicht[] }  — bei EBA + eigenem Text zwei: Heft und Dossier.
+ *  → { buendel: BuendelSicht[] }  — bei EBA mit eigenem Text, neuer Situation oder neuem
+ *    Handlungsprodukt (Heft A/B) zwei: Heft und Dossier (F15).
  *
  * Ein Modellaufruf pro Bündel. An OpenAI geht kein Personenbezug (Invariante 9):
  * `baueAnfrage` bekommt nur Einheit, Heft, Kommentare und den eigenen Text.
@@ -13,7 +14,7 @@ import { createAdminClient } from '../../../../lib/supabase'
 import { einheitById, loadEinheit } from '../../../../lib/einheiten/index'
 import { werkstattKontext } from '../../../../lib/werkstatt/kontext'
 import { wendeAn } from '../../../../lib/fork/anwenden'
-import { pflichtPfade } from '../../../../lib/fork/positivliste'
+import { pflichtPfade, DOSSIER_AUFTRAEGE, type AuftragKey } from '../../../../lib/fork/positivliste'
 import { baueAnfrage } from '../../../../lib/fork/anfrage'
 import { frageModell } from '../../../../lib/fork/openai'
 import { pruefeVorschlag } from '../../../../lib/fork/vorschlag'
@@ -26,7 +27,11 @@ import {
 
 export const prerender = false
 
-const DOSSIER_KOMMENTAR = 'Neues Dossier in A2 zum eigenen Text'
+const DOSSIER_KOMMENTAR: Partial<Record<AuftragKey, string>> = {
+  eigener_text: 'Neues Dossier in A2 zum eigenen Text',
+  situation_umformulieren: 'Dossier an die neue Situation anpassen',
+  handlungsprodukt_aendern: 'Dossier an das neue Handlungsprodukt anpassen',
+}
 
 interface Lauf {
   heft: BuendelHeft
@@ -72,7 +77,8 @@ export const POST: APIRoute = async ({ locals, params, request }) => {
   if (text && !eigener) return fehler('Ein eigener Text ist nur beim Auftrag «Eigenen Text verwenden» möglich.', 400)
   if (eigener && !text) return fehler('Für «Eigenen Text verwenden» braucht es einen Text oder eine Datei.', 400)
 
-  const mitDossier = eigener && z.eba && heft !== 'auftrag' && z.roh.dossier != null
+  const dossierAuftraege = DOSSIER_AUFTRAEGE.filter((a) => kommentare.some((c) => c.auftrag === a))
+  const mitDossier = dossierAuftraege.length > 0 && z.eba && heft !== 'auftrag' && z.roh.dossier != null
   const admin = createAdminClient()
   try {
     // Tagesgrenze (F4): jedes Bündel ist ein Modellaufruf, das Dossier zählt mit.
@@ -98,8 +104,9 @@ export const POST: APIRoute = async ({ locals, params, request }) => {
       const dossier = rohAktuell.dossier as { glossar?: { id?: unknown }[] } | null
       laeufe.push({
         heft: 'dossier',
-        kommentare: [{ auftrag: 'eigener_text', datei: 'dossier', pfad: 'einleitung.was_ist_das', kommentar: DOSSIER_KOMMENTAR }],
-        pflicht: pflichtPfade('eigener_text', 'dossier', rohAktuell.dossier, { eba: true, geaenderteLeitfragen: lfs, heft }),
+        kommentare: dossierAuftraege.map((a) => ({ auftrag: a, datei: 'dossier' as const, pfad: 'einleitung.was_ist_das', kommentar: DOSSIER_KOMMENTAR[a]! })),
+        pflicht: [...new Set(dossierAuftraege.flatMap((a) =>
+          pflichtPfade(a, 'dossier', rohAktuell.dossier, { eba: true, heft, ...(a === 'eigener_text' ? { geaenderteLeitfragen: lfs } : {}) })))],
         glossarIds: (dossier?.glossar ?? []).map((g) => g?.id).filter((x): x is string => typeof x === 'string'),
       })
     }

@@ -80,6 +80,15 @@ export function pruefeVorschlag(args: {
     if (!feldFuer(datei, e.pfad)) { verwirf(datei, e.pfad, 'nicht ersetzbar'); continue }
     kandidaten.push({ pfad: e.pfad, wert, begruendung: e.begruendung })
   }
+  // F14: Kommt die ganze Schrittliste (H24L/G6L), gilt sie — Einzel-Hints derselben Datei fallen weg.
+  //      Sonst adressierten sie nach einem Label-Wechsel ein Label, das es nicht mehr gibt (§1 Reihenfolge).
+  if (kandidaten.some((k) => ['H24L', 'G6L'].includes(feldFuer(datei, k.pfad)!.nr))) {
+    for (let i = kandidaten.length - 1; i >= 0; i--) {
+      if (!['H24', 'G6'].includes(feldFuer(datei, kandidaten[i].pfad)!.nr)) continue
+      verwirf(datei, kandidaten[i].pfad, 'durch Schrittliste ersetzt')
+      kandidaten.splice(i, 1)
+    }
+  }
 
   // 2. LP-Texte desselben Hefts, Original und Vorschlag (§6, Invariante 6). Der Vorschlag
   //    ist die bisherige Fassung mit allen LP-Feldern dieser Antwort — strenger ist sicherer.

@@ -116,6 +116,7 @@ Zeichenbudget (§6). Felder für die Lehrperson sind mit **LP** markiert.
 | H22 | `handlungsprodukt.titel` | Text | S5 Auftrag |
 | H23 | `handlungsprodukt.format`, `.format_detail`, `.beschreibung` | Text | S5 Auftrag |
 | H24 | `handlungsprodukt.schritte[label=*].hint` | Text (`label` nie) | S5 Schritt n |
+| H24L | `handlungsprodukt.schritte` | ganze Liste `{label,hint}`; gleiche Anzahl; jedes `label` beginnt mit derselben Nummer wie das Original an dieser Stelle (Präfix bis zum ersten Leerzeichen, z. B. «01»); Budget wie Objekt (Summe × 1.15) (F14) | S5 Schritte |
 | H25 | `handlungsprodukt.hilfe_verweis`, `.schreib_label`, `.schreib_note` | Text | S5 |
 | H26 | `handlungsprodukt.abgaben` | Liste Text, 1–4 | S5 Abgabe |
 | H27 | `handlungsprodukt.scaffolding` | `{satzanfaenge[],strategien[],struktur[]}` | S5 |
@@ -140,6 +141,7 @@ Zeichenbudget (§6). Felder für die Lehrperson sind mit **LP** markiert.
 | G4 | `gemeinsamer_auftrag.zahlen_tabelle` | Liste gleicher Anzahl |
 | G5 | `gemeinsamer_auftrag.leitfrage`, `.mehrdeutigkeit.hint`, `.auftrag`, `.sozialform.empfehlung` | Text |
 | G6 | `gemeinsamer_auftrag.schritte[label=*].hint` | Text |
+| G6L | `gemeinsamer_auftrag.schritte` | wie H24L (F14) |
 | G7 | `gemeinsamer_auftrag.abgaben` | Liste Text, 1–4 |
 | G8 | `gemeinsamer_auftrag.heft_bezug[heft=*].inhalte` | Liste Text |
 | G9 | `gemeinsamer_auftrag.produkte` | Liste gleicher Anzahl, `schritt`/`form`/`modus` unverändert |
@@ -148,7 +150,7 @@ Zeichenbudget (§6). Felder für die Lehrperson sind mit **LP** markiert.
 | G12 | `gemeinsamer_auftrag.woerter` | Liste `{begriff,definition}` |
 | G13 | `gemeinsamer_auftrag.kontext_ausschluss` | Liste Text (nicht gedruckt) |
 
-### Dossier (`dossier`, nur EBA, nur Auftrag `eigener_text`)
+### Dossier (`dossier`, nur EBA; Aufträge `eigener_text`, `situation_umformulieren`, `handlungsprodukt_aendern`)
 
 | Nr | Pfad | Form |
 |---|---|---|
@@ -172,7 +174,7 @@ Alles, was in keiner Zeile oben steht. Ausdrücklich: `template`, `lehrgang`,
 `antwortform`, `pol_typ`, `feld_hoehe_mm`, `raster.zeilen`, `raster.vorgabe`,
 `raster.quelle_ref`, `mehrdeutigkeit.trade_off`, `quellen` jeder Spur,
 `methoden_ref_rezeption`, `set.glossar`, `kn_kriterium`, `dimension`,
-`schritte[].label`, `prinzip_handoff`, `sk_anker`, `dekontextualisierung`,
+`schritte[].label` (ausser über die ganze Liste H24L/G6L, F14), `prinzip_handoff`, `sk_anker`, `dekontextualisierung`,
 sowie jede Datei ausser den vier oben (`kn.json`, `prinzip.json`, `ki.json`,
 `lernprompt.json`, `lernbegleiter.json`, `begleiter.md`).
 
@@ -210,17 +212,29 @@ Pflicht-Abhängigkeit, die im Heft vorhanden ist, muss in der Antwort
 ### `situation_umformulieren`
 - Ziel: H1–H5 (Heft) oder G1–G4 (Auftragsbogen).
 - Erlaubt im Heft: H1–H7, H9–H14, H17–H21, H24, H26, H28, H29, H30, H34–H37.
-  Im Auftragsbogen: G1–G13.
+  Im Auftragsbogen: G1–G13. Bei EBA im Dossier: D1–D8 (F15).
 - Pflicht (Heft): H2, H3, H4, H5, H6, H7, H9, H14 jeder Leitfrage,
   H19, H28, H29, H36. (Auftragsbogen): G2, G3, G4, G5, G11, G13.
+  Bei EBA (nur Heft A/B, eigener Aufruf, §7): D2 für jedes Nugget mit `tag` =
+  Heft und D3 `sprachmodi_scaffolds[tag=Heft]`.
 
 ### `handlungsprodukt_aendern`
 - Ziel: H22/H23 (Heft) oder G5 `auftrag` / G9 (Auftragsbogen).
-- Erlaubt im Heft: H7, H9, H10 (nur wo der Wortlaut das Produkt nennt), H11, H13, H20–H33, H37. Im Auftragsbogen: G5–G10.
-- Pflicht (Heft): H22, H23, H24 für **alle** Schritte, H26, H27 (falls
+- Erlaubt im Heft: H7, H9, H10 (nur wo der Wortlaut das Produkt nennt), H11, H13, H20–H33, H24L, H37. Im Auftragsbogen: G5–G10, G6L. Bei EBA im Dossier: D1–D8 (F15).
+- Pflicht (Heft): H22, H23, H24L (die ganze Schrittliste; Labels nach der Nummer dürfen sich ändern, F14), H26, H27 (falls
   vorhanden), H28, H29, H30 für **alle** Kriterien, H31 (und H32 bei EBA) für
   alle Kriterien, H33 für jede Methode ausser `__spur__`, H37, H11 und H13 jeder
-  Leitfrage, H20 (wirksam im Heft, überschreibt H21 `scaffold_90`), H21, H7 (Wochenplan), H9 (Einleitung der Leitfragen) — beide nennen das Produkt (blinde Lesung 14.11.2026). (Auftragsbogen): G6 für alle Schritte, G7, G9, G10.
+  Leitfrage, H20 (wirksam im Heft, überschreibt H21 `scaffold_90`), H21, H7 (Wochenplan), H9 (Einleitung der Leitfragen) — beide nennen das Produkt (blinde Lesung 14.11.2026). (Auftragsbogen): G6L, G7, G9, G10.
+  Bei EBA (nur Heft A/B, eigener Aufruf, §7): D2 für jedes Nugget mit `tag` =
+  Heft und D3 `sprachmodi_scaffolds[tag=Heft]`.
+- Vorrang (F14): Enthält eine Antwort die ganze Schrittliste (H24L/G6L) und
+  zugleich Einzel-Hints (H24/G6) derselben Datei, gilt die Liste; die Hints
+  werden «durch Schrittliste ersetzt» verworfen.
+- Bekannte Kante (F14, nicht gelöst): Nach einem Label-Wechsel zeigen die
+  Einzelmarken der Hints auf ein Label, das es im Original nicht gibt. Eine
+  Ersetzung dorthin verwirft der Server mit «Dieser Schritt wurde umbenannt —
+  bitte die ganze Schrittliste markieren.» Die Lehrperson markiert die
+  Schrittliste (`data-feld` auf der ganzen Liste).
 - Die vier Stufen behalten ihre Abstufung; nur Begriffe und Produkt werden
   angepasst.
 
@@ -268,8 +282,10 @@ drin, mit der Warnung im README.
 
 - Endpunkt: OpenAI Responses API, `text.format` = JSON Schema (`strict`).
   Modell aus `OPENAI_MODEL`. Ein Aufruf **pro Bündel und Heft** (A, B,
-  Auftragsbogen getrennt); bei EBA + `eigener_text` ein **eigener Aufruf** für
-  das Dossier.
+  Auftragsbogen getrennt); bei EBA + `eigener_text`, `situation_umformulieren`
+  oder `handlungsprodukt_aendern` (Heft A/B) ein **eigener Aufruf** für das
+  Dossier (F15), mit einem synthetischen Kommentar je Auftrag. Er zählt zur
+  Tagesgrenze.
 - `store: false`. Kein `user`-Feld, keine `metadata` mit Personenbezug.
 - **Inhalt (abschliessend):**
   1. Systemteil: Rolle, Sprachregeln (EFZ: B1; EBA: A2, kurze Sätze), Schweizer

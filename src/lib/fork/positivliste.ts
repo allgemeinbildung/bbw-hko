@@ -22,7 +22,7 @@ const SPUREN: SpurKey[] = ['ohne_medien', 'mit_medien']
 /** 'T' Text · 'B' Wahrheitswert · 'Z' Zahl · [S] Liste · { k: S, 'k?': S } Objekt. */
 export type Schema = 'T' | 'B' | 'Z' | Schema[] | { [k: string]: Schema }
 export type Budget = 'text' | 'liste' | 'objekt' | 'elemente' | 'keins'
-export type Spezial = 'blockart' | 'methode' | 'mindmap' | 'nugget' | 'glossar_ids' | 'vokabeln'
+export type Spezial = 'blockart' | 'methode' | 'mindmap' | 'nugget' | 'glossar_ids' | 'vokabeln' | 'schrittnummern'
 export interface Form {
   schema: Schema; budget: Budget
   /** Relative Pfade, deren Wert gleich bleiben muss: `[]` je Element, `#` Anzahl, `-1` letztes Element. */
@@ -50,6 +50,8 @@ const BILD: Schema = {
     'zeilen?': [{ zellen: ['T'], 'marke?': 'T', 'stark?': 'B' }], 'text?': ['T'], 'wechsel?': [{ wer: 'T', text: 'T', 'marke?': 'T' }] }],
 }
 const T: Form = { schema: 'T', budget: 'text' }
+/** Ganze Schrittliste (F14): gleiche Anzahl, je Label dieselbe Nummer, Budget wie Objektliste. */
+const SCHRITTE: Form = { schema: [{ label: 'T', hint: 'T' }], budget: 'objekt', fix: ['#'], spezial: ['schrittnummern'] }
 const tl = (anzahl?: [number, number], fix?: string[]): Form => ({ schema: ['T'], budget: 'liste', anzahl, fix })
 const ob = (schema: Schema, fix?: string[], spezial?: Spezial[]): Form => ({ schema, budget: 'objekt', fix, spezial })
 type Roh = [nr: string, muster: string, form: Form, block: string, extra?: Partial<Feld>]
@@ -84,6 +86,7 @@ const HEFT: Roh[] = [
   ['H23', 'handlungsprodukt.format_detail', T, 'S5 Auftrag'],
   ['H23', 'handlungsprodukt.beschreibung', T, 'S5 Auftrag'],
   ['H24', 'handlungsprodukt.schritte[label=*].hint', T, 'S5 Schritt n'],
+  ['H24L', 'handlungsprodukt.schritte', SCHRITTE, 'S5 Schritte'],
   ['H25', 'handlungsprodukt.hilfe_verweis', T, 'S5'],
   ['H25', 'handlungsprodukt.schreib_label', T, 'S5'],
   ['H25', 'handlungsprodukt.schreib_note', T, 'S5'],
@@ -113,6 +116,7 @@ const SET: Roh[] = [
   ['G5', `${GA}.auftrag`, T, 'Auftragsbogen'],
   ['G5', `${GA}.sozialform.empfehlung`, T, 'Auftragsbogen'],
   ['G6', `${GA}.schritte[label=*].hint`, T, 'Auftragsbogen'],
+  ['G6L', `${GA}.schritte`, SCHRITTE, 'Auftragsbogen'],
   ['G7', `${GA}.abgaben`, tl([1, 4]), 'Auftragsbogen'],
   ['G8', `${GA}.heft_bezug[heft=*].inhalte`, tl([1, 99]), 'Auftragsbogen'],
   ['G9', `${GA}.produkte`, ob([{ schritt: 'Z', form: 'T', modus: 'T', 'stationen?': ['T'], 'hinweis?': 'T', 'dauer?': 'T' }], ['#', '[].schritt', '[].form', '[].modus']), 'Auftragsbogen'],
@@ -210,23 +214,26 @@ const ERLAUBT: Record<AuftragKey, string[]> = {
   // Für den Auftragsbogen nennt §4 nur das Ziel G5 `leitfrage`; erlaubt ist darum nur dieses.
   leitfrage_umformulieren: ['H10', 'H11', 'H13', 'H15', 'G5'],
   eigener_text: [...bereich('H', 8, 19), ...bereich('H', 34, 36), ...bereich('D', 1, 8)],
-  situation_umformulieren: [...bereich('H', 1, 7), ...bereich('H', 9, 14), ...bereich('H', 17, 21), 'H24', 'H26', 'H28', 'H29', 'H30', ...bereich('H', 34, 37), ...bereich('G', 1, 13)],
-  handlungsprodukt_aendern: ['H7', 'H9', 'H10', 'H11', 'H13', 'H20', ...bereich('H', 21, 33), 'H37', ...bereich('G', 5, 10)],
+  situation_umformulieren: [...bereich('H', 1, 7), ...bereich('H', 9, 14), ...bereich('H', 17, 21), 'H24', 'H26', 'H28', 'H29', 'H30', ...bereich('H', 34, 37), ...bereich('G', 1, 13), ...bereich('D', 1, 8)],
+  // F14: H24L/G6L ganze Schrittliste (Labels nach der Nummer); F15: Dossier bei EBA.
+  handlungsprodukt_aendern: ['H7', 'H9', 'H10', 'H11', 'H13', 'H20', ...bereich('H', 21, 33), 'H24L', 'H37', ...bereich('G', 5, 10), 'G6L', ...bereich('D', 1, 8)],
 }
 const ZIEL: Record<AuftragKey, (f: Feld) => boolean> = {
   leitfrage_umformulieren: (f) => f.nr === 'H10' || f.muster === `${GA}.leitfrage`,
   eigener_text: (f) => f.nr === 'H10',
   situation_umformulieren: (f) => ['H1', 'H2', 'H3', 'H4', 'H5', 'G1', 'G2', 'G3', 'G4'].includes(f.nr),
-  handlungsprodukt_aendern: (f) => ['H22', 'H23', 'G9'].includes(f.nr) || f.muster === `${GA}.auftrag`,
+  handlungsprodukt_aendern: (f) => ['H22', 'H23', 'H24L', 'G6L', 'G9'].includes(f.nr) || f.muster === `${GA}.auftrag`,
 }
 /** Was die Lehrperson für den Auftrag markieren darf (§4 «Ziel»). */
 export const zielFelder = (auftrag: AuftragKey): Feld[] => FELDER.filter(ZIEL[auftrag])
+/** Aufträge, bei denen das EBA-Dossier mitzieht (eigener Aufruf, F15). */
+export const DOSSIER_AUFTRAEGE: readonly AuftragKey[] = ['eigener_text', 'situation_umformulieren', 'handlungsprodukt_aendern']
 const lfNr = (pfad: string): number | null => { const m = /leitfragen\[nr=(\d+)\]/.exec(pfad); return m ? Number(m[1]) : null }
 /** Grund, warum der Auftrag das Feld nicht ersetzen darf, oder `null`. `zielLeitfragen`: «derselben Leitfrage» (§4). */
 export function erlaubtFuerAuftrag(auftrag: AuftragKey, datei: FassungsDatei, pfad: string, ctx: { eba: boolean; zielLeitfragen?: number[] }): string | null {
   const feld = feldFuer(datei, pfad)
   if (!feld) return 'Feld steht nicht auf der Positivliste'
-  if (datei === 'dossier' && !(auftrag === 'eigener_text' && ctx.eba)) return 'Das Dossier ist nur bei EBA mit eigenem Text ersetzbar'
+  if (datei === 'dossier' && !(DOSSIER_AUFTRAEGE.includes(auftrag) && ctx.eba)) return 'Das Dossier ist nur bei EBA mit eigenem Text, neuer Situation oder neuem Handlungsprodukt ersetzbar'
   if (auftrag === 'eigener_text' && pfad.startsWith('spuren.mit_medien.')) return 'Eigener Text gilt nur für die Spur ohne Medien'
   if (auftrag === 'leitfrage_umformulieren' && feld.nr === 'H14') return 'Die Lösung darf beim Umformulieren nicht geändert werden'
   if (feld.nurEba && !ctx.eba) return 'Feld gibt es nur bei EBA'
@@ -242,7 +249,7 @@ const PFLICHT: Record<AuftragKey, { heft: string[]; set: string[] }> = {
   leitfrage_umformulieren: { heft: [], set: [] },
   eigener_text: { heft: ['H8', 'H36'], set: [] },
   situation_umformulieren: { heft: ['H2', 'H3', 'H4', 'H5', 'H6', 'H7', 'H9', 'H14', 'H19', 'H28', 'H29', 'H36'], set: ['G2', 'G3', 'G4', 'G5', 'G11', 'G13'] },
-  handlungsprodukt_aendern: { heft: ['H22', 'H23', 'H24', 'H26', 'H27', 'H28', 'H29', 'H30', 'H31', 'H32', 'H33', 'H37', 'H11', 'H13', 'H20', 'H21', 'H7', 'H9'], set: ['G6', 'G7', 'G9', 'G10'] },
+  handlungsprodukt_aendern: { heft: ['H22', 'H23', 'H24L', 'H26', 'H27', 'H28', 'H29', 'H30', 'H31', 'H32', 'H33', 'H37', 'H11', 'H13', 'H20', 'H21', 'H7', 'H9'], set: ['G6L', 'G7', 'G9', 'G10'] },
 }
 function pfadeZu(nrs: string[], art: Feld['datei'], roh: unknown, eba: boolean): string[] {
   return FELDER.filter((f) => f.datei === art && nrs.includes(f.nr) && (eba || !f.nurEba)).flatMap((f) => konkretePfade(f.muster, roh))
@@ -258,13 +265,19 @@ function leitfrageRoh(roh: unknown, n: number): Record<string, unknown> | undefi
 /**
  * Pflicht-Abhängigkeiten (4a) als konkrete Pfade der übergebenen Rohdatei. Nur Pfade,
  * deren Feld existiert. `eigener_text` ohne `geaenderteLeitfragen` gilt für alle Leitfragen.
- * `heft` (optional, nur Dossier): nur Nuggets mit diesem `tag`.
+ * `heft` (optional, nur Dossier): nur Nuggets mit diesem `tag`. Bei Situations- und
+ * Produktwechsel (F15) sind Info-Karten und Sprachkarte des Hefts Pflicht.
  */
 export function pflichtPfade(auftrag: AuftragKey, datei: FassungsDatei, roh: unknown, ctx: { eba: boolean; geaenderteLeitfragen?: number[]; heft?: string }): string[] {
   const art = dateiArt(datei)
   let pfade: string[]
   if (art === 'dossier') {
-    if (auftrag !== 'eigener_text' || !ctx.eba) return []
+    if (!ctx.eba || !DOSSIER_AUFTRAEGE.includes(auftrag)) return []
+    if (auftrag !== 'eigener_text') {
+      const vomHeft = (muster: string) => konkretePfade(muster, roh)
+        .filter((p) => !ctx.heft || (lesePfad(roh, p) as { tag?: string }).tag === ctx.heft)
+      return [...new Set([...vomHeft('nuggets[id=*]'), ...vomHeft('sprachmodi_scaffolds[tag=*]')])].filter((p) => feldFuer(datei, p) !== null)
+    }
     const lf = ctx.geaenderteLeitfragen
     const nuggets = konkretePfade('nuggets[id=*]', roh).filter((p) => {
       const n = lesePfad(roh, p) as { tag?: string; fuer_leitfrage?: number[] }
@@ -362,7 +375,10 @@ export interface PruefKontext {
 export function pruefeWert(datei: FassungsDatei, pfad: string, originalWert: unknown, neuerWert: unknown, ctx: PruefKontext): string | null {
   const feld = feldFuer(datei, pfad)
   if (!feld) return 'Feld steht nicht auf der Positivliste'
-  if (originalWert === undefined || originalWert === null) return 'Feld fehlt im Original'
+  if (originalWert === undefined || originalWert === null) {
+    // F14, bekannte Kante: Nach einem Label-Wechsel (H24L/G6L) zeigt der Einzel-Hint auf ein Label, das es im Original nicht gibt.
+    return feld.nr === 'H24' || feld.nr === 'G6' ? 'Dieser Schritt wurde umbenannt — bitte die ganze Schrittliste markieren.' : 'Feld fehlt im Original'
+  }
   const { form } = feld
   if (!passtSchema(neuerWert, form.schema)) return 'Wert hat nicht die erwartete Form'
   for (const f of form.fix ?? []) {
@@ -404,6 +420,12 @@ function spezial(s: Spezial, o: unknown, n: unknown, ctx: PruefKontext): string 
     const nug = n as { inhalt: string; fakten_anker: unknown[] }
     if (nug.fakten_anker.length) return '`fakten_anker` muss leer sein'
     return zeichen(nug.inhalt) > 700 ? `Info-Karte zu lang: ${zeichen(nug.inhalt)} Zeichen, erlaubt 700` : null
+  }
+  if (s === 'schrittnummern') {
+    const nummer = (x: unknown) => String((x as { label?: unknown })?.label ?? '').trim().split(/\s/)[0]
+    const alt = o as unknown[]
+    const i = (n as unknown[]).findIndex((x, j) => nummer(x) !== nummer(alt[j]))
+    return i < 0 ? null : `Schritt ${i + 1}: Das Label muss mit «${nummer(alt[i])}» beginnen`
   }
   if (s === 'glossar_ids') { const ids = (n as { id: string }[]).map((g) => g.id); return new Set(ids).size === ids.length ? null : 'Glossar-IDs sind nicht eindeutig' }
   if (s === 'vokabeln') {

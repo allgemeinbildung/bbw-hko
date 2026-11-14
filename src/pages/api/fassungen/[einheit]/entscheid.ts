@@ -58,7 +58,12 @@ export const POST: APIRoute = async ({ locals, params, request }) => {
     })
     if (angenommen.length) {
       const neueKeys = new Set(angenommen.map(schluessel))
-      const ersetzungen = [...(f.ersetzungen ?? []).filter((e) => !neueKeys.has(schluessel(e))), ...angenommen]
+      // Ein angenommener Block ersetzt ältere Ersetzungen desselben Pfads UND darunter liegender
+      // Pfade (z. B. die ganze Schrittliste H24L ältere Einzel-Hints H24) — sonst stimmt sein
+      // original_hash beim Anwenden nicht mehr und er gälte als «veraltet» (F14).
+      const unter = (alt: { datei: string; pfad: string }) =>
+        angenommen.some((n) => n.datei === alt.datei && (alt.pfad.startsWith(`${n.pfad}.`) || alt.pfad.startsWith(`${n.pfad}[`)))
+      const ersetzungen = [...(f.ersetzungen ?? []).filter((e) => !neueKeys.has(schluessel(e)) && !unter(e)), ...angenommen]
       const { error: fErr } = await admin.from('einheit_fassungen').update({ ersetzungen }).eq('id', f.id).eq('user_id', z.userId)
       if (fErr) throw fErr
     }
