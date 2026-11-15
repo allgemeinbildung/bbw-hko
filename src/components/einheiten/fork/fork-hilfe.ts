@@ -79,11 +79,37 @@ export function lesbar(datei: string | null, pfad: string): string {
     if (name === 'ohne_medien') { teile.push('ohne Medien'); continue }
     if (name === 'mit_medien') { teile.push('mit Medien'); continue }
     if (name === 'leitfragen' && schl === 'nr') { teile.push(`Leitfrage ${wert}`); continue }
+    // UX-Test 15.11.2026: «Wissensteil «nugget_B_01»» → «Wissenskarte B1».
+    const nug = name === 'nuggets' && wert ? /^nugget_([A-Za-z]+)_0*(\d+)$/.exec(wert) : null
+    if (nug) { teile.push(`Wissenskarte ${nug[1].toUpperCase()}${nug[2]}`); continue }
     const label = NAMEN[name] ?? name.replace(/_/g, ' ')
     if (schl) teile.push(`${label} «${wert}»`.trim())
     else if (label) teile.push(label)
   }
   return teile.join(' · ')
+}
+
+/** OpenAI-Hinweis (F11) — seit dem UX-Test 15.11.2026 vor jedem Abschicken, nicht nur beim eigenen Text. */
+export const HINWEIS_OPENAI =
+  'Kommentare und eigener Text gehen zur Bearbeitung an OpenAI (USA). OpenAI nutzt sie nicht für das Training, kann sie aber bis zu 30 Tage zur Missbrauchskontrolle aufbewahren. Bitte keine Namen und keine Texte von Lernenden eingeben.'
+
+/**
+ * Gründe, aus denen der Server einen Teil des Vorschlags verwirft, in Klartext.
+ * Die technischen Gründe bleiben im Server (die Korrekturrunde schickt sie ans Modell).
+ */
+export function grundKlartext(grund: string): string {
+  if (/zu lang/i.test(grund)) return 'zu lang für den Platz im Heft'
+  if (/zu kurz/i.test(grund)) return 'zu kurz'
+  if (/JSON|erwartete Form|Pfad|nicht setzbar|nicht erreichbar|Datei/i.test(grund)) return 'der Vorschlag hatte hier eine ungültige Form'
+  if (/nicht erlaubt|Nur Felder derselben|Im Auftragsbogen nur|Positivliste|nicht ersetzbar|Kein Auftrag/i.test(grund)) return 'diesen Teil darf der gewählte Auftrag nicht ändern'
+  if (/doppelt/i.test(grund)) return 'doppelt vorgeschlagen'
+  if (/Schrittliste/i.test(grund)) return 'schon in der neuen Schrittliste enthalten'
+  if (/unverändert bleiben|Lösung/i.test(grund)) return 'ein fester Teil wäre verändert worden'
+  if (/Anzahl/i.test(grund)) return 'die Anzahl der Einträge passt nicht'
+  if (/Spur ohne Medien/i.test(grund)) return 'eigener Text gilt nur für das Heft ohne Medien'
+  if (/Glossar|fakten_anker|__spur__/i.test(grund)) return 'passt nicht zum Glossar der Einheit'
+  if (/Anrede/i.test(grund)) return 'Du-Anrede statt «Sie»'
+  return grund
 }
 
 export const DATEI_MAX = 5 * 1024 * 1024

@@ -928,7 +928,9 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer: cssRendererRo
       setTimeout(() => URL.revokeObjectURL(url), 1000)
       // Der ZIP enthält immer beide Spuren; `spur` ist die beim Download gewählte.
       trackDownload({ art: 'bundle', dateien: log.length, kn_typ: knTyp, abteilung: abteilung || null, ...spurMeta })
-      showToast(`${log.length} Dateien als Zip exportiert.`)
+      showToast(vermerk
+        ? `Ihre Fassung: ${log.length} Dateien als ZIP exportiert. Jedes Dokument trägt den Vermerk «${VERMERK}»; was angepasst ist, steht in HINWEIS-FASSUNG.txt.`
+        : `${log.length} Dateien als Zip exportiert.`)
     } catch (e: any) {
       console.error(e)
       showToast('Fehler beim Bundling: ' + e.message, 'error')
@@ -1387,11 +1389,11 @@ export default function EinheitWorkbench({ set: dRoh, cssRenderer: cssRendererRo
               className="wb-dlbox-zip"
               onClick={handleBundle}
               disabled={bundling}
-              title="Alle Dokumente der Einheit als ZIP herunterladen"
+              title={vermerk ? 'Ihre Fassung der Einheit als ZIP herunterladen' : 'Alle Dokumente der Einheit als ZIP herunterladen'}
             >
               <span className="wb-dlbox-zip-icon" aria-hidden="true">⬇</span>
               <span className="wb-dlbox-zip-label">
-                {bundling ? 'Download läuft…' : 'Ganze Einheit · ZIP'}
+                {bundling ? 'Download läuft…' : vermerk ? 'Meine Fassung · ZIP' : 'Ganze Einheit · ZIP'}
               </span>
             </button>
           </div>
