@@ -357,6 +357,7 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
             Vorschau schliessen
           </button>
         )}
+        <a className="fk-link" href="/anleitungen/meine-fassung.pdf" target="_blank" rel="noopener">Anleitung (PDF)</a>
         <button type="button" className="fk-link" onClick={() => setOffen((o) => !o)} aria-expanded={offen}>{offen ? 'einklappen' : 'ausklappen'}</button>
       </div>
 
