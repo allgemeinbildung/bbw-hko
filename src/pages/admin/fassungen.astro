@@ -36,7 +36,7 @@ try {
   fehler = true
 }
 
-const auftragLabel = (k?: string) => (k && (AUFTRAEGE as Record<string, { label: string }>)[k]?.label) || k || '–'
+const auftragLabel = (k?: string) => (k === 'manuell' ? 'Selbst bearbeitet' : (k && (AUFTRAEGE as Record<string, { label: string }>)[k]?.label) || k || '–')
 const text = (v: unknown) => (typeof v === 'string' ? v : v === undefined ? '(nicht vorhanden)' : JSON.stringify(v, null, 2))
 const datum = (s: string) => {
   try { return new Date(s).toLocaleString('de-CH', { dateStyle: 'short', timeStyle: 'short' }) } catch { return s }

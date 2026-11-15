@@ -108,7 +108,10 @@ export function baueForkProp(a: {
     ...(a.modus === 'vorschau' && a.buendel ? { vorschauBuendelId: a.buendel.id } : {}),
     geaendert: fassung.map(schluessel),
     vorgeschlagen: vorschlag.map(schluessel),
-    warnungen: warnungenFuer([...fassung, ...vorschlag]).filter((w) => w.code !== 'fusszeile'),
+    // Selbst bearbeitete Wörter lösen keine Warnungen aus (Begleiter/KI-Toolbox bleiben im ZIP):
+    // wer von Hand ändert, sieht genau, was er ändert (15.11.2026).
+    warnungen: warnungenFuer([...fassung, ...vorschlag].filter((e): e is Ersetzung & { auftrag: AuftragKey } => e.auftrag !== 'manuell'))
+      .filter((w) => w.code !== 'fusszeile'),
     bericht: a.bericht,
     zielMuster,
   }

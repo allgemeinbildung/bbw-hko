@@ -21,6 +21,9 @@ export type AuftragKey =
   | 'situation_umformulieren'
   | 'handlungsprodukt_aendern'
 
+/** Woher eine Ersetzung stammt: ein Auftrag ans Modell oder «manuell» (Selbst bearbeiten, 15.11.2026). */
+export type ErsetzungsHerkunft = AuftragKey | 'manuell'
+
 /** Eine Ersetzung, Felder genau wie VERTRAG §1. */
 export interface Ersetzung {
   datei: FassungsDatei
@@ -30,7 +33,7 @@ export interface Ersetzung {
   wert: unknown
   /** 'sha256:' + 64 hex über den kanonischen Originalwert. */
   original_hash: string
-  auftrag: AuftragKey
+  auftrag: ErsetzungsHerkunft
   /** uuid des Bündels, aus dem die Ersetzung stammt. */
   buendel_id: string
 }

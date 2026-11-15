@@ -13,6 +13,7 @@ import { AUFTRAEGE } from '../../../lib/fork/positivliste'
 import { HINWEIS_START, HINWEIS_UPLOAD, VERMERK } from '../../../lib/fork/typen'
 import type { AuftragKey, BuendelHeft, BuendelSicht, Entscheid, FassungsDatei, ForkProp, KommentarEingabe } from '../../../lib/fork/typen'
 import { HEFT_LABEL, HINWEIS_OPENAI, VERMERK_CSS, auftraegeFuer, grundKlartext, heftVon, lesbar, pruefeDatei } from './fork-hilfe'
+import { manuellBearbeitbar } from '../../../lib/fork/manuell'
 
 interface Props {
   fork: ForkProp
@@ -25,7 +26,10 @@ interface Props {
 }
 
 type Buendel = Partial<Record<BuendelHeft, KommentarEingabe[]>>
-interface Auswahl { datei: FassungsDatei; pfad: string; x: number; y: number; auftraege: AuftragKey[] }
+/** Wahl im Dialog: ein Auftrag ans Modell oder «Selbst bearbeiten» (15.11.2026). */
+type Wahl = AuftragKey | 'manuell'
+interface Auswahl { datei: FassungsDatei; pfad: string; x: number; y: number; auftraege: AuftragKey[]; manuell: boolean }
+const SPRUNG_KEY = 'hko-fork-sprung'
 
 const KOMMENTAR_MAX = 2000
 const HEFTE: BuendelHeft[] = ['A', 'B', 'auftrag']
@@ -56,7 +60,10 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
   const [offen, setOffen] = useState(true)
   const [markieren, setMarkieren] = useState(false)
   const [auswahl, setAuswahl] = useState<Auswahl | null>(null)
-  const [auftrag, setAuftrag] = useState<AuftragKey | ''>('')
+  const [auftrag, setAuftrag] = useState<Wahl | ''>('')
+  // Selbst bearbeiten: geladener Text, Entwurf, erlaubte Länge.
+  const [eigen, setEigen] = useState<{ wert: string; entwurf: string; max: number } | null>(null)
+  const [speichert, setSpeichert] = useState(false)
   const [kommentar, setKommentar] = useState('')
   const [buendel, setBuendel] = useState<Buendel>(() => ladeBuendel(einheitId))
   const [texte, setTexte] = useState<Partial<Record<BuendelHeft, { text: string; datei: File | null }>>>({})
@@ -82,6 +89,13 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
   useEffect(() => {
     try {
       if (sessionStorage.getItem(GELOESCHT_KEY) === einheitId) { sessionStorage.removeItem(GELOESCHT_KEY); setNotiz('Ihre Fassung ist gelöscht. Sie sehen wieder das Original.') }
+      const sprung = sessionStorage.getItem(SPRUNG_KEY)
+      if (sprung) {
+        sessionStorage.removeItem(SPRUNG_KEY)
+        setNotiz('Ihre Änderung ist gespeichert.')
+        const i = sprung.indexOf(':')
+        if (i > 0) setTimeout(() => zeigeBlock(sprung.slice(0, i), sprung.slice(i + 1)), 400)
+      }
     } catch { /* ohne sessionStorage keine Bestätigung */ }
   }, [einheitId])
 
@@ -113,8 +127,8 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
           el.toggleAttribute('data-fk-sel', !!auswahl && f === `${auswahl.datei}:${auswahl.pfad}`)
           // UX-Test 15.11.2026: wählbare Blöcke im Markiermodus dauerhaft sichtbar, nicht erst beim Überfahren.
           const i = f.indexOf(':')
-          el.toggleAttribute('data-fk-waehlbar',
-            markieren && i > 0 && auftraegeFuer(f.slice(0, i) as FassungsDatei, f.slice(i + 1), fork.zielMuster).length > 0)
+          el.toggleAttribute('data-fk-waehlbar', markieren && i > 0 && (
+            auftraegeFuer(f.slice(0, i) as FassungsDatei, f.slice(i + 1), fork.zielMuster).length > 0 || manuellBearbeitbar(f.slice(0, i), f.slice(i + 1))))
         }
         const voll: number[] = []
         wurzel.querySelectorAll<HTMLElement>('.a4-page').forEach((s, i) => { if (s.scrollHeight > s.clientHeight + 2) voll.push(i + 1) })
@@ -136,7 +150,8 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
       const datei = attr.slice(0, i) as FassungsDatei
       const pfad = attr.slice(i + 1)
       const auftraege = i > 0 ? auftraegeFuer(datei, pfad, fork.zielMuster) : []
-      if (auftraege.length) return { el, datei, pfad, auftraege }
+      const manuell = i > 0 && manuellBearbeitbar(datei, pfad)
+      if (auftraege.length || manuell) return { el, datei, pfad, auftraege, manuell }
       el = el.parentElement?.closest<HTMLElement>('[data-feld]') ?? null
     }
     return null
@@ -157,9 +172,11 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
       if (!z) { setNotiz('Diesen Teil kann man nicht anpassen. Wählbar sind die gestrichelt umrandeten Blöcke.'); return }
       e.preventDefault()
       e.stopPropagation()
-      setAuswahl({ datei: z.datei, pfad: z.pfad, x: e.clientX, y: e.clientY, auftraege: z.auftraege })
-      setAuftrag(z.auftraege.length === 1 ? z.auftraege[0] : '')
+      setAuswahl({ datei: z.datei, pfad: z.pfad, x: e.clientX, y: e.clientY, auftraege: z.auftraege, manuell: z.manuell })
+      const wahlen: Wahl[] = [...(z.manuell ? ['manuell' as const] : []), ...z.auftraege]
+      setAuftrag(wahlen.length === 1 ? wahlen[0] : '')
       setKommentar('')
+      setEigen(null)
     }
     wurzel.setAttribute('data-fk-markieren', '')
     wurzel.addEventListener('mouseover', ueber)
@@ -179,8 +196,39 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
     return () => clearInterval(t)
   }, [sende])
 
+  // Selbst bearbeiten: aktuellen Text (Original oder eigene Fassung) vom Server holen.
+  useEffect(() => {
+    if (auftrag !== 'manuell' || !auswahl) return
+    let aus = false
+    setEigen(null)
+    fetch(`${api}/manuell?datei=${encodeURIComponent(auswahl.datei)}&pfad=${encodeURIComponent(auswahl.pfad)}`)
+      .then(async (res) => {
+        if (aus) return
+        if (!res.ok) { setFehler(await fehlerAus(res)); setAuswahl(null); return }
+        const b = (await res.json()) as { wert: string; max: number }
+        if (!aus) setEigen({ wert: b.wert, entwurf: b.wert, max: b.max })
+      })
+      .catch(() => { if (!aus) setFehler('Netzwerkfehler — bitte nochmals versuchen.') })
+    return () => { aus = true }
+  }, [auftrag, auswahl, api])
+
+  const speichereManuell = async () => {
+    if (!auswahl || !eigen || speichert) return
+    setSpeichert(true)
+    setFehler(null)
+    try {
+      const res = await fetch(`${api}/manuell`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ datei: auswahl.datei, pfad: auswahl.pfad, wert: eigen.entwurf }),
+      })
+      if (!res.ok) { setFehler(await fehlerAus(res)); return }
+      try { sessionStorage.setItem(SPRUNG_KEY, `${auswahl.datei}:${auswahl.pfad}`) } catch { /* ohne Sprung */ }
+      geheZu('ansicht', 'fassung')
+    } catch { setFehler('Netzwerkfehler — bitte nochmals versuchen.') } finally { setSpeichert(false) }
+  }
+
   const zumBuendel = () => {
-    if (!auswahl || !auftrag || !kommentar.trim()) return
+    if (!auswahl || !auftrag || auftrag === 'manuell' || !kommentar.trim()) return
     const heft = heftVon(auswahl.datei)
     if (!heft) return
     const eintrag: KommentarEingabe = { auftrag, datei: auswahl.datei, pfad: auswahl.pfad, kommentar: kommentar.trim().slice(0, KOMMENTAR_MAX) }
@@ -424,7 +472,9 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
             <details className="fk-verlauf"><summary className="fk-klein">Frühere Änderungswünsche ({verlauf.length})</summary>
               <ul>{verlauf.map((b) => (
                 <li key={b.id} className="fk-klein">
-                  {new Date(b.created_at).toLocaleString('de-CH', { dateStyle: 'short', timeStyle: 'short' })} · {HEFT_LABEL[b.heft]} · {STATUS_LABEL[b.status]} · {b.kommentare.length} Kommentar{b.kommentare.length === 1 ? '' : 'e'}
+                  {new Date(b.created_at).toLocaleString('de-CH', { dateStyle: 'short', timeStyle: 'short' })} · {HEFT_LABEL[b.heft]} · {(b.kommentare[0]?.auftrag as string) === 'manuell'
+                    ? <>Selbst bearbeitet: {lesbar(b.kommentare[0].datei, b.kommentare[0].pfad)}</>
+                    : <>{STATUS_LABEL[b.status]} · {b.kommentare.length} Kommentar{b.kommentare.length === 1 ? '' : 'e'}</>}
                   {(b.status === 'vorschlag' || b.status === 'unvollstaendig') && b.id !== vorschauB?.id && <> · <a href={`?vorschau=${encodeURIComponent(b.id)}`}>Vorschau</a></>}
                 </li>
               ))}</ul>
@@ -437,15 +487,33 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
 
       {auswahl && (
         <div className="fk-pop" role="dialog" aria-label="Kommentar zum Block"
-          style={{ left: Math.max(8, Math.min(auswahl.x, window.innerWidth - 340)), top: Math.max(8, Math.min(auswahl.y + 12, window.innerHeight - (auftrag === 'eigener_text' ? 560 : 400))) }}>
+          style={{ left: Math.max(8, Math.min(auswahl.x, window.innerWidth - 340)), top: Math.max(8, Math.min(auswahl.y + 12, window.innerHeight - (auftrag === 'eigener_text' ? 560 : auftrag === 'manuell' ? 360 : 400))) }}>
           <div className="fk-buendel-kopf"><strong>{lesbar(auswahl.datei, auswahl.pfad)}</strong></div>
-          <label className="fk-klein">Auftrag
-            <select value={auftrag} onChange={(e) => setAuftrag(e.target.value as AuftragKey)}>
-              {auswahl.auftraege.length > 1 && <option value="">Bitte wählen …</option>}
-              {auswahl.auftraege.map((a) => <option key={a} value={a}>{AUFTRAEGE[a].label}</option>)}
+          <label className="fk-klein">Was möchten Sie tun?
+            <select value={auftrag} onChange={(e) => { setAuftrag(e.target.value as Wahl); setFehler(null) }}>
+              {auswahl.auftraege.length + (auswahl.manuell ? 1 : 0) > 1 && <option value="">Bitte wählen …</option>}
+              {auswahl.manuell && <option value="manuell">Selbst bearbeiten (ohne Modell)</option>}
+              {auswahl.auftraege.map((a) => <option key={a} value={a}>{AUFTRAEGE[a].label} (mit Modell)</option>)}
             </select>
           </label>
-          {auftrag && <p className="fk-klein">{AUFTRAEGE[auftrag].beschreibung}</p>}
+          {auftrag === 'manuell' && <p className="fk-klein">Ändern Sie den Text direkt. Es geht nichts an ein Sprachmodell, und zusammenhängende Stellen (Lösungen, andere Hefte) passen Sie bei Bedarf selbst an.</p>}
+          {auftrag && auftrag !== 'manuell' && <p className="fk-klein">{AUFTRAEGE[auftrag].beschreibung}</p>}
+          {auftrag === 'manuell' && (
+            eigen ? (
+              <>
+                <textarea className="fk-manuell" rows={6} value={eigen.entwurf} autoFocus
+                  onChange={(e) => setEigen({ ...eigen, entwurf: e.target.value })} />
+                {fehler && <p className="fk-fehler" role="alert">{fehler}</p>}
+                <div className="fk-zeile">
+                  <span className={`fk-klein${[...eigen.entwurf].length > eigen.max ? ' fk-zuviel' : ''}`}>{[...eigen.entwurf].length} / {eigen.max} Zeichen</span>
+                  <button type="button" className="fk-link" onClick={() => setAuswahl(null)}>Abbrechen</button>
+                  <button type="button" className="fk-knopf haupt"
+                    disabled={speichert || !eigen.entwurf.trim() || eigen.entwurf === eigen.wert || [...eigen.entwurf].length > eigen.max}
+                    onClick={speichereManuell}>{speichert ? 'Speichert …' : 'Speichern'}</button>
+                </div>
+              </>
+            ) : <p className="fk-klein" role="status">Text wird geladen …</p>
+          )}
           {/* UX-Test 15.11.2026: Beim eigenen Text stehen Text und Kommentar im selben Dialog. */}
           {auftrag === 'eigener_text' && popHeft && (
             <div className="fk-eigen">
@@ -456,16 +524,20 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
                 onChange={(e) => setzeText(popHeft, { text: e.target.value })} />
             </div>
           )}
-          <label className="fk-klein">{auftrag === 'eigener_text' ? <strong>Was soll mit Ihrem Text passieren?</strong> : <strong>Was soll anders werden?</strong>}
-            <textarea rows={4} maxLength={KOMMENTAR_MAX} placeholder={auftrag === 'eigener_text' ? 'z. B. «Situation und Aufgaben auf diesen Zeitungsartikel stützen» (Pflicht)' : 'Ihr Kommentar (Pflicht)'}
-              value={kommentar} onChange={(e) => setKommentar(e.target.value)} autoFocus />
-          </label>
-          <p className="fk-klein">{HINWEIS_OPENAI}</p>
-          <div className="fk-zeile">
-            <span className="fk-klein">{kommentar.length} / {KOMMENTAR_MAX}</span>
-            <button type="button" className="fk-link" onClick={() => setAuswahl(null)}>Abbrechen</button>
-            <button type="button" className="fk-knopf haupt" disabled={!auftrag || !kommentar.trim() || popEigenFehlt} onClick={zumBuendel}>Hinzufügen</button>
-          </div>
+          {auftrag !== 'manuell' && (
+            <>
+              <label className="fk-klein">{auftrag === 'eigener_text' ? <strong>Was soll mit Ihrem Text passieren?</strong> : <strong>Was soll anders werden?</strong>}
+                <textarea rows={4} maxLength={KOMMENTAR_MAX} placeholder={auftrag === 'eigener_text' ? 'z. B. «Situation und Aufgaben auf diesen Zeitungsartikel stützen» (Pflicht)' : 'Ihr Kommentar (Pflicht)'}
+                  value={kommentar} onChange={(e) => setKommentar(e.target.value)} autoFocus />
+              </label>
+              <p className="fk-klein">{HINWEIS_OPENAI}</p>
+              <div className="fk-zeile">
+                <span className="fk-klein">{kommentar.length} / {KOMMENTAR_MAX}</span>
+                <button type="button" className="fk-link" onClick={() => setAuswahl(null)}>Abbrechen</button>
+                <button type="button" className="fk-knopf haupt" disabled={!auftrag || !kommentar.trim() || popEigenFehlt} onClick={zumBuendel}>Hinzufügen</button>
+              </div>
+            </>
+          )}
         </div>
       )}
     </section>
@@ -503,6 +575,8 @@ p.fk-warn { padding-left: 10px; }
 .fk-angenommen .fk-zustand { color: var(--brand-dark); font-weight: 600; }
 .fk-speichern { position: sticky; bottom: -10px; background: #fff; padding: 8px 0; border-top: 1px solid #e5e7eb; z-index: 1; }
 .fk-pop textarea { margin-top: 2px; }
+.fk-pop textarea.fk-manuell { width: 100%; box-sizing: border-box; border: 1px solid var(--brand); border-radius: 6px; padding: 6px; font: inherit; resize: vertical; }
+.fk-zuviel { color: #b91c1c; font-weight: 600; }
 /* «Problem melden» schwebt unten rechts und deckte «Entscheid speichern» ab (UX-Test 15.11.2026). */
 body:has(.fk-leiste[data-modus="vorschau"]) .qf-fab { right: auto; left: 1.25rem; }
 .fk-pop { position: fixed; z-index: 60; width: 320px; background: #fff; border: 1px solid #d1d5db; border-top: 3px solid var(--brand); border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.18); padding: 10px; display: grid; gap: 6px; max-height: calc(100vh - 16px); overflow: auto; font: 13px/1.45 system-ui, sans-serif; color: #1f2937; }
