@@ -29,13 +29,13 @@ const verdraengt = (e: Ersetzung, datei: string, pfad: string) =>
   e.datei === datei && (e.pfad === pfad || e.pfad.startsWith(`${pfad}.`) || e.pfad.startsWith(`${pfad}[`))
 
 /** Aktueller Text des Felds in der Fassung (Original, wenn nichts ersetzt ist) und die erlaubte Länge. */
-export function jetzigerWert(roh: FassungsDateien, ersetzungen: Ersetzung[], datei: FassungsDatei, pfad: string): { wert: string; max: number } | null {
+export function jetzigerWert(roh: FassungsDateien, ersetzungen: Ersetzung[], datei: FassungsDatei, pfad: string): { wert: string; max: number; original: string } | null {
   if (!manuellBearbeitbar(datei, pfad)) return null
   const original = lesePfad(roh[datei], pfad)
   if (typeof original !== 'string') return null
   const { dateien } = wendeAn(roh, ersetzungen)
   const jetzt = lesePfad(dateien[datei], pfad)
-  return { wert: typeof jetzt === 'string' ? jetzt : original, max: textMax([...original].length) }
+  return { wert: typeof jetzt === 'string' ? jetzt : original, max: textMax([...original].length), original }
 }
 
 export type ManuellErgebnis =

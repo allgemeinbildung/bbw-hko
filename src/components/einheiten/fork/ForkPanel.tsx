@@ -62,7 +62,7 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
   const [auswahl, setAuswahl] = useState<Auswahl | null>(null)
   const [auftrag, setAuftrag] = useState<Wahl | ''>('')
   // Selbst bearbeiten: geladener Text, Entwurf, erlaubte Länge.
-  const [eigen, setEigen] = useState<{ wert: string; entwurf: string; max: number } | null>(null)
+  const [eigen, setEigen] = useState<{ wert: string; entwurf: string; max: number; original: string } | null>(null)
   const [speichert, setSpeichert] = useState(false)
   const [kommentar, setKommentar] = useState('')
   const [buendel, setBuendel] = useState<Buendel>(() => ladeBuendel(einheitId))
@@ -205,8 +205,8 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
       .then(async (res) => {
         if (aus) return
         if (!res.ok) { setFehler(await fehlerAus(res)); setAuswahl(null); return }
-        const b = (await res.json()) as { wert: string; max: number }
-        if (!aus) setEigen({ wert: b.wert, entwurf: b.wert, max: b.max })
+        const b = (await res.json()) as { wert: string; max: number; original?: string }
+        if (!aus) setEigen({ wert: b.wert, entwurf: b.wert, max: b.max, original: b.original ?? b.wert })
       })
       .catch(() => { if (!aus) setFehler('Netzwerkfehler — bitte nochmals versuchen.') })
     return () => { aus = true }
@@ -506,6 +506,9 @@ export default function ForkPanel({ fork, pagesRef, renderKey, zeige }: Props) {
                 {fehler && <p className="fk-fehler" role="alert">{fehler}</p>}
                 <div className="fk-zeile">
                   <span className={`fk-klein${[...eigen.entwurf].length > eigen.max ? ' fk-zuviel' : ''}`}>{[...eigen.entwurf].length} / {eigen.max} Zeichen</span>
+                  {eigen.entwurf !== eigen.original && (
+                    <button type="button" className="fk-link" onClick={() => setEigen({ ...eigen, entwurf: eigen.original })}>Original einsetzen</button>
+                  )}
                   <button type="button" className="fk-link" onClick={() => setAuswahl(null)}>Abbrechen</button>
                   <button type="button" className="fk-knopf haupt"
                     disabled={speichert || !eigen.entwurf.trim() || eigen.entwurf === eigen.wert || [...eigen.entwurf].length > eigen.max}

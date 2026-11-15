@@ -1,0 +1,264 @@
+---
+/**
+ * Fork-Pilot «Meine Fassung» — Nutzung und Kosten (nur KT1).
+ * Liest mit dem Service-Role-Client nach der Rollenprüfung; schreibt nichts.
+ * Rechnung: src/lib/fork/nutzung.ts + kosten.ts · Annahmen: docs/fork/KOSTEN.md.
+ */
+import Admin from '../../../layouts/Admin.astro'
+import { createAdminClient } from '../../../lib/supabase'
+import { einheitById } from '../../../lib/einheiten/index'
+import { AUFTRAEGE } from '../../../lib/fork/positivliste'
+import { werteAus, type AufrufZeile, type BuendelZeile, type FassungZeile, type Zahlen } from '../../../lib/fork/nutzung'
+import { betrag, usdZuChf, PREISE, PREISSTAND, PREISQUELLE, USD_CHF, KURSSTAND } from '../../../lib/fork/kosten'
+
+export const prerender = false
+
+const user = Astro.locals.user
+if (!user) return Astro.redirect('/login')
+const { data: profile } = await Astro.locals.supabase.from('profiles').select('role').eq('id', user.id).single()
+if (profile?.role !== 'kt1') return Astro.redirect('/')
+
+// Zeitraum über die URL, wie /admin/statistik (ohne JS).
+const ZEITRAEUME = ['7', '30', 'alle'] as const
+const roh = Astro.url.searchParams.get('tage') ?? '30'
+const zeitraum = (ZEITRAEUME as readonly string[]).includes(roh) ? roh : '30'
+const seit = zeitraum === 'alle' ? null : new Date(Date.now() - Number(zeitraum) * 86_400_000).toISOString()
+
+type Einstellungen = { aktiv: boolean; max_pro_tag_person: number | null; max_pro_tag_gesamt: number; text_aufbewahrung_tage: number; updated_at: string }
+let ladeFehler: string | null = null
+let einst: Einstellungen | null = null
+let aufrufeLesbar = true
+let auswertung: ReturnType<typeof werteAus> | null = null
+const namen = new Map<string, string>()
+
+try {
+  const admin = createAdminClient()
+  const qa = admin.from('fork_aufrufe').select('user_id, art, created_at')
+  // `*`, damit die Seite auch ohne Migration 030 rendert (dann fehlen die Token-Spalten).
+  const qb = admin.from('einheit_fassung_buendel').select('*')
+  const [e, a, b, f, p] = await Promise.all([
+    admin.from('fork_einstellungen').select('*').eq('id', 1).maybeSingle(),
+    (seit ? qa.gte('created_at', seit) : qa).limit(20000),
+    (seit ? qb.gte('created_at', seit) : qb).limit(5000),
+    admin.from('einheit_fassungen').select('id, user_id, einheit_id, created_at').limit(5000),
+    admin.from('profiles').select('id, full_name'),
+  ])
+  if (b.error || f.error) throw new Error('Fassungen nicht lesbar (Migration 028 angewendet?)')
+  if (!e.error) einst = (e.data as Einstellungen | null) ?? null
+  if (a.error) aufrufeLesbar = false
+  for (const x of p.data ?? []) namen.set(x.id, x.full_name ?? '–')
+  const alle = (f.data ?? []) as FassungZeile[]
+  auswertung = werteAus({
+    aufrufe: aufrufeLesbar ? ((a.data ?? []) as AufrufZeile[]) : null,
+    buendel: (b.data ?? []) as BuendelZeile[],
+    fassungen: seit ? alle.filter((x) => x.created_at >= seit) : alle,
+    alleFassungen: alle,
+  })
+} catch (err) {
+  ladeFehler = err instanceof Error ? err.message : 'Unbekannter Fehler'
+}
+
+const zahl = (n: number) => n.toLocaleString('de-CH')
+const tokens = (n: number) => (n >= 10_000 ? `${(n / 1000).toLocaleString('de-CH', { maximumFractionDigits: 0 })}k` : zahl(n))
+const auftragLabel = (k: string) => (AUFTRAEGE as Record<string, { label: string }>)[k]?.label ?? k
+const FEHLER_LABEL: Record<string, string> = {
+  nicht_konfiguriert: 'Server nicht eingerichtet', zeitueberschreitung: 'Zeitüberschreitung', abgelehnt: 'Modell hat abgelehnt',
+  unvollstaendig: 'Antwort abgeschnitten', http: 'HTTP-/Netzwerkfehler', format: 'Antwort im falschen Format', pruefung: 'Fehler bei der Prüfung', unbekannt: 'nicht erfasst (vor Migration 030)',
+}
+const kosten = (z: Zahlen) => (z.kostenUsd === null ? null : { usd: betrag(z.kostenUsd, 'USD'), chf: betrag(usdZuChf(z.kostenUsd), 'CHF') })
+const tagFmt = new Intl.DateTimeFormat('de-CH', { weekday: 'short', day: '2-digit', month: '2-digit' })
+const maxTag = Math.max(1, ...(auswertung?.proTag ?? []).map((t) => t.buendel + t.korrektur))
+const s = auswertung?.summe
+const preisModelle = Object.entries(PREISE)
+---
+<Admin title="Fassungen · Nutzung">
+  <div class="space-y-6">
+    <header class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="text-sm"><a href="/admin/fassungen" class="hover:underline" style="color: var(--brand-dark);">← Fassungen</a></p>
+        <h1 class="text-2xl font-bold text-slate-900">Nutzung «Meine Fassung»</h1>
+        <p class="text-sm text-slate-600 mt-1">Wer das Werkzeug wie nutzt und was die Modellaufrufe kosten.</p>
+      </div>
+      <nav class="flex gap-1 p-1 rounded-lg bg-slate-100" aria-label="Zeitraum">
+        {ZEITRAEUME.map((t) => (
+          <a href={`/admin/fassungen/nutzung?tage=${t}`}
+             class={`px-3 py-1 rounded-md text-sm font-medium transition ${t === zeitraum ? 'tab-active' : 'text-slate-600 hover:bg-white'}`}
+          >{t === 'alle' ? 'Alle' : `${t} Tage`}</a>
+        ))}
+      </nav>
+    </header>
+
+    <!-- Einstellungen (nur lesend; geändert wird im SQL-Editor, siehe 029_fork_schalter.sql) -->
+    <section class="bg-white rounded-lg border border-slate-200 p-4 text-sm">
+      {einst ? (
+        <div class="flex flex-wrap gap-x-6 gap-y-1 items-baseline">
+          <span>
+            <span class="field-label">Status</span>{' '}
+            <span class={`font-semibold px-2 py-0.5 rounded-full text-xs ${einst.aktiv ? '' : 'bg-red-100 text-red-800'}`} style={einst.aktiv ? 'background: var(--brand-tint); color: var(--brand-dark);' : ''}>
+              {einst.aktiv ? 'aktiv' : 'ausgeschaltet (Not-Aus)'}
+            </span>
+          </span>
+          <span><span class="field-label">pro Person und Tag</span> {einst.max_pro_tag_person ?? 'Vorgabe (FORK_MAX_AUFRUFE_PRO_TAG, sonst 20)'} Bündel</span>
+          <span><span class="field-label">gesamt pro Tag</span> {einst.max_pro_tag_gesamt} Modellaufrufe</span>
+          <span><span class="field-label">Texte löschen nach</span> {einst.text_aufbewahrung_tage} Tagen</span>
+          <span class="text-xs text-slate-400">geändert {new Date(einst.updated_at).toLocaleString('de-CH', { dateStyle: 'short', timeStyle: 'short' })}</span>
+        </div>
+      ) : (
+        <p class="text-slate-500">Einstellungen nicht lesbar (Migration 029 nicht angewendet?) — dann gilt nur die Grenze pro Person aus der Umgebung.</p>
+      )}
+    </section>
+
+    {ladeFehler && (
+      <div class="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+        <p class="font-semibold">Nutzung nicht abrufbar.</p>
+        <p class="mt-1">{ladeFehler}</p>
+      </div>
+    )}
+
+    {auswertung && s && (
+      <>
+        <section class="grid grid-cols-2 lg:grid-cols-5 gap-4">
+          {[
+            { label: 'Modellaufrufe', wert: zahl(s.modellaufrufe), hint: aufrufeLesbar ? `davon ${zahl(s.korrekturen)} Korrekturrunden` : 'aus Bündeln geschätzt' },
+            { label: 'Selbst bearbeitet', wert: zahl(s.manuell), hint: 'Änderungen ohne Modell' },
+            { label: 'Fassungen angelegt', wert: zahl(s.fassungen), hint: 'im Zeitraum' },
+            { label: 'Vorschläge', wert: zahl(s.vorschlaege), hint: `${zahl(s.angenommen)} übernommen · ${zahl(s.verworfen)} verworfen · ${zahl(s.offen)} offen` },
+            {
+              label: 'Kosten',
+              wert: kosten(s)?.chf ?? '–',
+              hint: kosten(s) ? `${kosten(s)!.usd}${s.ohneTokens ? ` · ${s.ohneTokens} Bündel ohne Zahlen` : ''}` : 'Tokens noch nicht erfasst',
+            },
+          ].map((k) => (
+            <div class="bg-white rounded-lg border border-slate-200 p-4">
+              <div class="field-label">{k.label}</div>
+              <div class="text-2xl font-bold text-slate-900 mt-1">{k.wert}</div>
+              <div class="text-xs text-slate-500 mt-1">{k.hint}</div>
+            </div>
+          ))}
+        </section>
+
+        {!auswertung.tokenSpalten && (
+          <p class="-mt-2 text-xs text-slate-500">
+            Tokens werden erst mit Migration <code class="font-mono">030_fork_tokens.sql</code> gespeichert — bis dahin «noch nicht erfasst».
+            Schätzung pro Aufruf: <code class="font-mono">docs/fork/KOSTEN.md</code>.
+          </p>
+        )}
+
+        <!-- Pro Lehrperson -->
+        <section class="bg-white rounded-lg border border-slate-200 p-5 overflow-x-auto">
+          <h2 class="text-sm font-semibold text-slate-900 mb-3">Pro Lehrperson</h2>
+          {auswertung.personen.length === 0 ? (
+            <p class="text-sm text-slate-500">Im Zeitraum keine Nutzung.</p>
+          ) : (
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="text-left text-xs text-slate-500 border-b border-slate-200">
+                  <th class="pb-2 font-semibold">Person</th>
+                  <th class="pb-2 font-semibold text-right">Modellaufrufe</th>
+                  <th class="pb-2 font-semibold text-right">Selbst bearb.</th>
+                  <th class="pb-2 font-semibold text-right">Fassungen</th>
+                  <th class="pb-2 font-semibold text-right">übern. / verw. / offen</th>
+                  <th class="pb-2 font-semibold text-right">Fehler</th>
+                  <th class="pb-2 font-semibold text-right">Tokens ein / aus</th>
+                  <th class="pb-2 font-semibold text-right">Kosten</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[...auswertung.personen.map((p) => ({ name: namen.get(p.user_id) ?? '–', z: p.zahlen, summe: false })), { name: 'Summe', z: s, summe: true }].map(({ name, z, summe }) => (
+                  <tr class={summe ? 'border-t-2 border-slate-300 font-semibold' : 'border-b border-slate-100'}>
+                    <td class="py-1.5">{name}</td>
+                    <td class="py-1.5 text-right tabular-nums">{zahl(z.modellaufrufe)}{z.korrekturen > 0 && <span class="text-xs text-slate-400"> ({z.korrekturen} K.)</span>}</td>
+                    <td class="py-1.5 text-right tabular-nums">{zahl(z.manuell)}</td>
+                    <td class="py-1.5 text-right tabular-nums">{zahl(z.fassungen)}</td>
+                    <td class="py-1.5 text-right tabular-nums">{z.angenommen} / {z.verworfen} / {z.offen}</td>
+                    <td class="py-1.5 text-right tabular-nums">{z.fehler}{z.unvollstaendig > 0 && <span class="text-xs text-slate-400"> +{z.unvollstaendig} unvollst.</span>}</td>
+                    <td class="py-1.5 text-right tabular-nums">
+                      {z.tokensEingabe + z.tokensAusgabe > 0 ? `${tokens(z.tokensEingabe)} / ${tokens(z.tokensAusgabe)}` : <span class="text-xs text-slate-400">noch nicht erfasst</span>}
+                    </td>
+                    <td class="py-1.5 text-right tabular-nums whitespace-nowrap">
+                      {kosten(z) ? <span title={kosten(z)!.usd}>{kosten(z)!.chf}</span> : <span class="text-xs text-slate-400">–</span>}
+                      {z.ohneTokens > 0 && z.kostenUsd !== null && <span class="text-xs text-slate-400"> (+{z.ohneTokens} ohne Zahlen)</span>}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+          <p class="text-xs text-slate-500 mt-3">
+            Modellaufrufe aus <code class="font-mono">fork_aufrufe</code> (auch abgebrochene; «K.» = Korrekturrunden). Übernommen/verworfen: Entscheide pro Block in den Bündeln; offen = Vorschlag ohne Entscheid.
+          </p>
+        </section>
+
+        <div class="grid lg:grid-cols-2 gap-6">
+          <!-- Aufrufe pro Tag -->
+          <section class="bg-white rounded-lg border border-slate-200 p-5">
+            <h2 class="text-sm font-semibold text-slate-900 mb-3">Modellaufrufe pro Tag</h2>
+            {auswertung.proTag.length === 0 ? <p class="text-sm text-slate-500">Keine.</p> : (
+              <ul class="space-y-1 text-sm">
+                {auswertung.proTag.map((t) => (
+                  <li class="flex items-center gap-3">
+                    <span class="w-24 text-xs text-slate-500 tabular-nums">{tagFmt.format(new Date(`${t.tag}T12:00:00`))}</span>
+                    <span class="flex-1 h-3 rounded bg-slate-100 overflow-hidden flex">
+                      <span style={`width: ${(t.buendel / maxTag) * 100}%; background: var(--brand);`} />
+                      <span style={`width: ${(t.korrektur / maxTag) * 100}%; background: var(--brand-dark); opacity: 0.45;`} />
+                    </span>
+                    <span class="w-16 text-right tabular-nums">{t.buendel + t.korrektur}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {einst && <p class="text-xs text-slate-500 mt-3">Grenze: {einst.max_pro_tag_gesamt} pro Tag gesamt. Heller Teil = Korrekturrunden.</p>}
+          </section>
+
+          <!-- Fehler -->
+          <section class="bg-white rounded-lg border border-slate-200 p-5">
+            <h2 class="text-sm font-semibold text-slate-900 mb-3">Fehlgeschlagene Bündel</h2>
+            {auswertung.fehler.length === 0 ? <p class="text-sm text-slate-500">Keine.</p> : (
+              <ul class="space-y-1 text-sm">
+                {auswertung.fehler.map((f) => (
+                  <li class="flex justify-between"><span>{FEHLER_LABEL[f.art] ?? f.art}</span><span class="tabular-nums">{f.n}</span></li>
+                ))}
+              </ul>
+            )}
+            {s.unvollstaendig > 0 && <p class="text-xs text-slate-500 mt-3">Dazu {s.unvollstaendig} unvollständige Vorschläge (Pflichtfelder fehlten nach den Korrekturrunden).</p>}
+          </section>
+
+          <!-- Aufträge -->
+          <section class="bg-white rounded-lg border border-slate-200 p-5">
+            <h2 class="text-sm font-semibold text-slate-900 mb-3">Beliebteste Aufträge</h2>
+            {auswertung.auftraege.length === 0 ? <p class="text-sm text-slate-500">Keine.</p> : (
+              <ul class="space-y-1 text-sm">
+                {auswertung.auftraege.map((a) => (
+                  <li class="flex justify-between"><span>{auftragLabel(a.auftrag)}</span><span class="tabular-nums">{a.n}</span></li>
+                ))}
+              </ul>
+            )}
+            <p class="text-xs text-slate-500 mt-3">Bündel mit Modellaufruf, die den Auftrag enthalten.</p>
+          </section>
+
+          <!-- Einheiten -->
+          <section class="bg-white rounded-lg border border-slate-200 p-5">
+            <h2 class="text-sm font-semibold text-slate-900 mb-3">Meistbearbeitete Einheiten</h2>
+            {auswertung.einheiten.length === 0 ? <p class="text-sm text-slate-500">Keine.</p> : (
+              <ul class="space-y-1 text-sm">
+                {auswertung.einheiten.slice(0, 15).map((e) => (
+                  <li class="flex justify-between gap-3">
+                    <a href={`/einheiten/${e.einheit_id}`} class="hover:underline truncate" style="color: var(--brand-dark);">{einheitById(e.einheit_id)?.einheit_titel ?? e.einheit_id}</a>
+                    <span class="tabular-nums">{e.n}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <p class="text-xs text-slate-500 mt-3">Bündel mit Modell und Selbst-Bearbeitungen.</p>
+          </section>
+        </div>
+
+        <p class="text-xs text-slate-500">
+          Preise ({PREISSTAND}, <a href={PREISQUELLE} class="underline">OpenAI</a>, USD pro 1 Mio. Tokens ein/gecacht/aus):
+          {preisModelle.map(([m, p], i) => <span>{i > 0 ? ' · ' : ' '}{m} {p.eingabe}/{p.gecacht}/{p.ausgabe}</span>)}.
+          Kurs 1 USD = {USD_CHF} CHF ({KURSSTAND}). Kosten nur aus gespeicherten Tokens; Bündel vor Migration 030 fehlen darin.
+        </p>
+      </>
+    )}
+  </div>
+</Admin>

@@ -19,7 +19,7 @@ import { baueAnfrage, feldauszug, type Feldauszug } from '../../../../lib/fork/a
 
 /** Felder des Hefts, die das Dossier als Lesekontext braucht (keine Lösungen). */
 const BEZUG = /^(titel|persona|situation_text|zahlen_tabelle|leitfrage|quellen_anker|leitfragen_intro|(spuren\.[a-z_]+\.)?leitfragen\[nr=\d+\]\.(text|knoten_ref|liefert)|handlungsprodukt\.(titel|format|beschreibung|schritte|abgaben)|spuren\.[a-z_]+\.leitfragen\[nr=\d+\]\.raster\.(auftrag|knoten_ref))$/
-import { frageModell } from '../../../../lib/fork/openai'
+import { frageModell, type Nutzung } from '../../../../lib/fork/openai'
 import { pruefeVorschlag } from '../../../../lib/fork/vorschlag'
 import { MAX_BYTES, textAusDatei, textAusEingabe } from '../../../../lib/fork/text'
 import { HEFT_DATEI, type BuendelHeft, type KommentarEingabe } from '../../../../lib/fork/typen'
@@ -162,17 +162,30 @@ async function verarbeite(
   const datei = HEFT_DATEI[l.heft]
   let art: string | undefined
   let patch: Partial<BuendelRow>
+  // Tokens über Hauptaufruf und Korrekturrunden summieren (Migration 030, docs/fork/KOSTEN.md).
+  const summe = { tokens_eingabe: 0, tokens_gecacht: 0, tokens_ausgabe: 0, tokens_denken: 0, modell_aufrufe: 0 }
+  let modellId: string | undefined
+  const zaehle = (n?: Nutzung, m?: string) => {
+    if (m) modellId ??= m
+    if (!n) return
+    summe.modell_aufrufe++
+    summe.tokens_eingabe += n.eingabe
+    summe.tokens_gecacht += n.gecacht ?? 0
+    summe.tokens_ausgabe += n.ausgabe
+    summe.tokens_denken += n.denken ?? 0
+  }
   try {
     const { system, nutzer } = baueAnfrage({
       kontext: c.kontext, datei, roh: c.rohAktuell[datei], rohOriginal: c.rohOriginal[datei], kommentare: l.kommentare,
       eigenerText: c.text, eba: c.eba, pflicht: l.pflicht, glossarBegriffe: l.glossarBegriffe, bezug: c.bezug,
     })
     const erg = await frageModell({ system, nutzer })
+    zaehle(erg.nutzung, erg.modell)
     if (!erg.ok) {
       // Nur die Art loggen — `meldung` kann den Ablehnungstext des Modells tragen (F11).
       console.warn(`[fassungen] Modellaufruf ${row.id}: ${erg.fehler}`)
       art = erg.fehler
-      patch = { status: 'fehler' }
+      patch = { status: 'fehler', ...(erg.modell ? { modell: erg.modell } : {}) }
     } else {
       const pruefe = (antwort: typeof erg.antwort) => pruefeVorschlag({
         datei, rohOriginal: c.rohOriginal[datei], rohAktuell: c.rohAktuell[datei], antwort,
@@ -196,6 +209,7 @@ async function verarbeite(
           system,
           nutzer: `${nutzer}\n\nKORREKTUR: Diese Pflicht-Pfade sind noch nicht gültig. Senden Sie NUR diese Pfade neu — ersetzt (deutlich unter der Grenze) oder bestätigt:\n${gruende.join('\n')}`,
         })
+        zaehle(nachfrage.nutzung, nachfrage.modell)
         if (nachfrage.ok) {
           const neu = new Set(vorschlag.fehlend)
           antwort = {
@@ -213,8 +227,12 @@ async function verarbeite(
     }
   } catch (e) {
     console.warn(`[fassungen] Prüfung ${row.id}: ${e instanceof Error ? e.name : 'Fehler'}`)
-    patch = { status: 'fehler' }
+    art = 'pruefung'
+    patch = { status: 'fehler', ...(modellId ? { modell: modellId } : {}) }
   }
-  const { data } = await admin.from('einheit_fassung_buendel').update(patch).eq('id', row.id).select('*').single()
+  const zahlen = { ...summe, ...(patch.status === 'fehler' ? { fehler_art: art ?? 'pruefung' } : {}) }
+  let { data, error } = await admin.from('einheit_fassung_buendel').update({ ...patch, ...zahlen }).eq('id', row.id).select('*').single()
+  // Ohne Migration 030 fehlen die Zahlen-Spalten — dann nur den Status schreiben.
+  if (error) ({ data } = await admin.from('einheit_fassung_buendel').update(patch).eq('id', row.id).select('*').single())
   return buendelSicht((data as BuendelRow | null) ?? { ...row, ...patch }, art)
 }

@@ -33,9 +33,12 @@ export interface Bestaetigung { pfad: string; begruendung: string }
 export interface ModellAntwort { ersetzungen: Ersetzung[]; bestaetigt: Bestaetigung[]; hinweis: string }
 
 export type ModellFehler = 'nicht_konfiguriert' | 'zeitueberschreitung' | 'abgelehnt' | 'unvollstaendig' | 'http' | 'format'
+/** Tokens eines Aufrufs. `gecacht` ist Teil von `eingabe`, `denken` Teil von `ausgabe` (nur wenn OpenAI sie meldet). */
+export interface Nutzung { eingabe: number; ausgabe: number; gesamt: number; gecacht?: number; denken?: number }
 export type ModellErgebnis =
-  | { ok: true; antwort: ModellAntwort; modell: string; nutzung?: { eingabe: number; ausgabe: number; gesamt: number } }
-  | { ok: false; fehler: ModellFehler; meldung: string }
+  | { ok: true; antwort: ModellAntwort; modell: string; nutzung?: Nutzung }
+  /** `nutzung`/`modell` nur, wenn OpenAI geantwortet hat (dann wurde der Aufruf auch berechnet). */
+  | { ok: false; fehler: ModellFehler; meldung: string; nutzung?: Nutzung; modell?: string }
 
 /** Antwortschema nach VERTRAG §7, strikt-tauglich: jedes Objekt mit
  *  additionalProperties false, jedes Feld in required, Wurzel ist ein Objekt.
@@ -78,7 +81,11 @@ function leseEnv(name: string): string | undefined {
   return wert && wert.trim() ? wert.trim() : undefined
 }
 
-const fehler = (f: ModellFehler, meldung: string): ModellErgebnis => ({ ok: false, fehler: f, meldung })
+const fehler = (f: ModellFehler, meldung: string, extra: { nutzung?: Nutzung; modell?: string } = {}): ModellErgebnis => ({
+  ok: false, fehler: f, meldung,
+  ...(extra.nutzung ? { nutzung: extra.nutzung } : {}),
+  ...(extra.modell ? { modell: extra.modell } : {}),
+})
 const istText = (v: unknown): v is string => typeof v === 'string'
 const istObjekt = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v)
 
@@ -88,6 +95,18 @@ export function pruefeAntwort(v: unknown): v is ModellAntwort {
   const ersOk = v.ersetzungen.every((e) => istObjekt(e) && istText(e.datei) && istText(e.pfad) && istText(e.wert_json) && istText(e.begruendung))
   const bestOk = v.bestaetigt.every((b) => istObjekt(b) && istText(b.pfad) && istText(b.begruendung))
   return ersOk && bestOk
+}
+
+/** `usage` der Responses API lesen; `undefined`, wenn Zahlen fehlen. */
+export function leseNutzung(json: unknown): Nutzung | undefined {
+  const u = istObjekt(json) && istObjekt(json.usage) ? json.usage : undefined
+  if (!u || typeof u.input_tokens !== 'number' || typeof u.output_tokens !== 'number') return undefined
+  const n: Nutzung = { eingabe: u.input_tokens, ausgabe: u.output_tokens, gesamt: typeof u.total_tokens === 'number' ? u.total_tokens : u.input_tokens + u.output_tokens }
+  const gecacht = istObjekt(u.input_tokens_details) ? u.input_tokens_details.cached_tokens : undefined
+  const denken = istObjekt(u.output_tokens_details) ? u.output_tokens_details.reasoning_tokens : undefined
+  if (typeof gecacht === 'number') n.gecacht = gecacht
+  if (typeof denken === 'number') n.denken = denken
+  return n
 }
 
 export async function frageModell(args: { system: string; nutzer: string; signal?: AbortSignal }): Promise<ModellErgebnis> {
@@ -142,6 +161,9 @@ export async function frageModell(args: { system: string; nutzer: string; signal
     return fehler('http', `OpenAI HTTP ${res.status}${teile.length ? ` (${teile.join(', ')})` : ''}${retry ? `, Retry-After ${retry}` : ''}.`)
   }
   if (!istObjekt(json)) return fehler('format', 'Antwort ist kein JSON-Objekt.')
+  // Ab hier hat OpenAI geantwortet — Tokens auch bei Fehlern mitgeben (sie werden berechnet).
+  const nutzung = leseNutzung(json)
+  const mit = { nutzung, modell: istText(json.model) ? json.model : modell }
 
   // `output_text` ist laut Referenz nur eine SDK-Bequemlichkeit — wir lesen `output[]`.
   const teile = (Array.isArray(json.output) ? json.output : [])
@@ -149,15 +171,15 @@ export async function frageModell(args: { system: string; nutzer: string; signal
     .flatMap((o) => (Array.isArray(o.content) ? o.content : []))
     .filter(istObjekt)
   const ablehnung = teile.find((c) => c.type === 'refusal')
-  if (ablehnung) return fehler('abgelehnt', istText(ablehnung.refusal) ? ablehnung.refusal.slice(0, 500) : 'Das Modell hat abgelehnt.')
+  if (ablehnung) return fehler('abgelehnt', istText(ablehnung.refusal) ? ablehnung.refusal.slice(0, 500) : 'Das Modell hat abgelehnt.', mit)
 
   if (json.status === 'incomplete') {
     const grund = istObjekt(json.incomplete_details) && istText(json.incomplete_details.reason) ? json.incomplete_details.reason : 'unbekannt'
-    return fehler('unvollstaendig', `Antwort unvollstaendig (${grund}).`)
+    return fehler('unvollstaendig', `Antwort unvollstaendig (${grund}).`, mit)
   }
   if (json.status !== 'completed') {
     const code = istObjekt(json.error) && istText(json.error.code) ? `, code=${json.error.code}` : ''
-    return fehler('http', `Status ${istText(json.status) ? json.status : 'unbekannt'}${code}.`)
+    return fehler('http', `Status ${istText(json.status) ? json.status : 'unbekannt'}${code}.`, mit)
   }
 
   const text = teile.filter((c) => c.type === 'output_text' && istText(c.text)).map((c) => c.text as string).join('')
@@ -165,13 +187,9 @@ export async function frageModell(args: { system: string; nutzer: string; signal
   try {
     antwort = JSON.parse(text)
   } catch {
-    return fehler('format', 'Ausgabe ist kein gueltiges JSON.')
+    return fehler('format', 'Ausgabe ist kein gueltiges JSON.', mit)
   }
-  if (!pruefeAntwort(antwort)) return fehler('format', 'Ausgabe entspricht nicht dem Antwortschema.')
+  if (!pruefeAntwort(antwort)) return fehler('format', 'Ausgabe entspricht nicht dem Antwortschema.', mit)
 
-  const u = istObjekt(json.usage) ? json.usage : undefined
-  const nutzung = u && typeof u.input_tokens === 'number' && typeof u.output_tokens === 'number'
-    ? { eingabe: u.input_tokens, ausgabe: u.output_tokens, gesamt: typeof u.total_tokens === 'number' ? u.total_tokens : u.input_tokens + u.output_tokens }
-    : undefined
   return { ok: true, antwort, modell: istText(json.model) ? json.model : modell, ...(nutzung ? { nutzung } : {}) }
 }

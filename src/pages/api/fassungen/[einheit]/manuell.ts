@@ -1,6 +1,6 @@
 /**
  * Fork-Pilot «Meine Fassung» — Selbst bearbeiten (15.11.2026), ohne Modell.
- *  GET  /api/fassungen/<einheit>/manuell?datei=<datei>&pfad=<pfad>  → { wert, max }  aktueller Text des Felds
+ *  GET  /api/fassungen/<einheit>/manuell?datei=<datei>&pfad=<pfad>  → { wert, max, original }  aktueller Text des Felds und Original
  *  POST /api/fassungen/<einheit>/manuell  { datei, pfad, wert }       → { fassung: FassungSicht }
  *
  * Prüfung in `src/lib/fork/manuell.ts` (Positivliste, Form, Länge, Anrede). Jede Änderung

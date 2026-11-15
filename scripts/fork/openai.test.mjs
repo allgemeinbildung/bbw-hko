@@ -148,3 +148,16 @@ test('Fehlende Konfiguration: kein Aufruf', async () => {
   keinKey(r)
   assert.equal(aufrufe.length, 0)
 })
+
+test('Nutzung: gecachte und Denk-Tokens; Tokens auch bei unvollständiger Antwort (KOSTEN.md)', async () => {
+  setzeFetch(200, erfolg({ usage: { input_tokens: 100, output_tokens: 50, total_tokens: 150, input_tokens_details: { cached_tokens: 40 }, output_tokens_details: { reasoning_tokens: 30 } } }))
+  const r = await frageModell(ARGS)
+  assert.deepEqual(r.nutzung, { eingabe: 100, ausgabe: 50, gesamt: 150, gecacht: 40, denken: 30 })
+
+  setzeFetch(200, erfolg({ status: 'incomplete', incomplete_details: { reason: 'max_output_tokens' }, usage: { input_tokens: 7, output_tokens: 32000, total_tokens: 32007 } }))
+  const u = await frageModell(ARGS)
+  assert.equal(u.ok, false)
+  assert.equal(u.fehler, 'unvollstaendig')
+  assert.deepEqual(u.nutzung, { eingabe: 7, ausgabe: 32000, gesamt: 32007 })
+  assert.equal(u.modell, 'modell-test-2026')
+})
