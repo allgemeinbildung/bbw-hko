@@ -39,7 +39,7 @@ const { count: meldungenOffen } = await Astro.locals.supabase
           <a
             href="/admin/meine-abteilung"
             class={`px-3 py-1 rounded-md text-sm font-medium transition ${path === '/admin/meine-abteilung' ? 'admin-tab-active' : 'admin-tab'}`}
-          >Meine Abteilung</a>
+          >Rückmeldungen · Meine Abteilung</a>
           <a
             href="/admin/meldungen"
             class={`inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-sm font-medium transition ${path.startsWith('/admin/meldungen') ? 'admin-tab-active' : 'admin-tab'}`}

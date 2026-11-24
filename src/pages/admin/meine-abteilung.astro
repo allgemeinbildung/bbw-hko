@@ -8,6 +8,8 @@
 // Datenbank-Sperre). Zuordnung über profiles.abteilung der Lehrperson.
 import Admin from '../../layouts/Admin.astro'
 import TextMitLinks from '../../components/TextMitLinks.astro'
+import { KOMMENTAR_FELDER } from '../../lib/feedback-kommentare'
+import { knTypLabel } from '../../lib/einheiten/kn-typ-labels'
 
 const user = Astro.locals.user
 if (!user) return Astro.redirect('/login')
@@ -75,6 +77,49 @@ const itemsFor = (lpId: string): Item[] => [
   })),
 ].sort((a, b) => (b.datum ?? '').localeCompare(a.datum ?? ''))
 
+
+// «Inhalt ansehen»: alles, was das Rückmeldeformular erfasst — nicht nur die Anmerkungen.
+const BEWERTUNG_LABEL: Record<string, string> = {
+  tauglichkeit: 'Passt zu Klasse und Planung',
+  qualitaet_situation: 'Qualität der Herausforderungen',
+  qualitaet_handlungsprodukt: 'Qualität des Handlungsprodukts',
+  schwierigkeit: 'Anspruch für die Lernenden',
+  motivation: 'Engagement der Lernenden',
+  kn_validitaet: 'KN misst die Kompetenz',
+  kn_fairness: 'KN fair',
+  kn_zeit_angemessen: 'KN-Zeit angemessen',
+  kn_raster_brauchbar: 'Beurteilungsraster brauchbar',
+}
+const NIVEAU_LABEL: Record<string, string> = { zu_leicht: 'zu leicht', passend: 'passend', zu_schwer: 'zu schwer' }
+const KN_ERGEBNIS_LABEL: Record<string, string> = { unter_50: 'unter 50 %', '50_75': '50–75 %', '75_90': '75–90 %', ueber_90: 'über 90 %' }
+// Bewertungen mit Zahl und/oder Begründung, in der Reihenfolge des Bogens
+const bewertungen = (row: any): Array<{ label: string; wert: number | null; warum: string }> =>
+  KOMMENTAR_FELDER
+    .map((f) => ({ label: BEWERTUNG_LABEL[f] ?? f, wert: typeof row[f] === 'number' ? row[f] : null, warum: row.bewertung_kommentare?.[f] ?? '' }))
+    .filter((b) => b.wert != null || b.warum)
+// Eckdaten in einer Zeile: Niveau, KN-Ergebnis, Weiterempfehlung, Einsatz
+const eckdaten = (row: any): string[] => [
+  row.niveau_passung ? `Niveau: ${NIVEAU_LABEL[row.niveau_passung] ?? row.niveau_passung}` : '',
+  row.kn_ergebnis ? `KN-Ergebnis der Klasse: ${KN_ERGEBNIS_LABEL[row.kn_ergebnis] ?? row.kn_ergebnis}` : '',
+  typeof row.weiterempfehlung === 'boolean' ? (row.weiterempfehlung ? 'empfiehlt die Einheit weiter' : 'empfiehlt die Einheit nicht weiter') : '',
+  [row.genutzt_sit_a && 'A', row.genutzt_sit_b && 'B', row.genutzt_sit_c && 'C', row.genutzt_kn && 'KN'].filter(Boolean).length
+    ? `eingesetzt: ${[row.genutzt_sit_a && 'A', row.genutzt_sit_b && 'B', row.genutzt_sit_c && 'C', row.genutzt_kn && 'KN'].filter(Boolean).join(' · ')}` : '',
+  row.kn_typ_verwendet ? `KN-Form: ${row.kn_typ_verwendet === 'andere' ? (row.kn_typ_anders || 'andere Form') : knTypLabel(row.kn_typ_verwendet)}` : '',
+  row.dauer_lektionen != null ? `${row.dauer_lektionen} Lektionen` : '',
+].filter(Boolean)
+// Weitere Freitexte, die das Formular erfasst
+const FREITEXTE: Array<[string, string]> = [
+  ['eigene_anpassungen', 'Eigene Anpassungen'],
+  ['noetiges_scaffolding', 'Brauchte zusätzlich'],
+  ['bewertungspositionen_feedback', 'Bewertungspositionen'],
+  ['scaffolds_feedback', 'Scaffolds'],
+  ['begleiter_nuetzlich', 'Begleiter: nützlich?'],
+  ['was_funktionierte', 'Was funktionierte'],
+  ['was_nicht_funktionierte', 'Was nicht funktionierte'],
+  ['aenderungsvorschlaege', 'Änderungsvorschläge'],
+  ['anmerkungen', 'Anmerkungen'],
+]
+
 const datum = (s: string) => (s ? new Date(s).toLocaleDateString('de-CH') : '')
 
 const textFuer = (p: any, items: Item[]) => {
@@ -109,6 +154,14 @@ const hatErfahrung = (i: Item) => i.kind === 'einheit' && i.row.feedback_art !==
         Erst die Lehrperson ansprechen und hier vermerken, dann ihre Beiträge sichten und per Knopf an KT2 weiterleiten.
         Weitergeleitetes erscheint unter <a href="/admin/kt2" class="underline">KT2-Übergabe</a>.
       </p>
+      <details class="text-sm text-slate-600 mt-2 max-w-3xl">
+        <summary class="cursor-pointer text-xs font-semibold text-slate-600">Was bedeuten KT1 und KT2 hier?</summary>
+        <ul class="list-disc pl-5 mt-1 space-y-1 text-xs">
+          <li><b>Weiterleiten an KT2:</b> Beiträge, die das Team für den gemeinsamen Kompetenznachweis (KT2) sehen soll. Der Knopf wird frei, sobald du die Lehrperson oben als «angesprochen» oder «nicht erreichbar» vermerkt hast.</li>
+          <li><b>Antwort von KT1</b> (unter «Bei der Einheit sichtbar»): deine Stellungnahme an die Lehrperson: wird aufgenommen · wird nicht aufgenommen · später. Sie ist frei, sobald der Status «Gesichtet» gespeichert ist.</li>
+          <li><b>Kurzumfrage</b> («Hilft dir die Plattform?»): anonym, ohne Abteilung, darum nicht hier, sondern unter <a href="/admin/statistik" class="underline">Statistik</a>.</li>
+        </ul>
+      </details>
     </div>
     <form method="get" class="flex items-center gap-2 text-sm">
       <label for="abteilung" class="text-slate-500">Abteilung</label>
@@ -242,11 +295,29 @@ const hatErfahrung = (i: Item) => i.kind === 'einheit' && i.row.feedback_art !==
                         <ul class="list-disc pl-5">{it.row.eigen_links.map((l: any) => <li><a href={l.url} target="_blank" rel="noopener" class="underline text-slate-700 break-all">{l.titel || l.url}</a></li>)}</ul>
                       )}
                     </>)}
-                    {it.kind !== 'material' && it.row.eigene_anpassungen && <div><span class="text-xs font-semibold text-amber-800 uppercase tracking-wide">Eigene Anpassungen</span><p class="text-slate-700 whitespace-pre-wrap">{it.row.eigene_anpassungen}</p></div>}
-                    {it.kind !== 'material' && it.row.was_funktionierte && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Was funktionierte</span><p class="text-slate-700 whitespace-pre-wrap">{it.row.was_funktionierte}</p></div>}
-                    {it.kind !== 'material' && it.row.was_nicht_funktionierte && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Was nicht funktionierte</span><p class="text-slate-700 whitespace-pre-wrap">{it.row.was_nicht_funktionierte}</p></div>}
-                    {it.kind !== 'material' && it.row.aenderungsvorschlaege && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Änderungsvorschläge</span><p class="text-slate-700 whitespace-pre-wrap">{it.row.aenderungsvorschlaege}</p></div>}
-                    {it.kind !== 'material' && it.row.anmerkungen && <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Anmerkungen</span><p class="text-slate-700 whitespace-pre-wrap">{it.row.anmerkungen}</p></div>}
+                    {it.kind !== 'material' && eckdaten(it.row).length > 0 && (
+                      <p class="text-xs text-slate-600">{eckdaten(it.row).join(' · ')}</p>
+                    )}
+                    {it.kind !== 'material' && bewertungen(it.row).length > 0 && (
+                      <div>
+                        <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Bewertungen und Begründungen</span>
+                        <ul class="space-y-0.5 text-slate-700">
+                          {bewertungen(it.row).map((b) => (
+                            <li><span class="font-medium">{b.label}{b.wert != null && ` (${b.wert}/5)`}{b.warum ? ':' : ''}</span>{b.warum && <> {b.warum}</>}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {it.kind !== 'material' && FREITEXTE.filter(([f]) => it.row[f]).map(([f, label]) => (
+                      <div><span class={`text-xs font-semibold uppercase tracking-wide ${f === 'eigene_anpassungen' ? 'text-amber-800' : 'text-slate-500'}`}>{label}</span><p class="text-slate-700 whitespace-pre-wrap">{it.row[f]}</p></div>
+                    ))}
+                    {it.kind !== 'material' && it.row.neue_idee && (it.row.idee_titel || it.row.idee_beschreibung) && (
+                      <div><span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Neue Idee{it.row.idee_typ ? ` (${it.row.idee_typ})` : ''}</span>
+                        <p class="text-slate-700 whitespace-pre-wrap">{[it.row.idee_titel, it.row.idee_beschreibung].filter(Boolean).join(' — ')}</p></div>
+                    )}
+                    {it.kind !== 'material' && !eckdaten(it.row).length && !bewertungen(it.row).length && !FREITEXTE.some(([f]) => it.row[f]) && (
+                      <p class="text-xs text-slate-400">Die Lehrperson hat keine weiteren Angaben gemacht.</p>
+                    )}
                   </div>
                 </details>
 
@@ -297,7 +368,7 @@ const hatErfahrung = (i: Item) => i.kind === 'einheit' && i.row.feedback_art !==
                     <p class="text-slate-400" x-show="freigeschaltet && originalStatus === 'eingereicht'">Erst sichten: Status auf «Gesichtet» setzen und speichern.</p>
                     <div class="flex flex-wrap items-start gap-2 pt-2 border-t border-slate-200">
                       <select x-model="stellung" class="input text-xs py-1 w-52">
-                        <option value="">Keine Antwort von KT1</option>
+                        <option value="">Antwort von KT1: noch keine</option>
                         <option value="aufgenommen">Wird aufgenommen</option>
                         <option value="nicht_aufgenommen">Wird nicht aufgenommen</option>
                         <option value="spaeter">Später</option>
